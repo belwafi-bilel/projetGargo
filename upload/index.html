@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <script data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js" data-require="angular.js@1.4.x"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <p>Hello {{name}}!</p>
+    <input type="file" ng-file-model="files" multiple />
+    <button type="button" ng-click="upload()">Upload</button>
+
+    <p ng-repeat="file in files">
+      {{file.name}}
+    </p>
+  </body>
+
+</html>

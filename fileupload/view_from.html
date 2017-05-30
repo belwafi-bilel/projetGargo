@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../styles/vendor-479457d43d.css">
+  <link rel="stylesheet" href="../styles/app-2d27e186c4.css">
+
+  <title>jQuery formBuilder/formRender Demo</title>
+</head>
+<style>
+ul.form_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.form_list li {
+    float: left;
+}
+
+.form_list li {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    text-decoration: none;
+}
+.form_list li:hover{
+    background: #400c66;
+	cursor: pointer;
+}
+
+.select_list{
+	background: #455c66;
+}
+
+body{
+/*background-color: transparent !important;*/
+
+
+/*background: #2389c6;*/
+background: white;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #423f3f;
+  padding: 6px;
+  text-decoration: none;
+  color: #e07878;
+  //display: block
+}
+#myUL li{
+height:32px;
+
+}
+
+.view_data_list_select{
+background-color: #6c7b7b !important;
+}
+
+#myUL li a.header {
+  background-color: #e2e2e2;
+  cursor: default;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+
+
+
+<body style="height:1200px; width:50%">
+	<!-- <label>Background Color</label>
+  	<button id="frmb-0-save" class="btn-primary jscolor {valueElement:'chosen-value', onFineChange:'setbackColor(this)'}">
+		&nbsp;
+	</button>
+	<label>Font Color</label -->
+	<!-- <button id="frmb-0-save" class="view_data">
+		View data
+	</button > -->
+
+	<div ba-panel="" ba-panel-title="Forms Collection" ba-panel-class="with-scroll">
+    <div class="panel with-scroll animated zoomIn" zoom-in="">
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title">FORMS COLLECTION</h3>
+        </div>
+        <div class="panel-body" ng-transclude="">
+            <!-- ngInclude: 'app/pages/form/inputs/widgets/inputGroups.html' -->
+           <!--  <div ng-include="'app/pages/form/inputs/widgets/inputGroups.html'" class="ng-scope">
+                <div class="input-group ng-scope"><span class="input-group-addon input-group-addon-primary addon-left" id="basic-addon1">@</span> <input type="text" class="form-control with-primary-addon" placeholder="Username" aria-describedby="basic-addon1"></div>
+                <div class="input-group ng-scope"><input type="text" class="form-control with-warning-addon" placeholder="Recipient's username" aria-describedby="basic-addon2"> <span class="input-group-addon input-group-addon-warning addon-right" id="basic-addon2">@example.com</span></div>
+                <div class="input-group ng-scope"><span class="input-group-addon addon-left input-group-addon-success">$</span> <input type="text" class="form-control with-success-addon" aria-label="Amount (to the nearest dollar)"> <span class="input-group-addon addon-right input-group-addon-success">.00</span></div>
+                <div class="input-group ng-scope"><input type="text" class="form-control with-danger-addon" placeholder="Search for..."> <span class="input-group-btn"><button class="btn btn-danger" type="button">Go!</button></span></div>
+            </div> -->
+
+            Form Name :
+<ul class="form_list">
+
+</ul>
+	<br>
+        
+
+<style>
+
+	#frmb-0-stage-wrap *{
+	/*background:transparent !important;
+	color:#fff  !important;*/
+	}
+</style>
+<div>
+  <div class="table_listed"  style="width: 30%;float: left;">
+<ul id="myUL">
+</ul>
+  </div>
+  <div class="content" style="width: 69%;float: right;"></div>
+</div>  
+
+  
+  
+  
+  <script src="assets/js/jquery.min.js"></script>
+	<script>
+
+var input_radio_field_value;
+var input_chartjs_value;
+var input_textarea_field_value;
+var Select_form_id;
+var post_data_table;
+
+function save_data_post(id) {
+    var x = $("#from_table"+id).serializeArray();
+	
+	var myJSON_array = JSON.stringify(x); 
+    $.post("../scripts/Update.php", {
+        from_array_data: myJSON_array	,
+        from_id: id
+    }, function(result) {}, 'json');
+
+
+	//console.log(x);
+	//$.each(x, function(i, field) {
+	//alert($("[name='"+field.name+"']").prop("tagName"));
+    //alert($("[name='"+field.name+"']").attr("type"));
+	//});
+	//console.log($(".content").html());return false;
+	
+    $.each(x, function(i, field) {
+        if (field.name == "text-preview")
+            input_radio_field_value = field.value;
+
+        if (field.name == "number-preview")
+            input_chartjs_value = field.value;
+
+        if (field.name == "text1-preview")
+            input_textarea_field_value = field.value;
+    });
+	
+    
+    $.post("../scripts/Update.php", {
+        input_radio_field: input_radio_field_value,
+        input_chartjs: input_chartjs_value,
+        input_textarea_field: input_textarea_field_value
+    }, function(result) {
+        alert("Saved!");
+    }, 'json');
+	
+	alert(" Saved!");
+	shake(Select_form_id);
+	
+	
+}
+
+function viewdata_list(id){
+
+	$(".date_view_ui").removeClass("view_data_list_select");
+	$(".ui_select"+id).addClass("view_data_list_select");
+
+		$.post("../scripts/Connection.php",{table_name:'form_savedata'},function(result){
+			
+			for (j=0;j<result.length;j++){
+			
+			if(result[j].id == id){
+				kkk = result[j].array_data;
+				data_array_value= JSON.parse(kkk);
+				//console.log(sdf);
+				$("input[type=checkbox]").prop("checked", false);
+				$("input[type=radio]").prop('checked', false);
+
+				$("input[type=text]").val("");
+				$("textarea").val("");
+				
+				for (i=0;i<data_array_value.length;i++){
+				var tag_name = $("[name='"+data_array_value[i].name+"']").prop("tagName");
+				var tag_type = $("[name='"+data_array_value[i].name+"']").attr("type");
+						if (tag_name=="INPUT" && tag_type=="radio"){
+						$("[name='"+data_array_value[i].name+"'][value='"+data_array_value[i].value+"']").prop('checked', true);
+						}
+						else if(tag_name=="INPUT" && tag_type=="checkbox"){
+							if(data_array_value[i].value =="on"){
+							$("[name='"+data_array_value[i].name+"']").prop("checked", true);
+							}
+							else{
+							$("[name='"+data_array_value[i].name+"'][value='"+data_array_value[i].value+"']").prop("checked", true);
+							}
+						}
+						else{
+						$("[name='"+data_array_value[i].name+"']").val(data_array_value[i].value);
+						}
+				
+				}
+			}
+			}
+			
+		},'json');
+	
+	$(".change_data_list").remove();	
+	$("#from_table"+Select_form_id).append("<button type='button' title='Change' class='btn btn-danger change_data_list' onclick='Change_data_post("+id+")'>Edit</button>");
+	
+}
+
+
+function Delect_data_list(id){
+
+$.post("../scripts/Update.php",{Delect_recode_id:id},function(result){},'json');
+setTimeout(function(){ shake(Select_form_id); }, 500);
+}
+
+
+
+function Change_data_post(id){
+
+    var x = $("#from_table"+Select_form_id).serializeArray();
+	
+	var myJSON_array = JSON.stringify(x); 
+    $.post("../scripts/Update.php", {
+        change_from_data: myJSON_array,
+        change_from_id: id
+    }, function(result) {}, 'json');
+
+	//console.log(x);
+	//$.each(x, function(i, field) {
+	//alert($("[name='"+field.name+"']").prop("tagName"));
+    //alert($("[name='"+field.name+"']").attr("type"));
+	//});
+	//console.log($(".content").html());return false;
+	
+	alert("Edited!");
+	shake(Select_form_id);
+
+}
+
+
+
+	
+	function shake(id){
+	Select_form_id = id;
+	$(".view_list").removeClass("select_list");
+	$(".selectview_list"+id).addClass("select_list");
+	
+	$(".content").empty();
+		//post_data_table
+		for(i=0;i<post_data_table.length;i++){
+			if(id == post_data_table[i].id){
+				$(".content").append("<form id='from_table"+post_data_table[i].id+"' style='width:100%'>"+post_data_table[i].str_con+"<button type='submit' title='Save' class='btn btn-danger' onclick='save_data_post("+post_data_table[i].id+")'>Save</button></form>");
+			}
+		}
+	$("#myUL").empty();	
+	$.post("../scripts/Connection.php",{table_name:'form_savedata'},function(result_a){
+		for(i=result_a.length-1;i>=0;i--){
+			if(Select_form_id == result_a[i].Form_id){
+				$("#myUL").append("<li><a href='#' class='date_view_ui ui_select"+result_a[i].id+"' onclick='viewdata_list("+result_a[i].id+")'>"+result_a[i].date+"</a><a onclick='Delect_data_list("+result_a[i].id+")'><i class='ion-close-round'></i></a></li>");
+			}
+		}
+	},'json');	
+		
+		
+		
+		
+
+	}
+	$(document).ready(function(){
+		$.post("../scripts/Connection.php",{table_name:'fileupload'},function(result){
+			//$(".content").html(result[0].str_con);
+			post_data_table = result;
+			for(i=0;i<result.length;i++){
+				if(i==0){
+				Select_form_id = result[0].id;
+					$(".content").append("<form id='from_table"+result[i].id+"' style='width:100%'>"+result[i].str_con+"<button type='button' title='Save' class='btn btn-danger' onclick='save_data_post("+result[i].id+")'>Save</button></form>");
+					$(".form_list").append("<li class='view_list select_list selectview_list"+result[i].id+"' onclick=shake("+result[i].id+")>"+ result[i].Form_name +"</li>");
+				
+						$.post("../scripts/Connection.php",{table_name:'form_savedata'},function(result_a){
+							for(i=result_a.length-1;i>=0;i--){
+								if(Select_form_id == result_a[i].Form_id){
+									$("#myUL").append("<li><a href='#' class='date_view_ui ui_select"+result_a[i].id+"' onclick='viewdata_list("+result_a[i].id+")'>"+result_a[i].date+"</a><a onclick='Delect_data_list("+result_a[i].id+")'><i class='ion-close-round'></i></a></li>");
+								}
+							}
+						},'json');
+				
+				
+				
+				}
+				else{
+					$(".form_list").append("<li class = 'view_list selectview_list"+result[i].id+"' onclick=shake("+result[i].id+")>"+ result[i].Form_name +"</li>");
+				}
+			}			
+		},'json');
+		
+
+		
+
+		
+		
+		
+		
+	});
+
+
+
+	
+
+	
+	
+	
+	function setbackColor(picker) {
+		 $("#frmb-0-stage-wrap div").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap li").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap label").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap a").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap bottom").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap text").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap select").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap input").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap textarea").css("background-color", '#' + picker.toString()+" !important");
+	}
+	
+	function setfontColor(picker) {
+		 $("#frmb-0-stage-wrap div").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap li").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap label").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap a").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap bottom").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap text").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap select").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap input").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap textarea").css("color", '#' + picker.toString()+" !important");
+	}
+	
+	</script>
+</div>
+    </div>
+</div>
+</body>
+
+
+</html>
