@@ -112,11 +112,8 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
 })
 });
  refresh();
+
 </script>
-
-  
-
-
 <div style="display:nones "class="refreshdiv"  id="refersh">
   <div>
     <?php echo $this->Html->image("LoaderIcon.gif");?>
@@ -126,16 +123,26 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
   <div>
 </div>
 </div>
-<div class="header">
 
-<div> 
-<button type="button" id="addplan"class="btn btn-primary left">
-  <?php echo __("Plans (+)");?></button>
-   <i class="fa fa-floppy-o btn btn-primary left" aria-hidden="true"></i>
-   <i class="glyphicon glyphicon-eye-close open-close btn btn-primary left" aria-hidden="true" ></i>
-   <i class="glyphicon glyphicon-eye-open open-close btn btn-primary left" aria-hidden="true" style="display:none"></i>
+<div class="row">
+  <div class="col-xs-12 col-md-80 white height-33">
 
-<select id="selectionPlan"style="float: right; color:white;height: 34px;background: #286090;min-width: 200px;">
+  <span><?php echo __("LIST PLAN"); ?></span>
+ <button type="button"  class="open-close HIDE btn-btn">
+   <?php echo __("HIDE"); ?>
+   </button> 
+   <button type="button"  class="open-close preview btn-btn" style="display:none">
+  <?php echo __("PREVIEW"); ?>
+   </button>
+   <button type="button" id="print" class="btn-btn">
+<?php echo __("PRINT"); ?>
+ </button>
+   <button type="button" id="addplan" class="btn-btn">
+  <?php echo __("PLANS (+)");?></button>
+</div>
+
+<div class="col-xs-12 col-md-2  right ">
+<select id="selectionPlan" class="selectPlan margin-left-14 white ">
   
 <?php foreach ($plans as $plan) { ?>
 <option value="<?php echo $plan['Plan']['id'] ?>">
@@ -144,8 +151,6 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
   <?php }?>
 </select>
 </div>
-
-
 </div>
 <div class="body" id="newPlan" style="display:none;">
   <button type="button" class="btn btn-primary"style="background-color: #286090;margin-right: 717px;margin-top: -40px;" id="savePLan">
@@ -157,26 +162,18 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
   <div class="logoPlan">
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
 <label class=""style=" width: 90px;height: 90px;">
-  <img src="./sm/img/plans/vide.gif"style=" width: 100px;height: 100px;" id="Logo">
+  <img src="./sm/img/plans/vide.png"style=" width: 500px;height: 500px;" id="Logo">
   <input type="file" style="display:none" id="userImage">
 </label> 
-       
-      </div>
-       </div>
-      <div class="item" id="planAtrribute">
-         <div >
-             <input type="text" class="inputplan" id="Titre" value="" placeholder="Titre" >
-         </div>
+</div>
+</div>
+      <div class="item" id="planAtrribute">    
           <div>
             <input type="text" class="inputplan" value="" id="Adresse" placeholder="Addresse">
-         </div>
-          
-      </div>
-  <button type="button" id="plusAttributePlan"class="btn btn-primary"style="float: left;margin-left: -39px;margin-top: 27px;
-"><?php echo __("+");?>
-  </button>  
+         </div> 
+      </div> 
 </div>        
-<div id="PlanShow">
+<div id="PlanShow" class="col-xs-12 col-md-12">
 
 </div>
  <datalist id="query">
