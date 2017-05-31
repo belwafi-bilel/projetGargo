@@ -36,7 +36,7 @@ function refresh(){
    if($("#refersh").is(':visible'))
   { if($("#historical_plan_id"))
     var id_historcal=$("#historical_plan_id").val()
-    alert(id_historcal)
+   
  $.ajax({
   type: "POST",
   url:"sm/plans/detail_plan/"+id_historcal
@@ -113,55 +113,7 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
 });
  refresh();
 </script>
-<style type="text/css">
-.header{
-  width: 100%;
-  height: 40px;
-  background-color:white;
-  
-}
-.body{
-margin-top: 2px;
-}
-.logoPlan
-{
-    padding: 10px;
-    width: 142px;
-    float: left;
-     background-color: rgba(255,255,255,1);
-     height: 155px;
-}
-.item{
-  height: 130px;
-  
-}
-.item>div
-{
-    margin-left: 142px;
-    padding: 0px;
-    background-color:white;
-    height: 49px;
-    margin-top: 4px;
-   
-  
-}.item>div>input
-{    width: 98%;
-    height: 100%;
-    padding: 11px;
-    text-transform: uppercase;
-    border: 3px solid;
-    border-color: #f2f2f2;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    
-}
-.contact{
-  padding-bottom: 20px;
 
-}
-
-</style>
   
 
 
@@ -176,9 +128,13 @@ margin-top: 2px;
 </div>
 <div class="header">
 
-<div style="margin-top: -44px;padding: 3px;"> 
-<button type="button" id="addplan"class="btn btn-primary"style="float:left;">
+<div> 
+<button type="button" id="addplan"class="btn btn-primary left">
   <?php echo __("Plans (+)");?></button>
+   <i class="fa fa-floppy-o btn btn-primary left" aria-hidden="true"></i>
+   <i class="glyphicon glyphicon-eye-close open-close btn btn-primary left" aria-hidden="true" ></i>
+   <i class="glyphicon glyphicon-eye-open open-close btn btn-primary left" aria-hidden="true" style="display:none"></i>
+
 <select id="selectionPlan"style="float: right; color:white;height: 34px;background: #286090;min-width: 200px;">
   
 <?php foreach ($plans as $plan) { ?>
@@ -188,7 +144,8 @@ margin-top: 2px;
   <?php }?>
 </select>
 </div>
-   <i class="glyphicon glyphicon-eye-close open-close col-md-1 btn1212" aria-hidden="true" ></i>
+
+
 </div>
 <div class="body" id="newPlan" style="display:none;">
   <button type="button" class="btn btn-primary"style="background-color: #286090;margin-right: 717px;margin-top: -40px;" id="savePLan">

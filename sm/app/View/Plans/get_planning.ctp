@@ -139,7 +139,6 @@ var position=Number($("#position").val())-1;
  <i class="fa fa-comments col-md-1 btn1212" aria-hidden="true"></i>
 </div>
 <div class="col-md-6" style="padding: 0px;margin-top:2px">
- <i class="fa fa-floppy-o col-md-1 btn1212" aria-hidden="true"></i>
    <i class="fa fa-reply col-md-1 btn1212" aria-hidden="true" id="reply" detailPlan=""></i>
     <i class="fa fa-share col-md-1 btn1212" aria-hidden="true" id="share" ></i>
    

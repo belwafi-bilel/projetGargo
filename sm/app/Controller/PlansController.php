@@ -723,6 +723,9 @@ function planning to return all data for action planning id=?
 	$line=0;
 	$id=explode(',',$liste)[0];
 	$his_id=explode(',',$liste)[1];
+	$plans =array();
+	$axes=array();
+	
  $plans=$this->Plan->find('first',array('conditions'=>array('Plan.id'=>$id)));  
  $historical_plans=$this->getHistorical_plan($plans['Plan']['id']); 
  if($his_id>=count($historical_plans))
@@ -975,12 +978,17 @@ function detail_plan to refresh table planning
 */
 public function detail_plan($id=null)
 {
-
+$axesId=array();
+$axes=array();
+$line=0;
+$row=0;
 	$axes2=$axes = $this->getAxes($id);
+	if($axes)
   $row=$this->getNUmbreRowPlanningTable($axes[0]['Axis']['id']);
   foreach ($axes2 as $axe) {
   	$axesId[]=$axe['Axis']['id'];
   }
+  if($axesId)
   $line=$this->getNUmbreLinePlanningTable($axesId);
 $line+=count($axesId);
  $this->set(compact('axes','line','row'));

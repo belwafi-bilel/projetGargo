@@ -47,7 +47,7 @@ function refresh(){
             {label:'Insérer des ligne en dessous', icon:'sm/img/icon/bottom.png',action:function() {  
             	var tab=liste.split(',');
             	liste= Array(tab[0],Number(tab[1])+1,tab[2]);
-            	alert(liste)
+            	
             	 $.ajax({
                  type: "POST",
                 url:"sm/plans/addLine/"+liste
@@ -57,7 +57,7 @@ function refresh(){
             {label:'Insérer des colonnes a gauche',     icon:'sm/img/icon/right.png', action:function() {
             	var tab=liste.split(',');
             	liste= Array(tab[0],Number(tab[1])+1,tab[2],$("#historical_plan_id").val());
-            	alert(liste)
+            
             	 $.ajax({
                  type: "POST",
                 url:"sm/plans/addRow/"+liste
@@ -79,14 +79,14 @@ function refresh(){
 
              } },
             null,
-             {label:'Fusionner les cellules',     icon:'sm/img/icon/fusionner.png', action:function() { alert('clicked 3') } },
+             {label:'Fusionner les cellules',     icon:'sm/img/icon/fusionner.png', action:function() {  } },
               {label:'Fractionner les cellules',     icon:'sm/img/icon/fractionner.png', action:function() { 
               	 } },
               null,
                {label:'Supprimer les lignes',     icon:'sm/img/icon/deleteline.png', action:function() {
                	var tab=liste.split(',');
             	liste= Array($("#historical_plan_id").val(),tab[2]);
-            	alert(liste)
+         
                 	$.ajax({
                  type: "POST",
                 url:"sm/plans/deleteLine/"+liste
@@ -116,7 +116,7 @@ var content=($(this).html()).trim();
 	$(this).parent().find(".jqte_toolbar").hide();  
   prompt("",content)
 listes=liste+','+htmlEntities(content);
-alert(listes);
+
 		$.ajax({
                  type: "POST",
                 url:"sm/plans/saveCelle/"+listes
