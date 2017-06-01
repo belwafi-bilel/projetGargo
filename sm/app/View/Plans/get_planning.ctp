@@ -98,7 +98,11 @@ var position=Number($("#position").val())-1;
       </div>
   </div>
       <div class="item">
-         <textarea>bilel</textarea>
+         <div class="composantVertical" style="resize: both;max-height: 150px">
+                      <div class="jqte-test"  >
+                        TITLE
+                      </div>
+                    </div>
      
       </div>
 </div>
