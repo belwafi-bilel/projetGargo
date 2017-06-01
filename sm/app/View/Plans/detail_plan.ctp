@@ -128,17 +128,13 @@ function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
     </script>
-<style>
-
-table.sorting-table {cursor: move;}
-table tr.sorting-row td {background-color: #8b8;}
-table td.sorter {width: 0px; }
-</style><div style="display:none"class="refreshdiv"  id="refersh">
+<div style="display:none"class="refreshdiv"  id="refersh">
   <div>
     <?php echo $this->Html->image("LoaderIcon.gif");?>
 </div>
 </div>
 <table id="example" class="table-border" style="width:100%;color: white;">
+         
          <thead>
             
             <tr id="typecomposante">
@@ -199,10 +195,7 @@ table td.sorter {width: 0px; }
 							<?php } ?>			
 					  <?php }?>
 					</tr>
-					<tr class="plusLine"><td colspan="<?php echo $row; ?>" class="context-menu-one">
-						<div style="display:none">
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-						<hr><div></td></tr>
+				
 			  <?php } ?>
       <?php } ?>
         </tbody>

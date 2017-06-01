@@ -719,7 +719,7 @@ function planning to return all data for action planning id=?
 */
      public function getPlanning($liste=null)
 {
-	$row=0;
+	$row=3;
 	$line=0;
 	$id=explode(',',$liste)[0];
 	$his_id=explode(',',$liste)[1];

@@ -12,6 +12,7 @@
 	   border-style: none;
     margin: 0px;
     padding: 0px;
+    min-height: 28px;
 }
 .jqte * {
 	color:#333;

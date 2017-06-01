@@ -691,14 +691,13 @@ border-top: 1px solid #dddddd;
 
 }
 .composantVertical>div{
-   overflow: auto;
-    resize: both;
+ overflow: auto;
+    /* resize: both; */
     min-height: 100px;
     min-width: 100px;
     width: auto;
     height: auto;
- 
-    border: 1px solid rgb(35, 137, 198);
+    /* border: 1px solid rgb(35, 137, 198); */
 }
 .plusTd :hover{
     color: rgba(105, 150, 86, 0.99);
@@ -879,7 +878,7 @@ background: #2f4b4b;
     right: 6px;
 }
 #table_id{
-margin-top: 4px;
+margin-top: 1px;
 }
 .cp{
     width: 32px;
@@ -1407,23 +1406,23 @@ i{
 }
 .btn1212{
          
-       padding: 6px 0px;
+         padding: 8px 10px;
     margin-bottom: 0;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.42857143;
-    text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     /* background-image: none; */
     border: 1px solid transparent;
     /* border-radius: 1px; */
-    /* float: left; */
+    float: left; 
     color: #fff;
     /* background-color: #337ab7; */
     border-color: #f5f5f5;
     margin-top: -3px;
     height: 34px;
+    text-align: center;
      
 }
 .btn-primary{
@@ -1433,20 +1432,25 @@ i{
     margin: 3px;
       float: right;
 }
-.table-border,
+
  .table-border>tbody>tr>td,
   .table-border>tbody>tr>th,
    .table-border>tfoot>tr>td, 
    .table-border>tfoot>tr>th
     {
-    border: 1px solid rgb(35, 137, 198);
-    background: white;
+    border: 2px solid #F5F5F5;
+    
 }
-.table-border>thead>tr>td, 
-   .table-border>thead>tr>th
+
+   .table-border>tbody>tr>td:nth-child(even),
+   .table-border>thead>tr>td:nth-child(even)
    {
-     border: 1px solid rgb(35, 137, 198);
-    background: #2e6da4
+    background: #f5f5f5;
+   }
+    .table-border>tbody>tr>td:nth-child(odd),
+   .table-border>thead>tr>td:nth-child(odd)
+   {
+    background: #ffffff;
    }
 td>div>hr{
   border-top: 3px double #8c8b8b;  
@@ -1508,6 +1512,7 @@ td>div>.fa-plus-circle
     margin-top: 4px;
     float: right;
     margin-left: 6px;
+
 }
 .col-md-80{
         width: 80%;
@@ -1530,14 +1535,50 @@ td>div>.fa-plus-circle
 }
 .item>textarea
 {
-        margin: 0px;
-    width: 800px;
-    height: 151px;
-    padding: 17px;
+        margin-top: 10px;
+    width: 85%;
+    margin-left: -5px;
     resize: none;
-    border-style: solid;
+    border: solid 3px;
     border-color: #f5f5f5;
 }
 .share{
     background-color: #2b3a41;
+}
+.margin-top-2{
+        margin-top: 2px;
+}
+.border-none{
+        border: none;
+}
+.color-black{
+    color: #2b3a41;
+    text-transform: uppercase;
+}
+.margin-left--12
+{
+    margin-left: -11px;
+}
+.margin-left-7
+{
+margin-left: 7px;
+}
+.margin-top-12 {
+margin-top: 12px;
+}
+.table-border{
+    col:nth-child(2n+3) {background: #CCC}
+}
+.margin-bottom-13{
+        margin-bottom: 13px;
+}
+.barre_Tache_projet{
+background: white;
+    float: right;
+    margin-top: 2px;
+    width: 100%;
+}
+.padding-top-5
+{
+    padding-top: 5px;
 }

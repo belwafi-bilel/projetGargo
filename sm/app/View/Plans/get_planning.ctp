@@ -88,7 +88,7 @@ var position=Number($("#position").val())-1;
 <input type ="hidden" value="<?php echo $his_id ?>" id="position">
 <div id="projectTache" class="auth-block" style="position: absolute;margin-left: 241px;width:700px; display:none">
   </div>
-<div class="body" id="body">
+<div class="body margin-top-2" id="body">
   <div class="logoPlan">
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
@@ -109,12 +109,36 @@ var position=Number($("#position").val())-1;
       <div id="outil" style="display:none">
       </div>
   <div id="outiltable">
-   <div class="col-md-4">
+   <div class="col-md-1" style="padding: 0px;margin-top:2px;">
+      <i class="col-md-6 btn1212 border-none color-black left">
+         <span><?php echo __("NORMAL  ");?></span>
+      <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
+      </i>
+      </i>
+    
+    
    </div> 
-<div class="col-md-8" style="padding: 0px;margin-top:2px">
-   <i class="col-md-2"></i>
-  <i class="fa fa-reply col-md-2 btn1212" aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
-  <i class="fa fa-share col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
+
+<div class="col-md-11" style="padding: 0px;margin-top:2px">
+  <div class="col-md-2" style="padding: 0px;">
+     <i class="glyphicon glyphicon-text-size col-md-2 btn1212 border-none color-black margin-left-7">
+    <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true" >
+      </i>
+    </i>
+    <i class="glyphicon glyphicon-text-color col-md-2 btn1212 border-none color-black margin-left-7">
+    <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
+      </i>
+    </i>
+
+    <i class="col-md-1 glyphicon glyphicon-bold btn1212 border-none color-black margin-left-7" aria-hidden="true"></i>
+    <i class="col-md-1 glyphicon glyphicon-italic btn1212 border-none color-black" aria-hidden="true"></i>
+    <i class="col-md-1 fa fa-underline btn1212 border-none color-black" aria-hidden="true"></i>
+ </div>
+
+
+
+  <i class="fa fa-reply col-md-2 btn1212 color-black" aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
+  <i class="fa fa-share col-md-2 btn1212 color-black" aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
   <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" Save");?></i>
   <i class="fa fa-trash col-md-2 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ><?php echo __("  DELETE");?></i>
   <i class="btn1212 col-md-2 fa fa-share-alt share"><?php echo __(" SHARE");?></i>
@@ -127,37 +151,16 @@ var position=Number($("#position").val())-1;
   <?php include("detail_plan.ctp"); ?>
 </div>
 </div>
-<div style="background: white;float: right;margin-top: 7px;width: 100%;"> 
+<div class="barre_Tache_projet"> 
 <button type="button" class="btn-btn" id="addproject"><?php echo __("PROJET (+)");?></button>
 <button type="button" class="btn-btn" id="addTask" ><?php echo __("TÂCHE (+)");?></button>
 </div>
-<div style="background: white;float: right;margin-top: 7px;width: 100%;"> 
+<div class="barre_Tache_projet"> 
 
- <div class="item" id="vision" >
-<?php 
-            foreach ($visionplans as $visionplan){
-              ?>
- <i class="fa fa-trash deleteoption" attr="option<?php echo $visionplan['VisionPlan']['id']?>" aria-hidden="true" style="float: right;color: #2389c6;font-size: large;margin-top: 15px;"></i>
-        <div id="option<?php echo $visionplan['VisionPlan']['id']?>">
-      
-            <input type="text"  class="inputplan" value="" placeholder="
-            <?php echo $visionplan['VisionPlan']['description']?> ">
-        </div>
-             <?php } ?>  
-             <div>
-  <input type="text" value=""style="border: none;width: 50%;height: 100%;padding: 11px;text-transform: uppercase;">
-<button type="button"  class="btn btn-primary"style="
-    margin-top: 5px;"><?php echo __("+");?>
-</button>
+ <div class="row">
+  <div class="col-xs-12 col-md-80 white height-33 padding-top-5">
+ <sapn> <?php echo __("Ajouter une ligne de texte"); ?>
 </div>
-<div style="background: white;float: right;margin-top: 7px;width: 100%;"> 
-&nbsp;&nbsp;&nbsp;<?php echo __("");?>
-<button type="button" class="btn btn-primary recording"style="
-    background-color: #286090;"><?php echo __("SAUVEGARDER");?>
-</button>
-</button>
-</div>
-
 </div>
 </div>
 

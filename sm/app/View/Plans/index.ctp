@@ -173,7 +173,7 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
          </div> 
       </div> 
 </div>        
-<div id="PlanShow" class="col-xs-12 col-md-12">
+<div id="PlanShow" class="col-xs-12 col-md-12 margin-bottom-13">
 
 </div>
  <datalist id="query">

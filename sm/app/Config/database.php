@@ -7,7 +7,7 @@ class DATABASE_CONFIG
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'ANMOLSHAH',
+		'password' => '',
 		'database' => 'smartsearch',
 		'prefix' => '',
 		'encoding' => 'utf8'

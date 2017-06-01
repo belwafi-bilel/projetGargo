@@ -9436,3 +9436,1362 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2017-06-01 10:04:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:04:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,3,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,3,1,null')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:39 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1105): Model->find('all', Array)
+#8 [internal function]: PlansController->deleteLine('5,1')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:42 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/5,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:04:42 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:04:50 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,2,1,&lt;p%20class=&quot;MsoNormal&quot;&gt;&lt;span%20style=&quot;background&58;olive;mso-highlight&58;olive&quot;&gt;&lt;o&58;p&gt;%20&lt;&47;o&58;p&gt;&lt;&47;span&gt;&lt;&47;p&gt;&lt;div&gt;hfghhfgh&lt;&47;div&gt;&lt;div&gt;gfhfg&lt;&47;div&gt;&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,2,1,&lt;p cla...')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:50 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1105): Model->find('all', Array)
+#8 [internal function]: PlansController->deleteLine('5,1')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:50 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:04:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,2,2,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,2,2,')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:04:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1105): Model->find('all', Array)
+#8 [internal function]: PlansController->deleteLine('5,2')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:04:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:05:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/addLine/5,2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(953): Model->find('first', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1003): PlansController->getNUmbreRowPlanningTable('5')
+#9 [internal function]: PlansController->addLine('5,2')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:05:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:35 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,1,3,bo&lt;div...')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:24:35 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:35 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1105): Model->find('all', Array)
+#8 [internal function]: PlansController->deleteLine('5,3')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:24:35 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,1,3,bo&lt;div...')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:24:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/deleteRow/5,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1080): Model->find('all', Array)
+#8 [internal function]: PlansController->deleteRow('5,3')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:24:38 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:39 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/5,3,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:24:39 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:42 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/addLine/5,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(953): Model->find('first', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1003): PlansController->getNUmbreRowPlanningTable('5')
+#9 [internal function]: PlansController->addLine('5,3')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:43 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:24:54 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,&lt;p%20class=&quot;MsoNormal&quot;&gt;&lt;span%20style=&quot;background&58;olive;mso-highlight&58;olive&quot;&gt;&lt;o&58;p&gt;%20&lt;&47;o&58;p&gt;&lt;&47;span&gt;&lt;&47;p&gt;&lt;div&gt;hfghhfgh&lt;&47;div&gt;&lt;div&gt;gfhfg&lt;&47;div&gt;&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;&lt;div&gt;jdf&lt;&47;div&gt;&lt;div&gt;hj&lt;&47;div&gt;&lt;div&gt;djh&lt;&47;div&gt;&lt;div&gt;j&lt;&47;div&gt;&lt;div&gt;djfh&lt;&47;div&gt;&lt;div&gt;jdhjd&lt;&47;div&gt;&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;&lt;div&gt;fhjd&lt;&47;div&gt;&lt;div&gt;fjhd&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('detail_plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1144): Model->find('first', Array)
+#8 [internal function]: PlansController->saveCelle('2,1,1,&lt;p cla...')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:24:54 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/detail_plan/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axes')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(773): Model->find('all', Array)
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(985): PlansController->getAxes('5')
+#9 [internal function]: PlansController->detail_plan('5')
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#13 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2017-06-01 10:25:04 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/getPlanning/3,0
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(729): Model->find('first', Array)
+#8 [internal function]: PlansController->getPlanning('3,0')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:25:10 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(178): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:25:24 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(178): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:25:50 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans/getPlanning/3,0
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('plans')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(729): Model->find('first', Array)
+#8 [internal function]: PlansController->getPlanning('3,0')
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-01 10:31:50 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:31:50 Error: [MissingViewException] View file "Plans\delete_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_line.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:31:56 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:31:56 Error: [MissingViewException] View file "Plans\delete_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_line.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:03 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:04 Error: [MissingViewException] View file "Plans\delete_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_row.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteRow/5,2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:11 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:11 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;dfg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;djgdgdfj&lt;&47;div&gt;&lt;div&gt;dgdf&lt;&47;div&gt;&lt;div&gt;g&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;&lt;div&gt;hdg&lt;&47;div&gt;&lt;div&gt;dg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:11 Error: [MissingViewException] View file "Plans\delete_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_line.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:22 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:32:22 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:25 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,&lt;p%20class=&quot;MsoNormal&quot;&gt;&lt;span%20style=&quot;background&58;olive;mso-highlight&58;olive&quot;&gt;&lt;o&58;p&gt;%20&lt;&47;o&58;p&gt;&lt;&47;span&gt;&lt;&47;p&gt;&lt;div&gt;hfghhfgh&lt;&47;div&gt;&lt;div&gt;gfhfg&lt;&47;div&gt;&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;&lt;div&gt;jdf&lt;&47;div&gt;&lt;div&gt;hj&lt;&47;div&gt;&lt;div&gt;djh&lt;&47;div&gt;&lt;div&gt;j&lt;&47;div&gt;&lt;div&gt;djfh&lt;&47;div&gt;&lt;div&gt;jdhjd&lt;&47;div&gt;&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;&lt;div&gt;fhjd&lt;&47;div&gt;&lt;div&gt;fjhd&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:25 Error: [MissingViewException] View file "Plans\delete_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_row.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteRow/5,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:30 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:32 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/null,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:39 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,bo&lt;div&gt;jglfg&lt;&47;div&gt;&lt;div&gt;d&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:40 Error: [MissingViewException] View file "Plans\delete_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_line.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteLine/5,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:44 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 10:57:44 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:06:25 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,axes2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:06:25 Error: [MissingViewException] View file "Plans\add_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_line.ctp',
+)
+Request URL: /sou_project/sm/plans/addLine/2,1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:06:41 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:22:22 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:22:26 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:22:27 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/null,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:22:32 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:22:32 Error: [MissingViewException] View file "Plans\add_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_line.ctp',
+)
+Request URL: /sou_project/sm/plans/addLine/1,1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:23:57 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:23:57 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:23:59 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:26:32 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:26:34 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:41:29 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:41:33 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:41:35 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 11:42:04 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:26:32 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,2,null&lt;div&gt;fhjdf&lt;&47;div&gt;&lt;div&gt;jh&lt;&47;div&gt;&lt;div&gt;dh&lt;&47;div&gt;&lt;div&gt;dj&lt;&47;div&gt;&lt;div&gt;hj&lt;&47;div&gt;&lt;div&gt;dhj&lt;&47;div&gt;&lt;div&gt;hj&lt;&47;div&gt;&lt;div&gt;dfjh&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:27:03 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,2,&lt;div&gt;&lt;br&gt;&lt;&47;div&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:33:31 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,axes1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:34 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:39 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,nullkjnhklfh
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:41 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,nullkjnhklfh
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:44 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,nulldfhdfh
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:53 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:40:57 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 14:41:10 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,2,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:00:53 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:00:55 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/null,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:00:58 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/null,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:01 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/null,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:07 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:10 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:15 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:18 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,1,3,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-01 15:01:24 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,3,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
