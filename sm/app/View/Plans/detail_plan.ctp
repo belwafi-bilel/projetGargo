@@ -114,7 +114,6 @@ $(this).parent().find(".jqte_toolbar").show();
 $(".jqte_editor").focusout(function(){
 var content=($(this).html()).trim();
 	$(this).parent().find(".jqte_toolbar").hide();  
-  prompt("",content)
 listes=liste+','+htmlEntities(content);
 
 		$.ajax({
