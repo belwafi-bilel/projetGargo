@@ -132,6 +132,14 @@ $('td>div>i').hide();
       $("#dessous"+id).show();
       $("#dessus"+id).show();
       $("#delete"+id).show();
+       
+        $("#dessous"+id).delay(8000).fadeOut();
+      $("#dessus"+id).delay(8000).fadeOut();
+      $("#delete"+id).delay(8000).fadeOut();
+       setTimeout(function() {
+        $("tbody").find('tr').css('border', 'none'); // change it back after ...
+    }, 8000);
+   
     });
 
 
