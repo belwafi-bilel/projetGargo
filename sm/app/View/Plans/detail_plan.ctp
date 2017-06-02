@@ -123,6 +123,18 @@ listes=liste+','+htmlEntities(content);
                 $("#refersh").show();	 
 })
       });
+ 
+ $("tbody> tr").click(function(){
+$("tbody").find('tr').css('border','none');
+$('td>div>i').hide();
+        $(this).css("border","1px solid #337ab7");
+       var id= $(this).attr('id');
+      $("#dessous"+id).show();
+      $("#dessus"+id).show();
+      $("#delete"+id).show();
+    });
+
+
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
@@ -141,25 +153,48 @@ function htmlEntities(str) {
              <?php for ($i=0; $i <$row ; $i++) { 
                ?>
                 <td bgcolor=" "> 
-                 
+                  <!-- <i class="fa fa-plus-circle fa-plus-circle-left " aria-hidden="true"></i>  -->
    <input list="query" style="background-color:none; color:#ffffff;" placeholder='ITEM' class="form-control2 input2" id=""  value=""/>
               </td>
+               <!-- <i class="fa fa-plus-circle fa-plus-circle-right" aria-hidden="true"></i> -->
                <?php }?>   
             </tr>
         </thead>
         <tbody>
         	<?php foreach ($axes as $axe) 
         	{ ?>
-	        	<tr>
-				<td colspan="<?php echo $row; ?>" liste="<?php echo $axe['Axis']['id'].',1,1'; ?>">
-					<div class="jqte-test">
-						<?php echo $axe['Axis']['title'];  ?>
-				    </div>
-				 </td>
-				</tr>
+              <tr class="plusLines">
+                  <td colspan="<?php echo $row; ?>" >
+                     <div><i class="fa fa-plus-circle fa-plus-circle2" id="dessus<?php echo $axe['Axis']['id'];?>A"   aria-hidden="true"></i>
+                  <i class="fa fa fa-times-circle fa-times-circle " id="delete<?php echo $axe['Axis']['id'];?>A" aria-hidden="true"></i>
+                </div>
+                 </td>
+               </tr>
+                	        	<tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
+                    				<td colspan="<?php echo $row; ?>" liste="<?php echo $axe['Axis']['id'].',1,1'; ?>">
+                    					<div class="jqte-test">
+                    						<?php echo $axe['Axis']['title'];  ?>
+                    				    </div>
+                    				 </td>
+                    				</tr>
+                <tr class="plusLines">
+                  <td colspan="<?php echo $row; ?>" >
+                   <div> <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'];?>A"aria-hidden="true"></i></div>
+                   </td>
+                 </tr>
+         
 				<?php for($i=1;$i<=$axe['Axis']['line'];$i++)
 					{ ?>
-					<tr>
+            <tr class="plusLines">
+            <td colspan="<?php echo $row; ?>" >
+            <div>
+            <i class="fa fa-plus-circle fa-plus-circle2" id="dessus<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
+            <i class="fa fa fa-times-circle fa-times-circle " id="delete<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
+           <div>
+           </td>
+         </tr>
+					<tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
+
 						<?php for($j=1;$j<=$axe['Axis']['row'];$j++)
 							{ 
 							foreach ($axe['detail_planning'] as $detail_planning) 
@@ -170,7 +205,10 @@ function htmlEntities(str) {
 										?>
 										<td class="context-menu-one" 
 										liste="<?php echo $axe['Axis']['id'].','.$i.','.$j ?>">
+                         
+                       
                     <div class="composantVertical" style="resize: both;">
+
 											<div class="jqte-test" >
 										    <?php
 										    $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
@@ -187,14 +225,20 @@ function htmlEntities(str) {
 													?>
 											</div>
                     </div>
+                    
 									    </td>
+
 										<?php
 									    }
 								?>
 							<?php } ?>			
 					  <?php }?>
 					</tr>
-				
+				  <tr class="plusLines"><td colspan="<?php echo $row; ?>" >
+            <div style="display:nones">
+            <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
+           
+           <div></td></tr>
 			  <?php } ?>
       <?php } ?>
         </tbody>

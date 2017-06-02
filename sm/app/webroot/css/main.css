@@ -1409,10 +1409,9 @@ i{
     border-radius: 4px;
 }
 .btn1212{
-         
-         padding: 8px 10px;
+     padding: 8px 10px;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.42857143;
     white-space: nowrap;
     vertical-align: middle;
@@ -1420,13 +1419,14 @@ i{
     /* background-image: none; */
     border: 1px solid transparent;
     /* border-radius: 1px; */
-    float: left; 
+    float: left;
     color: #fff;
-    /* background-color: #337ab7; */
+    background-color: #2b3a41;
     border-color: #f5f5f5;
     margin-top: -3px;
     height: 34px;
     text-align: center;
+    color: #ffffff;
      
 }
 .btn-primary{
@@ -1442,7 +1442,7 @@ i{
    .table-border>tfoot>tr>td, 
    .table-border>tfoot>tr>th
     {
-    border: 2px solid #F5F5F5;
+   margin: 1px;
     
 }
 
@@ -1456,18 +1456,68 @@ i{
    {
     background: #ffffff;
    }
+   .table-border>tbody>tr>td:hover
+   {
+    border: 1px dashed #337ab7;
+   }
+   .active
+   {
+   border: 1px solid #ff0000;
+   }
+   .table-border>tbody>tr:hover
+   {
+     border: 1px dashed #337ab7;
+        
+   }
+   
 td>div>hr{
   border-top: 3px double #8c8b8b;  
   padding: 0px;
   margin: 0px;
 }
-td>div>.fa-plus-circle
+td>.fa-plus-circle-left
 {
+  color: rgb(43, 58, 65);
+    margin-top: 50px; 
+    float: left;
     position: absolute;
-    margin-left: -14px;
-    color: rgb(35, 137, 198);
-    margin-top: -4px;
+display: none;
+}
+td>.fa-plus-circle-right
+{
+    /*position: absolute;*/
+    color: rgb(43, 58, 65);
+    margin-top: -52px;
+    float: right;
+display: none;
+}
+td>div>.fa-plus-circle1
+{
+   position: absolute;
+    margin-left: 50%;
+    color: rgb(43, 58, 65);
+    margin-top: -6px;
+display: none;
+}
+td>div>.fa-plus-circle2
+{
+   position: absolute;
+    margin-left: 50%;
+    color: rgb(43, 58, 65);
+    margin-top: -6px;
+    display: none;
 
+}
+td>div>.fa-times-circle
+{
+  position: absolute;
+    color: rgb(43, 58, 65);
+    margin-top: -6px;
+    right: 7px;
+display: none;
+}
+.static{
+    position: static;
 }
 .white{
   background-color:white;
@@ -1582,4 +1632,8 @@ background: white;
 .padding-top-5
 {
     padding-top: 5px;
+}
+.margin-left--10
+{
+    margin-left: -9px;
 }
