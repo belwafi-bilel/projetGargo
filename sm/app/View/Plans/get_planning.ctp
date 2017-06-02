@@ -113,39 +113,35 @@ var position=Number($("#position").val())-1;
       <div id="outil" style="display:none">
       </div>
   <div id="outiltable">
-   <div class="col-md-1" style="padding: 0px;margin-top:2px;">
-      <i class="col-md-6 btn1212 border-none color-black left">
-         <span><?php echo __("NORMAL  ");?></span>
-      <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
+   <div class="col-md-2" style="padding: 0px;margin-top:2px;">
+          <i class="col-md-6 btn1212   left">
+             <span><?php echo __("NORMAL  ");?></span>
+          <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
+          </i>
+          </i>
+    <div class="col-md-6" style="padding: 0px;">
+       <i class="glyphicon glyphicon-text-size col-md-6 btn1212 ">
+      <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--10" aria-hidden="true" >
+        </i>
       </i>
+        <i class="glyphicon glyphicon-text-color col-md-6 btn1212 ">
+      <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
+        </i>
       </i>
-    
+ </div>
     
    </div> 
 
-<div class="col-md-11" style="padding: 0px;margin-top:2px">
-  <div class="col-md-2" style="padding: 0px;">
-     <i class="glyphicon glyphicon-text-size col-md-2 btn1212 border-none color-black margin-left-7">
-    <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true" >
-      </i>
-    </i>
-    <i class="glyphicon glyphicon-text-color col-md-2 btn1212 border-none color-black margin-left-7">
-    <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
-      </i>
-    </i>
+<div class="col-md-10" style="padding: 0px;margin-top:2px">
 
-    <i class="col-md-1 glyphicon glyphicon-bold btn1212 border-none color-black margin-left-7" aria-hidden="true"></i>
-    <i class="col-md-1 glyphicon glyphicon-italic btn1212 border-none color-black" aria-hidden="true"></i>
-    <i class="col-md-1 fa fa-underline btn1212 border-none color-black" aria-hidden="true"></i>
- </div>
-
-
-
-  <i class="fa fa-reply col-md-2 btn1212 color-black" aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
-  <i class="fa fa-share col-md-2 btn1212 color-black" aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
-  <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" Save");?></i>
-  <i class="fa fa-trash col-md-2 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ><?php echo __("  DELETE");?></i>
+ <i class="col-md-1 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
+  <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
+  <i class="col-md-1 fa fa-underline btn1212 " aria-hidden="true"></i>
+  <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
+  <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
+  <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" SAVE");?></i>
   <i class="btn1212 col-md-2 fa fa-share-alt share"><?php echo __(" SHARE");?></i>
+  <i class="fa fa-trash col-md-1 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
 </div>
   
 </div>
