@@ -1038,11 +1038,11 @@ public function addRow($liste=null)
  $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
 $axes = $this->Axis->find('all',
-	['conditions'=>['Axis.historical_plan_id'=>$liste[3]],'order'=>['Axis.position'=>'ASC']]);
+	['conditions'=>['Axis.historical_plan_id'=>$liste[1]],'order'=>['Axis.position'=>'ASC']]);
 	foreach ($axes as $axe) 
 		{
 		$detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$axe['Axis']['id'],'DetailPlan.row >='=>$liste[2]]]);
+	     ['conditions'=>['DetailPlan.axes_id'=>$axe['Axis']['id'],'DetailPlan.row >='=>$liste[0]]]);
 			foreach ($detailplans as $detailplan) 
 			{
 				$detailplan['DetailPlan']['row']=intval($detailplan['DetailPlan']['row'])+1;
@@ -1059,7 +1059,7 @@ $axes = $this->Axis->find('all',
 				{
 					$data=array(
 							'line'=>$line[$i],
-							'row'=>$liste[2],
+							'row'=>$liste[0],
 							'content'=>null,
 							'id_user'=>$id,
 							'axes_id'=>$axe['Axis']['id']);

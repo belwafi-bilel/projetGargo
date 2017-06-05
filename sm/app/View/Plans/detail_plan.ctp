@@ -30,11 +30,6 @@ function refresh(){
 }
 }
       $(function() {
-      	var liste=null;
-      	$('td').click(function(){
-		liste=$(this).attr('liste');
-      	});
-
         $('td').contextPopup({
           items: [
             {label:'Insérer des lignes au-dessus',     icon:'sm/img/icon/top.png', action:function() {
@@ -110,39 +105,157 @@ function refresh(){
         });
   $(".jqte_editor").focus(function(){	
 $(this).parent().find(".jqte_toolbar").show();
+$("tbody,thead").find('tr,td').css('border','none');
+$('td').find('i').hide();
 })
 $(".jqte_editor").focusout(function(){
 var content=($(this).html()).trim();
 	$(this).parent().find(".jqte_toolbar").hide();  
 listes=liste+','+htmlEntities(content);
-
-		$.ajax({
+		      $.ajax({
                  type: "POST",
                 url:"sm/plans/saveCelle/"+listes
                 })
                 $("#refersh").show();	 
 })
-      });
- 
- $("tbody> tr").click(function(){
-$("tbody").find('tr').css('border','none');
-$('td>div>i').hide();
-        $(this).css("border","1px solid #337ab7");
-       var id= $(this).attr('id');
+      
+ var liste=null;
+ var select=null;
+ $("tbody> tr>td").click(function(){
+    liste=$(this).attr('liste');
+    select="ok"
+$("tbody,thead").find('tr,td').css('border','none');
+$('td').find('i').hide();
+if($(".jqte_toolbar").is(":hidden")){
+        $(this).parent().css("border","1px solid #337ab7");
+       var id= $(this).parent().attr('id');
       $("#dessous"+id).show();
       $("#dessus"+id).show();
-      $("#delete"+id).show();
-       
-        $("#dessous"+id).delay(8000).fadeOut();
-      $("#dessus"+id).delay(8000).fadeOut();
-      $("#delete"+id).delay(8000).fadeOut();
-       setTimeout(function() {
-        $("tbody").find('tr').css('border', 'none'); // change it back after ...
-    }, 8000);
-   
+      $("#delete"+id).show();}
+   $("table").on('mouseleave', function() {
+     $("#dessous"+id).delay(100).fadeOut();
+      $("#dessus"+id).delay(100).fadeOut();
+      $("#delete"+id).delay(100).fadeOut();
+      $("tbody").find('tr,td').css('border', 'none');
+      
+   });
     });
+$("tbody>tr").on('mouseenter',function(){
+  if(select==null)
+  {
+  $("tbody,thead").find('tr,td').css('border','none');
+  $('td').find('i').hide();
+  }
+  $(this).css('border','1px dashed #337ab7');
+  $('td').removeClass('CellSelect');
+  select=null
+})
+
+var selectRow=null;
+$('.typecomposante').click(function(e){
+  selectRow='ok';
+  $('td').find('i').hide();
+ $("tbody,thead").find('tr,td').css('border','none');
+  
+  $(this).find('i').show();
+  var indice = Number($(this).attr('attr'))+1;
+var styles = {
+      borderLeft : "1px solid #337ab7",
+      borderRight: "1px solid #337ab7"
+    };
+$("tbody,thead").find('td:nth-child('+indice+')').css(styles);
+  });
+
+$('.typecomposante').on('mouseenter',function(e){
+  if(selectRow==null)
+  {
+    $("tbody,thead").find('tr,td').css('border','none');
+  $('td').find('i').hide();
+  };
+   var indice = Number($(this).attr('attr'))+1;
+var styles = {
+      borderLeft : "1px dashed #337ab7",
+      borderRight: "1px dashed #337ab7"
+    };
+$("tbody,thead").find('td:nth-child('+indice+')').css(styles);
+selectRow=null;
+});
 
 
+ $("tbody>tr>td").dblclick(function(){
+  $("tbody,thead").find('tr,td').css('border','none');
+  $('td').find('i').hide();
+$('td').removeClass('CellSelect');
+ $(this).addClass('CellSelect');
+
+
+});
+//})  $("tbody,thead").find('td').css('border','none');
+// var indice = Number($(this).attr('attr'))+1;
+// $("tbody,thead").find('td:nth-child('+indice+')').css(style);
+// })
+// $('.typecomposante').on('mouseleave', function() {
+//   $("tbody").find('td').css('border','none');
+// });
+
+
+
+
+
+ /*******************************************************/
+      $(".fa-times-circle").click(function(){
+          var tab=liste.split(',');
+                    liste= Array($("#historical_plan_id").val(),tab[2]);
+               
+                        $.ajax({
+                       type: "POST",
+                      url:"sm/plans/deleteLine/"+liste
+                      })
+                      $("#refersh").show(); 
+      })
+      $(".fa-plus-circle2").click(function(){
+          $.ajax({
+                 type: "POST",
+                url:"sm/plans/addLine/"+liste
+                })
+                $("#refersh").show();
+      })
+      $(".fa-plus-circle1").click(function(){
+        var tab=liste.split(',');
+              liste= Array(tab[0],Number(tab[1])+1,tab[2]);
+              
+               $.ajax({
+                 type: "POST",
+                url:"sm/plans/addLine/"+liste
+                })
+                $("#refersh").show();
+      })
+/****************************************************/
+$(".typecomposante").dblclick(function(){
+  $(".input2").prop('disabled',true);
+  $(this).find('input').prop('disabled',false);
+});
+
+$(".fa-plus-circle-right").click(function(){
+              liste= Array($(this).parent('td').attr('attr'),$("#historical_plan_id").val());
+               $.ajax({
+                 type: "POST",
+                url:"sm/plans/addRow/"+liste
+                })
+                $("#refersh").show();
+             
+})
+$(".fa-plus-circle-left").click(function(){
+              liste= Array(Number($(this).parent('td').attr('attr')-1),$("#historical_plan_id").val());
+               $.ajax({
+                 type: "POST",
+                url:"sm/plans/addRow/"+liste
+                })
+                $("#refersh").show();
+             
+})
+
+});
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
@@ -160,11 +273,12 @@ function htmlEntities(str) {
               
              <?php for ($i=0; $i <$row ; $i++) { 
                ?>
-                <td bgcolor=" "> 
-                  <!-- <i class="fa fa-plus-circle fa-plus-circle-left " aria-hidden="true"></i>  -->
-   <input list="query" style="background-color:none; color:#ffffff;" placeholder='ITEM' class="form-control2 input2" id=""  value=""/>
+                <td bgcolor=" " class="typecomposante" attr='<?php echo $i;?>'> 
+                    <i class="fa fa-plus-circle fa-plus-circle-left " aria-hidden="true"></i>
+   <input list="query"  placeholder='ITEM' class="form-control2 input2" id=""  value="" disabled="disabled"/>
+                    <i class="fa fa-plus-circle fa-plus-circle-right" aria-hidden="true"></i> 
               </td>
-               <!-- <i class="fa fa-plus-circle fa-plus-circle-right" aria-hidden="true"></i> -->
+           
                <?php }?>   
             </tr>
         </thead>
