@@ -12495,3 +12495,15 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2017-06-05 17:01:57 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,1,1,axes2
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
