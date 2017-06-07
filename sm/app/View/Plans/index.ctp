@@ -26,9 +26,9 @@ function printDiv(maydiv) {
      var originalContents = document.body.innerHTML;
      document.body.innerHTML = printContents;
      window.print();
-  
      document.body.innerHTML = originalContents;
 window.close();
+document.reload();
 }
 $(document).ready(function() {
   setInterval(function(){refresh()}, 500);
@@ -93,11 +93,15 @@ var content=($("#Titre").find(".jqte_editor").html()).trim();
          type: "POST",
          url:"sm/plans/newPlan/"+liste
       }).done(function(result){
-        alert(result)
+    document.reload();
       })
  
 }
 })
+$("#print").click(function(){
+          
+         printDiv("printdiv");
+        })
 });
  refresh();
  function htmlEntities(str) {
@@ -117,6 +121,7 @@ var content=($("#Titre").find(".jqte_editor").html()).trim();
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
 </script>
 <div style="display:nones "class="refreshdiv"  id="refersh">
   <div>
@@ -136,7 +141,7 @@ var content=($("#Titre").find(".jqte_editor").html()).trim();
    <button type="button"  class="open-close preview btn-btn" style="display:none">
   <?php echo __("PREVIEW"); ?>
    </button>
-   <button type="button" id="print" class="btn-btn">
+   <button type="button" id="print" class="btn-btn" >
 <?php echo __("PRINT"); ?>
  </button>
    <button type="button" id="addplan" class="btn-btn">

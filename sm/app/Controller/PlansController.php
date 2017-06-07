@@ -35,35 +35,12 @@ public function editcoponent($liste=null)
 {
 
 }
-// public function budget($liste=null)
-// {
-// 	$index=explode(',', $liste);
-// 	if(count($index)!=3)
-// 	{
-// 		$index=explode(',-,',$liste);
-//        for ($i=1; $i <count($index)-1 ; $i++) { 
-//      	$listeindex=explode(',',$index[$i]);
-//      	$budget=array(
-//      		'plan_id'=>'1',
-//      		'reference'=>explode(',', $index[0])[0].'-'.explode(',', $index[0])[1],
-//      	     'total'=>explode(',', $index[count($index)-1]));
-//      	for ($j=0; $j <count($listeindex); $j++) { 
-//      	$data=array(
-//      		'item'=>$listeindex[0],
-//      		'amount'=>$listeindex[1],
-//      		'In-kind'=>$listeindex[2],
-//      		'source'=>$listeindex[3],
-//      		'status'=>$listeindex[4],
-//      		'budget_id'=>'1');	
-//      	}
-//      }
-//      die();
-// 	}else
-// 	{
-// $this->set(compact('liste'));
-// }
-
-// }
+public function budget($id=null)
+{
+$budgets=$this->getBudget_id($id);
+$detailbudgets=$this->getDetail_budget($id);
+$this->set(compact('budgets','detailbudgets'));
+}
 public function jobs()
 {
 
@@ -336,17 +313,17 @@ public function linkWeb($id=null)
 $linkweb=$this->Linkweb->find('first',array('conditions'=>array('Linkweb.plan_id'=>$id)));
 if(count($linkweb))
 {
-	echo "127.0.0.1/sou_project/sm/plans/link/".$linkweb['Linkweb']['lien'];
-	die();
+	return "127.0.0.1/sou_project/sm/plans/link/".$linkweb['Linkweb']['link'];
+	
 }else
 {
 	$reference= $this->random('32');
     $link="127.0.0.1/sou_project/sm/plans/link/".$reference;
-    echo $link;
+    
     $date=array('lien'=>$reference,'plan_id'=>$id);
     $this->Linkweb->create();
     $this->Linkweb->save($date);
-	die();
+	return $link;
 }
 }
 public function link($reference=null)
@@ -606,37 +583,10 @@ $string .= $chaine[rand()%strlen($chaine)];
 return $string;
 }
 
-public function project($liste=null)
+public function project($id=null)
 {
-	$TableTail=$this->Session->read("TableTail");
-	$coordonners=array(count($TableTail),count($TableTail[0]));
-	$this->loadModel('User');
-		$this->loadModel('Group');
-		$this->loadModel('GroupeUser');
-		$this->loadModel('Project');
-	$users=$this->User->find('all');
-		$Groups=$this->Group->find('all');
-		$IDproject=$this->Project->getLastInsertID();
-		$GroupeUsers=$this->GroupeUser->find('all');
-	if($liste==null){
-		;
-}else
-{
-$liste=explode(',', $liste);
-$id_plan=$this->Session->read('id_plan');	
-
-	$data=array('plan_id'=>$id_plan,
-		'ref_cell'=>$liste[2],
-		'titre'=>$liste[0],
-		'description'=>$liste[1],
-		'percentage'=>$liste[4],
-		'aviser_utiliateurs_courriel'=>$liste[3]);
-		$this->Project->create();
-		$this->Project->save($data);
-$IDproject=$this->Project->getLastInsertID();
-echo $IDproject;
-}
-$this->set(compact('coordonners','TableTail','users','Groups','GroupeUsers','IDproject'));
+	$projects=$this->getProject_id($id);
+	$this->set(compact('projects'));
 }
 public function task($liste=null)
 {
@@ -817,7 +767,7 @@ $visionplans=$this->VisionPlan->find('all',
 
 /******************************function detail planning*********************/
 /*
-*function detail planing return Table detail link with axes id=??
+*function detail planing return Table detail  with axes id=??
 */
 function getDetail_planning($id=null)
 {
@@ -891,6 +841,26 @@ $projects1[]=array_merge($project,
 }
 return $projects1;
 }
+
+/*****************************************function project ***********************/
+/*
+function getproject_id return all project of id=??
+*/
+public function getProject_id($id=null)
+{
+$this->loadModel('Project');
+
+$projects =$this->Project->find('all',
+	['conditions'=>['Project.id'=>$id]]);
+$projects1=null;
+foreach ($projects as $project) {
+$projects1[]=array_merge($project,
+	array('taches'=>$this->getTache($project['Project']['id'])));
+}
+return $projects1;
+}
+
+
 /*****************************************function tache ***********************/
 /*
 function tache return all tache of project_id=??
@@ -1165,12 +1135,12 @@ public function saveCelle($liste=null)
 {
 	$liste=explode(',',$liste);
 	 $this->loadModel('DetailPlan');
-    if(($liste[0]!=0)&&($liste[1]!=0)&&($liste[2]!=0))
+    if(($liste[0]!=0)&&($liste[1]!=0)&&($liste[2]-1!=0))
     {
      $detailplans=$this->DetailPlan->find('first',
 	     ['conditions'=>
 	     ['DetailPlan.axes_id'=>$liste[0],
-	     'DetailPlan.row'=>$liste[2],
+	     'DetailPlan.row'=>$liste[2]-1,
 	     'DetailPlan.line'=>$liste[1]
 	     ]]);
  
@@ -1244,5 +1214,19 @@ $data=array('plan_id'=>$liste[0],
 $this->HistoricalPlan->create();
 $this->HistoricalPlan->save($data);
 return null;
+}
+
+public function getBudget_id($id=null)
+{
+	$this->loadModel('Budget');
+	$budget=$this->Budget->find('first',['conditions'=>['Budget.id'=>$id]]);
+	return $budget;
+}
+
+
+public function share($id=null)
+{
+	$link=$this->linkWeb($id);
+$this->set(compact('link'));
 }
 }

@@ -87,21 +87,36 @@ $(".lock").click(function(){
           $(".fa-lock").hide()
           $(".fa-unlock-alt").show();
           $(".btnTachProject").hide()
-         
+          $("#example").css('pointer-events','auto');
         }else{
           $(".fa-lock").show()
           $(".fa-unlock-alt").hide();
           $(".btnTachProject").show();
-        
+          $("#example").css('pointer-events','none');
+            
         }
       })
+$(".share").click(function(){
+  $(".projectTache").show()
 
+   $.ajax({
+         type: "POST",
+         url:"sm/plans/share/"+$("#id").val()
+      }).done(function(result){
+        $("#projectTache").html(result)
+       $("#outiltable").hide();
+      })
+})
+$("#projectTache").click(function(){
+    $("#projectTache").draggable();
+   
+  });
 </script>
   
-<input type="text" value="<?php echo  $id;?>" id="plan_id">
-<input type ="text" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
-<input type ="text" value="<?php echo $his_id ?>" id="position">
-<div id="projectTache" class="auth-block" style="position: absolute;margin-left: 241px;width:700px; display:none">
+<input type="hidden" value="<?php echo  $id;?>" id="plan_id">
+<input type ="hidden" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
+<input type ="hidden" value="<?php echo $his_id ?>" id="position">
+<div id="projectTache" class="" style="margin-left: 141px;margin-top: 53px;width: 700px;display: initial;position: fixed;">
   </div>
 <div class="body margin-top-2" id="body">
   <div class="logoPlan">
@@ -181,3 +196,114 @@ $(".lock").click(function(){
 </div>
 </div>
 
+<div id="printdiv" style="display:none;">
+
+<table id="example1" class="table-border" style="width:100%;color: white;">
+         
+         <thead>
+            
+            <tr id="typecomposante">
+              
+             <?php
+
+             $i=0;
+             foreach ($type_Planning as $typePlan) {
+              $i=$i+1;
+               ?>
+                <td  class="typecomposante" attr='<?php echo $i;?>'> 
+                  
+                    
+    <?php echo $typePlan['TypePlan']['description'] ?>
+                   
+              </td>
+           <td> 
+          </td>
+               <?php  }
+               $row=$i;?>
+               <td>
+               <td>   
+            </tr>
+        </thead>
+        <tbody>
+          <?php
+           foreach ($axes as $axe) 
+          {
+          
+           ?>
+              
+          <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
+          <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" >
+           <div class="composantVertical1" 
+                axes="<?php echo $axe['Axis']['id'];?>" style="resize: both;hieght:30px;">
+                    
+                      <?php echo $axe['Axis']['title'];  ?>
+                       
+                          </div>
+                             </td>
+                            </tr>
+                <tr class="plusLines">
+                  <td colspan="<?php echo 2*$row;?>" >
+                  
+                   </td>
+                 </tr>
+         
+        <?php for($i=1;$i<=$axe['Axis']['line'];$i++)
+          { ?>
+            <tr class="plusLines">
+            <td colspan="<?php echo 2*$row;?>">
+            <div>
+          
+            
+           <div>
+           </td>
+         </tr>
+          <tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
+
+            <?php for($j=1;$j<=$axe['Axis']['row'];$j++)
+              { 
+              foreach ($axe['detail_planning'] as $detail_planning) 
+                { 
+                  if(($detail_planning['DetailPlan']['line']==$i)&&
+                    ($detail_planning['DetailPlan']['row']==$j)
+                     ){
+                    ?>
+                    <td colspan="2" class="context-menu-one" 
+                    liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>">
+                         
+                       
+                    <div class="composantVertical" style="resize: both;">
+
+                        <?php
+                        $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
+                         echo htmlspecialchars_decode($y); 
+
+                         ?>
+                         <?php
+                         if($detail_planning['DetailPlan']['budgets']['total']) 
+                        { ?>
+                        BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]
+                        <?php }
+                        if(count($detail_planning['DetailPlan']['projects']))
+                          for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
+                            { ?>
+                            Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>
+                            <?php }
+                          ?>
+                      
+                    </div>
+                    
+                      </td>
+
+                    <?php
+                      }
+                ?>
+              <?php } ?>      
+            <?php }?>
+          </tr>
+          
+        <?php } ?>
+      <?php } ?>
+        </tbody>
+</table>
+
+</div>

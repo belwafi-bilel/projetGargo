@@ -942,13 +942,13 @@ margin-top: 1px;
     height: 90%;
 }
 .refreshdiv>div{
- width: 242px;
+width: 242px;
     margin: 0 auto;
     border-radius: 10px;
     background: none;
     color: #fff;
     padding: 22px;
-    margin-top: 12%;
+    margin-top: -9%;
     position: absolute;
     margin-left: 30%;
    
@@ -1192,12 +1192,9 @@ color: white;
     background: hsla(130, 6%, 20%, 0.86);
 }
 .table{
-   /*border-style: double;
-    border-color: #f7f5f5;*/
-    border: 2px solid black;
-    border-collapse: inherit;
-    background: white;
-    margin-left: -100px;
+ background: white;
+    margin-bottom: 0px;
+    font-size: x-small;
 }
 .polygon[Attributes Style] {
     fill: rgb(0, 53, 94);
@@ -1330,7 +1327,7 @@ i{
     right: 0px; 
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    background-color: rgba(0, 0, 0, 0); 
+   
     color: #000;
       /* opacity: 1; */
 }
@@ -1614,6 +1611,18 @@ td>.plusRow{
     margin-top: 4px;
     float: right;
     margin-left: 6px;
+
+}
+.btn-btn12
+{
+     border-color: #586c75;
+    border-radius: 12px;
+    border-style: solid;
+    background: none;
+ margin-left: 6px;
+    color: #0000FF;
+    float: right;
+   font-size: 8px;
 
 }
 .col-md-80{

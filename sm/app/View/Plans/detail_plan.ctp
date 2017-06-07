@@ -309,11 +309,37 @@ $(".plusAxes").click(function(){
                 })
                 $("#refersh").show();
 })
+/****************************budget*****************/
+$(".budget").click(function(){
+  id=$(this).attr('id');
+  // alert(id)
+  // $("#projectTache").show();
+  $.ajax({
+          type: "POST",
+           url:"sm/plans/budget/"+id
+        }).done(function(result){
+          $("#projectTache").show();
+          $("#projectTache").html(result);
+          $("#outiltable").hide();
+        })
+})
+$(".project").click(function(){
+  id=$(this).attr('id');
+  $.ajax({
+          type: "POST",
+           url:"sm/plans/project/"+id
+        }).done(function(result){
+          $("#projectTache").show();
+          $("#projectTache").html(result);
+          $("#outiltable").hide();
+        })
+})
 });
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
     </script>
+    
 <div style="display:none"class="refreshdiv"  id="refersh">
   <div>
     <?php echo $this->Html->image("LoaderIcon.gif");?>
@@ -399,17 +425,20 @@ function htmlEntities(str) {
 										    <?php
 										    $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
 										     echo htmlspecialchars_decode($y); 
+
+                         ?></div>
+                         <?php
 										     if($detail_planning['DetailPlan']['budgets']['total'])	
 												{ ?>
-												<button class="btnlien">BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]</button>
+												<button class="btn-btn12 budget" id="<?php echo $detail_planning['DetailPlan']['budgets']['id'] ?>">BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]</button>
 												<?php }
 												if(count($detail_planning['DetailPlan']['projects']))
 													for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
 														{ ?>
-															<button class="btnlien">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['description'];?>]</button>
+															<button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['id']?>">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>]</button>
 														<?php }
 													?>
-											</div>
+											
                     </div>
                     
 									    </td>
