@@ -26,9 +26,9 @@ function printDiv(maydiv) {
      var originalContents = document.body.innerHTML;
      document.body.innerHTML = printContents;
      window.print();
-  
      document.body.innerHTML = originalContents;
 window.close();
+document.reload();
 }
 $(document).ready(function() {
   setInterval(function(){refresh()}, 500);
@@ -70,48 +70,57 @@ $("#selectionPlan").on('change',function(){
       })
 })
 $("#addplan").click(function(){
+  $("#MenuPlan").hide();
   $("#newPlan").show();
-  $(this).hide();
-  $("#PlanShow").hide();
-  $("#selectionPlan").hide();
-   $("#savePLan").show();
-    $("#cancelNewPlan").show();
+   $("#PlanShow").hide();
 });
 $("#cancelNewPlan").click(function(){
-  $(this).hide();
-  $("#PlanShow").show();
-  $("#addplan").show();
-  $("#savePLan").hide();
-  $("#selectionPlan").show();
+ $("#MenuPlan").show();
   $("#newPlan").hide();
+   $("#PlanShow").show();
 });
 $("#savePLan").click(function(){
-  $(this).hide();
-  $("#PlanShow").show();
-  $("#addplan").show();
-  $("#cancelNewPlan").hide();
-  $("#selectionPlan").show();
-  $("#newPlan").hide();
-  var titre=$("#Titre").val();
-  var Adresse=$("#Adresse").val();
-  var logo=$("#userImage").val();
 
-  var attrOption=titre+"!!"+Adresse+"!!";
-  $("#planAtrribute").find('.planAtrribute').each(function(il,el){
-attrOption+=","+$(this).val();
-$(this).parent().remove();
-$(this).remove();
-  });
+  $("#MenuPlan").show();
+  $("#newPlan").hide();
+   $("#PlanShow").show();
+var content=($("#Titre").find(".jqte_editor").html()).trim();
+  var files=$(document).find('input[type="file"]')[0].files
+   if (files.length > 0) {
+            var file = files[0];
+  var liste=Array(htmlEntities(content),file.name);
   $.ajax({
          type: "POST",
-         url:"sm/plans/newPlan/"+attrOption
-      }) 
+         url:"sm/plans/newPlan/"+liste
+      }).done(function(result){
+    
+      })
+ 
+}
 })
-$("#plusAttributePlan").click(function(){
-$("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribute'></div>")
-})
+$("#print").click(function(){
+          
+         printDiv("printdiv");
+        })
 });
  refresh();
+ function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'a9a').replace(/\:/g,'..');
+}
+ function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#output')
+                        .attr('src', e.target.result)
+                        .width(100)
+                        .height(100);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
 </script>
 <div style="display:nones "class="refreshdiv"  id="refersh">
@@ -124,17 +133,15 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
 </div>
 </div>
 
-<div class="row">
+<div class="row" id="MenuPlan">
   <div class="col-xs-12 col-md-80 white height-33">
-
-  <span><?php echo __("LIST PLAN"); ?></span>
  <button type="button"  class="open-close HIDE btn-btn">
    <?php echo __("HIDE"); ?>
    </button> 
    <button type="button"  class="open-close preview btn-btn" style="display:none">
   <?php echo __("PREVIEW"); ?>
    </button>
-   <button type="button" id="print" class="btn-btn">
+   <button type="button" id="print" class="btn-btn" >
 <?php echo __("PRINT"); ?>
  </button>
    <button type="button" id="addplan" class="btn-btn">
@@ -144,34 +151,45 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
 <div class="col-xs-12 col-md-2  right ">
 <select id="selectionPlan" class="selectPlan margin-left-14 white ">
   
-<?php foreach ($plans as $plan) { ?>
+<?php
+if($plans)
+ foreach ($plans as $plan) { ?>
 <option value="<?php echo $plan['Plan']['id'] ?>">
 <?php echo  $plan['Plan']['title'];?>
 </option>
-  <?php }?>
+  <?php } ?>
 </select>
 </div>
 </div>
-<div class="body" id="newPlan" style="display:none;">
-  <button type="button" class="btn btn-primary"style="background-color: #286090;margin-right: 717px;margin-top: -40px;" id="savePLan">
-    <?php echo __("Save");?>
-</button>
- <button type="button" class="btn btn-primary"style="background-color: #286090;margin-right: 617px;margin-top: -40px;" id="cancelNewPlan">
-    <?php echo __("Cancel");?>
-</button>
+<div class="row" id="newPlan" style="display:none;">
+   <div class="col-xs-12  white height-33">
+    <span><?php echo __("New PLAN"); ?></span>
+ <button type="button"  class="btn-btn" id="savePLan">
+   <?php echo __("Save"); ?>
+   </button> 
+   <button type="button"  class="btn-btn" style="display:nones" id="cancelNewPlan">
+  <?php echo __("Cancel"); ?>
+   </button>
+</div>
+
+   
   <div class="logoPlan">
-    <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
-<label class=""style=" width: 90px;height: 90px;">
-  <img src="./sm/img/plans/vide.png"style=" width: 500px;height: 500px;" id="Logo">
-  <input type="file" style="display:none" id="userImage">
-</label> 
-</div>
-</div>
-      <div class="item" id="planAtrribute">    
-          <div>
-            <input type="text" class="inputplan" value="" id="Adresse" placeholder="Addresse">
-         </div> 
-      </div> 
+     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
+      <label>
+        <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
+         <input type="file" accept="image/gif, image/jpeg, image/png" id="inputupload" onchange="readURL(this);" style="display:none" >
+         </label>
+      </div>
+  </div>
+      <div class="item margin-top-34">
+         <div class="composantVertical" id="Titre" style="resize: both;max-height: 150px">
+                      <div class="jqte-test"  >
+                        TITLE
+                      </div>
+                    </div>
+     
+      </div>
+
 </div>        
 <div id="PlanShow" class="col-xs-12 col-md-12 margin-bottom-13">
 
@@ -179,7 +197,7 @@ $("#planAtrribute").append("<div><input type='text' class='inputplan planAtrribu
  <datalist id="query">
   <?php foreach ($types as $type) {
 	?>
-<option value="<?php echo $type['TypeComponent']['description'] ?>-<?php echo ''.$type['TypeComponent']['id']; ?>">
+<option value="<?php echo $type['TypeComponent']['description'] ?>">
 	</option>
 <?php
 } ?>

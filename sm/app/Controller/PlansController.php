@@ -8,6 +8,7 @@ App::uses('AppController', 'Controller');
 
 class PlansController extends AppController {
 
+
 public function composant($liste=null)
 {	$this->loadModel("Composant");
 $coordonner=explode(',',$liste);
@@ -34,35 +35,12 @@ public function editcoponent($liste=null)
 {
 
 }
-// public function budget($liste=null)
-// {
-// 	$index=explode(',', $liste);
-// 	if(count($index)!=3)
-// 	{
-// 		$index=explode(',-,',$liste);
-//        for ($i=1; $i <count($index)-1 ; $i++) { 
-//      	$listeindex=explode(',',$index[$i]);
-//      	$budget=array(
-//      		'plan_id'=>'1',
-//      		'reference'=>explode(',', $index[0])[0].'-'.explode(',', $index[0])[1],
-//      	     'total'=>explode(',', $index[count($index)-1]));
-//      	for ($j=0; $j <count($listeindex); $j++) { 
-//      	$data=array(
-//      		'item'=>$listeindex[0],
-//      		'amount'=>$listeindex[1],
-//      		'In-kind'=>$listeindex[2],
-//      		'source'=>$listeindex[3],
-//      		'status'=>$listeindex[4],
-//      		'budget_id'=>'1');	
-//      	}
-//      }
-//      die();
-// 	}else
-// 	{
-// $this->set(compact('liste'));
-// }
-
-// }
+public function budget($id=null)
+{
+$budgets=$this->getBudget_id($id);
+$detailbudgets=$this->getDetail_budget($id);
+$this->set(compact('budgets','detailbudgets'));
+}
 public function jobs()
 {
 
@@ -118,18 +96,25 @@ $this->DetailPlan->save($data);
 }
 public function newPlan($liste=null)
 {
+	$liste=explode(',',$liste);
 	$id=$this->Session->read('id');
-	$liste=explode('!!', $liste);
+	$fileData =null;
 	$date=array(
-		'titre'=>$liste[0],
-		'date_creation'=>date("Y-m-d h:s:i"),
-		'logo'=>'',
-		'profile_id'=>$id,
-		'adress'=>$liste[1],
-		'option'=>$liste[2]);
+		'title'=>$this->getHtml($liste[0]),
+		'date_create'=>date("Y-m-d h:s:i"),
+		'logo'=>$fileData,
+		'adress'=>'',
+		'user_id'=>$id);
 	$this->Plan->create();
 	$this->Plan->save($date);
+	$idLaste= $this->Plan->getLastInsertID();
+
+$this->addTypePlanning($idLaste.',1');
+$this->addTypePlanning($idLaste.',2');
+$this->addTypePlanning($idLaste.',3');
+$this->addHistoricalPlanning($idLaste);
 }
+
 public function plan($liste=null)
 {
 	$total=$this->Session->read("total");
@@ -173,7 +158,6 @@ public function index()
 	    $plans="";
 	    $types="";
         $this->layout=null;
-		SessionComponent::delete('TableTail');
 		$this->loadModel('TypeComponent');
 		$types=$this->TypeComponent->find('all');
 		$this->loadModel('PersonalOffer');
@@ -206,13 +190,11 @@ public function index()
 				 $access=array('access'=>false);
 			     $this->set((compact('access','')));
 				}
+				$this->Session->write('plan_id',$plans[0]['Plan']['id']);
 			}
 	}
 $this->set(compact('types','listes','plans'));  
 }
-
-
-
 public function detailPlans($id=null,$x=null)
 {
 	$total=0;
@@ -331,17 +313,17 @@ public function linkWeb($id=null)
 $linkweb=$this->Linkweb->find('first',array('conditions'=>array('Linkweb.plan_id'=>$id)));
 if(count($linkweb))
 {
-	echo "127.0.0.1/sou_project/sm/plans/link/".$linkweb['Linkweb']['lien'];
-	die();
+	return "127.0.0.1/sou_project/sm/plans/link/".$linkweb['Linkweb']['link'];
+	
 }else
 {
 	$reference= $this->random('32');
     $link="127.0.0.1/sou_project/sm/plans/link/".$reference;
-    echo $link;
+    
     $date=array('lien'=>$reference,'plan_id'=>$id);
     $this->Linkweb->create();
     $this->Linkweb->save($date);
-	die();
+	return $link;
 }
 }
 public function link($reference=null)
@@ -601,37 +583,10 @@ $string .= $chaine[rand()%strlen($chaine)];
 return $string;
 }
 
-public function project($liste=null)
+public function project($id=null)
 {
-	$TableTail=$this->Session->read("TableTail");
-	$coordonners=array(count($TableTail),count($TableTail[0]));
-	$this->loadModel('User');
-		$this->loadModel('Group');
-		$this->loadModel('GroupeUser');
-		$this->loadModel('Project');
-	$users=$this->User->find('all');
-		$Groups=$this->Group->find('all');
-		$IDproject=$this->Project->getLastInsertID();
-		$GroupeUsers=$this->GroupeUser->find('all');
-	if($liste==null){
-		;
-}else
-{
-$liste=explode(',', $liste);
-$id_plan=$this->Session->read('id_plan');	
-
-	$data=array('plan_id'=>$id_plan,
-		'ref_cell'=>$liste[2],
-		'titre'=>$liste[0],
-		'description'=>$liste[1],
-		'percentage'=>$liste[4],
-		'aviser_utiliateurs_courriel'=>$liste[3]);
-		$this->Project->create();
-		$this->Project->save($data);
-$IDproject=$this->Project->getLastInsertID();
-echo $IDproject;
-}
-$this->set(compact('coordonners','TableTail','users','Groups','GroupeUsers','IDproject'));
+	$projects=$this->getProject_id($id);
+	$this->set(compact('projects'));
 }
 public function task($liste=null)
 {
@@ -719,13 +674,14 @@ function planning to return all data for action planning id=?
 */
      public function getPlanning($liste=null)
 {
+	$this->loadModel('HistoricalPlan');
 	$row=3;
 	$line=0;
 	$id=explode(',',$liste)[0];
 	$his_id=explode(',',$liste)[1];
 	$plans =array();
 	$axes=array();
-	
+	$type_Planning=array();
  $plans=$this->Plan->find('first',array('conditions'=>array('Plan.id'=>$id)));  
  $historical_plans=$this->getHistorical_plan($plans['Plan']['id']); 
  if($his_id>=count($historical_plans))
@@ -746,8 +702,9 @@ function planning to return all data for action planning id=?
 		$line+=count($axesId);
   	}
  }
-
-   $this->set(compact('plans','optionplans','visionplans','historical_plans','id','axes','line','row','his_id'));       
+ $type_Planning=$this->getTypePlanning($id);
+$id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
+   $this->set(compact('plans','optionplans','visionplans','type_Planning','historical_plans','id','axes','line','row','his_id','id_hisorical'));       
 }
 /*****************************function historical planning*****************************/
 /*
@@ -768,18 +725,21 @@ function axes for return all axes for histrical planing id=??
 */
 public function getAxes($id=null)
 {
+	$this->loadModel('HistoricalPlan');
+	$HistoricalPlans=$this->HistoricalPlan->find('first',
+	['conditions'=>['HistoricalPlan.id'=>$id]]);
+
 $this->loadModel('Axis');
 $axes = $this->Axis->find('all',
 	['conditions'=>['Axis.historical_plan_id'=>$id],'order'=>['Axis.position'=>'ASC']]);
 $axes1=array();
 foreach ($axes as $axe) {
-	$row=$this->getNUmbreRowPlanningTable($axe['Axis']['id']);
+	$row=$this->getNUmbreRowPlanningTable($HistoricalPlans['HistoricalPlan']['plan_id']);
 	$line=$this->getNUmbreLinePlanningTable($axe['Axis']['id']);
 	$coordonners=array('row'=>$row,'line'=>($line==0)?0:($line/(($row!=0)?$row:1)));
 	$axefinal=array_merge($axe['Axis'],$coordonners);
  	$axes1[]=array_merge(array('Axis'=>$axefinal,'detail_planning'=>$this->getDetail_planning($axe['Axis']['id'])));
  }
-
 	return $axes1;	
 }
 /*************************function option action planning*****************/
@@ -807,7 +767,7 @@ $visionplans=$this->VisionPlan->find('all',
 
 /******************************function detail planning*********************/
 /*
-*function detail planing return Table detail link with axes id=??
+*function detail planing return Table detail  with axes id=??
 */
 function getDetail_planning($id=null)
 {
@@ -881,6 +841,26 @@ $projects1[]=array_merge($project,
 }
 return $projects1;
 }
+
+/*****************************************function project ***********************/
+/*
+function getproject_id return all project of id=??
+*/
+public function getProject_id($id=null)
+{
+$this->loadModel('Project');
+
+$projects =$this->Project->find('all',
+	['conditions'=>['Project.id'=>$id]]);
+$projects1=null;
+foreach ($projects as $project) {
+$projects1[]=array_merge($project,
+	array('taches'=>$this->getTache($project['Project']['id'])));
+}
+return $projects1;
+}
+
+
 /*****************************************function tache ***********************/
 /*
 function tache return all tache of project_id=??
@@ -947,11 +927,10 @@ function getNumberRowPlanningTable return Planning table Number row of planning_
 */
 private function getNUmbreRowPlanningTable($id=null)
 {
-	$MaxRow[0]['max']=0;
-	$this->loadModel('DetailPlan');
-    $MaxRow=$this->DetailPlan->find('first',
-	['fields'=>['MAX(DetailPlan.row) as max'],'conditions'=>['DetailPlan.axes_id'=>$id]]);
-   return ($MaxRow[0]['max']!=0)?$MaxRow[0]['max']:0;
+
+	$this->loadModel('TypePlan');
+    $plans=$this->TypePlan->find('all',['conditions'=>['TypePlan.plan_id'=>$id]]);
+   return (count($plans))?count($plans):0;
 }
 /*****************************************function Planning table Number line ***********************/
 /*
@@ -964,13 +943,35 @@ private function getNUmbreLinePlanningTable($id=null)
 	['conditions'=>['DetailPlan.axes_id'=>$id]]);
    return $NumberLigne;
 }
+/*****************************************function add axes ***********************/
+/*
+function addAxess to add new axes in dada base
+*/
+public function addAxes($id=null)
+{
+$this->loadModel('Axis');
+$position=(count($this-> getAxes($id)))?count($this-> getAxes($id)):1;
+$data=array(
+			'title'=>'Axes',
+			'historical_plan_id'=>$id,
+			'position'=>$position);
+			$this->Axis->create();
+			$this->Axis->save($data);
+}
 /*****************************************function set axes ***********************/
 /*
-function setAxess to add new axes in dada base
+function setAxes to Edit axes in dada base
 */
-public function setAxes($data=null)
-{
-
+public function setAxes($liste=null)
+{$this->loadModel('Axis');
+	$liste=explode(',',$liste);
+	$axis=$this->Axis->find('first',['conditions'=>['Axis.id'=>$liste[0]]]);
+	$data=array(
+			'id'=>$liste[0],
+			'title'=>$liste[1],
+			'historical_plan_id'=>$axis['Axis']['historical_plan_id'],
+			'position'=>$axis['Axis']['position']);
+			$this->Axis->save($data);
 }
 /*****************************************function detail_plan ***********************/
 /*
@@ -982,16 +983,20 @@ $axesId=array();
 $axes=array();
 $line=0;
 $row=0;
+$liste=explode(',',$id);
+$id=$liste[0];
 	$axes2=$axes = $this->getAxes($id);
 	if($axes)
-  $row=$this->getNUmbreRowPlanningTable($axes[0]['Axis']['id']);
+  $row=$this->getNUmbreRowPlanningTable($id);
   foreach ($axes2 as $axe) {
   	$axesId[]=$axe['Axis']['id'];
   }
   if($axesId)
   $line=$this->getNUmbreLinePlanningTable($axesId);
 $line+=count($axesId);
- $this->set(compact('axes','line','row'));
+$id_plan=$this->Session->read('plan_id');
+$type_Planning=$this->getTypePlanning($id_plan);
+ $this->set(compact('axes','line','row','type_Planning'));
 }
 /*****************************************function add line  ***********************/
 /*
@@ -1000,11 +1005,6 @@ function addLine to add new line planning action of axes_id=?? and position=?
 public function addLine($liste=null)
 {
 	$liste=explode(',',$liste);
-	$row=$this->getNUmbreRowPlanningTable($liste[0]);
-
-	if($row==0)
-		$row=3;
-
 	$this->loadModel('DetailPlan');
 $detailplans=$this->DetailPlan->find('all',
 	['conditions'=>['DetailPlan.axes_id'=>$liste[0],'DetailPlan.line >='=>$liste[1]]]);
@@ -1014,7 +1014,7 @@ $detailplans=$this->DetailPlan->find('all',
 			$this->DetailPlan->save($detailplan['DetailPlan']);
 		}
  $id=$this->Session->read('id');
-	for($i=0;$i<$row;$i++)
+	for($i=0;$i<$liste[2];$i++)
 	{
 		$data=array(
 			'line'=>$liste[1],
@@ -1034,7 +1034,7 @@ public function addRow($liste=null)
 {
 	$id=$this->Session->read('id');
  $liste=explode(',',$liste);
-// print_r($liste);
+print_r($liste);
  $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
 $axes = $this->Axis->find('all',
@@ -1066,6 +1066,7 @@ $axes = $this->Axis->find('all',
 			$this->DetailPlan->create();
 			$this->DetailPlan->save($data);
 		}
+		$this->addTypePlanning($liste[1].','.$liste[0]);
 }
 /*****************************************function delete Row  ***********************/
 /*
@@ -1154,5 +1155,78 @@ public function getHtml($content=null)
 	$filter=array('&','<','>','"','/',':',',',' ','[',']');
 	return str_replace($find, $filter, $content);
 	
+}
+/*****************************************function get type planing***********************/
+/*
+function getTypePlanning to get type planning action of plan id=?
+*/
+public function getTypePlanning($id=null)
+{
+	$this->loadModel('TypePlan');
+	return $this->TypePlan->find('all',['conditions'=>['TypePlan.plan_id'=>$id],'order'=>['TypePlan.position'=>'ASC']]);
+} 
+/*****************************************function add type planing***********************/
+/*
+function addTypePlanning to add type planning action of plan id=?
+*/
+public function addTypePlanning($liste=null)
+{
+	$liste=explode(',',$liste);
+$this->loadModel('TypePlan');
+$TypePLans=$this->TypePlan->find('all',['
+	conditions'=>['TypePlan.position>='=>$liste[1]]]);
+foreach ($TypePLans as $TypePlan) {
+	$data=array('description'=>$TypePlan['TypePlan']['description'],
+		'position'=>intval($TypePlan['TypePlan']['position'])+1,
+		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
+	$this->TypePlan->save($data);
+}
+	$data=array('description'=>'ITEM',
+		'position'=>$liste[1],
+		'plan_id'=>$liste[0]);
+	
+	$this->TypePlan->create();
+	$this->TypePlan->save($data);
+	return null;
+}
+public function setTypePlanning($liste=null)
+{$liste=explode(',',$liste);
+	$this->loadModel('TypePlan');
+	$typePlan=$this->TypePlan->find('first',['conditions'=>['TypePlan.id'=>$liste[0]]]);
+
+	$data=array(
+		'id'=>$liste[0],
+		'description'=>$liste[1],
+		'position'=>$typePlan['TypePlan']['position'],
+		'plan_id'=>$typePlan['TypePlan']['plan_id']);
+	
+	$this->TypePlan->save($data);
+	return null;
+}
+public function addHistoricalPlanning($liste=null)
+{
+	$id=$this->Session->read('id');
+	$liste=explode(',', $liste);
+	$this->loadModel('HistoricalPlan');
+$data=array('plan_id'=>$liste[0],
+	'user_id'=>$id,
+	'date'=>date("Y-m-d h:s:i"));
+$this->HistoricalPlan->create();
+$this->HistoricalPlan->save($data);
+return null;
+}
+
+public function getBudget_id($id=null)
+{
+	$this->loadModel('Budget');
+	$budget=$this->Budget->find('first',['conditions'=>['Budget.id'=>$id]]);
+	return $budget;
+}
+
+
+public function share($id=null)
+{
+	$link=$this->linkWeb($id);
+$this->set(compact('link'));
 }
 }

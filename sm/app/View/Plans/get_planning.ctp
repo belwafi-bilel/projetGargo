@@ -79,21 +79,51 @@ var position=Number($("#position").val())-1;
        
          refresh();
       })
+
+
 })
+$(".lock").click(function(){
+        if($(".fa-lock").is(":visible")){
+          $(".fa-lock").hide()
+          $(".fa-unlock-alt").show();
+          $(".btnTachProject").hide()
+          $("#example").css('pointer-events','auto');
+        }else{
+          $(".fa-lock").show()
+          $(".fa-unlock-alt").hide();
+          $(".btnTachProject").show();
+          $("#example").css('pointer-events','none');
+            
+        }
+      })
+$(".share").click(function(){
+  $(".projectTache").show()
 
-
+   $.ajax({
+         type: "POST",
+         url:"sm/plans/share/"+$("#id").val()
+      }).done(function(result){
+        $("#projectTache").html(result)
+       $("#outiltable").hide();
+      })
+})
+$("#projectTache").click(function(){
+    $("#projectTache").draggable();
+   
+  });
 </script>
   
-<input type="hidden" value="<?php echo  $id;?>" id="historical_plan_id">
+<input type="hidden" value="<?php echo  $id;?>" id="plan_id">
+<input type ="hidden" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
 <input type ="hidden" value="<?php echo $his_id ?>" id="position">
-<div id="projectTache" class="auth-block" style="position: absolute;margin-left: 241px;width:700px; display:none">
+<div id="projectTache" class="" style="margin-left: 141px;margin-top: 53px;width: 700px;display: initial;position: fixed;">
   </div>
 <div class="body margin-top-2" id="body">
   <div class="logoPlan">
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
         <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
-         <input type="file" accept="image/*" id="inputupload"onchange="loadFile(event)" style="display:none" >
+         
          </label>
       </div>
   </div>
@@ -113,13 +143,13 @@ var position=Number($("#position").val())-1;
       <div id="outil" style="display:none">
       </div>
   <div id="outiltable">
-   <div class="col-md-2" style="padding: 0px;margin-top:2px;">
-          <i class="col-md-6 btn1212   left">
+   <div class="col-md-3" style="padding: 0px;margin-top:2px;">
+          <i class="col-md-5 btn1212   left">
              <span><?php echo __("NORMAL  ");?></span>
           <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
           </i>
           </i>
-    <div class="col-md-6" style="padding: 0px;">
+    <div class="col-md-5" style="padding: 0px;">
        <i class="glyphicon glyphicon-text-size col-md-6 btn1212 ">
       <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--10" aria-hidden="true" >
         </i>
@@ -129,19 +159,21 @@ var position=Number($("#position").val())-1;
         </i>
       </i>
  </div>
-    
+    <i class="col-md-2 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
    </div> 
 
-<div class="col-md-10" style="padding: 0px;margin-top:2px">
-
- <i class="col-md-1 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
-  <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
+<div class="col-md-9" style="padding: 0px;margin-top:2px">
+   <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
   <i class="col-md-1 fa fa-underline btn1212 " aria-hidden="true"></i>
   <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
   <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
   <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" SAVE");?></i>
   <i class="btn1212 col-md-2 fa fa-share-alt share"><?php echo __(" SHARE");?></i>
+
+  <i class="fa fa-lock col-md-1 btn1212 lock " style="display:none" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
+<i class="fa fa-unlock-alt col-md-1 btn1212 lock "  aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
   <i class="fa fa-trash col-md-1 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
+   
 </div>
   
 </div>
@@ -151,7 +183,7 @@ var position=Number($("#position").val())-1;
   <?php include("detail_plan.ctp"); ?>
 </div>
 </div>
-<div class="barre_Tache_projet"> 
+<div class="barre_Tache_projet btnTachProject" style="display:none;"> 
 <button type="button" class="btn-btn" id="addproject"><?php echo __("PROJET (+)");?></button>
 <button type="button" class="btn-btn" id="addTask" ><?php echo __("TÂCHE (+)");?></button>
 </div>
@@ -164,3 +196,114 @@ var position=Number($("#position").val())-1;
 </div>
 </div>
 
+<div id="printdiv" style="display:none;">
+
+<table id="example1" class="table-border" style="width:100%;color: white;">
+         
+         <thead>
+            
+            <tr id="typecomposante">
+              
+             <?php
+
+             $i=0;
+             foreach ($type_Planning as $typePlan) {
+              $i=$i+1;
+               ?>
+                <td  class="typecomposante" attr='<?php echo $i;?>'> 
+                  
+                    
+    <?php echo $typePlan['TypePlan']['description'] ?>
+                   
+              </td>
+           <td> 
+          </td>
+               <?php  }
+               $row=$i;?>
+               <td>
+               <td>   
+            </tr>
+        </thead>
+        <tbody>
+          <?php
+           foreach ($axes as $axe) 
+          {
+          
+           ?>
+              
+          <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
+          <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" >
+           <div class="composantVertical1" 
+                axes="<?php echo $axe['Axis']['id'];?>" style="resize: both;hieght:30px;">
+                    
+                      <?php echo $axe['Axis']['title'];  ?>
+                       
+                          </div>
+                             </td>
+                            </tr>
+                <tr class="plusLines">
+                  <td colspan="<?php echo 2*$row;?>" >
+                  
+                   </td>
+                 </tr>
+         
+        <?php for($i=1;$i<=$axe['Axis']['line'];$i++)
+          { ?>
+            <tr class="plusLines">
+            <td colspan="<?php echo 2*$row;?>">
+            <div>
+          
+            
+           <div>
+           </td>
+         </tr>
+          <tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
+
+            <?php for($j=1;$j<=$axe['Axis']['row'];$j++)
+              { 
+              foreach ($axe['detail_planning'] as $detail_planning) 
+                { 
+                  if(($detail_planning['DetailPlan']['line']==$i)&&
+                    ($detail_planning['DetailPlan']['row']==$j)
+                     ){
+                    ?>
+                    <td colspan="2" class="context-menu-one" 
+                    liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>">
+                         
+                       
+                    <div class="composantVertical" style="resize: both;">
+
+                        <?php
+                        $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
+                         echo htmlspecialchars_decode($y); 
+
+                         ?>
+                         <?php
+                         if($detail_planning['DetailPlan']['budgets']['total']) 
+                        { ?>
+                        BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]
+                        <?php }
+                        if(count($detail_planning['DetailPlan']['projects']))
+                          for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
+                            { ?>
+                            Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>
+                            <?php }
+                          ?>
+                      
+                    </div>
+                    
+                      </td>
+
+                    <?php
+                      }
+                ?>
+              <?php } ?>      
+            <?php }?>
+          </tr>
+          
+        <?php } ?>
+      <?php } ?>
+        </tbody>
+</table>
+
+</div>
