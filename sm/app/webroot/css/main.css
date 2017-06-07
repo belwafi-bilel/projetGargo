@@ -21,7 +21,7 @@ ul>li>div>img{
 }
 
 body{
-   background-color: #f2f2f2;
+   background-color: #f5f5f5;;
 }
 .notificationsdiv
 {    padding-left: 0px;
@@ -1500,7 +1500,7 @@ td>div>hr{
 td>.fa-plus-circle-left
 {
 color: rgb(43, 58, 65);
-    margin-top: 10px;
+    margin-top: 27px;
     float: left;
     position: absolute;
     margin-left: -5px;
@@ -1510,11 +1510,18 @@ display: none;
 td>.fa-plus-circle-right
 {
     position: absolute;
-  color: rgb(43, 58, 65);
-    margin-top: 10px;
-    margin-right: -7px;
-    float: right;
+    color: rgb(43, 58, 65);
+    margin-top: 11px;
+    margin-left: -5px;
+      float: left;
 display: none;
+}
+td>.fa-plus-circle-center
+{ color: rgb(43, 58, 65);
+    margin-top: 0px;
+    margin-left: 50%;
+    float: left;
+    display: none;
 }
 td>div>.fa-plus-circle1
 {
@@ -1533,13 +1540,29 @@ td>div>.fa-plus-circle2
     display: none;
 
 }
-td>div>.fa-times-circle
+td>div>.fa-times-circle-right
 {
   position: absolute;
     color: rgb(43, 58, 65);
     margin-top: 0px;
     right: 14px;
 display: none;
+}
+td>.plusAxes{
+      position: absolute;
+    color: rgb(43, 58, 65);
+    margin-top: 10px;
+    margin-left: -7px;
+    font-size: 17px;
+    
+}
+td>.plusRow{
+      position: absolute;
+    color: rgb(43, 58, 65);
+    margin-top: -7px;
+    margin-left: -7px;
+    font-size: 17px;
+    
 }
 .static{
     position: static;
@@ -1597,7 +1620,7 @@ display: none;
         width: 80%;
         margin-left: 30px;
 }
-.col-md-80>span{
+.white>span{
   
         background: none;
     color: #586c75;
@@ -1659,4 +1682,8 @@ background: white;
 .margin-left--10
 {
     margin-left: -9px;
+}
+.margin-top-34
+{
+    margin-top: 34px;
 }

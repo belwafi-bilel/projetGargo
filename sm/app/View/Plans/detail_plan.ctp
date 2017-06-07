@@ -19,7 +19,7 @@ function htmlEntities(str) {
 function refresh(){
    if($("#refersh").is(':visible'))
   { if($("#historical_plan_id"))
-    var id_historcal=$("#historical_plan_id").val()
+    var id_historcal=$("#historical_plan_id").val()+','+$("#plan_id").val()
      $.ajax({
   type: "POST",
   url:"sm/plans/detail_plan/"+id_historcal
@@ -33,6 +33,9 @@ function refresh(){
         $('td').contextPopup({
           items: [
             {label:'Insérer des lignes au-dessus',     icon:'sm/img/icon/top.png', action:function() {
+              var tab=liste.split(',');
+              liste= Array(tab[0],Number(tab[1]),tab[2],'desssus');
+              alert(liste)
                 $.ajax({
                  type: "POST",
                 url:"sm/plans/addLine/"+liste
@@ -42,7 +45,7 @@ function refresh(){
             {label:'Insérer des ligne en dessous', icon:'sm/img/icon/bottom.png',action:function() {  
             	var tab=liste.split(',');
             	liste= Array(tab[0],Number(tab[1])+1,tab[2]);
-            	
+            	alert(liste)
             	 $.ajax({
                  type: "POST",
                 url:"sm/plans/addLine/"+liste
@@ -51,8 +54,8 @@ function refresh(){
                } },
             {label:'Insérer des colonnes a gauche',     icon:'sm/img/icon/right.png', action:function() {
             	var tab=liste.split(',');
-            	liste= Array(tab[0],Number(tab[1])+1,tab[2],$("#historical_plan_id").val());
-            
+            	liste= Array(tab[2],$("#historical_plan_id").val());
+            alert(liste)
             	 $.ajax({
                  type: "POST",
                 url:"sm/plans/addRow/"+liste
@@ -63,9 +66,9 @@ function refresh(){
             {label:'Insérer des colonnes a droite',     icon:'sm/img/icon/left.png', action:function() { 
 
                   var tab=liste.split(',');
-              liste= Array(tab[0],Number(tab[1]),Number(tab[2])+1,$("#historical_plan_id").val());
+              liste= Array(Number(tab[2])+1,$("#historical_plan_id").val());
               
-
+                alert(liste)
                $.ajax({
                  type: "POST",
                 url:"sm/plans/addRow/"+liste
@@ -111,17 +114,31 @@ $('td').find('i').hide();
 $(".jqte_editor").focusout(function(){
 var content=($(this).html()).trim();
 	$(this).parent().find(".jqte_toolbar").hide();  
+  var axesid=$(this).parent().parent().attr('axes');
+  if(axesid==null)
+  {
 listes=liste+','+htmlEntities(content);
 		      $.ajax({
                  type: "POST",
                 url:"sm/plans/saveCelle/"+listes
                 })
                 $("#refersh").show();	 
+ }
+ else
+ {
+  var listes=axesid+','+htmlEntities(content);
+   $.ajax({
+                 type: "POST",
+                url:"sm/plans/setAxes/"+listes
+                })
+                $("#refersh").show(); 
+ }
 })
       
  var liste=null;
  var select=null;
  $("tbody> tr>td").click(function(){
+  $("td").find('span').hide()
     liste=$(this).attr('liste');
     select="ok"
 $("tbody,thead").find('tr,td').css('border','none');
@@ -148,22 +165,30 @@ $("tbody>tr").on('mouseenter',function(){
   }
   $(this).css('border','1px dashed #337ab7');
   $('td').removeClass('CellSelect');
-  select=null
+  select=null;
+  $("td").find('span').show()
 })
 
 var selectRow=null;
 $('.typecomposante').click(function(e){
+  $("td").find('span').hide()
   selectRow='ok';
   $('td').find('i').hide();
  $("tbody,thead").find('tr,td').css('border','none');
-  
   $(this).find('i').show();
+  $("#fa-plus-circle-right"+$(this).attr('attr')).show();
   var indice = Number($(this).attr('attr'))+1;
 var styles = {
       borderLeft : "1px solid #337ab7",
       borderRight: "1px solid #337ab7"
     };
-$("tbody,thead").find('td:nth-child('+indice+')').css(styles);
+$("tbody").find('td:nth-child('+indice+')').css(styles);
+var styles = {
+      borderLeft : "1px solid #337ab7",
+      borderTop: "1px solid #337ab7",
+      borderRight: "1px solid #337ab7"
+    };
+$(this).css(styles);
   });
 
 $('.typecomposante').on('mouseenter',function(e){
@@ -179,6 +204,7 @@ var styles = {
     };
 $("tbody,thead").find('td:nth-child('+indice+')').css(styles);
 selectRow=null;
+$("td").find('span').show()
 });
 
 
@@ -198,15 +224,27 @@ $('td').removeClass('CellSelect');
 //   $("tbody").find('td').css('border','none');
 // });
 
+$(".input2").focusout(function(){
+  var id=$(this).attr('id');
+  var description =$(this).val();
+  var liste=Array(id,description);
+    $.ajax({
+                       type: "POST",
+                      url:"sm/plans/setTypePlanning/"+liste
+                      })
+                      $("#refersh").show(); 
+})
 
-
-
+$(".typecomposante").dblclick(function(){
+  $(".input2").prop('disabled',true);
+  $(this).find('input').prop('disabled',false);
+  $("tbody,thead").find('tr,td').css('border','none');
+  $('td').find('i').hide();
+});
 
  /*******************************************************/
-      $(".fa-times-circle").click(function(){
-          var tab=liste.split(',');
-                    liste= Array($("#historical_plan_id").val(),tab[2]);
-               
+      $(".fa-times-circle-right").click(function(){
+                    liste= Array($("#historical_plan_id").val(),$(this).attr('id'));
                         $.ajax({
                        type: "POST",
                       url:"sm/plans/deleteLine/"+liste
@@ -214,6 +252,9 @@ $('td').removeClass('CellSelect');
                       $("#refersh").show(); 
       })
       $(".fa-plus-circle2").click(function(){
+        var tab=liste.split(',');
+              liste= Array(tab[0],Number(tab[1]),tab[2]);
+              alert(liste)
           $.ajax({
                  type: "POST",
                 url:"sm/plans/addLine/"+liste
@@ -223,38 +264,51 @@ $('td').removeClass('CellSelect');
       $(".fa-plus-circle1").click(function(){
         var tab=liste.split(',');
               liste= Array(tab[0],Number(tab[1])+1,tab[2]);
-              
+              alert(liste)
                $.ajax({
                  type: "POST",
                 url:"sm/plans/addLine/"+liste
                 })
                 $("#refersh").show();
       })
+      $(".fa-plus-circle-center").click(function(){
+       liste= Array($("#historical_plan_id").val(),$(this).attr('id'));
+              
+                  $.ajax({
+                 type: "POST",
+                url:"sm/plans/deleteRow/"+liste
+                })
+                $("#refersh").show(); 
+
+      });
+       $(".fa-plus-circle-left").click(function(){
+                    liste= Array(Number($(this).attr('id'))-1,$("#historical_plan_id").val());
+                     $.ajax({
+                       type: "POST",
+                      url:"sm/plans/addRow/"+liste
+                      })
+                      $("#refersh").show();
+                   
+      })
+      $(".fa-plus-circle-right").click(function(){
+              liste= Array($(this).attr('attr'),$("#historical_plan_id").val());
+               $.ajax({
+                 type: "POST",
+                url:"sm/plans/addRow/"+liste
+                })
+                $("#refersh").show();
+             
+      })
+     
 /****************************************************/
-$(".typecomposante").dblclick(function(){
-  $(".input2").prop('disabled',true);
-  $(this).find('input').prop('disabled',false);
-});
-
-$(".fa-plus-circle-right").click(function(){
-              liste= Array($(this).parent('td').attr('attr'),$("#historical_plan_id").val());
+$(".plusAxes").click(function(){
+   liste= Array($("#historical_plan_id").val());
                $.ajax({
                  type: "POST",
-                url:"sm/plans/addRow/"+liste
+                url:"sm/plans/addAxes/"+liste
                 })
                 $("#refersh").show();
-             
 })
-$(".fa-plus-circle-left").click(function(){
-              liste= Array(Number($(this).parent('td').attr('attr')-1),$("#historical_plan_id").val());
-               $.ajax({
-                 type: "POST",
-                url:"sm/plans/addRow/"+liste
-                })
-                $("#refersh").show();
-             
-})
-
 });
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
@@ -271,36 +325,46 @@ function htmlEntities(str) {
             
             <tr id="typecomposante">
               
-             <?php for ($i=0; $i <$row ; $i++) { 
+             <?php
+
+             $i=0;
+             foreach ($type_Planning as $typePlan) {
+              $i=$i+1;
                ?>
-                <td bgcolor=" " class="typecomposante" attr='<?php echo $i;?>'> 
-                    <i class="fa fa-plus-circle fa-plus-circle-left " aria-hidden="true"></i>
-   <input list="query"  placeholder='ITEM' class="form-control2 input2" id=""  value="" disabled="disabled"/>
-                    <i class="fa fa-plus-circle fa-plus-circle-right" aria-hidden="true"></i> 
+                <td  class="typecomposante" attr='<?php echo $i;?>'> 
+                  <i class="fa  fa-times-circle fa-plus-circle-center " id="<?php echo $i; ?>" aria-hidden="true"></i>
+                    <i class="fa fa-plus-circle fa-plus-circle-left " id="<?php echo $i; ?>" aria-hidden="true"></i>
+   <input list="query"  placeholder='<?php echo $typePlan['TypePlan']['description'] ?>' class="form-control2 input2" id="<?php echo $typePlan['TypePlan']['id'] ?>"  value="" disabled="disabled"/>
+                   
               </td>
-           
-               <?php }?>   
+           <td>
+    <i class="fa fa-plus-circle fa-plus-circle-right" attr="<?php echo $i;?>"id='fa-plus-circle-right<?php echo $i; ?>' aria-hidden="true"></i> 
+          </td>
+               <?php  }
+               $row=$i;?>
+               <td><span class="fa fa-plus-circle plusRow"  aria-hidden="true"></span>
+               <td>   
             </tr>
         </thead>
         <tbody>
-        	<?php foreach ($axes as $axe) 
-        	{ ?>
-              <tr class="plusLines">
-                  <td colspan="<?php echo $row; ?>" >
-                     <div><i class="fa fa-plus-circle fa-plus-circle2" id="dessus<?php echo $axe['Axis']['id'];?>A"   aria-hidden="true"></i>
-                  <i class="fa fa fa-times-circle fa-times-circle " id="delete<?php echo $axe['Axis']['id'];?>A" aria-hidden="true"></i>
-                </div>
-                 </td>
-               </tr>
-                	        	<tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
-                    				<td colspan="<?php echo $row; ?>" liste="<?php echo $axe['Axis']['id'].',1,1'; ?>">
-                    					<div class="jqte-test">
-                    						<?php echo $axe['Axis']['title'];  ?>
-                    				    </div>
+        	<?php
+           foreach ($axes as $axe) 
+        	{
+          
+           ?>
+              
+          <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
+          <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" liste="<?php echo $axe['Axis']['id'].',1,'.$row; ?>">
+           <div class="composantVertical1" 
+                axes="<?php echo $axe['Axis']['id'];?>" style="resize: both;hieght:30px;">
+                    <div class="jqte-test">
+                    	<?php echo $axe['Axis']['title'];  ?>
+                    			</div>
+                          </div>
                     				 </td>
                     				</tr>
                 <tr class="plusLines">
-                  <td colspan="<?php echo $row; ?>" >
+                  <td colspan="<?php echo 2*$row;?>" >
                    <div> <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'];?>A"aria-hidden="true"></i></div>
                    </td>
                  </tr>
@@ -308,10 +372,10 @@ function htmlEntities(str) {
 				<?php for($i=1;$i<=$axe['Axis']['line'];$i++)
 					{ ?>
             <tr class="plusLines">
-            <td colspan="<?php echo $row; ?>" >
+            <td colspan="<?php echo 2*$row;?>">
             <div>
             <i class="fa fa-plus-circle fa-plus-circle2" id="dessus<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
-            <i class="fa fa fa-times-circle fa-times-circle " id="delete<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
+            <i class="fa  fa-times-circle fa-times-circle-right " id="delete<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
            <div>
            </td>
          </tr>
@@ -325,8 +389,8 @@ function htmlEntities(str) {
 										($detail_planning['DetailPlan']['row']==$j)
 									   ){
 										?>
-										<td class="context-menu-one" 
-										liste="<?php echo $axe['Axis']['id'].','.$i.','.$j ?>">
+										<td colspan="2" class="context-menu-one" 
+										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>">
                          
                        
                     <div class="composantVertical" style="resize: both;">
@@ -364,4 +428,9 @@ function htmlEntities(str) {
 			  <?php } ?>
       <?php } ?>
         </tbody>
+        <tfoot>
+          <tr><td colspan="<?php 2*$row ?>">
+ <span class="fa fa-plus-circle plusAxes"  aria-hidden="true"></span>
+
+          </td></tr></tfoot>
 </table>

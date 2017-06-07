@@ -79,13 +79,28 @@ var position=Number($("#position").val())-1;
        
          refresh();
       })
-})
 
+
+})
+$(".lock").click(function(){
+        if($(".fa-lock").is(":visible")){
+          $(".fa-lock").hide()
+          $(".fa-unlock-alt").show();
+          $(".btnTachProject").hide()
+         
+        }else{
+          $(".fa-lock").show()
+          $(".fa-unlock-alt").hide();
+          $(".btnTachProject").show();
+        
+        }
+      })
 
 </script>
   
-<input type="hidden" value="<?php echo  $id;?>" id="historical_plan_id">
-<input type ="hidden" value="<?php echo $his_id ?>" id="position">
+<input type="text" value="<?php echo  $id;?>" id="plan_id">
+<input type ="text" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
+<input type ="text" value="<?php echo $his_id ?>" id="position">
 <div id="projectTache" class="auth-block" style="position: absolute;margin-left: 241px;width:700px; display:none">
   </div>
 <div class="body margin-top-2" id="body">
@@ -93,7 +108,7 @@ var position=Number($("#position").val())-1;
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
         <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
-         <input type="file" accept="image/*" id="inputupload"onchange="loadFile(event)" style="display:none" >
+         
          </label>
       </div>
   </div>
@@ -113,13 +128,13 @@ var position=Number($("#position").val())-1;
       <div id="outil" style="display:none">
       </div>
   <div id="outiltable">
-   <div class="col-md-2" style="padding: 0px;margin-top:2px;">
-          <i class="col-md-6 btn1212   left">
+   <div class="col-md-3" style="padding: 0px;margin-top:2px;">
+          <i class="col-md-5 btn1212   left">
              <span><?php echo __("NORMAL  ");?></span>
           <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
           </i>
           </i>
-    <div class="col-md-6" style="padding: 0px;">
+    <div class="col-md-5" style="padding: 0px;">
        <i class="glyphicon glyphicon-text-size col-md-6 btn1212 ">
       <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--10" aria-hidden="true" >
         </i>
@@ -129,19 +144,21 @@ var position=Number($("#position").val())-1;
         </i>
       </i>
  </div>
-    
+    <i class="col-md-2 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
    </div> 
 
-<div class="col-md-10" style="padding: 0px;margin-top:2px">
-
- <i class="col-md-1 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
-  <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
+<div class="col-md-9" style="padding: 0px;margin-top:2px">
+   <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
   <i class="col-md-1 fa fa-underline btn1212 " aria-hidden="true"></i>
   <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
   <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
   <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" SAVE");?></i>
   <i class="btn1212 col-md-2 fa fa-share-alt share"><?php echo __(" SHARE");?></i>
+
+  <i class="fa fa-lock col-md-1 btn1212 lock " style="display:none" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
+<i class="fa fa-unlock-alt col-md-1 btn1212 lock "  aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
   <i class="fa fa-trash col-md-1 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
+   
 </div>
   
 </div>
@@ -151,7 +168,7 @@ var position=Number($("#position").val())-1;
   <?php include("detail_plan.ctp"); ?>
 </div>
 </div>
-<div class="barre_Tache_projet"> 
+<div class="barre_Tache_projet btnTachProject" style="display:none;"> 
 <button type="button" class="btn-btn" id="addproject"><?php echo __("PROJET (+)");?></button>
 <button type="button" class="btn-btn" id="addTask" ><?php echo __("TÂCHE (+)");?></button>
 </div>
