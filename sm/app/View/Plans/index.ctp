@@ -47,6 +47,7 @@ function refresh(){
 }
 }
  var id=$("#selectionPlan").val()
+
  if(id)
  {var liste=Array(id,0)
    $.ajax({
@@ -54,7 +55,7 @@ function refresh(){
          url:"sm/plans/getPlanning/"+liste
       }).done(function(result){
         $("#PlanShow").html(result)
-         refresh();
+        
       })
     }
 $("#selectionPlan").on('change',function(){
@@ -84,16 +85,16 @@ $("#savePLan").click(function(){
   $("#MenuPlan").show();
   $("#newPlan").hide();
    $("#PlanShow").show();
-var content=($("#Titre").find(".jqte_editor").html()).trim();
+var content=$("#Titre").val();
   var files=$(document).find('input[type="file"]')[0].files
    if (files.length > 0) {
             var file = files[0];
-  var liste=Array(htmlEntities(content),file.name);
+  var liste=Array(content,file.name);
   $.ajax({
          type: "POST",
          url:"sm/plans/newPlan/"+liste
       }).done(function(result){
-    
+    document.reload();
       })
  
 }
@@ -103,7 +104,7 @@ $("#print").click(function(){
          printDiv("printdiv");
         })
 });
- refresh();
+ //refresh();
  function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'a9a').replace(/\:/g,'..');
 }
@@ -182,12 +183,7 @@ if($plans)
       </div>
   </div>
       <div class="item margin-top-34">
-         <div class="composantVertical" id="Titre" style="resize: both;max-height: 150px">
-                      <div class="jqte-test"  >
-                        TITLE
-                      </div>
-                    </div>
-     
+        <textarea id="Titre" style="margin: 0px;width: 864px;height: 119px;resize: initial;overflow: hidden;">TITLE</textarea >
       </div>
 
 </div>        
