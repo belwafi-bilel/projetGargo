@@ -25,30 +25,16 @@ public function colone($numLigne=null)
 $tab=explode(',',$numLigne); 
 	$this->set(compact('tab','types'));
 }
-public function divligne($numLigne=null)
-{
-	$tab=explode(',',$numLigne); 
 
-	$this->set(compact('tab'));
-}
-public function editcoponent($liste=null)
-{
 
-}
 public function budget($id=null)
 {
 $budgets=$this->getBudget_id($id);
 $detailbudgets=$this->getDetail_budget($id);
 $this->set(compact('budgets','detailbudgets'));
 }
-public function jobs()
-{
 
-}
-public function resources()
-{
 
-}
 public function textarea($liste=null)
 {
 	$this->set(compact('liste'));
@@ -100,7 +86,7 @@ public function newPlan($liste=null)
 	$id=$this->Session->read('id');
 	$fileData =null;
 	$date=array(
-		'title'=>$this->getHtml($liste[0]),
+		'title'=>$liste[0],
 		'date_create'=>date("Y-m-d h:s:i"),
 		'logo'=>$fileData,
 		'adress'=>'',
@@ -477,97 +463,7 @@ public function getData($i,$j)
 	return $this->Session->read('TableTail.'.$i.'.'.$j.'.data')?
 	$this->Session->read('TableTail.'.$i.'.'.$j.'.data'):"";
 }
-public function getcolor($i,$j)
-{
-	if($this->Session->read('TableTail.'.$i.'.'.$j.'.color'))
-		$color= $this->Session->read('TableTail.'.$i.'.'.$j.'.color');
-		else if($this->Session->read('TableTail.'.$i.'.0'.'.color'))
-         $color= $this->Session->read('TableTail.'.$i.'.0'.'.color');
-		 else if($this->Session->read('TableTail.0.'.$j.'.color'))
-	    $color= $this->Session->read('TableTail.0.'.$j.'.color');
-	else $color= $this->Session->read('TableTail.0.0.color');;
-return $color;
 
-}
-public function gettypes($j=null)
-{
-return ($this->Session->read('TableTail.1.'.$j.'.type'))?
-$this->Session->read('TableTail.1.'.$j.'.type'):"";
-}
-public function getdisplay($j=null)
-{
-return ($this->Session->read('TableTail.0.'.$j.'.display'))?
-$this->Session->read('TableTail.0.'.$j.'.display'):"";
-}
-public function colors($liste=null)
-{
-
-$indexcolor=explode(',',$liste);
-
-$this->Session->delete('TableTail.'.$indexcolor[0].'.'.$indexcolor[1].'.color');
-$this->Session->write('TableTail.'.$indexcolor[0].'.'.$indexcolor[1].'.color',$indexcolor[2]);
-$this->tableau($indexcolor[3].",".$indexcolor[4]);
-exit;	
-}
-public function typeCom($liste=null)
-{
-$indexcolor=explode(',',$liste);
-$this->Session->delete('TableTail.1.'.$indexcolor[0].'.type');
-$this->Session->write('TableTail.1.'.$indexcolor[0].'.type',$indexcolor[1]);
-exit;	
-}
-public function displaycol($liste=null)
-{
-$indexcolor=explode('.',$liste);
-$display=explode(',',$indexcolor[1]);
-$this->Session->delete('TableTail.0.'.$indexcolor[0].'.display');
-$this->Session->write('TableTail.0.'.$indexcolor[0].'.display',$display[0]);
-$this->tableau($display[1].",".$display[2]);
-exit;	
-}
-public function blockage($type=null)
-{
-	$this->Session->write('TableTail.0.0.duplicate',$type);
-}
-
-public function boite()
-{
-
-}
-public function deleteligne($liste=null)
-{
-	$TableTails=$this->Session->read("TableTail");
-	 	$this->Session->delete('TableTail.'.$liste);
-	 	$tab=array_values($this->Session->read("TableTail"));	
-	$this->Session->write("TableTail",$tab);
-	$ettiquette=$this->Session->read('ettiquette');
-
-	for ($i=0; $i <count($ettiquette) ; $i++) { 
-		if($ettiquette[$i]['id']==$liste)
-			{$this->Session->delete('ettiquette.'.$i);break;}
-	}
-$ettiquette=$this->Session->read('ettiquette');
-print_r(array_values($ettiquette));
-$this->Session->write('ettiquette',array_values($ettiquette));
-$this->tableau();
-	exit;
-
-}
-public function deletecolone($liste=null)
-{
-	$index=explode(',', $liste);
-	print_r($index);
-	$TableTails=$this->Session->read("TableTail");
-	 for ($i=0; $i <$index[0]; $i++) { 
-	 	$this->Session->delete('TableTail.'.$i.'.'.$index[2]);
-	 	$tab=array_values($this->Session->read("TableTail.".$i));
-	$this->Session->write('TableTail.'.$i,$tab);
-	}
-	$TableTails2=$this->Session->read("TableTail");
-	$this->Session->write("TableTail",$TableTails2);
-$this->tableau();
-	exit;
-}
 public function blockagecellule($liste=null)
 {$index=explode(',', $liste);
 $this->Session->write('TableTail.'.$index[0].'.'.$index[1].".",$index[2]);
@@ -583,63 +479,35 @@ $string .= $chaine[rand()%strlen($chaine)];
 return $string;
 }
 
-public function project($id=null)
-{
-	$projects=$this->getProject_id($id);
-	$this->set(compact('projects'));
-}
 public function task($liste=null)
 {
-	if($liste==null)
-	{
-	$id_plan=$this->Session->read('id_plan');
-	$this->loadModel('Project');
-    $projects=$this->Project->find('all',['conditions'=>['Project.plan_id'=>$id_plan]]);
-    $this->set(compact('projects'));
-    }else{
-    $liste=explode(',', $liste);
-    $data=array('project_id'=>intval($liste[2]),
-    			'titre'=>$liste[0],
-    			'description'=>$liste[1],
-    			'date_debut'=>$liste[3],
-    			'date_fin'=>$liste[4],
-    			'heurs_estimee'=>$liste[5],
-    			'taux_estimee'=>$liste[6],
-    			'budget'=>$liste[7],
-    			'urgent'=>$liste[8],
-    			'aviser_utilisateurs_couriel'=>$liste[9]);
+    $data=array('project_id'=>$liste,
+    			'titre'=>null,
+    			'description'=>null,
+    			'date_debut'=>null,
+    			'date_fin'=>null,
+    			'heurs_estimee'=>null,
+    			'taux_estimee'=>null,
+    			'urgent'=>'false',
+    			'aviser_utilisateurs_couriel'=>'false');
    $this->loadModel('Tach');
    $this->Tach->create();
    $this->Tach->save($data);
-   echo __("Task bien sauvgarder");
-   die();
-    }
-}
-public function ettiquette($liste=null)
+  }
+public function deleteTask($id=null)
 {
-	$tab=$this->Session->read("ettiquette");
-	$tab[]=array('id'=>$liste,
-		'description'=>'Objectif:');
- $this->Session->write("ettiquette",$tab);
-$tab=$this->Session->read('ettiquette');
-//$this->tableau();
-die();
+	 $this->loadModel('Tach');
+	$this->Tach->id = $id;
+$this->Tach->delete();
 }
-public function EditEtiquette($liste=null)
+public function setTask($liste=null)
 {
-	$liste=explode(',',$liste);
-
-$ettiquette=$this->Session->read('ettiquette');
-foreach ($ettiquette as $key => $value) {
-	if($value==$liste[0])
-		{$X=$key;
-	break;}
-
-}
-$this->Session->delete('ettiquette.'.$X);
-$tab=array('id'=>$liste[0],
-	'description'=>$liste[1]);
-$this->Session->write('TableTail.'.$X.'.'.$tab);
+	 $liste=explode(',',$liste);
+	 $this->loadModel('Tach');
+     $data=array(
+     	'id'=>$liste[0],
+        $liste[1]=>$liste[2]);
+$this->Tach->save($data);
 }
 
 public function deletePlan($id=null)
@@ -649,24 +517,65 @@ $this->Plan->delete();
 $this->loadModel('DetailPlan');
 $this->DetailPlan->deleteAll(array('DetailPlan.id_plan'=>$id));
 }
-public function ettitquet()
+/*****************************************function set project ***********************/
+/*
+function set project to add new project in data base 
+ */
+public function setProject($liste=null)
 {
-$ettiquette=$this->Session->read('ettiquette');
-echo "<pre>";
-print_r($ettiquette);
-die();
+$liste=explode('--.--',$liste);	
+$this->loadModel('ProjectDetailPlanning');
+$this->loadModel('Project');
+$data=array('title'=>$liste[0],
+			'description'=>$liste[1],
+			'accompli'=>'0',
+			'notify_user'=>$liste[2]);
+$this->Project->create();
+$this->Project->save($data);
+$id=$this->Project->getLastInsertID();
+$liste_id=explode(' ',$liste[3]);
+for ($i=0; $i <count($liste_id) ; $i++) { 
+	$data=array('detail_planning_id'=>$liste_id[$i],
+				'project_id'=>$id);
+	$this->ProjectDetailPlanning->create();
+	$this->ProjectDetailPlanning->save($data);
 }
 
-public function sendMessage()
-{
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-     $headers .= 'From: Financement multiple <bilel.belwafi.iit@gmail.com>' . "\r\n";
-     $headers .= 'Cc: bilel.belwafi.iit@gmail.com' . "\r\n";
-$sujet = '';
-$message = "";
-mail("belwafi22173693@gmail.com", $sujet, $message,$headers);
+}
+/*****************************************function project ***********************/
+/*
+function show project detail with id = ?
+ */
 
+public function project($id=null)
+{
+	$projects=$this->getProject_id($id);
+	$this->set(compact('projects'));
+}
+/*****************************************function add project With id list cell***********************/
+/*
+function addProject show interfaces for add new project with liste id cell=?
+*/
+public function addProject($liste=null)
+{
+	$liste=trim($liste);
+	$this->set(compact('liste'));
+}
+/**************************function sendMessage********************************/
+/*
+function sendMessage to share the planning=?
+*/
+public function sendMessage($liste=null)
+{
+// 	$liste=explode('&99;',$liste);
+// $headers  = 'MIME-Version: 1.0' . "\r\n";
+//      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//      $headers .= 'From:'..'<'..'>' . "\r\n";
+//      $headers .= 'Cc:' . "\r\n";
+// $sujet = $liste[1];
+// $message = $liste[2];
+// mail($Email_Pro, $sujet, $message,$headers);
+ 
 }
 /**************************function planning********************************/
 /*
@@ -702,9 +611,10 @@ function planning to return all data for action planning id=?
 		$line+=count($axesId);
   	}
  }
- $type_Planning=$this->getTypePlanning($id);
+ $type_Plannings=$this->getTypePlanning($id);
+
 $id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
-   $this->set(compact('plans','optionplans','visionplans','type_Planning','historical_plans','id','axes','line','row','his_id','id_hisorical'));       
+   $this->set(compact('plans','optionplans','visionplans','type_Plannings','historical_plans','id','axes','line','row','his_id','id_hisorical'));       
 }
 /*****************************function historical planning*****************************/
 /*
@@ -721,7 +631,6 @@ return $HistoricalPlans;
 /***************************** function axes*****************************/
 /*
 function axes for return all axes for histrical planing id=??
-
 */
 public function getAxes($id=null)
 {
@@ -968,7 +877,7 @@ public function setAxes($liste=null)
 	$axis=$this->Axis->find('first',['conditions'=>['Axis.id'=>$liste[0]]]);
 	$data=array(
 			'id'=>$liste[0],
-			'title'=>$liste[1],
+			'title'=>trim($liste[1]),
 			'historical_plan_id'=>$axis['Axis']['historical_plan_id'],
 			'position'=>$axis['Axis']['position']);
 			$this->Axis->save($data);
@@ -995,8 +904,10 @@ $id=$liste[0];
   $line=$this->getNUmbreLinePlanningTable($axesId);
 $line+=count($axesId);
 $id_plan=$this->Session->read('plan_id');
-$type_Planning=$this->getTypePlanning($id_plan);
- $this->set(compact('axes','line','row','type_Planning'));
+$type_Plannings=$this->getTypePlanning($id);
+
+
+ $this->set(compact('axes','line','row','type_Plannings'));
 }
 /*****************************************function add line  ***********************/
 /*
@@ -1005,6 +916,8 @@ function addLine to add new line planning action of axes_id=?? and position=?
 public function addLine($liste=null)
 {
 	$liste=explode(',',$liste);
+	if($liste[2]==0)
+		$liste[2]=3;
 	$this->loadModel('DetailPlan');
 $detailplans=$this->DetailPlan->find('all',
 	['conditions'=>['DetailPlan.axes_id'=>$liste[0],'DetailPlan.line >='=>$liste[1]]]);
@@ -1135,23 +1048,16 @@ public function saveCelle($liste=null)
 {
 	$liste=explode(',',$liste);
 	 $this->loadModel('DetailPlan');
-    if(($liste[0]!=0)&&($liste[1]!=0)&&($liste[2]-1!=0))
-    {
-     $detailplans=$this->DetailPlan->find('first',
-	     ['conditions'=>
-	     ['DetailPlan.axes_id'=>$liste[0],
-	     'DetailPlan.row'=>$liste[2]-1,
-	     'DetailPlan.line'=>$liste[1]
-	     ]]);
- 
-                $detailplans['DetailPlan']['content']=$this->getHtml($liste[3]);
-				$this->DetailPlan->save($detailplans['DetailPlan']);
+   
+    $data=array('id'=>$liste[0],
+    	'content'=>$this->getHtml($liste[1]));
+				$this->DetailPlan->save($data);
 
-    }
+    
 }
 public function getHtml($content=null)
 {
-	$find=array('&amp;','&lt;','&gt;','&quot;','&47;','&58;','&44;','&nbsp;','&91;','&93;');
+	$find=array('&amp;','&lt;','&gt;','&quot;','&42;','&58;','&44;','&nbsp;','&91;','&93;');
 	$filter=array('&','<','>','"','/',':',',',' ','[',']');
 	return str_replace($find, $filter, $content);
 	
@@ -1189,6 +1095,10 @@ foreach ($TypePLans as $TypePlan) {
 	$this->TypePlan->save($data);
 	return null;
 }
+/*****************************************function set type planing***********************/
+/*
+function setTypePlanning to set type planning action of plan id=?
+*/
 public function setTypePlanning($liste=null)
 {$liste=explode(',',$liste);
 	$this->loadModel('TypePlan');
@@ -1203,6 +1113,10 @@ public function setTypePlanning($liste=null)
 	$this->TypePlan->save($data);
 	return null;
 }
+/*****************************************function add Historical planing***********************/
+/*
+function addHistoricalPlanning to add historical planning action of plan id=?
+*/
 public function addHistoricalPlanning($liste=null)
 {
 	$id=$this->Session->read('id');
@@ -1215,7 +1129,10 @@ $this->HistoricalPlan->create();
 $this->HistoricalPlan->save($data);
 return null;
 }
-
+/*****************************************function get budget With id***********************/
+/*
+function getBudget_id to get budget id=?
+*/
 public function getBudget_id($id=null)
 {
 	$this->loadModel('Budget');
@@ -1223,10 +1140,25 @@ public function getBudget_id($id=null)
 	return $budget;
 }
 
-
+/*****************************************function share***********************/
+/*
+function share to share planning action of plan id=?
+*/
 public function share($id=null)
 {
+
 	$link=$this->linkWeb($id);
-$this->set(compact('link'));
+	$users=$this->getUser($id);
+	$this->set(compact('link','users'));
+
+}
+/*****************************************function get all user***********************/
+/*
+function getUser =?
+*/
+public function getUser($id=null)
+{
+		$this->loadModel('User');
+	return $this->User->find('all');
 }
 }

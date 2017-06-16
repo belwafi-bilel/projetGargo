@@ -8,9 +8,7 @@
     jqteStatus = jqteStatus ? false : true;
     $('.jqte-test').jqte({"status" : jqteStatus})
   });
-function htmlEntities(str) {
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'a9a').replace(/\:/g,'..');
-}
+
 
 </script>
 
@@ -30,147 +28,193 @@ function refresh(){
 }
 }
       $(function() {
-        $('td').contextPopup({
-          items: [
-            {label:'Insérer des lignes au-dessus',     icon:'sm/img/icon/top.png', action:function() {
-              var tab=liste.split(',');
-              liste= Array(tab[0],Number(tab[1]),tab[2],'desssus');
-              alert(liste)
-                $.ajax({
-                 type: "POST",
-                url:"sm/plans/addLine/"+liste
-                })
-                $("#refersh").show();
-             } },
-            {label:'Insérer des ligne en dessous', icon:'sm/img/icon/bottom.png',action:function() {  
-            	var tab=liste.split(',');
-            	liste= Array(tab[0],Number(tab[1])+1,tab[2]);
-            	alert(liste)
-            	 $.ajax({
-                 type: "POST",
-                url:"sm/plans/addLine/"+liste
-                })
-                $("#refersh").show();
-               } },
-            {label:'Insérer des colonnes a gauche',     icon:'sm/img/icon/right.png', action:function() {
-            	var tab=liste.split(',');
-            	liste= Array(tab[2],$("#historical_plan_id").val());
-            alert(liste)
-            	 $.ajax({
-                 type: "POST",
-                url:"sm/plans/addRow/"+liste
-                })
-                $("#refersh").show();
+        // $('td').contextPopup({
+        //   items: [
+        //     {label:'Insérer des lignes au-dessus',     icon:'sm/img/icon/top.png', action:function() {
+        //       var tab=liste.split(',');
+        //       liste= Array(tab[0],Number(tab[1]),tab[2],'desssus');
+        //       alert(liste)
+        //         $.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/addLine/"+liste
+        //         })
+        //         $("#refersh").show();
+        //      } },
+        //     {label:'Insérer des ligne en dessous', icon:'sm/img/icon/bottom.png',action:function() {  
+        //     	var tab=liste.split(',');
+        //     	liste= Array(tab[0],Number(tab[1])+1,tab[2]);
+        //     	alert(liste)
+        //     	 $.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/addLine/"+liste
+        //         })
+        //         $("#refersh").show();
+        //        } },
+        //     {label:'Insérer des colonnes a gauche',     icon:'sm/img/icon/right.png', action:function() {
+        //     	var tab=liste.split(',');
+        //     	liste= Array(tab[2],$("#historical_plan_id").val());
+        //     alert(liste)
+        //     	 $.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/addRow/"+liste
+        //         })
+        //         $("#refersh").show();
              
-                } }, 
-            {label:'Insérer des colonnes a droite',     icon:'sm/img/icon/left.png', action:function() { 
+        //         } }, 
+        //     {label:'Insérer des colonnes a droite',     icon:'sm/img/icon/left.png', action:function() { 
 
-                  var tab=liste.split(',');
-              liste= Array(Number(tab[2])+1,$("#historical_plan_id").val());
+        //           var tab=liste.split(',');
+        //       liste= Array(Number(tab[2])+1,$("#historical_plan_id").val());
               
-                alert(liste)
-               $.ajax({
-                 type: "POST",
-                url:"sm/plans/addRow/"+liste
-                })
-                $("#refersh").show();
+        //         alert(liste)
+        //        $.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/addRow/"+liste
+        //         })
+        //         $("#refersh").show();
 
-             } },
-            null,
-             {label:'Fusionner les cellules',     icon:'sm/img/icon/fusionner.png', action:function() {  } },
-              {label:'Fractionner les cellules',     icon:'sm/img/icon/fractionner.png', action:function() { 
-              	 } },
-              null,
-               {label:'Supprimer les lignes',     icon:'sm/img/icon/deleteline.png', action:function() {
-               	var tab=liste.split(',');
-            	liste= Array($("#historical_plan_id").val(),tab[2]);
+        //      } },
+        //     null,
+        //      {label:'Fusionner les cellules',     icon:'sm/img/icon/fusionner.png', action:function() {  } },
+        //       {label:'Fractionner les cellules',     icon:'sm/img/icon/fractionner.png', action:function() { 
+        //       	 } },
+        //       null,
+        //        {label:'Supprimer les lignes',     icon:'sm/img/icon/deleteline.png', action:function() {
+        //        	var tab=liste.split(',');
+        //     	liste= Array($("#historical_plan_id").val(),tab[2]);
          
-                	$.ajax({
-                 type: "POST",
-                url:"sm/plans/deleteLine/"+liste
-                })
-                $("#refersh").show();	
+        //         	$.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/deleteLine/"+liste
+        //         })
+        //         $("#refersh").show();	
 
 
-               } },
-                {label:'Supprimer les colonnes',     icon:'sm/img/icon/deleterow.png', action:function() {
-                	var tab=liste.split(',');
-            	liste= Array($("#historical_plan_id").val(),tab[2]);
+        //        } },
+        //         {label:'Supprimer les colonnes',     icon:'sm/img/icon/deleterow.png', action:function() {
+        //         	var tab=liste.split(',');
+        //     	liste= Array($("#historical_plan_id").val(),tab[2]);
             	
-                	$.ajax({
-                 type: "POST",
-                url:"sm/plans/deleteRow/"+liste
-                })
-                $("#refersh").show();	
+        //         	$.ajax({
+        //          type: "POST",
+        //         url:"sm/plans/deleteRow/"+liste
+        //         })
+        //         $("#refersh").show();	
 
-                } }
-             ]
-        });
+        //         } }
+        //      ]
+        // });
   $(".jqte_editor").focus(function(){	
+     if($(".fa-unlock-alt").is(":visible"))
+  {
+    $("tbody,thead").find('tr,td').css('border','none');
+$(this).find('i').hide();
 $(this).parent().find(".jqte_toolbar").show();
-$("tbody,thead").find('tr,td').css('border','none');
-$('td').find('i').hide();
+
+}
 })
 $(".jqte_editor").focusout(function(){
+   if($(".fa-unlock-alt").is(":visible"))
+  {
 var content=($(this).html()).trim();
 	$(this).parent().find(".jqte_toolbar").hide();  
   var axesid=$(this).parent().parent().attr('axes');
   if(axesid==null)
   {
-listes=liste+','+htmlEntities(content);
+    $id=$(this).parents('.composantVertical').attr('id');
+
+listes=$id+','+htmlEntities(content);
 		      $.ajax({
                  type: "POST",
                 url:"sm/plans/saveCelle/"+listes
                 })
                 $("#refersh").show();	 
  }
- else
- {
-  var listes=axesid+','+htmlEntities(content);
-   $.ajax({
+}
+})
+
+$('.textarea-axe').dblclick(function(){
+  $(this).find('textarea').prop('disabled',false);
+  $(this).find('textarea').select()
+  $(this).find('textarea').css('cursor','auto');
+
+})
+$('.textarea-axe > textarea').on('change',function(){
+ 
+   var axesid=$(this).attr('axes');
+  var listes=axesid+','+$(this).val().trim();
+  $(this).css('cursor','pointer');
+ $.ajax({
                  type: "POST",
                 url:"sm/plans/setAxes/"+listes
                 })
                 $("#refersh").show(); 
- }
+
 })
-      
+
+
+
+
  var liste=null;
  var select=null;
- $("tbody> tr>td").click(function(){
-  $("td").find('span').hide()
+
+ $("tbody>tr>td").click(function(){
+   if($(".fa-unlock-alt").is(":visible"))
+  {
+
+  // $("td").find('span').hide()
     liste=$(this).attr('liste');
     select="ok"
 $("tbody,thead").find('tr,td').css('border','none');
 $('td').find('i').hide();
-if($(".jqte_toolbar").is(":hidden")){
+if($(".jqte_toolbar").is(":hidden")||$('.textarea-axes').is(':disabled')){
         $(this).parent().css("border","1px solid #337ab7");
        var id= $(this).parent().attr('id');
       $("#dessous"+id).show();
       $("#dessus"+id).show();
       $("#delete"+id).show();}
+    }else
+   {
+    $(this).css('border','none');
+//$(this).find('i').hide();
+   }
+});
    $("table").on('mouseleave', function() {
+     if($(".fa-unlock-alt").is(":visible"))
+  {
      $("#dessous"+id).delay(100).fadeOut();
       $("#dessus"+id).delay(100).fadeOut();
       $("#delete"+id).delay(100).fadeOut();
       $("tbody").find('tr,td').css('border', 'none');
-      
-   });
+      }
+  
     });
 $("tbody>tr").on('mouseenter',function(){
+  if($(".fa-unlock-alt").is(":visible"))
+  {
   if(select==null)
   {
-  $("tbody,thead").find('tr,td').css('border','none');
-  $('td').find('i').hide();
+   if($("tbody,thead").find('tr,td').css('border')='1px dashed #337ab7;')
+   {
+    $("tbody,thead").find('tr,td').css('border','none');
+   }
   }
-  $(this).css('border','1px dashed #337ab7');
-  $('td').removeClass('CellSelect');
+    if($("tbody,thead").find('tr,td').css('border')='1px dashed #337ab7;')
+   {
+    $("tbody,thead").find('tr,td').css('border','none');
+   }
+  
+  // $('td').removeClass('CellSelect');
   select=null;
   $("td").find('span').show()
+  $(this).css('border','1px dashed #337ab7;');
+}
 })
 
 var selectRow=null;
 $('.typecomposante').click(function(e){
+   if($(".fa-unlock-alt").is(":visible"))
+  {
   $("td").find('span').hide()
   selectRow='ok';
   $('td').find('i').hide();
@@ -189,9 +233,12 @@ var styles = {
       borderRight: "1px solid #337ab7"
     };
 $(this).css(styles);
+}
   });
 
 $('.typecomposante').on('mouseenter',function(e){
+   if($(".fa-unlock-alt").is(":visible"))
+  {
   if(selectRow==null)
   {
     $("tbody,thead").find('tr,td').css('border','none');
@@ -205,15 +252,19 @@ var styles = {
 $("tbody,thead").find('td:nth-child('+indice+')').css(styles);
 selectRow=null;
 $("td").find('span').show()
+}
 });
 
 
  $("tbody>tr>td").dblclick(function(){
-  $("tbody,thead").find('tr,td').css('border','none');
-  $('td').find('i').hide();
-$('td').removeClass('CellSelect');
- $(this).addClass('CellSelect');
+   if($(".fa-unlock-alt").is(":visible"))
+  {
+//   $("tbody,thead").find('tr,td').css('border','none');
+//   $('td').find('i').hide();
+// $('td').removeClass('CellSelect');
+//  $(this).addClass('CellSelect');
 
+}
 
 });
 //})  $("tbody,thead").find('td').css('border','none');
@@ -234,14 +285,12 @@ $(".input2").focusout(function(){
                       })
                       $("#refersh").show(); 
 })
-
 $(".typecomposante").dblclick(function(){
   $(".input2").prop('disabled',true);
   $(this).find('input').prop('disabled',false);
   $("tbody,thead").find('tr,td').css('border','none');
   $('td').find('i').hide();
 });
-
  /*******************************************************/
       $(".fa-times-circle-right").click(function(){
                     liste= Array($("#historical_plan_id").val(),$(this).attr('id'));
@@ -318,17 +367,23 @@ $(".budget").click(function(){
           type: "POST",
            url:"sm/plans/budget/"+id
         }).done(function(result){
+          
+          $('td').find('i').hide();
+          $("#example").find('div').css('pointer-events','none');
           $("#projectTache").show();
           $("#projectTache").html(result);
           $("#outiltable").hide();
         })
 })
 $(".project").click(function(){
+
   id=$(this).attr('id');
   $.ajax({
           type: "POST",
            url:"sm/plans/project/"+id
         }).done(function(result){
+          $("#example").find('div').css('pointer-events','none');
+          $('td').find('i').hide();
           $("#projectTache").show();
           $("#projectTache").html(result);
           $("#outiltable").hide();
@@ -336,8 +391,31 @@ $(".project").click(function(){
 })
 });
 function htmlEntities(str) {
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&47;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&42;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
+ $('.context-menu-one').click(function(){
+  if($(".fa-lock").is(":visible"))
+  {
+     if($(this).find("input[type='checkbox']").is(":checked"))
+    {
+      $(this).find("input[type='checkbox']").prop("checked",false);
+      $(this).css('background-color','rgba(60, 118, 61, 0)');
+      $(this).find('span').hide()
+    }
+    else
+    {
+      $(this).find("input[type='checkbox']").prop("checked",true)
+      $(this).css('background-color','rgba(60, 118, 61, 0.88)');
+      $(this).find('span').show()
+    }
+     
+}
+
+
+  
+    //console.log($(this).closest('input').id);
+  }); //document-ready end
+
     </script>
     
 <div style="display:none"class="refreshdiv"  id="refersh">
@@ -349,26 +427,24 @@ function htmlEntities(str) {
          
          <thead>
             
-            <tr id="typecomposante">
-              
+            <tr id="typecomposante">          
              <?php
-
              $i=0;
-             foreach ($type_Planning as $typePlan) {
+             foreach ($type_Plannings as $typePlan) {
               $i=$i+1;
                ?>
                 <td  class="typecomposante" attr='<?php echo $i;?>'> 
                   <i class="fa  fa-times-circle fa-plus-circle-center " id="<?php echo $i; ?>" aria-hidden="true"></i>
                     <i class="fa fa-plus-circle fa-plus-circle-left " id="<?php echo $i; ?>" aria-hidden="true"></i>
    <input list="query"  placeholder='<?php echo $typePlan['TypePlan']['description'] ?>' class="form-control2 input2" id="<?php echo $typePlan['TypePlan']['id'] ?>"  value="" disabled="disabled"/>
-                   
+                 
               </td>
            <td>
     <i class="fa fa-plus-circle fa-plus-circle-right" attr="<?php echo $i;?>"id='fa-plus-circle-right<?php echo $i; ?>' aria-hidden="true"></i> 
           </td>
                <?php  }
                $row=$i;?>
-               <td><span class="fa fa-plus-circle plusRow"  aria-hidden="true"></span>
+               <td style="background: none;"><span class="fa fa-plus-circle plusRow"  aria-hidden="true"></span>
                <td>   
             </tr>
         </thead>
@@ -376,25 +452,18 @@ function htmlEntities(str) {
         	<?php
            foreach ($axes as $axe) 
         	{
-          
            ?>
-              
           <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
-          <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" liste="<?php echo $axe['Axis']['id'].',1,'.$row; ?>">
-           <div class="composantVertical1" 
-                axes="<?php echo $axe['Axis']['id'];?>" style="resize: both;hieght:30px;">
-                    <div class="jqte-test">
-                    	<?php echo $axe['Axis']['title'];  ?>
-                    			</div>
-                          </div>
-                    				 </td>
-                    				</tr>
+            <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" class="textarea-axe" liste="<?php echo $axe['Axis']['id'].',1,'.$row; ?>">
+              
+              <textarea disabled='disabled' axes="<?php echo $axe['Axis']['id'];?>" class="textarea-axes"><?php echo $axe['Axis']['title'];  ?></textarea>
+            </td>
+          </tr>
                 <tr class="plusLines">
                   <td colspan="<?php echo 2*$row;?>" >
                    <div> <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'];?>A"aria-hidden="true"></i></div>
                    </td>
                  </tr>
-         
 				<?php for($i=1;$i<=$axe['Axis']['line'];$i++)
 					{ ?>
             <tr class="plusLines">
@@ -406,7 +475,6 @@ function htmlEntities(str) {
            </td>
          </tr>
 					<tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
-
 						<?php for($j=1;$j<=$axe['Axis']['row'];$j++)
 							{ 
 							foreach ($axe['detail_planning'] as $detail_planning) 
@@ -416,17 +484,15 @@ function htmlEntities(str) {
 									   ){
 										?>
 										<td colspan="2" class="context-menu-one" 
-										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>">
-                         
-                       
-                    <div class="composantVertical" style="resize: both;">
-
+										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>"  id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
+                    <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
+                      
+                    <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" style="resize: both;">
 											<div class="jqte-test" >
 										    <?php
 										    $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
 										     echo htmlspecialchars_decode($y); 
-
-                         ?></div>
+                         ?></div><dir class="divbutton">
                          <?php
 										     if($detail_planning['DetailPlan']['budgets']['total'])	
 												{ ?>
@@ -438,11 +504,10 @@ function htmlEntities(str) {
 															<button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['id']?>">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>]</button>
 														<?php }
 													?>
-											
+                    </dir>
                     </div>
-                    
+                  
 									    </td>
-
 										<?php
 									    }
 								?>

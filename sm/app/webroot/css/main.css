@@ -128,7 +128,15 @@ body{
     padding: 10px;
     margin-left: 7px;
 }
-
+.form-control2-2 {
+      
+    border:none;
+    background-color: none;
+    box-shadow: none;
+    width: 100%;
+    color: black;
+    
+}
 .form-control2:active{
     border-right: none;
     border-left: none;
@@ -231,8 +239,8 @@ input[type="text"]:disabled {
     border-color: #adadad;
 }
 .table>tbody>tr>td {
-    padding: 0 8px;
-    line-height: 35px;
+   padding: 0px;
+    line-height: 15px;
     border-top: 1px solid rgba(255,255,255,.2);
 }.table-hover>tbody>tr:hover
 {
@@ -380,11 +388,11 @@ a.al-sidebar-list-link {
     padding: 18px 0 0;
     list-style: none;
 }ul, menu, dir {
-    display: block;
-    -webkit-margin-before: -1px;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+       display: block;
+    -webkit-margin-before: 0px;
+    /* -webkit-margin-after: 0em; */
+    /* -webkit-margin-start: 0px; */
+    /* -webkit-margin-end: 0px; */
     -webkit-padding-start: 11px;
 }
 a.al-sidebar-list-link b {
@@ -763,10 +771,9 @@ composantVertical>div>div ..jqte_editor
     border: none;
 }
 .edit{
-   font-size: large;
+       font-size: xx-small;
     color: rgb(79, 96, 87);
     cursor: pointer;
-    background: none;
     border: none;
     float: right;
 }
@@ -822,9 +829,9 @@ background: #2f4b4b;
 }
 .fa-times{
     float: right;
-    top: 0px;
-    margin-top: -17px;
-    margin-right: -13px;
+    /* top: 0px; */
+    margin-top: -15px;
+    margin-right: -11px;
     cursor: pointer;
 
 }
@@ -1054,7 +1061,7 @@ border-left: none;
 border-right: none;
 }
 .input-group-addon {
-    padding: 10px 4px;
+    padding: 0px;
     font-size: 10px;
     font-weight: 400;
     line-height: 1;
@@ -1193,8 +1200,9 @@ color: white;
 }
 .table{
  background: white;
-    margin-bottom: 0px;
-    font-size: x-small;
+    margin-bottom: 0px;    
+    font-size: xx-small;
+        color: #2b3a41;
 }
 .polygon[Attributes Style] {
     fill: rgb(0, 53, 94);
@@ -1208,12 +1216,11 @@ i{
 
 .auth-block2{
        
-    margin: 0 auto;
-    border-radius: 5px;
-    background: rgba(0,0,0,.55);
-    color: #0e0000;
-    padding: 32px;
-    margin-top: -81px;
+       margin: 0 auto;
+    border-radius: 3px;
+    background: rgba(43, 58, 65, 0.84);
+    color: #ffffff;
+    padding: 15px 12px 33px 11px;
 }
 .del-ligne{
         color: white;
@@ -1478,7 +1485,7 @@ i{
   .CellSelect
    {
    box-shadow: 0px 0px 50px #000000;
-    z-index: 3;
+    z-index: 7;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1.5);
     -ms-transition: all 200ms ease-in;
@@ -1488,6 +1495,11 @@ i{
     transition: all 200ms ease-in;
     transform: scale(1.5);
     width: 200px;
+    height: 30px;
+    position: absolute;
+        
+
+
    }
 td>div>hr{
   border-top: 3px double #8c8b8b;  
@@ -1503,12 +1515,19 @@ color: rgb(43, 58, 65);
     margin-left: -5px;
 display: none;
 }
+td>label{
+    
+ display: grid; 
+     max-width: 100%; 
+     margin-bottom: 0px; 
+     font-weight: 700; 
 
+}
 td>.fa-plus-circle-right
 {
     position: absolute;
     color: rgb(43, 58, 65);
-    margin-top: 11px;
+    margin-top: 4px;
     margin-left: -5px;
       float: left;
 display: none;
@@ -1525,7 +1544,7 @@ td>div>.fa-plus-circle1
    position: absolute;
     margin-left: 50%;
     color: rgb(43, 58, 65);
-    margin-top: -14px;
+    margin-top: -7px;
 display: none;
 }
 td>div>.fa-plus-circle2
@@ -1533,7 +1552,7 @@ td>div>.fa-plus-circle2
    position: absolute;
     margin-left: 50%;
     color: rgb(43, 58, 65);
-    margin-top: 1px;
+    margin-top: -8px;
     display: none;
 
 }
@@ -1541,12 +1560,12 @@ td>div>.fa-times-circle-right
 {
   position: absolute;
     color: rgb(43, 58, 65);
-    margin-top: 0px;
-    right: 14px;
+    margin-top: -8px;
+    right: 5px;
 display: none;
 }
 td>.plusAxes{
-      position: absolute;
+    
     color: rgb(43, 58, 65);
     margin-top: 10px;
     margin-left: -7px;
@@ -1554,10 +1573,10 @@ td>.plusAxes{
     
 }
 td>.plusRow{
-      position: absolute;
+      
     color: rgb(43, 58, 65);
-    margin-top: -7px;
-    margin-left: -7px;
+    margin-top: 0px;
+    right: 32px;
     font-size: 17px;
     
 }
@@ -1695,4 +1714,188 @@ background: white;
 .margin-top-34
 {
     margin-top: 34px;
+}
+#checkboxes {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+    .whatever{
+        background: white;
+    cursor: pointer;
+        display: inline-block;
+        padding: 10px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+        width: 100%;
+    }
+    
+   input[type=checkbox]{
+        display: none;
+    }
+    .check_overlay {
+    cursor: pointer;
+    background: white;
+    color: #767676;
+    width: 100%;
+    border: none;
+    
+}
+.check{
+    cursor: pointer;
+    background: white;
+    color: #767676;
+    width: 100%;
+    margin: 0px;
+    border: none;
+    
+}
+        .check_overlay>span{
+    
+      color: #70c3f3;
+        }
+    
+
+.cat_head {
+    background: #f4f4f4;
+}
+.fa-check-square,.fa-square{   
+    font-size: 16px;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: -10px;
+    color: #2b3a41;
+
+}
+.fa-check-square{
+    color: #00ff00;
+}
+.fa-square{ 
+color: #ff0000;
+}
+td>.divbutton{
+    overflow: auto;
+    resize: both;
+    min-height: 100px;
+    min-width: 100px;
+    width: auto;
+    height: auto;
+    border: 1px solid rgb(35, 137, 198);
+}
+.table-responsive>div>input{
+margin: 1px;
+}
+.table-responsive> .col-md-12{
+        background: #2389c6;
+    height: 30px;
+    padding: 4px;
+}
+.input-task{
+        width: 100%;
+   border: solid 1px rgb(212, 218, 221);
+   
+}
+
+input[disabled] {
+    cursor: default;
+    background: none;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #ff00ff, 0px 0px 0px #0d0d0d;
+  background: #00FF00;
+  
+  
+}
+/*input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 10px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.6px;
+}*/
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ac51b5;
+}
+/*input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #ac51b5;
+  border-radius: 5px;
+  border: 0px solid #000101;
+}*/
+/*input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 5px;
+  width: 100%;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}*/
+/*input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}*/
+input[type=range]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 5px;
+  
+  border-radius: 2px;
+  background: #65001c;
+  cursor: pointer;
+}
+
+.textarea-axes{
+        margin: 0px;
+    width: 956px;
+    height: 46px;
+    resize: initial;
+    border: none;
+    color: black;
+    font-size: large;
+    background: none;
+    font-weight: 600;
+    padding: 12px 14px;
+    overflow: hidden;
+    cursor: pointer;
+}
+textarea:disabled, input:not([type]):disabled, input[type="color" i]:disabled, input[type="date" i]:disabled, input[type="datetime" i]:disabled, input[type="datetime-local" i]:disabled, input[type="email" i]:disabled, input[type="month" i]:disabled, input[type="password" i]:disabled, input[type="number" i]:disabled, input[type="search" i]:disabled, input[type="tel" i]:disabled, input[type="text" i]:disabled, input[type="time" i]:disabled, input[type="url" i]:disabled, input[type="week" i]:disabled {
+    background-color: rgba(245, 245, 245, 0.46);
 }

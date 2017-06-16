@@ -88,17 +88,21 @@ $(".lock").click(function(){
           $(".fa-unlock-alt").show();
           $(".btnTachProject").hide()
           $("#example").css('pointer-events','auto');
-        }else{
+          $(".check_overlay").hide();
+                  }else{
           $(".fa-lock").show()
           $(".fa-unlock-alt").hide();
           $(".btnTachProject").show();
-          $("#example").css('pointer-events','none');
+          $("#example").find('div').css('pointer-events','none');
+         
+          $(".check_overlay").show();
+         // $("#example").find('label').css('pointer-events','painted');
             
         }
       })
 $(".share").click(function(){
   $(".projectTache").show()
-
+$(".barre_Tache_projet").hide();
    $.ajax({
          type: "POST",
          url:"sm/plans/share/"+$("#id").val()
@@ -111,12 +115,37 @@ $("#projectTache").click(function(){
     $("#projectTache").draggable();
    
   });
+$("#addproject").click(function(){
+
+var liste=""
+  $("td").find("input:checkbox:checked").each(function(){
+  id=$(this).attr('id')
+       liste=liste+" "+id 
+  })
+    $.ajax({
+         type: "POST",
+         url:"sm/plans/addProject/"+liste
+      }).done(function(result){
+         $("i").hide();
+        $("#projectTache").show()
+        $("#projectTache").html(result)
+       $("#outiltable").hide();
+      })
+  
+})
+$(".item ").dblclick(function(){
+$(this).find('.textareaTitle').prop('disabled',false);
+})
+$('.textareaTitle').on('change',function(){
+  $(this).prop('disabled',true);
+})
+refresh();
 </script>
   
 <input type="hidden" value="<?php echo  $id;?>" id="plan_id">
 <input type ="hidden" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
 <input type ="hidden" value="<?php echo $his_id ?>" id="position">
-<div id="projectTache" class="" style="margin-left: 141px;margin-top: 53px;width: 700px;display: initial;position: fixed;">
+<div id="projectTache" class="" style="margin-left: 30px;margin-top: 53px;position: absolute;">
   </div>
 <div class="body margin-top-2" id="body">
   <div class="logoPlan">
@@ -127,14 +156,11 @@ $("#projectTache").click(function(){
          </label>
       </div>
   </div>
-      <div class="item">
-         <div class="composantVertical" style="resize: both;max-height: 150px">
-                      <div class="jqte-test"  >
-                        TITLE
-                      </div>
-                    </div>
      
+        <div class="item">
+        <textarea class="textareaTitle"disabled="disabled" id="Titre" style=" border: none;margin: 0px;width: 85%;height: 119px;resize: initial;overflow: hidden;"><?php if($plans) echo $plans['Plan']['title']; ?></textarea >
       </div>
+     
 </div>
 <input type="hidden" value="" id="coordonners">
 <input type="hidden" value="<?php if($plans) echo $plans['Plan']['id']; ?>" id="id_plans"> 
@@ -180,7 +206,7 @@ $("#projectTache").click(function(){
   </div>
 
 <div id="table_id">
-  <?php include("detail_plan.ctp"); ?>
+  <?php // include("detail_plan.ctp"); ?>
 </div>
 </div>
 <div class="barre_Tache_projet btnTachProject" style="display:none;"> 
