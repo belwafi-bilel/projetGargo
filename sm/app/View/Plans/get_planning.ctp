@@ -151,8 +151,7 @@ refresh();
   <div class="logoPlan">
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
-        <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
-         
+         <img src="data:image/jpeg;base64,<?php echo base64_encode($plans['Plan']['logo']); ?>"style=" width: 100px;height: 100px;" />
          </label>
       </div>
   </div>

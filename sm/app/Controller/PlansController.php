@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  */
 
 class PlansController extends AppController {
-
+ 
 
 public function composant($liste=null)
 {	$this->loadModel("Composant");
@@ -80,13 +80,18 @@ $this->loadModel('DetailPlan');
 $this->DetailPlan->create();
 $this->DetailPlan->save($data);
 }
-public function newPlan($liste=null)
+public function newPlan()
 {
-	$liste=explode(',',$liste);
+	if ($this->request->is('post')) 
+		echo "<pre>";
+	print_r($this->request->data);
+ $photo = $this->request->data[0]["logo"];
+         if($photo["size"]>0){
+            $fileData = fread(fopen($photo["tmp_name"],"r"),$photo["size"]);
+             }
 	$id=$this->Session->read('id');
-	$fileData =null;
 	$date=array(
-		'title'=>$liste[0],
+		'title'=>$this->request->data['Title'],
 		'date_create'=>date("Y-m-d h:s:i"),
 		'logo'=>$fileData,
 		'adress'=>'',
@@ -94,11 +99,11 @@ public function newPlan($liste=null)
 	$this->Plan->create();
 	$this->Plan->save($date);
 	$idLaste= $this->Plan->getLastInsertID();
-
 $this->addTypePlanning($idLaste.',1');
 $this->addTypePlanning($idLaste.',2');
 $this->addTypePlanning($idLaste.',3');
 $this->addHistoricalPlanning($idLaste);
+$this->redirect('../../#/SmartLibrary/listplan');
 }
 
 public function plan($liste=null)

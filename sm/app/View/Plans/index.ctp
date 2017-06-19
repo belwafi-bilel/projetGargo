@@ -87,6 +87,7 @@ $("#savePLan").click(function(){
    $("#PlanShow").show();
 var content=$("#Titre").val();
   var files=$(document).find('input[type="file"]')[0].files
+
    if (files.length > 0) {
             var file = files[0];
   var liste=Array(content,file.name);
@@ -162,10 +163,12 @@ if($plans)
 </select>
 </div>
 </div>
+<form method="post" action="./sm/Plans/newPlan" enctype="multipart/form-data">
+
 <div class="row" id="newPlan" style="display:none;">
    <div class="col-xs-12  white height-33">
     <span><?php echo __("New PLAN"); ?></span>
- <button type="button"  class="btn-btn" id="savePLan">
+ <button type="submit"  class="btn-btn" id="savePLan1">
    <?php echo __("Save"); ?>
    </button> 
    <button type="button"  class="btn-btn" style="display:nones" id="cancelNewPlan">
@@ -178,15 +181,18 @@ if($plans)
      <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
         <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
-         <input type="file" accept="image/gif, image/jpeg, image/png" id="inputupload" onchange="readURL(this);" style="display:none" >
+        <?php echo $this->Form->input('.logo',array('label'=>false,'type'=>'file','id'=>'inputupload', 'options' => array('accept' => 'application/gzip,application/gzipped,application/octet-stream'),'onchange'=>'readURL(this);','style'=>'display: none')); ?>
+         
          </label>
       </div>
   </div>
       <div class="item margin-top-34">
-        <textarea id="Titre" style="margin: 0px;width: 864px;height: 119px;resize: initial;overflow: hidden;">TITLE</textarea >
+        <?php echo $this->Form->input('Title',array('label'=>false,'type'=>'textarea','class'=>'textareaNewPlan')); ?>
+        
       </div>
 
-</div>        
+</div>  
+</form>     
 <div id="PlanShow" class="col-xs-12 col-md-12 margin-bottom-13">
 
 </div>
