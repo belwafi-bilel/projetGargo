@@ -39021,3 +39021,588 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2017-06-19 10:07:01 Error: [MissingControllerException] Controller class PlanController could not be found.
+Exception Attributes: array (
+  'class' => 'PlanController',
+  'plugin' => NULL,
+)
+Request URL: /sou_project/sm/Plan/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-19 10:07:24 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:09:29 Error: Fatal Error (4): syntax error, unexpected 'die' (T_EXIT) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 87]
+2017-06-19 10:09:29 Error: [FatalErrorException] syntax error, unexpected 'die' (T_EXIT)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 10:09:34 Error: Fatal Error (4): syntax error, unexpected 'die' (T_EXIT) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 87]
+2017-06-19 10:09:34 Error: [FatalErrorException] syntax error, unexpected 'die' (T_EXIT)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 10:09:39 Error: Fatal Error (4): syntax error, unexpected 'die' (T_EXIT) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 87]
+2017-06-19 10:09:39 Error: [FatalErrorException] syntax error, unexpected 'die' (T_EXIT)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 87, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 10:37:14 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 110]
+2017-06-19 10:37:14 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 10:37:18 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 110]
+2017-06-19 10:37:18 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 110, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 10:38:03 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:38:43 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(99): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 10:38:56 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(99): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 10:39:28 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:40:27 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:41:55 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 10:42:36 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:43:49 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 10:44:03 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 10:48:27 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 11:08:50 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 11:15:05 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(98): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:15:23 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(98): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:15:55 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(98): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:16:38 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 11:19:05 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:20:02 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:23:21 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 11:24:04 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:24:34 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 11:25:37 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-19 11:50:53 Error: [MissingActionException] Action PlansController::SmartLibrary() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'SmartLibrary',
+)
+Request URL: /sou_project/sm/plans/SmartLibrary/listplan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-06-19 11:51:24 Error: [MissingControllerException] Controller class SmartLibraryController could not be found.
+Exception Attributes: array (
+  'class' => 'SmartLibraryController',
+  'plugin' => NULL,
+)
+Request URL: /sou_project/sm/SmartLibrary/listplan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-19 11:52:12 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /sou_project/sm/
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-19 11:54:26 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 12:29:00 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 12:37:16 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 12:43:29 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 12:43:59 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 12:44:12 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:00:47 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:27:25 Error: Fatal Error (4): syntax error, unexpected '$post_max_size' (T_VARIABLE), expecting function (T_FUNCTION) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 10]
+2017-06-19 13:27:25 Error: [FatalErrorException] syntax error, unexpected '$post_max_size' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 13:29:58 Error: Fatal Error (4): syntax error, unexpected '$post_max_size' (T_VARIABLE), expecting function (T_FUNCTION) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 10]
+2017-06-19 13:29:58 Error: [FatalErrorException] syntax error, unexpected '$post_max_size' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 10, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-19 13:30:20 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:31:17 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:31:23 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:45:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1118 The size of BLOB/TEXT data inserted in one transaction is greater than 10% of redo log size. Increase the redo log size using innodb_log_file_size.
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-19 13:46:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1118 The size of BLOB/TEXT data inserted in one transaction is greater than 10% of redo log size. Increase the redo log size using innodb_log_file_size.
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(100): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
