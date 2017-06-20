@@ -313,7 +313,7 @@ $(".typecomposante").dblclick(function(){
       })
       $(".fa-plus-circle-right, .plusRow").click(function(){
               liste= Array(Number($(this).attr('attr'))+1,$("#historical_plan_id").val());
-alert(liste);
+
                $.ajax({
                  type: "POST",
                 url:"sm/plans/addRow/"+liste
