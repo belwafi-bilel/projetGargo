@@ -21,15 +21,16 @@ $('#save').click(function(){
 	$Project_Description=$("#Project_Description").val();
 	$Task_Notify=$("#Task_Notify").val();
 	$liste=$title+"--.--"+$Project_Description+"--.--"+$Task_Notify+"--.--"+$id;
-	alert($liste)
+	
 	 $.ajax({
           type: "POST",
            url:"sm/plans/setProject/"+$liste
         }).done(function(result){
-        	 $(this).parent().hide();
+        	
+        });
+         $(this).parent().hide();
   $("#refersh").show();
   $("#outiltable").show();
-        });
 	
 })
 </script>
@@ -42,20 +43,19 @@ $('#save').click(function(){
 	
 			<input type="hidden" name="frmAction" value="CreateProject">
 			<div>
-					<input type="text" id="Project_Title" value="" class="form-control2" placeholder=<?php echo __("Titre");?>>
-				</div>
-				<div>
+					<input type="text" id="Project_Title" value="" class="form-control2" placeholder="<?php echo __("Titre");?>" style="width: 600px;">
+		    </div>
+			<div>
 					<textarea id="Project_Description" class="form-control2 input-lg"
-           placeholder="<?php echo __('Description');?>"></textarea>
-				</div>
-			  <tbody style="background: white;color: black;">
+           placeholder="<?php echo __('Description');?>" style="width: 600px;"></textarea>
+			</div>
         	<div>
 		<label class="check_overlay "for="Task_Notify"><?php echo __("Aviser les utiliateurs par courriel");?>
 					 <span class="fa fa-check-circle" style="margin-top: -4px;"></span>
 						<input type="checkbox" id="Task_Notify" id="Task_Notify" value="1" class="text ui-widget-content ui-corner-all">
 				
-					</label>
-				</div>
+		</label>
+		</div>
 
  
 </div>

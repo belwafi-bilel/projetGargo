@@ -207,6 +207,8 @@ $("input[type=range]").on('input',function(){
 </td>
 <td>
   <i class="fa fa-trash" aria-hidden="true" id="<?php echo $taches['Tach']['id'] ?>"></i>
+  <i class="fa fa-users" aria-hidden="true"></i>
+  
 </td>
 </tr>
 </tbody>

@@ -96,7 +96,7 @@ $(".lock").click(function(){
           $("#example").find('div').css('pointer-events','none');
          
           $(".check_overlay").show();
-         // $("#example").find('label').css('pointer-events','painted');
+          $("#example").find('button').css('pointer-events','painted');
             
         }
       })
@@ -116,7 +116,6 @@ $("#projectTache").click(function(){
    
   });
 $("#addproject").click(function(){
-
 var liste=""
   $("td").find("input:checkbox:checked").each(function(){
   id=$(this).attr('id')
@@ -129,7 +128,7 @@ var liste=""
          $("i").hide();
         $("#projectTache").show()
         $("#projectTache").html(result)
-       $("#outiltable").hide();
+      // $("#outiltable").hide();
       })
   
 })
@@ -139,7 +138,7 @@ $(this).find('.textareaTitle').prop('disabled',false);
 $('.textareaTitle').on('change',function(){
   $(this).prop('disabled',true);
 })
-refresh();
+//refresh();
 </script>
   
 <input type="hidden" value="<?php echo  $id;?>" id="plan_id">
@@ -170,7 +169,7 @@ refresh();
   <div id="outiltable">
    <div class="col-md-3" style="padding: 0px;margin-top:2px;">
           <i class="col-md-5 btn1212   left">
-             <span><?php echo __("NORMAL  ");?></span>
+             <span><?php echo __("NORMAL");?></span>
           <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
           </i>
           </i>
@@ -205,7 +204,7 @@ refresh();
   </div>
 
 <div id="table_id">
-  <?php // include("detail_plan.ctp"); ?>
+  <?php  include("detail_plan.ctp"); ?>
 </div>
 </div>
 <div class="barre_Tache_projet btnTachProject" style="display:none;"> 
