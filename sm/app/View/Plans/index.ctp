@@ -15,7 +15,6 @@
   ?>
    <?php
 echo $this->Html->script('RowSorter');
-
      ?>
  <?php 
  echo $this->Html->script('colResizable-1.6');
@@ -32,30 +31,31 @@ document.reload();
 }
 $(document).ready(function() {
   setInterval(function(){refresh()}, 500);
-function refresh(){
+function refresh()
+{
    if($("#refersh").is(':visible'))
-  { if($("#historical_plan_id"))
-    var id_historcal=$("#historical_plan_id").val()
-   
- $.ajax({
-  type: "POST",
-  url:"sm/plans/detail_plan/"+id_historcal
-}).done(function(result) {
-     $("#table_id").html(result);
- });
- $("#refersh").hide();
-}
+      {
+       if($("#historical_plan_id"))
+        var id_historcal=$("#historical_plan_id").val()
+         $.ajax({
+          type: "POST",
+          url:"sm/plans/detail_plan/"+id_historcal
+        }).done(function(result) {
+             $("#table_id").html(result);
+         });
+        $("#refersh").hide();
+      }
 }
  var id=$("#selectionPlan").val()
-
  if(id)
- {var liste=Array(id,0)
+ {
+  var liste=Array(id,0)
    $.ajax({
          type: "POST",
          url:"sm/plans/getPlanning/"+liste
       }).done(function(result){
         $("#PlanShow").html(result)
-        
+         
       })
     }
 $("#selectionPlan").on('change',function(){
@@ -81,15 +81,13 @@ $("#cancelNewPlan").click(function(){
    $("#PlanShow").show();
 });
 $("#savePLan").click(function(){
-
   $("#MenuPlan").show();
   $("#newPlan").hide();
    $("#PlanShow").show();
 var content=$("#Titre").val();
   var files=$(document).find('input[type="file"]')[0].files
-
    if (files.length > 0) {
-            var file = files[0];
+  var file = files[0];
   var liste=Array(content,file.name);
   $.ajax({
          type: "POST",
@@ -101,9 +99,8 @@ var content=$("#Titre").val();
 }
 })
 $("#print").click(function(){
-          
-         printDiv("printdiv");
-        })
+    printDiv("printdiv");
+  })
 });
  //refresh();
  function htmlEntities(str) {
@@ -125,11 +122,7 @@ $("#print").click(function(){
         }
 
 </script>
-<div style="display:nones "class="refreshdiv"  id="refersh">
-  <div>
-    <?php echo $this->Html->image("LoaderIcon.gif");?>
-</div>
-</div>
+
 <div style="display:none "class="notificationdiv"  id="notification">
   <div>
 </div>
@@ -208,7 +201,11 @@ if($plans)
   
 
 
-
+<div style="display:none"class="refreshdiv"  id="refersh">
+  <div>
+    <?php echo $this->Html->image("LoaderIcon.gif");?>
+</div>
+</div>
   
 
 

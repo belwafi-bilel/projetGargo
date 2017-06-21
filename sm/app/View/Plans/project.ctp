@@ -106,14 +106,14 @@ $("input[type=range]").on('input',function(){
     });
     $(".fa-trash").click(function(){
       $id=$(this).attr('id');
-      alert($id)
+      $id2=$("#id_project").val();
        $.ajax({
          type: "POST",
          url:"sm/plans/deleteTask/"+$id
       });
        $.ajax({
                 type: "POST",
-                 url:"sm/plans/project/"+$id
+                 url:"sm/plans/project/"+$id2
               }).done(function(result){
                 $("#example").find('div').css('pointer-events','none');
                 $('td').find('i').hide();
@@ -131,7 +131,7 @@ $("input[type=range]").on('input',function(){
   <i class="fa fa-times" aria-hidden="true"></i>
 <div class="table-responsive" style="background: rgba(255, 255, 255, 0.8);">
 <input type="hidden" value="<?php echo $projects[0]['Project']['id']; ?>" id="id_project">
-  
+ 
   <?php foreach ($projects as $project) {
     
   ?>
@@ -143,51 +143,97 @@ $("input[type=range]").on('input',function(){
 <thead>
 <tr>
 <th>
- <?php echo __("TITLE");?>
+<span class="tooltip"> <?php echo __("TITLE");?>
+ <span class="tooltiptext"><?php echo __("description de tache") ?></span>
+</span>
 </th>
   <th>
+    <span class="tooltip">
      <?php echo __("DESCRIPTION");?>
+     <span class="tooltiptext"><?php echo __("description de tache") ?></span>
+</span>
 </th>
 <th>
+  <span class="tooltip">
    <?php echo __("DATE DEBUT");?>
+   <span class="tooltiptext"><?php echo __("DATE DEBUT") ?></span>
 </th>
 <th>
-   <?php echo __("DATE ÈCHEANCE");?>
+   <span class="tooltip">
+     <?php echo __("DATE ÈCHEANCE");?>
+   <span class="tooltiptext"><?php echo __("DATE ÈCHEANCE") ?></span>
 </th>
 <th>
+  <span class="tooltip">
    <?php echo __("HEUR ESTIMER");?>
+  <span class="tooltiptext"><?php echo __("HEUR ESTIMER") ?></span>
 </th>
 <th>
-  <?php echo __("TAUX ESSTIMÉ") ?>
+  <span class="tooltip">
+   <?php echo __("TAUX ESSTIMÉ") ?>
+  <span class="tooltiptext"><?php echo __("TAUX ESSTIMÉ") ?></span>
 </th>
-<th><?php echo __("Urgent");?></th>
-<th><?php echo __("PAR Courriel");?></th>
 <th>
+  <span class="tooltip">
+   <?php echo __("URGENT");?>
+  <span class="tooltiptext"><?php echo __("URGENT") ?></span>
+</th>
+<th>
+  <span class="tooltip">
+    <?php echo __("PAR COURIEL");?>
+  <span class="tooltiptext"><?php echo __("AVIS PAR COURRIEL") ?></span>
+</th>
+<th>
+  <span class="tooltip">
    <?php echo __("ACCOMPLI (%)");?>
+  <span class="tooltiptext"><?php echo __("ACCOMPLI (%)") ?></span>
 </th>
-<th> <?php echo __("Action");?></th>
+<th> 
+  <span class="tooltip">
+   <?php echo __("Action");?>
+  <span class="tooltiptext"><?php echo __("ACTION") ?></span> 
+</th>
 </tr></thead>
       <?php foreach ($project['taches'] as $taches) {
         ?>
 <tbody>
+
 <tr>
 <td class="inputCell">
+ <span class="tooltip">
   <input disabled='disabled' value="<?php echo $taches['Tach']['title'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="title">
+  <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span> 
 </td>
 <td class="inputCell">
+  <span class="tooltip">
   <input disabled='disabled' value="<?php echo $taches['Tach']['description'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="description">
+   <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span>
 </td>
 <td class="inputCell">
+   <span class="tooltip">
   <input type="date"  disabled='disabled' value="<?php echo $taches['Tach']['date_debut'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="date_debut">
+   <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span>
 </td>
 <td class="inputCell">
+   <span class="tooltip">
   <input type="date"  disabled='disabled' value="<?php echo $taches['Tach']['date_fin'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="date_fin" >
+   <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span>
 </td>
 <td class="inputCell">
+   <span class="tooltip">
   <input disabled='disabled' value="<?php echo $taches['Tach']['heurs_estimee'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="heurs_estimee">
+   <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span>
 </td>
 <td class="inputCell">
+  <span class="tooltip">
   <input type="number" disabled='disabled' value="<?php echo $taches['Tach']['tauxe_estimee'] ?>" class="form-control2-2 edit_Input" id="<?php echo $taches['Tach']['id'] ?>" attr="tauxe_estimee">
+   <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+  </span>
 </td>
 <td>
       <input type="checkbox" value="" id="U<?php echo $taches['Tach']['id'] ?>"  checked class="form-control2-2 edit_Input" attr="urgent"  style="display:block"/>
@@ -207,6 +253,8 @@ $("input[type=range]").on('input',function(){
 </td>
 <td>
   <i class="fa fa-trash" aria-hidden="true" id="<?php echo $taches['Tach']['id'] ?>"></i>
+  <i class="fa fa-users" aria-hidden="true"></i>
+
 </td>
 </tr>
 </tbody>

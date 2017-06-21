@@ -83,8 +83,6 @@ $this->DetailPlan->save($data);
 public function newPlan()
 {
 	if ($this->request->is('post')) 
-		echo "<pre>";
-	print_r($this->request->data);
  $photo = $this->request->data[0]["logo"];
          if($photo["size"]>0){
             $fileData = fread(fopen($photo["tmp_name"],"r"),$photo["size"]);
@@ -103,6 +101,8 @@ $this->addTypePlanning($idLaste.',1');
 $this->addTypePlanning($idLaste.',2');
 $this->addTypePlanning($idLaste.',3');
 $this->addHistoricalPlanning($idLaste);
+$id_Historical= $this->HistoricalPlan->getLastInsertID();
+$this->addAxes($id_Historical);
 $this->redirect('../../#/SmartLibrary/listplan');
 }
 
@@ -448,11 +448,11 @@ $listes=array("groupe1","groupe2","groupe3","groupe4");
 }
 public function edit($liste=null)
 {
-	$detailsession=$this->Session->read("TableTail");
-	echo "<pre>";
-	print_r($detailsession);
-echo "</pre>";
-	die();
+// 	$detailsession=$this->Session->read("TableTail");
+// 	echo "<pre>";
+// 	print_r($detailsession);
+// echo "</pre>";
+// 	die();
 }
 
 public function getdeblock($i,$j)
@@ -859,7 +859,7 @@ private function getNUmbreLinePlanningTable($id=null)
 }
 /*****************************************function add axes ***********************/
 /*
-function addAxess to add new axes in dada base
+function addAxess to add new axes in dada base with id_historical=?
 */
 public function addAxes($id=null)
 {
@@ -871,6 +871,10 @@ $data=array(
 			'position'=>$position);
 			$this->Axis->create();
 			$this->Axis->save($data);
+	$idLaste= $this->Axis->getLastInsertID();
+	$idPlan=$this->getIdPlanningByHistoricalPlanId($id);
+	$type_Plannings=$this->getTypePlanning($idPlan);
+	$this->addLine($idLaste.",1,".count($type_Plannings));
 }
 /*****************************************function set axes ***********************/
 /*
@@ -908,9 +912,9 @@ $id=$liste[0];
   if($axesId)
   $line=$this->getNUmbreLinePlanningTable($axesId);
 $line+=count($axesId);
-$id_plan=$this->Session->read('plan_id');
-$type_Plannings=$this->getTypePlanning($id);
 
+$id_plan=$this->getIdPlanningByHistoricalPlanId($id);
+$type_Plannings=$this->getTypePlanning($id_plan);
 
  $this->set(compact('axes','line','row','type_Plannings'));
 }
@@ -921,6 +925,7 @@ function addLine to add new line planning action of axes_id=?? and position=?
 public function addLine($liste=null)
 {
 	$liste=explode(',',$liste);
+
 	if($liste[2]==0)
 		$liste[2]=3;
 	$this->loadModel('DetailPlan');
@@ -943,6 +948,52 @@ $detailplans=$this->DetailPlan->find('all',
 $this->DetailPlan->create();
 $this->DetailPlan->save($data);
 	}
+}
+/*****************************************function deleteTypePlaningByPlanningId ***********************/
+/*
+function deleteTypePlaningByPlanningId to delete all type planning by id Planning=?
+*/
+function deleteTypePlaningByPlanningId($id=null){
+$this->loadModel('TypePlan');
+$this->TypePlan->deleteAll(array('TypePlan.plan_id'=>$id));
+}
+/*****************************************function deleteTypePlaningByPositionType ***********************/
+/*
+function deleteTypePlaningByPositionType to delete  type planning by id Planning=? and position type=?
+*/
+function deleteTypePlaningByPositionType($liste=null){
+	$liste2=explode(',',$liste);
+$this->loadModel('TypePlan');
+$this->TypePlan->deleteAll(array('TypePlan.plan_id'=>$liste2[0],'TypePlan.position'=>$liste2[1]));
+$this->setTypePlaningByposition($liste);
+}
+/*****************************************function deleteTypePlaningById ***********************/
+/*
+function deleteTypePlannigbyId to delete type planning by id Type Planning=?
+*/
+function deleteTypePlanningById($id=null)
+{
+$this->loadModel('TypePlan');
+$this->TypePlan->id=$id;
+$this->TypePlan->delete();
+}
+/*****************************************function setTypePlaningByposition ***********************/
+/*
+function setTypePlaningByposition to edit position  type planning by id Type Planning=? and position=?
+*/
+function setTypePlaningByposition($liste=null){
+	$liste=explode(',',$liste);
+$this->loadModel('TypePlan');
+$listeTypePlannig=$this->TypePlan->find('all',
+	['conditions'=>['TypePlan.plan_id'=>$liste[0],'TypePlan.position > '=>$liste[1]]]);
+
+	foreach ($listeTypePlannig as $type_Plannings) {
+		$data=array('id'=>$type_Plannings['TypePlan']['id'],
+			'position'=>intval($type_Plannings['TypePlan']['position'])-1
+			);
+		$this->TypePlan->save($data);
+	}
+
 }
 /*****************************************function add Row  ***********************/
 /*
@@ -997,18 +1048,24 @@ public function deleteRow($liste=null)
  $this->loadModel('Axis');
  $axes = $this->Axis->find('all',
 	['conditions'=>['Axis.historical_plan_id'=>$liste[0]]]);
+
+$tab=array();
 	foreach ($axes as $axe) 
 		{
-          $detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$axe['Axis']['id'],'DetailPlan.row >'=>$liste[1]]]);
-          $this->DetailPlan->deleteAll(array('DetailPlan.row '=>$liste[1],'DetailPlan.axes_id'=>$axe['Axis']['id']));
-			foreach ($detailplans as $detailplan) 
+			$tab[]=$axe['Axis']['id'];
+		}
+$this->DetailPlan->deleteAll(array('DetailPlan.row '=>$liste[1],'DetailPlan.axes_id'=>$tab));		
+$detailplans=$this->DetailPlan->find('all',
+	     ['conditions'=>['DetailPlan.axes_id'=>$tab,'DetailPlan.row >'=>$liste[1]]]);
+        foreach ($detailplans as $detailplan) 
 			{
 				$detailplan['DetailPlan']['row']=intval($detailplan['DetailPlan']['row'])-1;
 				$this->DetailPlan->save($detailplan['DetailPlan']);
 			}
+			$plan_id=$this->getIdPlanningByHistoricalPlanId($liste[0]);
+			$this->deleteTypePlaningByPositionType($plan_id.','.$liste[1]);
 
-		}
+
 
 }
 /*****************************************function delete line  ***********************/
@@ -1020,31 +1077,44 @@ public function deleteLine($liste=null)
   $liste=explode(',',$liste);
   $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
- $axes = $this->Axis->find('all',
-	['conditions'=>['Axis.historical_plan_id'=>$liste[0]]]);
-	foreach ($axes as $axe) 
-		{
+ $line=$this->getNumberLineByAxes($liste[1]);
+ $axes = $this->Axis->find('first',
+	['conditions'=>['Axis.id'=>$liste[1]]]);
           $detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$axe['Axis']['id'],'DetailPlan.line >'=>$liste[1]]]);
-          $this->DetailPlan->deleteAll(array('DetailPlan.line '=>$liste[1],'DetailPlan.axes_id'=>$axe['Axis']['id']));
+	     ['conditions'=>['DetailPlan.axes_id'=>$liste[1],'DetailPlan.line >'=>$liste[2]]]);
+          $this->DetailPlan->deleteAll(array('DetailPlan.line '=>$liste[2],'DetailPlan.axes_id'=>$liste[1]));
 			foreach ($detailplans as $detailplan) 
 			{
 				$detailplan['DetailPlan']['line']=intval($detailplan['DetailPlan']['line'])-1;
 				$this->DetailPlan->save($detailplan['DetailPlan']);
 			}
-
-		}
+			if($line==1)
+			{
+		$this->deleteAxes($liste[1]);
+		$line=0;
+	        }
 }
 
-/*****************************************function Merge cells ***********************/
+/*****************************************function delete axes ***********************/
 /*
-function mergeCelle to Merge cells  planning action of line=?? and position=?
+function deleteAxes to axes  planning action of line=?? 
 */
-public function mergeCelle($liste=null)
+public function deleteAxes($id=null)
 {
-;
+$this->loadModel('Axis');
+$this->Axis->id=$id;
+$this->Axis->delete();
 }
-
+/*****************************************function get Number Ligne by axes ***********************/
+/*
+function getNumberLineByAxes to nimber ligne by axe_id=?
+*/
+public function getNumberLineByAxes($id=null)
+{
+$this->loadModel('DetailPlan');
+$number=$this->DetailPlan->find('count',['conditions'=>['DetailPlan.axes_id'=>$id],'fields'=>'DISTINCT DetailPlan.line']);
+return $number;
+}
 /*****************************************function save celle***********************/
 /*
 function saveCelle to save cells  planning action of celle=?? and position=?
@@ -1065,7 +1135,6 @@ public function getHtml($content=null)
 	$find=array('&amp;','&lt;','&gt;','&quot;','&42;','&58;','&44;','&nbsp;','&91;','&93;');
 	$filter=array('&','<','>','"','/',':',',',' ','[',']');
 	return str_replace($find, $filter, $content);
-	
 }
 /*****************************************function get type planing***********************/
 /*
@@ -1084,20 +1153,22 @@ public function addTypePlanning($liste=null)
 {
 	$liste=explode(',',$liste);
 $this->loadModel('TypePlan');
-$TypePLans=$this->TypePlan->find('all',['
-	conditions'=>['TypePlan.position>='=>$liste[1]]]);
+$TypePLans=$this->TypePlan->find('all',['conditions'=>['TypePlan.position >='=>$liste[1]]]);
 foreach ($TypePLans as $TypePlan) {
-	$data=array('description'=>$TypePlan['TypePlan']['description'],
+	$data=array(
+		'id'=>$TypePlan['TypePlan']['id'],
+		'description'=>$TypePlan['TypePlan']['description'],
 		'position'=>intval($TypePlan['TypePlan']['position'])+1,
 		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
 	$this->TypePlan->save($data);
 }
-	$data=array('description'=>'ITEM',
+	$data1=array(
+		'description'=>'bilel',
 		'position'=>$liste[1],
 		'plan_id'=>$liste[0]);
 	
 	$this->TypePlan->create();
-	$this->TypePlan->save($data);
+	$this->TypePlan->save($data1);
 	return null;
 }
 /*****************************************function set type planing***********************/
@@ -1165,5 +1236,16 @@ public function getUser($id=null)
 {
 		$this->loadModel('User');
 	return $this->User->find('all');
+}
+
+/*****************************************function getIdPlanningByHistoricalPlanId***********************/
+/*
+function getIdPlanningByHistoricalPlanId by  histroical_plan-id =?
+*/
+public function getIdPlanningByHistoricalPlanId($id)
+{
+	$this->loadModel('HistoricalPlan');
+	$historical_plan_id=$this->HistoricalPlan->findById($id);
+	return $historical_plan_id['HistoricalPlan']['plan_id'];
 }
 }
