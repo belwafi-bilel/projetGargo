@@ -43962,3 +43962,351 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2017-06-21 13:09:27 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/8,notify_user,false
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 14:38:23 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/1,accompli,60
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 14:38:26 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/5,accompli,84
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 14:38:28 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/6,accompli,74
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 14:39:41 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/1,accompli,42
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 14:40:34 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/7,accompli,38
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:10:16 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:04 Error: [MissingViewException] View file "Plans\add_axes.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_axes.ctp',
+)
+Request URL: /sou_project/sm/plans/addAxes/1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:09 Error: [MissingViewException] View file "Plans\delete_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_row.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteRow/1,3
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:13 Error: [MissingViewException] View file "Plans\delete_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_row.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteRow/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:20 Error: [MissingViewException] View file "Plans\set_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_task.ctp',
+)
+Request URL: /sou_project/sm/plans/setTask/5,accompli,0
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:32 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:15:34 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:16:45 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/6
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:55 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/7
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:56 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/8
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:57 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/9
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:57 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/10
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:57 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/10
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:58 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/11
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:58 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/11
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:17:59 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/12
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:01 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/12
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:02 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/13
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:02 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/13
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:03 Error: [MissingViewException] View file "Plans\delete_task.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\delete_task.ctp',
+)
+Request URL: /sou_project/sm/plans/deleteTask/14
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:14 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_row.ctp',
+)
+Request URL: /sou_project/sm/plans/addRow/2,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:26 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_row.ctp',
+)
+Request URL: /sou_project/sm/plans/addRow/3,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-21 16:18:31 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/20,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

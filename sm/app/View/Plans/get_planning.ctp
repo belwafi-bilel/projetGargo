@@ -168,32 +168,64 @@ $('.textareaTitle').on('change',function(){
       </div>
   <div id="outiltable">
    <div class="col-md-3" style="padding: 0px;margin-top:2px;">
-          <i class="col-md-5 btn1212   left">
+          
+             <i class="col-md-5 btn1212   left">
+              <span class="tooltip">
              <span><?php echo __("NORMAL");?></span>
-          <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
-          </i>
-          </i>
+              <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
+              </i>
+              <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+              </span>
+            </i>
+          
     <div class="col-md-5" style="padding: 0px;">
        <i class="glyphicon glyphicon-text-size col-md-6 btn1212 ">
+        <span class="tooltip">
       <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--10" aria-hidden="true" >
         </i>
+        <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+              </span>
       </i>
         <i class="glyphicon glyphicon-text-color col-md-6 btn1212 ">
+          <span class="tooltip">
       <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
         </i>
+        <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
+              </span>
       </i>
  </div>
-    <i class="col-md-2 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
+ <span>
+      <i class="col-md-2 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
    </div> 
 
 <div class="col-md-9" style="padding: 0px;margin-top:2px">
    <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
   <i class="col-md-1 fa fa-underline btn1212 " aria-hidden="true"></i>
-  <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan=""><?php echo __(" UNDO");?></i>
-  <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" ><?php echo __(" REDO");?></i>
-  <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" ><?php echo __(" SAVE");?></i>
-  <i class="btn1212 col-md-2 fa fa-share-alt share"><?php echo __(" SHARE");?></i>
-
+  <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan="">
+    <span class="tooltip">
+    <?php echo __(" UNDO");?>
+      <span class="tooltiptext"><?php echo __("UNDO") ?></span>
+              </span>
+  </i>
+  <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" >
+    <span class="tooltip">
+      <?php echo __(" REDO");?>
+      <span class="tooltiptext"><?php echo __("REDO") ?></span>
+    </span>
+    </i>
+  <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" >
+    <span class="tooltip">
+    <?php echo __(" SAVE");?>
+    <span class="tooltiptext"><?php echo __("SAVE NEW HISTORICAL") ?></span>
+    </span>
+  </i>
+  
+    <i class="btn1212 col-md-2 fa fa-share-alt share">
+      <span class="tooltip">
+        <?php echo __(" SHARE");?>
+       <span class="tooltiptext"><?php echo __("SHARE THE PLANNING") ?></span>
+  </span></i>
+   
   <i class="fa fa-lock col-md-1 btn1212 lock " style="display:none" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
 <i class="fa fa-unlock-alt col-md-1 btn1212 lock "  aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
   <i class="fa fa-trash col-md-1 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
@@ -235,10 +267,10 @@ $('.textareaTitle').on('change',function(){
               $i=$i+1;
                ?>
                 <td  class="typecomposante" attr='<?php echo $i;?>'> 
-                  
-                    
-    <?php echo $typePlan['TypePlan']['description'] ?>
-                   
+              <span class="tooltip">    
+                   <?php echo $typePlan['TypePlan']['description'] ?>
+                   <span class="tooltiptext"><?php echo __("SAVE NEW HISTORICAL") ?></span>
+              </span> 
               </td>
            <td> 
           </td>
@@ -291,10 +323,9 @@ $('.textareaTitle').on('change',function(){
                     ($detail_planning['DetailPlan']['row']==$j)
                      ){
                     ?>
-                    <td colspan="2" class="context-menu-one" 
+                    <td class="tooltip" colspan="2" class="context-menu-one" 
                     liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>">
-                         
-                       
+                    
                     <div class="composantVertical" style="resize: both;">
 
                         <?php
@@ -315,7 +346,9 @@ $('.textareaTitle').on('change',function(){
                           ?>
                       
                     </div>
-                    
+                     <span class="tooltiptext"><?php echo __("CLICK POUR MODIFIER ") ?></span>
+                    </span>
+
                       </td>
 
                     <?php

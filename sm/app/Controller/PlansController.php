@@ -448,11 +448,11 @@ $listes=array("groupe1","groupe2","groupe3","groupe4");
 }
 public function edit($liste=null)
 {
-	$detailsession=$this->Session->read("TableTail");
-	echo "<pre>";
-	print_r($detailsession);
-echo "</pre>";
-	die();
+// 	$detailsession=$this->Session->read("TableTail");
+// 	echo "<pre>";
+// 	print_r($detailsession);
+// echo "</pre>";
+// 	die();
 }
 
 public function getdeblock($i,$j)
