@@ -45901,3 +45901,29 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+<<<<<<< HEAD
+=======
+2017-06-28 11:57:58 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(170): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+>>>>>>> master

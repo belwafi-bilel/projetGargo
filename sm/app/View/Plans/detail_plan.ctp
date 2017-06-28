@@ -512,4 +512,4 @@ function htmlEntities(str) {
  <span class="fa fa-plus-circle plusAxes"  aria-hidden="true"></span>
 </td></tr></tfoot>
 </table>
-
+bilel belwafi
