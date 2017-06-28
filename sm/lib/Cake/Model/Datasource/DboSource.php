@@ -436,7 +436,7 @@ class DboSource extends DataSource {
 		$this->_result = $this->_execute($sql, $params);
 
 		if ($options['log']) {
-			$this->took = round((microtime(true) - $t) * 1000, 0);
+			$this->took = round((microtime(true) - $t) * 4000, 0);
 			$this->numRows = $this->affected = $this->lastAffected();
 			$this->logQuery($sql, $params);
 		}

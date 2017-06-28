@@ -111,12 +111,10 @@ $(".barre_Tache_projet").hide();
        $("#outiltable").hide();
       })
 })
-$("#projectTache").click(function(){
-    $("#projectTache").draggable();
-   
-  });
+
 $("#addproject").click(function(){
 var liste=""
+alert('bil')
   $("td").find("input:checkbox:checked").each(function(){
   id=$(this).attr('id')
        liste=liste+" "+id 
@@ -125,10 +123,10 @@ var liste=""
          type: "POST",
          url:"sm/plans/addProject/"+liste
       }).done(function(result){
-         $("i").hide();
-        $("#projectTache").show()
-        $("#projectTache").html(result)
-      // $("#outiltable").hide();
+        // $("i").hide();
+      $("#projectTache").show()
+       $("#projectTache").html(result)
+      $("#outiltable").hide();
       })
   
 })
@@ -137,15 +135,55 @@ $(this).find('.textareaTitle').prop('disabled',false);
 })
 $('.textareaTitle').on('change',function(){
   $(this).prop('disabled',true);
-})
+});
+$('.glyphicon-italic').click(function(){
+
+  if($("#font-style").val()=='italic')
+    $fontStyle='normal'
+  else
+    $fontStyle='italic'
+var liste=$("#historical_plan_id").val()+",font-style,"+$fontStyle;
+   $.ajax({
+         type: "POST",
+         url:"sm/plans/setStyle/"+liste
+      }).done(function(result){
+        getplaningapreMiseajour()
+      })
+});
+$('.glyphicon-bold').click(function(){
+if($("#font-weight").val()=='900')
+    $fontWeight='400'
+  else
+    $fontWeight=Number($("#font-weight").val())+100;
+var liste=$("#historical_plan_id").val()+",font-weight,"+$fontWeight;
+   $.ajax({
+         type: "POST",
+         url:"sm/plans/setStyle/"+liste
+      }).done(function(result){
+         getplaningapreMiseajour()
+      })
+});
+function getplaningapreMiseajour()
+{
+  var id=$("#selectionPlan").val();
+var position=Number($("#position").val())-1;
+ var liste= id+","+position;
+   $.ajax({
+         type: "POST",
+         url:"sm/plans/getPlanning/"+liste
+      }).done(function(result){
+        $("#PlanShow").html(result)
+         refresh();
+      })
+}
 //refresh();
 </script>
-  
+
+<input type="hidden" value="<?php if($style) echo  $style['Styleplanning']['font-style']; ?>" id="font-style">
+<input type="hidden" value="<?php if($style) echo  $style['Styleplanning']['font-weight']; ?>" id="font-weight">
 <input type="hidden" value="<?php echo  $id;?>" id="plan_id">
 <input type ="hidden" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
 <input type ="hidden" value="<?php echo $his_id ?>" id="position">
-<div id="projectTache" class="" style="margin-left: 30px;margin-top: 53px;position: absolute;">
-  </div>
 <div class="body margin-top-2" id="body">
   <div class="logoPlan">
     <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
@@ -154,87 +192,56 @@ $('.textareaTitle').on('change',function(){
          </label>
       </div>
   </div>
-     
         <div class="item">
         <textarea class="textareaTitle"disabled="disabled" id="Titre" style=" border: none;margin: 0px;width: 85%;height: 119px;resize: initial;overflow: hidden;"><?php if($plans) echo $plans['Plan']['title']; ?></textarea >
       </div>
-     
 </div>
 <input type="hidden" value="" id="coordonners">
 <input type="hidden" value="<?php if($plans) echo $plans['Plan']['id']; ?>" id="id_plans"> 
   <div class=" divPlanTable">
-    <div class="outilTable" >
-      <div id="outil" style="display:none">
-      </div>
   <div id="outiltable">
    <div class="col-md-3" style="padding: 0px;margin-top:2px;">
-          
              <i class="col-md-5 btn1212   left">
-              <span class="tooltip">
              <span><?php echo __("NORMAL");?></span>
               <i class="glyphicon glyphicon-triangle-bottom margin-top-2" aria-hidden="true" >
               </i>
-              <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
-              </span>
             </i>
-          
     <div class="col-md-5" style="padding: 0px;">
        <i class="glyphicon glyphicon-text-size col-md-6 btn1212 ">
-        <span class="tooltip">
       <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--10" aria-hidden="true" >
         </i>
-        <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
-              </span>
       </i>
         <i class="glyphicon glyphicon-text-color col-md-6 btn1212 ">
-          <span class="tooltip">
-      <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
+        <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
         </i>
-        <span class="tooltiptext"><?php echo __("DOUBEL CLICK POUR MODIFIER") ?></span>
-              </span>
       </i>
  </div>
  <span>
       <i class="col-md-2 glyphicon glyphicon-bold btn1212 " aria-hidden="true"></i>
    </div> 
-
 <div class="col-md-9" style="padding: 0px;margin-top:2px">
-   <i class="col-md-1 glyphicon glyphicon-italic btn1212  " aria-hidden="true"></i>
-  <i class="col-md-1 fa fa-underline btn1212 " aria-hidden="true"></i>
+   <i class="col-md-1 glyphicon glyphicon-italic btn1212 " aria-hidden="true" ></i>
+  <i class="col-md-1 glyphicon glyphicon-text-background btn1212 " aria-hidden="true">
+    <i class="glyphicon glyphicon-triangle-bottom margin-top-2 margin-left--12" aria-hidden="true">
+   </i>
+  </i>
   <i class="fa fa-reply col-md-2 btn1212 " aria-hidden="true" id="reply" detailPlan="">
-    <span class="tooltip">
     <?php echo __(" UNDO");?>
-      <span class="tooltiptext"><?php echo __("UNDO") ?></span>
-              </span>
   </i>
   <i class="fa fa-share col-md-2 btn1212 " aria-hidden="true" id="share" >
-    <span class="tooltip">
       <?php echo __(" REDO");?>
-      <span class="tooltiptext"><?php echo __("REDO") ?></span>
-    </span>
     </i>
   <i class="fa fa-floppy-o  col-md-2 btn1212" aria-hidden="true" id="share" >
-    <span class="tooltip">
     <?php echo __(" SAVE");?>
-    <span class="tooltiptext"><?php echo __("SAVE NEW HISTORICAL") ?></span>
-    </span>
   </i>
-  
     <i class="btn1212 col-md-2 fa fa-share-alt share">
-      <span class="tooltip">
         <?php echo __(" SHARE");?>
-       <span class="tooltiptext"><?php echo __("SHARE THE PLANNING") ?></span>
-  </span></i>
-   
+       </i>
   <i class="fa fa-lock col-md-1 btn1212 lock " style="display:none" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
 <i class="fa fa-unlock-alt col-md-1 btn1212 lock "  aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
   <i class="fa fa-trash col-md-1 btn1212 " style="background: red;" aria-hidden="true" id="deletePlan" attr="<?php echo $plans['Plan']['id'] ?>" ></i>
-   
 </div>
-  
 </div>
-  </div>
-
 <div id="table_id">
   <?php  include("detail_plan.ctp"); ?>
 </div>
@@ -244,24 +251,19 @@ $('.textareaTitle').on('change',function(){
 <button type="button" class="btn-btn" id="addTask" ><?php echo __("TÂCHE (+)");?></button>
 </div>
 <div class="barre_Tache_projet"> 
-
  <div class="row">
   <div class="col-xs-12 col-md-80 white height-33 padding-top-5">
  <sapn> <?php echo __("Ajouter une ligne de texte"); ?>
 </div>
 </div>
 </div>
-
+<div id="projectTache" class="projectTache">
+  </div>
 <div id="printdiv" style="display:none;">
-
 <table id="example1" class="table-border" style="width:100%;color: white;">
-         
          <thead>
-            
             <tr id="typecomposante">
-              
              <?php
-
              $i=0;
              foreach ($type_Planning as $typePlan) {
               $i=$i+1;
@@ -284,25 +286,19 @@ $('.textareaTitle').on('change',function(){
           <?php
            foreach ($axes as $axe) 
           {
-          
            ?>
-              
           <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
           <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" >
            <div class="composantVertical1" 
                 axes="<?php echo $axe['Axis']['id'];?>" style="resize: both;hieght:30px;">
-                    
                       <?php echo $axe['Axis']['title'];  ?>
-                       
                           </div>
                              </td>
                             </tr>
                 <tr class="plusLines">
                   <td colspan="<?php echo 2*$row;?>" >
-                  
                    </td>
                  </tr>
-         
         <?php for($i=1;$i<=$axe['Axis']['line'];$i++)
           { ?>
             <tr class="plusLines">

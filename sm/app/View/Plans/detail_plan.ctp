@@ -183,7 +183,6 @@ $("tbody>tr").on('mouseenter',function(){
    {
     $("tbody,thead").find('tr,td').css('border','none');
    }
-  
   // $('td').removeClass('CellSelect');
   select=null;
   $("td").find('span').show()
@@ -212,8 +211,7 @@ var styles = {
       borderRight: "1px solid #337ab7"
     };
 $(this).css(styles);
-}
-  });
+}});
 $('.typecomposante').on('mouseenter',function(e){
    if($(".fa-unlock-alt").is(":visible"))
   {
@@ -331,7 +329,7 @@ $(".plusAxes").click(function(){
                 $("#refersh").show();
 })
 /****************************budget*****************/
-$(".budget").click(function(){
+$(".budget").dblclick(function(){
   id=$(this).attr('id');
   // $("#projectTache").show();
   $.ajax({
@@ -353,13 +351,17 @@ $(".project").click(function(){
            url:"sm/plans/project/"+id
         }).done(function(result){
           $("#example").find('div').css('pointer-events','none');
-          $('td').find('i').hide();
+          $('#example').find('i').hide();
           $("#projectTache").show();
           $("#projectTache").html(result);
-          $("#outiltable").hide();
+          //$("#outiltable").hide();
         })
 })
 });
+
+
+
+
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&42;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
@@ -381,12 +383,32 @@ function htmlEntities(str) {
      }
       //console.log($(this).closest('input').id);
   }); //document-ready end
+ $(".budgets").mouseenter(function(){
+  $(".divBUdget").hide();
+  $(this).find('.divBUdget').slideToggle("slow");
+ })
+ $(".budgets").mouseout(function(){
+ // $(".divBUdget").hide();
+ // $(this).find('.divBUdget').slideToggle("slow");
+ })
+ $(".divBUdget").click(function(){
+  //id=$(this).attr('id');
+  // $("#projectTache").show();
+  $.ajax({
+          type: "POST",
+           url:"sm/plans/addBudget/"
+        }).done(function(result){
+          $('td').find('i').hide();
+          $("#example").find('div').css('pointer-events','none');
+          $("#projectTache").show();
+          $("#projectTache").html(result);
+          $("#outiltable").hide();
+        })
+ })
     </script>
-
-<table id="example" class="table-border" style="width:100%;color: white;">
-         
+<!-- style="font-family:<?php //echo $style['Styleplanning']['font-family']; ?>;font-size:<?php //echo  $style['Styleplanning']['font-size']; ?>;color:<?php //echo  $style['Styleplanning']['color']; ?>;background-color:<?php //echo  $style['Styleplanning']['background-color']; ?>;font-style:<?php // echo  $style['Styleplanning']['font-style']; ?>;font-weight:<?php //echo  $style['Styleplanning']['font-weight']; ?>" -->
+<table id="example" class="table-border" >
          <thead>
-            
             <tr id="typecomposante">          
              <?php
              $i=0;
@@ -402,7 +424,7 @@ function htmlEntities(str) {
     <i class="fa fa-plus-circle fa-plus-circle-right" attr="<?php echo $i-1;?>" id='fa-plus-circle-right<?php echo $i; ?>' aria-hidden="true"></i> 
           </td>
                <?php  }
-               $row=$i;?>
+               $row=$i; ?>
                <td style="background: none;">
                 <span class="fa fa-plus-circle plusRow" attr="<?php echo $i-1; ?>" aria-hidden="true"></span>
                <td>   
@@ -415,11 +437,10 @@ function htmlEntities(str) {
            ?>
           <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
             <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" class="textarea-axe" liste="<?php echo $axe['Axis']['id'].',1,'.$row; ?>">
-              
-              <textarea disabled='disabled' axes="<?php echo $axe['Axis']['id'];?>" class="textarea-axes"><?php echo $axe['Axis']['title'];  ?></textarea>
+              <textarea disabled='disabled' axes="<?php echo $axe['Axis']['id'];?>" class="textarea-axes"><?php echo $axe['Axis']['title'];?>
+              </textarea>
             </td>
           </tr>
-                
 				<?php for($i=1;$i<=$axe['Axis']['line'];$i++)
 					{ ?>
             <tr class="plusLines">
@@ -439,41 +460,49 @@ function htmlEntities(str) {
 										($detail_planning['DetailPlan']['row']==$j)
 									   ){
 										?>
+                    <?php if ($detail_planning['DetailPlan']['row']==$position){
+                        ?>
+                        <td colspan="2" class="budgets">
+                      <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
+                      <div class="budget">
+                        BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]
+                          <div class="divBUdget">
+                          new budget
+                          </div>
+                      </div>
+                      </div> 
+                      </td>
+                        <?php } else { ?>
 										<td colspan="2" class="context-menu-one" 
 										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>"  id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
                     <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
-                      
+
                     <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" style="resize: both;">
+             
 											<div class="jqte-test" >
 										    <?php
 										    $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
 										     echo htmlspecialchars_decode($y); 
-                         ?></div><dir class="divbutton">
+                         ?>
+                      </div>
+                      <dir class="divbutton">
                          <?php
-										     if($detail_planning['DetailPlan']['budgets']['total'])	
-												{ ?>
-												<button class="btn-btn12 budget" id="<?php echo $detail_planning['DetailPlan']['budgets']['id'] ?>">BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]</button>
-												<?php }
 												if(count($detail_planning['DetailPlan']['projects']))
 													for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
 														{ ?>
 															<button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['id']?>">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>]</button>
-														<?php }
-													?>
+														<?php } ?>
                     </dir>
                     </div>
-                  
+                     
 									    </td>
-										<?php
-									    }
-								?>
-							<?php } ?>			
+										
+							<?php } } }?>			
 					  <?php }?>
 					</tr>
 				  <tr class="plusLines"><td colspan="<?php echo $row; ?>" >
             <div style="display:nones">
             <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
-           
            <div></td></tr>
 			  <?php } ?>
       <?php } ?>
@@ -481,6 +510,6 @@ function htmlEntities(str) {
         <tfoot>
           <tr><td colspan="<?php 2*$row ?>">
  <span class="fa fa-plus-circle plusAxes"  aria-hidden="true"></span>
-
-          </td></tr></tfoot>
+</td></tr></tfoot>
 </table>
+

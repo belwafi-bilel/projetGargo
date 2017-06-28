@@ -100,7 +100,7 @@ $("input[type=range]").on('input',function(){
                 $('td').find('i').hide();
                 $("#projectTache").show();
                 $("#projectTache").html(result);
-                $("#outiltable").hide();
+               // $("#outiltable").hide();
               })
           });
     });
@@ -119,12 +119,22 @@ $("input[type=range]").on('input',function(){
                 $('td').find('i').hide();
                 $("#projectTache").show();
                 $("#projectTache").html(result);
-                $("#outiltable").hide();
+               // $("#outiltable").hide();
               })
           });
-
+$(".delegate").click(function(){
+  //
+$id=$(this).attr('id');
+  $.ajax({
+                type: "POST",
+                 url:"sm/plans/delegateTache/"
+              }).done(function(result){
+                 $("#InterfaceTache").html($("#projectTache").html());
+                 $("#projectTache").html(result)
+              })
+})
 </script>
-<div id="InterfaceTache" class="" style="margin-left:141px;margin-top:53px;width: 700px;display:none;position:fixed;">
+<div id="InterfaceTache" class="" style="display:none;position:absolute;">
 
   </div>
 <div class="auth-block2" >
@@ -253,7 +263,7 @@ $("input[type=range]").on('input',function(){
 </td>
 <td>
   <i class="fa fa-trash" aria-hidden="true" id="<?php echo $taches['Tach']['id'] ?>"></i>
-  <i class="fa fa-users" aria-hidden="true"></i>
+  <i class="fa fa-users delegate" id="<?php echo $taches['Tach']['id'] ?>" aria-hidden="true"></i>
 
 </td>
 </tr>
@@ -265,5 +275,5 @@ $("input[type=range]").on('input',function(){
     <button class="btn-btn12 addnew"  style="margin-left: -176px;" id="addNew"><?php echo __("TÂCHE (+)")?></button></div>
 </div>
 
-<button class="btn1212"style="float: right;width: 200px;" id="cancel">OK</button>
+<button class="btn1212"style="float: right;width: 200px;margin-top: 1px;" id="cancel">OK</button>
 </div>
