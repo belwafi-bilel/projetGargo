@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/form-builder.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/form-render.min.css">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>jQuery formBuilder/formRender Demo</title>
+
+</head>
+<style>
+ul.form_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.form_list li {
+    float: left;
+}
+
+.form_list li {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    text-decoration: none;
+}
+.form_list li:hover{
+    background: #400c66;
+	cursor: pointer;
+}
+
+.select_list{
+	background: #455c66;
+}
+.show_select{
+	display:none;
+}
+
+ul.form_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #2386c6;
+    border: 3px solid;
+}
+
+.form_list li {
+    float: left;
+}
+
+.form_list li {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#frmb-0-stage-wrap *{
+/*background:transparent !important;
+color:#fff  !important;*/
+}
+
+.command_button{
+display:none;
+}
+
+body {
+
+	/*background: #52736f !important;*/
+}
+</style>
+
+
+<body style="height:1200px">
+	<!-- <label>Background Color</label>
+  	<button id="frmb-0-save" class="btn-primary jscolor {valueElement:'chosen-value', onFineChange:'setbackColor(this)'}">
+		&nbsp;
+	</button>
+	<label>Font Color</label>
+	<button id="frmb-0-save" class="btn-primary jscolor {valueElement:'chosen-value', onFineChange:'setfontColor(this)'}">
+		&nbsp;
+	</button -->
+<b>Form Name:</b>	
+<ul class="form_list">
+</ul> <br />
+<b style="color: black;">Form name</b>	
+<input class = "New_formname" type="text"></text>
+<button id="save_div" class="save_div">Save</button> 
+<button id="Change_div" class="Change_div command_button">Change</button>
+   <br />
+    <br />
+ <div class="content">
+    <div class="build-wrap"></div>
+    <div class="render-wrap"></div>
+    <button id="edit-form">Edit Form</button>
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/form-builder.min.js"></script>
+  <script src="assets/js/form-render.min.js"></script>
+  <script src="assets/js/demo.js"></script>
+  <script src="jscolor.js"></script>
+
+
+	
+	<script>
+var Select_form_id;	
+	
+	
+	function shake(id){
+	Select_form_id = id;
+	$(".view_list").removeClass("select_list");
+	$(".selectview_list"+id).addClass("select_list");
+	$(".New_formname").addClass("command_button");
+	$(".save_div").addClass("command_button");
+	$(".Change_div").removeClass("command_button");
+	$(".frmb.ui-sortable").empty();
+	$(".stage-wrap.pull-left.empty").removeAttr("data-content");
+		$.post("../scripts/Connection.php",{table_name:'fileupload'},function(result){
+			//$(".frmb.ui-sortable").html(result[0].contant);
+			
+			for(i=0;i<result.length;i++){
+			
+				if(id == result[i].id){
+					$(".frmb.ui-sortable").html(result[i].contant);
+				}
+			}
+		},'json');
+
+	setTimeout(function(){$(".del-button.btn.delete-confirm").html("×");}, 200);	
+	}
+		
+	
+	$(document).ready(function(){
+		$.post("../scripts/Connection.php",{table_name:'fileupload'},function(result){
+			//$(".frmb.ui-sortable").html(result[0].contant);
+			//alert(result.length);
+			for(i=0;i<result.length;i++){
+			//$(".form_list").append("<li>"+ result[i].Form_name +"</li>");
+			$(".form_list").append("<li class = 'view_list selectview_list"+result[i].id+"' onclick=shake("+result[i].id+")>"+ result[i].Form_name +"</li>");
+			}
+		},'json');
+		
+
+		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Custom Table" style="display: list-item;"><span>Custom Table</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Budget" style="display: list-item;"><span>Budget</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Budget Custom" style="display: list-item;"><span>Budget Custom</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Dynamic Budget" style="display: list-item;"><span>Dynamic Budget</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Dynamic Budget Custom" style="display: list-item;"><span>Dynamic Budget Custom</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Jobs Leverage" style="display: list-item;"><span>Jobs Leverage</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="General Leverage" style="display: list-item;"><span>General Leverage</span></li>');
+//		$("ul.frmb-control.ui-sortable").append('<li class="icon-Custom_Table ui-sortable-handle icon-autocomplete" label="Order Form" style="display: list-item;"><span>Order Form</span></li>');
+		
+		$(document).mousemove(function(event) {
+			$("input.icon-Custom_Table").parent().addClass("Custom_Tableview");
+			$("input.icon-Custom_Table").parent().parent().next().addClass("Custom_Tablesetting");
+			
+			if($("div").hasClass("Custom_appendTrue")==false){
+			$(".prev-holder .Custom_Tableview").append('<table class="table table-striped"><thead><tr class="tr_col_name"><th></th><th>Cash</th><th>In Kind</th></tr></thead><tbody class="tr_row_name"><tr ng-repeat="item in smartTableData" class="ng-scope"><td class="ng-binding">Item1</td><td class="ng-binding"><input class="Table_inval form-control" name="custom_table_row1_col1" ></input></td><td class="ng-binding"><input class="Table_inval form-control" name="custom_table_row1_col2"></input></td></tr><tr ng-repeat="item in smartTableData" class="ng-scope"><td class="ng-binding">Item2</td><td class="ng-binding"><input class="Table_inval form-control" name="custom_table_row2_col1"></input></td><td class="ng-binding"><input class="Table_inval form-control" name="custom_table_row2_col2"></input></td></tr></tbody></table>');
+			$(".Custom_Tablesetting .form-elements").append('<div class="form-group Cols_table"><label for="className-frmb-0-fld-1">Cols</label> <div class="input-wrap"><select class="col_count form-control"><option value="2">2</option></select></div></div><div class="form-group Rows_table"><label for="className-frmb-0-fld-1">No of items</label> <div class="input-wrap"><select class="row_count  form-control"><option value="0" ></option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></div></div><hr>');
+			$(".Custom_Tablesetting .form-elements").append('<div>Add an item<hr><div class="contant_row"></div></div><hr>');
+
+
+			$("input.icon-Custom_Table").parent().addClass("Custom_appendTrue");
+			$("input.icon-Custom_Table").parent().parent().next().addClass("Custom_appendTrue");
+			$("input.icon-Custom_Table").remove();
+			
+			///settingpage cls
+			$(".Custom_Tablesetting div.description-wrap").remove();
+			$(".Custom_Tablesetting div.className-wrap").remove();
+			$(".Custom_Tablesetting div.name-wrap").remove();
+			$(".Custom_Tablesetting div.value-wrap").remove();
+			$(".Custom_Tablesetting div.access-wrap").remove();
+			
+			
+			   var row_count =  parseInt($(".col_count").val());
+			  
+			    $(".contant_col").append("<div class='form-group'><div><label for='className-frmb-0-fld-1'>Cash</label><div class='input-wrap' style='width: 30%;'><input class='form-control' value='Cash'></input></div></div><div><label for='className-frmb-0-fld-1'>In Kind</label><div class='input-wrap' style='width: 30%;'><input class='form-control' value='In Kind'></input></div></div></div>");
+		
+			   
+			   var row_count =  parseInt($(".row_count").val());	
+			   for (i=0;i<row_count;++i){
+			   s=i+1;
+			   $(".contant_row").append("<div class='form-group'><label for='className-frmb-0-fld-1'> Item "+ s +"</label><div class='input-wrap'><input class = 'form-control input_row"+ s +"' type='input' value='Item"+s+"' onchange='Row_name($(this), "+ s +")'></input></div></div>");
+			   }
+			
+			
+			
+			
+			
+			$(".col_count").change(function(){
+			   $(".contant_col").empty();
+			   var col_count =  parseInt($(this).val());
+			
+			  
+			   $(".contant_col").append("<div class='form-group'><div><label for='className-frmb-0-fld-1'>Cash</label><div class='input-wrap' style='width: 30%;'><input class='form-control' value='Cash'></input></div></div><div><label for='className-frmb-0-fld-1'>In Kind</label><div class='input-wrap' style='width: 30%;'><input class='form-control' value='In Kind'></input></div></div></div>");
+			  
+			   
+			   
+			   table_change();
+			   
+			   
+			});
+			
+			
+			$(".row_count").change(function(){
+			$(".contant_row").empty();
+			   var row_count =  parseInt($(this).val());
+			   for (i=0;i<row_count;++i){
+			   s=i+1;
+			   $(".contant_row").append("<div class='form-group'><label for='className-frmb-0-fld-1'> Item "+ s +"</label><div class='input-wrap'><input class = 'form-control input_row"+ s +"' type='input' value='Item"+s+"' onchange='Row_name($(this), "+ s +")'></input></div></div>");
+			   }
+			   
+			   table_change();
+			   
+			});
+			
+			
+			}
+		});
+		
+	});
+
+
+
+function table_change(){
+   var col_count =  parseInt($(".col_count").val());
+   var row_count =  parseInt($(".row_count").val());
+   
+   $(".tr_col_name").empty();
+   $(".tr_col_name").append("<th></th>");
+ 
+	 
+	  //  for (i=0;i<col_count;++i){
+	  //  kk=i+1;
+	  //  $(".tr_col_name").append("<th>Col"+kk+"</th>");
+   // }
+
+
+	  
+	   $(".tr_col_name").append("<th>Cash</th><th>In Kind</th>");
+   
+   
+   $(".tr_row_name").empty();
+   var str_html_table;
+   for (j=0;j<row_count;++j){
+	   kk=j+1;
+	   str_html_table =str_html_table + '<tr ng-repeat="item in smartTableData" class="ng-scope"><td class="ng-binding">Row'+kk+'</td>';
+	   for (i=0;i<col_count;++i){
+			str_html_table =str_html_table + '<td class="ng-binding"><input class="Table_inval form-control" name="custom_table_row'+j+'_col'+i+'"></input></td>';
+	   }
+	   str_html_table =str_html_table + '</tr>';
+   }
+   $(".tr_row_name").append(str_html_table);
+}
+
+function Row_name(obj, id){
+	$(".tr_row_name tr:nth-child("+id+") td:nth-child(1)").html(obj.val());
+}
+
+// function Column_name(obj, id){
+// 	s=id+1;
+// 	$(".tr_col_name th:nth-child("+s+")").html(obj.val());
+// }
+
+$("#Change_div").click(function(){
+	
+		var str_html = $(".frmb.ui-sortable").html();
+		str_html = str_html.replace(/frmb-0-fld-/g, "frmb-0-fld-s");
+		
+		var str_contant='';
+		
+		
+		$(".frmb.ui-sortable").find(".prev-holder").each(function() {
+			str_contant = str_contant + $(this).html();
+		});
+		
+		$.post("../scripts/Update.php",{formid:Select_form_id,s_contant:str_contant,str_html:str_html},function(result){},'json');
+		
+		setTimeout(function(){ document.location.reload(); }, 3000);//document.location.reload();
+	
+	
+});
+
+	
+	$("#save_div").click(function(){
+	
+	var form_name = $(".New_formname").val();
+	if(form_name==""){
+	alert("Enter Form Name");
+	
+	}else{
+		//$(".New_formname").val()="";
+	    $(".form_list").append("<li>"+ form_name +"</li>");	
+		var str_html = $(".frmb.ui-sortable").html();
+		str_html = str_html.replace(/frmb-0-fld-/g, "frmb-0-fld-s");
+		
+		var str_contant='';
+		
+		
+		$(".frmb.ui-sortable").find(".prev-holder").each(function() {
+			str_contant = str_contant + $(this).html();
+		});
+		
+		$.post("../scripts/Update.php",{formname:form_name,s_contant:str_contant,fileupload:str_html},function(result){},'json');
+		setTimeout(function(){ document.location.reload(); }, 2000);
+	
+	}	
+	
+	});
+	
+	
+	function setbackColor(picker) {
+		 $("#frmb-0-stage-wrap div").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap li").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap label").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap a").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap bottom").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap text").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap select").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap input").css("background-color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap textarea").css("background-color", '#' + picker.toString()+" !important");
+	}
+	
+	function setfontColor(picker) {
+		 $("#frmb-0-stage-wrap div").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap li").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap label").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap a").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap bottom").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap text").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap select").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap input").css("color", '#' + picker.toString()+" !important");
+		 $("#frmb-0-stage-wrap textarea").css("color", '#' + picker.toString()+" !important");
+	}
+	
+	</script>
+</body>
+</html>

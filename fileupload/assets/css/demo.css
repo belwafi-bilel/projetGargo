@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body > div {}
+
+#fb-template {
+  // display: none;
+}
+
+.template-textarea-wrap {
+  display: block !important;
+}
+
+.content {
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  background-color:transparent !important;
+}
+body {
+	
+	width:90%;
+	background-color:transparent !important;
+}
+
+.form-rendered .build-wrap {
+  display: none;
+}
+
+.render-wrap {
+  display: none;
+}
+
+.form-rendered .render-wrap {
+  display: block;
+}
+
+#edit-form {
+  display: none;
+  float: right;
+}
+
+.form-rendered #edit-form {
+  display: block;
+}
+li,label, div, a, bottom, text, select ,textarea, input, button {
+	background-color: transparent;
+	color: rgb(2,2,2);
+}
+#frmb-0-cb-wrap li, #frmb-0-cb-wrap label, #frmb-0-cb-wrap div, #frmb-0-cb-wrap a, #frmb-0-cb-wrap bottom, #frmb-0-cb-wrap text, #frmb-0-cb-wrap select ,#frmb-0-cb-wrap textarea, #frmb-0-cb-wrap input, button {
+	background-color: #2b3a41;
+	color: #fff !important;
+}
+
+
+
+
+

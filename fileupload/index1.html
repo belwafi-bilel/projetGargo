@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/form-builder.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/form-render.min.css">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>jQuery formBuilder/formRender Demo</title>
+
+</head>
+
+<body style="height:1200px">
+<div class="save-all-wrap">
+  <!-- <label style="color: blue;">Background Color</label>
+  	<button id="frmb-0-save" class="btn-primary jscolor {valueElement:'chosen-value', onFineChange:'setbackColor(this)'}">
+		&nbsp;
+	</button>
+     <label style="color: blue;">Font Color</label>
+	<button id="frmb-0-save" class="btn-primary jscolor {valueElement:'chosen-value', onFineChange:'setfontColor(this)'}">
+		&nbsp;
+	</button>  -->
+	<button id="save_div" type="button" style="float: right;">
+		Save
+	</button> &nbsp;
+	
+	</div>
+	<br >
+<!-- Multiple tabs  START  -->
+<div id="asas">
+<form action="" id="form-builder-pages">
+  <ul id="tabs">
+    <li><a href="#page-1">Form 1</a></li> 
+    <li id="add-page-tab"><a href="#new-page">+ Form</a></li>
+   
+  </ul>
+  <div id="page-1" class="fb-editor"></div>
+  <div id="new-page"></div>
+  
+</form>
+</div>
+<!-- Multiple tabs END     -->
+<!-- <div> -->
+<!-- <ul class="language-selector">
+  <li id="en"><button>English</button></li>
+  <li id="pt"><button>French</button></li>
+  <li id="zhtw"><button>繁體中文</button></li>
+  
+</ul> -->
+
+
+
+<!-- <div id="fb-editor"></div> -->
+
+<!-- </div> -->
+
+
+
+
+ <style>
+	#frmb-0-stage-wrap *{
+	/*background: white;*/
+	
+	}
+
+	.frmb.ui-sortable  {
+
+		border-style: dashed;
+		color: rgba(19, 160, 206, 0.7);
+	}
+
+.save-all-wrap{text-align:center;padding:20px;}
+
+
+/*.language-selector {
+  text-align: center;
+  margin: 0 0 20px;
+  padding: 0;
+  li {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background: white;
+    margin: 0;
+    line-height: 18px;
+  }
+}
+*/
+#asas {
+
+	display: inline;
+}
+</style> 
+
+
+
+	
+   <div class="content">
+  <!--  <div id="build-wrap"></div> -->
+    <div class="render-wrap"></div>
+    <button id="edit-form">Edit Form</button>
+  </div>
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/form-builder.min.js"></script>
+  <script src="assets/js/form-render.min.js"></script>
+  <script src="assets/js/demo.js"></script>
+  <!-- <script src="assets/js/translation.js"></script> -->
+
+   <script src="assets/js/multipletabs.js"></script>
+
+      <script src="assets/js/formfields.js"></script>
+  
+  	<script src="jscolor.js"></script>
+
+
+	<script>
+	$(document).ready(function(){
+		$.post("../scripts/Connection.php",{table_name:'fileupload'},function(result){
+			$(".frmb.ui-sortable").html(result[0].contant);
+		},'json');
+	});
+	
+	$("#save_div").click(function(){
+		var str_html = $(".frmb.ui-sortable").html();
+		str_html = str_html.replace(/frmb-0-fld-/g, "frmb-0-fld-s");
+		
+		var str_contant='';
+		
+		
+		$(".frmb.ui-sortable").find(".prev-holder").each(function() {
+			str_contant = str_contant + $(this).html();
+		});
+		
+		
+		
+		$.post("../scripts/Update.php",{fileupload:str_html,s_contant:str_contant},function(result){},'json');
+	
+	
+	
+	
+	
+	
+	
+	});
+
+	// function setbackColor(picker) {
+	// 	 $("#frmb-0-stage-wrap div").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap li").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap label").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap a").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap bottom").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap text").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap select").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap input").css("background-color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap textarea").css("background-color", '#' + picker.toString()+" !important");
+	// }
+	
+	// function setfontColor(picker) {
+	// 	 $("#frmb-0-stage-wrap div").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap li").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap label").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap a").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap bottom").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap text").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap select").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap input").css("color", '#' + picker.toString()+" !important");
+	// 	 $("#frmb-0-stage-wrap textarea").css("color", '#' + picker.toString()+" !important");
+	// }
+</script>
+
+  
+
+
+
+
+	
+	
+
+  
+</body>
+
+</html>
