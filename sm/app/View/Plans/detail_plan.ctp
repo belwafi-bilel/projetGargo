@@ -365,7 +365,7 @@ $(".project").click(function(){
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&42;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
- $('.context-menu-one').click(function(){
+ $('.Activites').click(function(){
   if($(".fa-lock").is(":visible"))
   {
      if($(this).find("input[type='checkbox']").is(":checked"))
@@ -398,15 +398,30 @@ function htmlEntities(str) {
           type: "POST",
            url:"sm/plans/addBudget/"
         }).done(function(result){
+       //   $('td').find('i').hide();
+          $("#example").find('div').css('pointer-events','none');
+          $("#projectTache").show();
+          $("#projectTache").html(result);
+   
+        })
+ })
+ $(".Activites").dblclick(function(){
+$liste=$(this).attr('for');
+  $.ajax({
+          type: "POST",
+           url:"sm/plans/newActiviter/"+$liste
+        }).done(function(result){
           $('td').find('i').hide();
           $("#example").find('div').css('pointer-events','none');
           $("#projectTache").show();
           $("#projectTache").html(result);
-          $("#outiltable").hide();
+   
         })
+  
  })
     </script>
 <!-- style="font-family:<?php //echo $style['Styleplanning']['font-family']; ?>;font-size:<?php //echo  $style['Styleplanning']['font-size']; ?>;color:<?php //echo  $style['Styleplanning']['color']; ?>;background-color:<?php //echo  $style['Styleplanning']['background-color']; ?>;font-style:<?php // echo  $style['Styleplanning']['font-style']; ?>;font-weight:<?php //echo  $style['Styleplanning']['font-weight']; ?>" -->
+
 <table id="example" class="table-border" >
          <thead>
             <tr id="typecomposante">          
@@ -431,7 +446,16 @@ function htmlEntities(str) {
             </tr>
         </thead>
         <tbody>
-        	<?php
+        	<pre>
+           <?php 
+        // print_r($axes);
+          //die();
+           ?>
+
+
+          </pre>
+          <?php
+
            foreach ($axes as $axe) 
         	{
            ?>
@@ -460,7 +484,7 @@ function htmlEntities(str) {
 										($detail_planning['DetailPlan']['row']==$j)
 									   ){
 										?>
-                    <?php if ($detail_planning['DetailPlan']['row']==$position){
+                    <?php if ($detail_planning['DetailPlan']['row']==$positionBudget){
                         ?>
                         <td colspan="2" class="budgets">
                       <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
@@ -472,7 +496,59 @@ function htmlEntities(str) {
                       </div>
                       </div> 
                       </td>
-                        <?php } else { ?>
+                        <?php } else if($detail_planning['DetailPlan']['row']==$positionActivite)
+                        { ?>
+                          <td colspan="2" class=" Activites" 
+                      id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
+                    <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
+                      <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
+                         
+                        <div class="">
+                       <dir class="divbutton">
+                       <?php
+                        if(count($detail_planning['DetailPlan']['activites']))
+                          for($c=0;$c<count($detail_planning['DetailPlan']['activites']);$c++)
+                            { ?>
+                              <button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['activites'][$c]['Activite']['id']?>"> 
+                              <?php echo $detail_planning['DetailPlan']['activites'][$c]['Activite']['description'];?></button>
+                            <?php } ?>
+                         <?php
+                        if(count($detail_planning['DetailPlan']['projects']))
+                          for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
+                            { ?>
+                              <button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['id']?>">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>]</button>
+                            <?php } ?>
+                       </dir>
+                    </div>
+                      </div> 
+                      </td>
+
+
+                        <?php }else if($detail_planning['DetailPlan']['row']==$positionEcheance)
+                          { ?>
+                          <td colspan="2" class="budgets" style="pointer-events: none">
+                      <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
+                     
+                      </div> 
+                      </td>
+                      <?php } else if($detail_planning['DetailPlan']['row']==$positionIndicator)
+                        {?>
+                           <td colspan="2" class="budgets" style="pointer-events: none">
+                      <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
+                      <?php
+                        if(count($detail_planning['DetailPlan']['activites']))
+                          for($c=0;$c<count($detail_planning['DetailPlan']['activites']);$c++)
+                            { 
+                                foreach ($detail_planning['DetailPlan']['activites'][$c] as $indicators) {
+                            echo $indicators['Indicator']['description'];
+                              ?>
+                            <?php }
+                            } ?>
+                            bilerl
+                      </div> 
+                      </td>
+                        <?php
+                        }else{ ?>
 										<td colspan="2" class="context-menu-one" 
 										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>"  id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
                     <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
@@ -485,14 +561,7 @@ function htmlEntities(str) {
 										     echo htmlspecialchars_decode($y); 
                          ?>
                       </div>
-                      <dir class="divbutton">
-                         <?php
-												if(count($detail_planning['DetailPlan']['projects']))
-													for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
-														{ ?>
-															<button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['id']?>">Project [<?php echo $detail_planning['DetailPlan']['projects'][$c]['Project']['title'];?>]</button>
-														<?php } ?>
-                    </dir>
+                     
                     </div>
                      
 									    </td>
@@ -512,4 +581,7 @@ function htmlEntities(str) {
  <span class="fa fa-plus-circle plusAxes"  aria-hidden="true"></span>
 </td></tr></tfoot>
 </table>
+<<<<<<< HEAD
 bilel belwafi
+=======
+>>>>>>> master

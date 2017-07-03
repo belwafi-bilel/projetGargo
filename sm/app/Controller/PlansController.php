@@ -97,29 +97,30 @@ public function newPlan()
  		'adress'=>'',
  		'user_id'=>$id);
  
- 	$this->Plan->create();
- 	$this->Plan->save($date);
- 	$idLaste= $this->Plan->getLastInsertID();
+$this->Plan->create();
+$this->Plan->save($date);
+$idLaste= $this->Plan->getLastInsertID();
 $this->addTypePlanning($idLaste.',1');
 $id=$this->TypePlan->getLastInsertID();
-$this->setTypePlanning($id.','.'Resources');
+$this->setTypePlanning($id.','.'Objectives');
 $this->addTypePlanning($idLaste.',2');
 $id=$this->TypePlan->getLastInsertID();
-$this->setTypePlanning($id.','.'Actitivés');
+$this->setTypePlanning($id.','.'Activities');
 $this->addTypePlanning($idLaste.',3');
 $id=$this->TypePlan->getLastInsertID();
-$this->setTypePlanning($id.','.'Actions');
+$this->setTypePlanning($id.','.'Indicator');
 $this->addTypePlanning($idLaste.',4');
 $id=$this->TypePlan->getLastInsertID();
-$this->setTypePlanning($id.','.'Échéances');
+$this->setTypePlanning($id.','.'Resources');
 $this->addTypePlanning($idLaste.',5');
 $id=$this->TypePlan->getLastInsertID();
 $this->setTypePlanning($id.','.'Budget');
- $this->addHistoricalPlanning($idLaste);
-
+$this->addTypePlanning($idLaste.',6');
+$id=$this->TypePlan->getLastInsertID();
+$this->setTypePlanning($id.','.'Deadline');
 $id_Historical= $this->HistoricalPlan->getLastInsertID();
 $this->addAxes($id_Historical);
- $this->redirect('../../#/SmartLibrary/listplan');
+$this->redirect('../../#/SmartLibrary/listplan');
  }
 
 
@@ -609,7 +610,10 @@ function planning to return all data for action planning id=?
 	$row=3;
 	$line=0;
 	$id=explode(',',$liste)[0];
-	$position=$this->getPositionBudget($id);
+	$positionBudget=$this->getPositionType($id.',BUDGET,BUDGETS');
+    $positionActivite=$this->getPositionType($id.',ACTIVITIES,ACTIVITE,ACTIVITY,ACTIVITÉS,ACTIVITÉ');
+    $positionIndicator=$this->getPositionType($id.',INDICATOR,MESURE');
+    $positionEcheance=$this->getPositionType($id.',ECHÉANCES,DEADLINE');
 	$his_id=explode(',',$liste)[1];
 	$plans =array();
 	$axes=array();
@@ -638,7 +642,7 @@ $style=$this->getStyle($historical_plans[$his_id]['HistoricalPlan']['id']);
  $type_Plannings=$this->getTypePlanning($id);
 
 $id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
-   $this->set(compact('plans','style','optionplans','visionplans','type_Plannings','historical_plans','id','position','axes','line','row','his_id','id_hisorical'));       
+   $this->set(compact('plans','style','optionplans','visionplans','type_Plannings','historical_plans','id','position','axes','line','row','his_id','id_hisorical','positionActivite','positionIndicator','positionEcheance','positionBudget'));       
 }
 /*****************************function historical planning*****************************/
 /*
@@ -715,7 +719,9 @@ foreach ($detailplans as $detailplan)
 	 		array('projects'=>$this->getProject($detailplan['DetailPlan']['id'])),
 	 		array('jobs'=>$this->getJobs($detailplan['DetailPlan']['id'])),
 	 		array('MaterielSources'=>$this->getMaterielSource($detailplan['DetailPlan']['id'])),
-	 		array('HumanSources'=>$this->gethumanSource($detailplan['DetailPlan']['id']))));
+	 		array('HumanSources'=>$this->gethumanSource($detailplan['DetailPlan']['id'])),
+	 		array('activites'=>$this->getListeActivityAndIndicatorByDetailPlanningId($detailplan['DetailPlan']['id']))
+	 		));
 	}
 	return $detailplans1;
 
@@ -933,10 +939,13 @@ $id=$liste[0];
 $line+=count($axesId);
 
 $id_plan=$this->getIdPlanningByHistoricalPlanId($id);
-$position=$this->getPositionBudget($id_plan);
+	$positionBudget=$this->getPositionType($id.',BUDGET,BUDGETS');
+    $positionActivite=$this->getPositionType($id.',ACTIVITIES,ACTIVITE,ACTIVITY,ACTIVITÉS,ACTIVITÉ');
+    $positionIndicator=$this->getPositionType($id.',INDICATOR,MESURE');
+    $positionEcheance=$this->getPositionType($id.',ECHÉANCES,DEADLINE');
 $type_Plannings=$this->getTypePlanning($id_plan);
 
- $this->set(compact('axes','line','row','type_Plannings','position'));
+ $this->set(compact('axes','line','row','type_Plannings','positionBudget','positionActivite','positionIndicator','positionEcheance'));
 }
 /*****************************************function add line  ***********************/
 /*
@@ -1049,7 +1058,7 @@ $axes = $this->Axis->find('all',
 					$data=array(
 							'line'=>$line[$i],
 							'row'=>$liste[0],
-							'content'=>'',
+							'content'=>' ',
 							'id_user'=>$id,
 							'axes_id'=>$axe['Axis']['id']);
 			$this->DetailPlan->create();
@@ -1218,7 +1227,7 @@ $style=$this->Styleplanning->findByHistoricalPlanId($id);
 return $style;
 }
 /*****************************************function setStylePlaning***********************/
-/*
+/*a
 function setStyle for Historicalplnning=?
 */
 public function setStyle($liste=null)
@@ -1242,14 +1251,19 @@ public function delegateTache($id=null)
 {
 
 }
-/*****************************************function getpositionBudget***********************/
+/*****************************************function getpositionType***********************/
 /*
-function getPositionBudget to get position type budget of the historicLplanning_ID=?  
+function getPositionType to get position type  of the historicLplanning_ID=? and type=?  
 */
- public function getPositionBudget($id=null)
+ public function getPositionType($liste=null)
 {
-	$typeplanningBudget=array('BUDGET','BUDGETS');
+	$id=explode(',',$liste)[0];
+
+	$typeplanningBudget=explode(',',$liste);
 	$typePlannings=$this->getTypePlanning($id);
+	// echo "<pre>";
+	// print_r($typeplanningBudget);
+	// die();
 	foreach ($typePlannings as $typePlanning) {
 		if(in_array(strtoupper($typePlanning['TypePlan']['description']),$typeplanningBudget)) {
 			return $typePlanning['TypePlan']['position'];
@@ -1257,6 +1271,7 @@ function getPositionBudget to get position type budget of the historicLplanning_
 	}
 	return 0;
 }
+
 /***********************************************DELETE**********************************************/
 /*****************************************function deleteProject***********************/
 /*
@@ -1348,5 +1363,105 @@ $detailplans=$this->DetailPlan->find('all',
 
 
 }
-	    
+	/**********************************function newActiviter  ***********************/
+/*
+function NewActiviter to NewActiviter  planning action of row=?? and position=?
+*/    
+public function newActiviter($liste=null)
+{
+	$NumIndicator=0;
+	$NumeroActivite=1;
+	$this->loadModel('Activite');
+	$num=count($this->getActivityByDetailPlanningId($liste));
+	$liste=explode(',',$liste);
+	$data=array(
+		'num'=>$num+1,
+		'description'=>'-',
+		'cible'=>'0',
+		'detail_planning_id'=>$liste[0]
+		);
+	$this->Activite->create();
+	$this->Activite->save($data);
+	$lasteIdActivite=$this->Activite->getLastInsertID();
+	$NumeroActivite=$this->Activite->findById($lasteIdActivite);
+
+$this->set(compact('NumeroActivite','NumIndicator'))	;
+}
+	/**********************************function getIndicators  ***********************/
+/*
+function getIndicators of activiter_id=?*/    
+public function getIndicators($id=null)
+{
+	$this->loadModel("Indicator");
+	return $this->Indicator->findAllByActiviterId($id);
+}
+/**********************************function listeIndicator of activiterId=?  ***********************/
+/*
+function ListeIndicator of activiter_id=?*/    
+public function listeindicator($id=null)
+{
+
+	$listeindicators=$this->getIndicators($id);
+	$NumIndicator=count($listeindicators);
+	$NumeroActiviter=$this->getActivityById($id)['Activite']['num'];
+	$this->set(compact('listeindicators','NumIndicator','id','NumeroActiviter'));
+}
+/**********************************function getActivityByDetailPlanningId  ***********************/
+/*
+function getActivityByDetailPlanningId of axes_id=? and line=?*/ 
+public function getActivityByDetailPlanningId($id=null)
+{
+	$this->loadModel('Activite');
+	$listeActiviter=$this->Activite->findAllByDetailPlanningId($id);
+	return $listeActiviter;
+}
+/**********************************function getListeActivityAndIndicatorByDetailPlanningId  ***********************/
+/*
+function getActivityByDetailPlanningId of axes_id=? and line=?*/ 
+public function getListeActivityAndIndicatorByDetailPlanningId($id=null)
+{
+	$this->loadModel('Activite');
+	$listeActiviters=$this->Activite->findAllByDetailPlanningId($id);
+	$tab=array();
+	foreach ($listeActiviters as $listeActiviter) {
+		$tab[]=array_merge($listeActiviter,$this->getIndicators($listeActiviter['Activite']['id']));
+	}
+	return $tab;
+}
+/**********************************function getActivityById  ***********************/
+/*
+function getActivityById of Id=?*/ 
+public function getActivityById($id)
+{
+	$this->loadModel('Activite');
+	$listeActiviter=$this->Activite->findById($id);
+	return $listeActiviter;
+}
+
+/**********************************function newIndicator  ***********************/
+/*
+function newIndicators of Activitre=?*/ 
+
+public function newIndicator($liste=null)
+{
+
+	$type=array('%','#','$');
+	$liste=explode(',',$liste);
+	$listeindicators=$this->getIndicators($liste[5]);
+	$NumIndicator=count($listeindicators);
+	$this->loadModel("Indicator");
+	$data=array(
+		'num'=>$NumIndicator+1,
+		'description'=>$liste[1],
+		'type'=>$type[$liste[2]],
+		'cible'=>$liste[3],
+		'valeur'=>'0',
+		'date_fin'=>$liste[4],
+		'activiter_id'=>$liste[5]
+		);
+	$this->Indicator->create();
+	$this->Indicator->save($data);
+}
+
+
 }

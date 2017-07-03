@@ -88,15 +88,15 @@ $(".lock").click(function(){
           $(".fa-unlock-alt").show();
           $(".btnTachProject").hide()
           $("#example").css('pointer-events','auto');
+          
           $(".check_overlay").hide();
                   }else{
           $(".fa-lock").show()
           $(".fa-unlock-alt").hide();
           $(".btnTachProject").show();
-          $("#example").find('div').css('pointer-events','none');
-         
+          $("#example").css('pointer-events','none');
           $(".check_overlay").show();
-          $("#example").find('button').css('pointer-events','painted');
+          $(".Activites").css('pointer-events','auto')
             
         }
       })
