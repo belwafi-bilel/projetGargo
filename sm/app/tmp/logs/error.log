@@ -45924,3 +45924,1810 @@ Stack Trace:
 #11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2017-06-28 14:18:49 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(170): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-28 14:18:58 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(170): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-06-28 15:16:01 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_row.ctp',
+)
+Request URL: /sou_project/sm/plans/addRow/4,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:17:11 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,Objective
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:17:42 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/2,Actitiv%C3%A9s
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:18:03 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/2,activities
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:19:13 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/3,Measurables
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:19:23 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/6,Resources
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:19:38 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/4,Budget
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:19:44 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/5,Deadline
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:20:08 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:20:18 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,Objective
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:20:37 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,Objectives
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:21:09 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/3,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:21:27 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:24:56 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/6,3000
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:27:48 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,&lt;span%20style=&quot;font-size&58;10px;&quot;&gt;null&lt;&42;span&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:27:51 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/2,&lt;span%20style=&quot;font-size&58;10px;&quot;&gt;null&lt;&42;span&gt;
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:28:30 Error: [MissingViewException] View file "Plans\add_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_line.ctp',
+)
+Request URL: /sou_project/sm/plans/addLine/1,2,6
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:35:44 Error: [MissingViewException] View file "Plans\add_line.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_line.ctp',
+)
+Request URL: /sou_project/sm/plans/addLine/1,3,6
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 15:40:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /sou_project/sm/plans/link
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(364): Model->find('first', Array)
+#7 [internal function]: PlansController->link()
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-28 15:41:25 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Plan.profile_id' in 'where clause'
+Request URL: /sou_project/sm/plans/comment
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `Plan`.`...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `Plan`.`...', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `Plan`.`...', false)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(Plan), Array)
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(268): Model->find('all', Array)
+#7 [internal function]: PlansController->comment()
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-28 15:44:05 Error: [MissingViewException] View file "Plans\set_project.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_project.ctp',
+)
+Request URL: /sou_project/sm/plans/setProject/projet--.--description%20de%20projet--.--1--.--1%203
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-28 16:15:32 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/3,INDICATOR
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 09:47:02 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 09:47:10 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 09:47:16 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/1,Objectives
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 09:53:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /sou_project/sm/plans/link
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(365): Model->find('first', Array)
+#7 [internal function]: PlansController->link()
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-29 13:42:51 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/3,dd
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 13:43:01 Error: [MissingViewException] View file "Plans\set_type_planning.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_type_planning.ctp',
+)
+Request URL: /sou_project/sm/plans/setTypePlanning/3,Indicator
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:04:19 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/6,3000
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:04:22 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,null
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:05 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/10,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:08 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/16,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:10 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/1,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:12 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/7,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:15 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/13,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:21:20 Error: [MissingViewException] View file "Plans\save_celle.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\save_celle.ctp',
+)
+Request URL: /sou_project/sm/plans/saveCelle/6,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:24:59 Error: [MissingViewException] View file "Plans\set_project.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_project.ctp',
+)
+Request URL: /sou_project/sm/plans/setProject/projet1--.--description--.--1--.--
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 14:27:03 Error: [MissingViewException] View file "Plans\set_project.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\set_project.ctp',
+)
+Request URL: /sou_project/sm/plans/setProject/bilel--.--belwafi--.--1--.--2%208
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-29 15:25:52 Error: Fatal Error (4): syntax error, unexpected '}' in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1371]
+2017-06-29 15:25:52 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1371)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1371, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1371, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:23:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Indicator.activite_id' in 'where clause'
+Request URL: /sou_project/sm/plans/listeindicator/1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `Indicat...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `Indicat...', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `Indicat...', false)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(Indicator), Array)
+#5 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(604): Model->find('first', Array)
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('findByActiviteI...', Array, Object(Indicator))
+#8 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1379): Model->__call('findByActiviteI...', Array)
+#9 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1379): Indicator->findByActiviteId('1')
+#10 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1386): PlansController->getIndicators('1')
+#11 [internal function]: PlansController->listeindicator('1')
+#12 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#13 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#14 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#15 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2017-06-30 10:55:36 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1372]
+2017-06-30 10:55:36 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans/addProject/%2014
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:55:42 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1372]
+2017-06-30 10:55:42 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans/addProject/%2014
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:55:51 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1372]
+2017-06-30 10:55:51 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans/newActiviter/
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:55:53 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1372]
+2017-06-30 10:55:53 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans/newActiviter/
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:55:53 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1372]
+2017-06-30 10:55:53 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans/newActiviter/
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1372, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 10:56:01 Error: Fatal Error (4): syntax error, unexpected '$NumeroActivite' (T_VARIABLE) in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1377]
+2017-06-30 10:56:01 Error: [FatalErrorException] syntax error, unexpected '$NumeroActivite' (T_VARIABLE)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1377)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1377, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1377, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:36 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:36 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:38 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:38 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:40 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:40 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:42 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:42 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:52 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:52 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:02:53 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:02:53 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:03:24 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1381]
+2017-06-30 11:03:24 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1381, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:08:26 Error: Fatal Error (1): Call to a member function getLastInsertID() on null in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1386]
+2017-06-30 11:08:26 Error: [FatalErrorException] Call to a member function getLastInsertID() on null
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1386)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1386, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\examp\\htdocs...', 1386, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 11:08:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findbyId' at line 1
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('findbyId', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('findbyId', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('findbyId', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('findbyId', Array, Object(Activite))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1387): Model->__call('findbyId', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1387): Activite->findbyId('3')
+#7 [internal function]: PlansController->newActiviter('1,1')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:09:32 Error: Fatal Error (4): syntax error, unexpected '=' in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1401]
+2017-06-30 14:09:32 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sou_project/sm/plans/detail_plan/1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 14:09:34 Error: Fatal Error (4): syntax error, unexpected '=' in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1401]
+2017-06-30 14:09:34 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 14:09:35 Error: Fatal Error (4): syntax error, unexpected '=' in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1401]
+2017-06-30 14:09:35 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 14:09:39 Error: Fatal Error (4): syntax error, unexpected '=' in [D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php, line 1401]
+2017-06-30 14:09:39 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sou_project/sm/plans/newActiviter/1,1
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\\examp\\htdocs...', 1401, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-06-30 14:36:39 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:36:43 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:36:43 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:36:43 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:36:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:36:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,bilel,
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,bilel,')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:41:40 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat' at line 1
+Request URL: /sou_project/sm/plans/newIndicator/1,description,2,33,12-12-22,5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('creat', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('creat', Array, Array)
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(616): DboSource->fetchAll('creat', Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(834): DboSource->query('creat', Array, Object(Indicator))
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Model->__call('creat', Array)
+#6 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1432): Indicator->creat()
+#7 [internal function]: PlansController->newIndicator('1,description,2...')
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-06-30 14:42:12 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,2,33,12-12-22,5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:44:56 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,1,1212,2017-06-06,20
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:44:58 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,1,1212,2017-06-06,20
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:44:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,1,1212,2017-06-06,20
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:44:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,1,1212,2017-06-06,20
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:44:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,1,1212,2017-06-06,20
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:52:16 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ggdgd,0,44443,2017-06-06,22
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:53:11 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,hgjghjj,0,4574547,2017-06-06,23
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:53:16 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,hgjghjj,0,4574547,2017-06-06,23
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:54:04 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,rtuhrtyhu,0,,2017-06-16,24
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 14:54:08 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,rtuhrtyhu,0,54747,2017-06-16,24
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:31 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:32 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:33 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:33 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:33 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:33 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:34 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:06:34 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,fgdf,0,46456,2017-06-14,25
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:07:43 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghfgh,0,65885,2017-06-07,26
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:07:44 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghfgh,0,65885,2017-06-07,26
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:07:45 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghfgh,0,65885,2017-06-07,26
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:06 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghfgh,0,65885,2017-06-07,26
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:11 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,,0,,,27
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:48 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,dsg,0,4536,,28
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:49 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,dsg,0,4536,,28
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:49 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,dsg,0,4536,,28
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:50 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,dsg,0,4536,,28
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:55 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,2,33,12-12-22,5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:08:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,description,2,33,12-12-22,5
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:09:52 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,hjkhjk,0,78,2017-06-14,29
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:09:52 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,hjkhjk,0,78,2017-06-14,29
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:09:53 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,hjkhjk,0,78,2017-06-14,29
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:14:24 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghjg,0,4654,2017-06-09,30
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:14:48 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/1,ghjgfgjgj,0,46545764,2017-06-09,30
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:20:21 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/0,hgjghj,0,5675,2017-06-05,31
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:21:00 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/,jhggj,2,6546,2017-06-05,32
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:30:24 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/0,teryrtyr,1,121213,2017-06-19,35
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:33:11 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,ergy,0,65566858,2017-06-21,36
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:34:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,kjkh,0,7688678,2017-06-06,37
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:35:11 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkiyui,0,7688677,2017-05-26,37
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:35:12 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkiyui,0,7688677,2017-05-26,37
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:04 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:05 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:08 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:09 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:10 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:36:12 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,khjkhjk,0,768,2017-06-08,39
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:37:58 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,hgkk,0,767,2017-06-07,40
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:38:02 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,hgkk,0,767,2017-06-07,40
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:38:28 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,hjkh,0,657,2017-06-08,41
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:38:39 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,hjkh657,2,657,2017-06-08,41
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:42:26 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,jghj,0,675656,2017-06-06,42
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:42:44 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,4364345,0,675656,2017-06-14,42
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:45:11 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfhgfh,0,5464577,2017-06-06,43
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:45:28 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfhgfh,0,5464577,2017-06-06,43
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:45:31 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfhgfh,0,5464577,2017-06-06,43
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:45:36 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfhgfh,0,5464577,2017-06-06,43
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:45:38 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfhgfh,0,5464577,2017-06-06,43
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:47:21 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,jhgjj,0,455,2017-06-08,44
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:53:37 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,lhljkl,1,786,2017-06-14,45
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:55:48 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,dfgsdg,0,45436,2017-06-07,46
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:57:57 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,,0,,,46
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:58:14 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,yeryre,0,,2017-06-06,47
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 15:58:50 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'activiter_id' cannot be null
+Request URL: /sou_project/sm/plans/newIndicator/--,:L,0,769,2017-05-31,48
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Indicator), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1450): Model->save(Array)
+#6 [internal function]: PlansController->newIndicator()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-30 15:58:54 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'activiter_id' cannot be null
+Request URL: /sou_project/sm/plans/newIndicator/--,:L,0,,,48
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Indicator), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1450): Model->save(Array)
+#6 [internal function]: PlansController->newIndicator()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-30 15:59:06 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'activiter_id' cannot be null
+Request URL: /sou_project/sm/plans/newIndicator/--,:L978,0,87987,2017-06-07,48
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Indicator), Array, Array)
+#4 D:\examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 D:\examp\htdocs\sou_project\sm\app\Controller\PlansController.php(1450): Model->save(Array)
+#6 [internal function]: PlansController->newIndicator()
+#7 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2017-06-30 15:59:33 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,lh7yuiyu,0,7787,2017-06-16,49
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:00:50 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,gfdg,0,5685658,2017-06-08,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:00:59 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,uytutu,0,,,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:01:45 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,,0,,,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:02:00 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,jhkhjk,0,2,2017-06-14,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:02:12 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,tyiyyiiyiy,0,5765,2017-06-28,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:02:29 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,5674575745747,1,3,2017-06-23,50
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:33:49 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,robert,2,323424,2017-05-31,51
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:34:05 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,bilel,1,3423,2017-06-20,51
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:34:18 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,francis,1,6346356,2017-06-27,51
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:45:08 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,indicator,0,3224,2017-06-05,52
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-06-30 16:45:20 Error: [MissingViewException] View file "Plans\new_indicator.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_indicator.ctp',
+)
+Request URL: /sou_project/sm/plans/newIndicator/--,indicator,0,34342,2017-06-06,52
+Stack Trace:
+#0 D:\examp\htdocs\sou_project\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 D:\examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
