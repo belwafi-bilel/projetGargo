@@ -179,8 +179,6 @@ var position=Number($("#position").val())-1;
 //refresh();
 </script>
 
-<input type="hidden" value="<?php if($style) echo  $style['Styleplanning']['font-style']; ?>" id="font-style">
-<input type="hidden" value="<?php if($style) echo  $style['Styleplanning']['font-weight']; ?>" id="font-weight">
 <input type="hidden" value="<?php echo  $id;?>" id="plan_id">
 <input type ="hidden" value="<?php echo $id_hisorical ?>" id="historical_plan_id">
 <input type ="hidden" value="<?php echo $his_id ?>" id="position">

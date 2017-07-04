@@ -118,6 +118,7 @@ $this->setTypePlanning($id.','.'Budget');
 $this->addTypePlanning($idLaste.',6');
 $id=$this->TypePlan->getLastInsertID();
 $this->setTypePlanning($id.','.'Deadline');
+ $this->addHistoricalPlanning($idLaste);
 $id_Historical= $this->HistoricalPlan->getLastInsertID();
 $this->addAxes($id_Historical);
 $this->redirect('../../#/SmartLibrary/listplan');
