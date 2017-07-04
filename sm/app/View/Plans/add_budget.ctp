@@ -270,5 +270,9 @@ $('.fa-times').click(function(){
   </table>
 </div>
 <button class="btn form-control"style="float: right;width: 200px;" id="save">save</button>
+<<<<<<< HEAD
+</div>
+=======
 </div>
 bilel belwafi
+>>>>>>> master

@@ -45901,6 +45901,8 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+<<<<<<< HEAD
+=======
 2017-06-28 11:57:58 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
 Exception Attributes: array (
   'class' => 'Mysql',
@@ -45924,7 +45926,12 @@ Stack Trace:
 #11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+<<<<<<< HEAD
+>>>>>>> master
+2017-06-28 14:11:07 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+=======
 2017-06-28 14:18:49 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+>>>>>>> master
 Exception Attributes: array (
   'class' => 'Mysql',
   'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
@@ -45946,7 +45953,11 @@ Stack Trace:
 #11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+<<<<<<< HEAD
+2017-06-28 14:11:13 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+=======
 2017-06-28 14:18:58 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+>>>>>>> master
 Exception Attributes: array (
   'class' => 'Mysql',
   'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
@@ -45968,6 +45979,8 @@ Stack Trace:
 #11 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #12 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+<<<<<<< HEAD
+=======
 2017-06-28 15:16:01 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
 Exception Attributes: array (
   'file' => 'Plans\\add_row.ctp',
@@ -47731,3 +47744,151 @@ Stack Trace:
 #3 D:\examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #4 D:\examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+>>>>>>> master
+2017-07-04 08:08:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 08:08:03 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 08:08:06 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 08:08:22 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'smartsearch\'',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 08:08:24 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'smartsearch\'',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 08:08:27 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'smartsearch\'',
+  'enabled' => true,
+)
+Request URL: /sou_project/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(269): Mysql->connect()
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3640): ConnectionManager::getDataSource('default')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1162): Model->setDataSource('default')
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3667): Model->setSource('type_components')
+#5 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3038): Model->getDataSource()
+#6 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#7 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(172): Model->find('all')
+#8 [internal function]: PlansController->index()
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-07-04 10:32:20 Error: [PDOException] SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+Request URL: /sou_project/sm/Plans/newPlan
+Stack Trace:
+#0 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 H:\Examp\htdocs\sou_project\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 H:\Examp\htdocs\sou_project\sm\app\Controller\PlansController.php(101): Model->save(Array)
+#6 [internal function]: PlansController->newPlan()
+#7 H:\Examp\htdocs\sou_project\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#8 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 H:\Examp\htdocs\sou_project\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#10 H:\Examp\htdocs\sou_project\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

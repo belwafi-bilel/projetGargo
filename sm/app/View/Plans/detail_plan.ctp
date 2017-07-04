@@ -421,8 +421,7 @@ $liste=$(this).attr('for');
  })
     </script>
 <!-- style="font-family:<?php //echo $style['Styleplanning']['font-family']; ?>;font-size:<?php //echo  $style['Styleplanning']['font-size']; ?>;color:<?php //echo  $style['Styleplanning']['color']; ?>;background-color:<?php //echo  $style['Styleplanning']['background-color']; ?>;font-style:<?php // echo  $style['Styleplanning']['font-style']; ?>;font-weight:<?php //echo  $style['Styleplanning']['font-weight']; ?>" -->
-
-<table id="example" class="table-border" >
+<table id="example" class="table-border" style="width: 100%">
          <thead>
             <tr id="typecomposante">          
              <?php
@@ -446,14 +445,6 @@ $liste=$(this).attr('for');
             </tr>
         </thead>
         <tbody>
-        	<pre>
-           <?php 
-        // print_r($axes);
-          //die();
-           ?>
-
-
-          </pre>
           <?php
 
            foreach ($axes as $axe) 
