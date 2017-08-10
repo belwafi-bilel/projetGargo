@@ -199,8 +199,8 @@ switch ($data['Event']['status']) {
 // {
 
 // }
-print_r($this->getPlanning($data['propertyPlaning']['historical_planing_id'].',1'));
-   die();
+return $this->getPlanning($data['propertyPlaning']['historical_planing_id'].',1');
+ 
 }
 
 
