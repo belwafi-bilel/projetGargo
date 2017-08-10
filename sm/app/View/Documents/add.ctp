@@ -159,8 +159,8 @@ $('#customers').css('overflow-y', 'auto');
 		echo $this->Form->input('creation_date',array('label'=>false, 'type'=>'hidden','value'=>date("20y-m-d H:S")));
 	?>
       <div class="al-content">
-     <div id="over" style=" width:100%; height:100%">
-</div>   
+   <!--   <div id="over" style=" width:100%; height:100%">
+</div>  -->  
                 
         
 			<div class="col-md-12 ">	  
@@ -298,21 +298,14 @@ $('#customers').css('overflow-y', 'auto');
                             <div id="progress-div">
         <label class="form-control col-md-2" style="width: 200px;height: 52px;">
                 Add main Document
-            
                  <?php echo $this->Form->file('upload',array('label'=>false,
                  'style'=>'display: none','id'=>'userImage'));?>
-   
           </label>
-
-               
-              
               <label class="form-control col-md-2 "style=" width: 300px;height: 52px;float: right;;">Add associated Document(s)
                 <span  class="glyphicon glyphicon-paperclip btn btn-default"></span> 
                  <?php echo $this->Form->file('file.',array('label'=>false,'multiple',
                  'style'=>'display: none','id'=>'userImage'));?>
              </label>   
-
-
 <div id="progress-bar"></div>
                             
                             </div>
@@ -322,12 +315,6 @@ $('#customers').css('overflow-y', 'auto');
                             <div class="form-group">
                                 <input type="submit" name="submit" id="name" class="form-control input-lg"  tabindex="1">
                             </div>		
-				
-
-
-
-
-
                         </form>											
                 </div>
                  </div>

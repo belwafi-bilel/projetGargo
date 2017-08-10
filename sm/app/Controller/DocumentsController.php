@@ -1,5 +1,7 @@
 <?php
+
 App::uses('AppController', 'Controller');
+
 /**
  * Documents Controller
  *
@@ -40,44 +42,116 @@ class DocumentsController extends AppController {
 	public function add() {
 
 		if ($this->request->is('post')) {
-	
-	$this->layout=null;
+     	$this->layout=null;
 			$espaceprofile=17;
             $id_users=$this->Session->read("id");
 			 $this->loadModel('DocumentCategory');
 			 $this->loadModel('DocumentCustomer');
 			 $this->loadModel('DocumentLanguage');
 			 $this->loadModel('DocumentSector');
-			 $this->loadModel('Attachment');
-			 $folderVisibility = new Folder();
-			 $folderDocument=new Folder();
-			  if ($dir=$folderVisibility->create('files' . DS .'Stockage'.DS.$this->request->data['visibility']))
-			  	$dirDocument='files' . DS .'Stockage'.DS.$this->request->data['visibility'].DS.$this->request->data['name'];
-			  if($folderDocument->create($dirDocument))
-			  	$size=0;
-			for ($i=0; $i < count($this->request->data['Document']['file']); $i++)
-			{
-               $size=$size+intval($this->request->data['Document']['file'][$i]['size']);
-			}
-			$size+=$this->request->data['Document']['upload']['size'];
-		    $size/=(1024*1024);
-			if($size<$espaceprofile)
-			{
-				 $filename = $dirDocument.DS.$this->request->data['Document']['upload']['name'];
-				 move_uploaded_file($this->request->data['Document']['upload']['tmp_name'],$filename);
-				 $document=array('name'=>$this->request->data['name'],
+			  $this->loadModel('Attachment');
+	$source_dir = 'files'.DS.$this->request->data['name'];	
+ if (!file_exists($source_dir)) {
+    mkdir($source_dir, 0777, true);
+ }
+
+
+				 $main_document = $this->request->data['Document']["upload"];
+          if($main_document["size"]>0){
+             $fileMain_document= fread(fopen($main_document["tmp_name"],"r"),$main_document["size"]);
+              }
+
+             $associated_documents1 = $associated_documents=$this->request->data['Document']['file'];
+              	foreach ($associated_documents as $associated_document) 
+						{
+							$filename =$source_dir.DS.$associated_document['name'];
+						 move_uploaded_file($associated_document["tmp_name"], $filename);
+						}
+
+
+//$file_list = Utils::listDirectory($source_dir);
+$dir = $source_dir;
+//  si le dossier pointe existe
+$files=array();
+if (is_dir($dir)) {
+   // si il contient quelque chose
+   if ($dh = opendir($dir)) {
+
+       // boucler tant que quelque chose est trouve
+       while (($file = readdir($dh)) !== false) {
+           // affiche le nom et le type si ce n'est pas un element du systeme
+           if( $file != '.' && $file != '..') {
+           //echo "fichier : $file : type : " . filetype($dir .'/'. $file) . "<br />\n";
+           $files[]=$file;
+           }
+       }
+       // on ferme la connection
+       closedir($dh);
+   }
+}
+ $zip = new ZipArchive(); 
+      if($zip->open($source_dir.'.zip', ZipArchive::CREATE) === true)
+      {
+	// Création d'un dossier par addEmptyDir(). [Facultatif]
+       $zip->addEmptyDir('Fichiers textes');
+	// Ajout d'un fichier.
+      	foreach ($files as $file) {
+	$zip->addFile($dir.'/'.$file);
+	}
+	// Ajout directement.
+	//$zip->addFromString('Fichiers textes/Fichier.txt', 'Je suis le contenu de Fichier.txt !');
+	$zip->close();
+      }
+
+$filedocument =addslashes(file_get_contents($source_dir.'.zip'));
+				 $document=
+				 array('name'=>$this->request->data['name'],
 				 	'country'=>$this->request->data['country'],
-				 	'them'=>$this->request->data['them'],
+				 	'theme'=>$this->request->data['them'],
 				 	'description'=>$this->request->data['description'],
 				 	'keyword'=>$this->request->data['keyword'],
 				 	'price'=>$this->request->data['Document']['price'],
-				 	'creation_date'=>$this->request->data['Document']['creation_date'],
-				 	'url'=>$filename,
-				 	'profile_id'=>$id_users,
-				 	'size'=>$size);
+				 	'visibility'=>$this->request->data['visibility'],
+				 	'date_created'=>$this->request->data['Document']['creation_date'],
+				 	'main_document'=>$fileMain_document,
+				 	'associated_document'=>$filedocument,
+				 	'user_id'=>$id_users,
+				 	'mime'=>$main_document["type"]
+				 	);
 				 $this->Document->create();
 				 $this->Document->save($document);
 				 $document_id=$this->Document->getLastInsertID();
+				   $associated_documents=$this->request->data['Document']['file'];
+              	foreach ($associated_documents1 as $associated_document) 
+						{
+							if($associated_document['size']>31457280)
+							{
+								$zip = new ZipArchive(); 
+								      if($zip->open('files'.DS.explode('.',$associated_document["name"])[0].'.zip', ZipArchive::CREATE) === true)
+								      {
+									$zip->addFile($dir.'/'.$associated_document['name']);
+									$zip->close();
+								      }
+								$file=addslashes(file_get_contents('files'.DS.explode('.',$associated_document["name"])[0].'.zip'));
+							}else
+							{
+								$file=addslashes(file_get_contents($source_dir.'/'.$associated_document["name"]));
+
+							}
+						 $data=array(
+						 	'extension'=>explode('.',$associated_document["name"])[sizeof(explode('.',$associated_document["tmp_name"]))-1],
+						 	'file'=>$file,
+						 	'document_id'=>$document_id,
+						 	'size'=>$this->bytes($associated_document['size']),
+						 	'name'=>$associated_document['name'],
+						 	'mime'=>$associated_document["type"]
+						 	);
+						 $this->Attachment->create();
+						 $this->Attachment->save($data);
+						   shell_exec('rm -rf ' . realpath('files'.DS.explode('.',$associated_document["name"])[0].'.zip'));
+						}
+						shell_exec('rm -rf ' . realpath($source_dir));
+                        shell_exec('rm -rf ' . realpath($source_dir.'.zip'));
 				 foreach ($this->request->data['s'] as $key => $value) {
 				 		$documentSector=array('sector_id'=>$key,
 				 			'document_id'=>$document_id);
@@ -102,24 +176,7 @@ class DocumentsController extends AppController {
 				 		$this->DocumentCustomer->create();
 				 $this->DocumentCustomer->save($DocumentCustomer);
 				 	}	
-			for ($i=0; $i < count($this->request->data['Document']['file']); $i++) 
-			{ 
-			  $extension=strtolower(pathinfo($this->request->data['Document']['file'][$i]['name'],PATHINFO_EXTENSION));
-			   $filename = $dirDocument.DS.$this->request->data['Document']['file'][$i]['name'];
-	           move_uploaded_file($this->request->data['Document']['file'][$i]['tmp_name'],$filename);
-	           $AttachmentArray=array('name'=>$this->request->data['Document']['file'][$i]['name'],
-	           	'keyword'=>"",
-	           	'url'=>$filename,
-	           	'extension'=>$extension,
-	           	'document_id'=>$document_id);
-	          $this->Attachment->create();
-				 $this->Attachment->save($AttachmentArray);
-            }
-
-             }else
-             {
-             	echo "memoir";
-             }
+		
 			if ($this->Document->save($this->request->data)) {
 				$this->Session->setFlash(__('The document has been saved'));
 				
@@ -127,6 +184,7 @@ class DocumentsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The document could not be saved. Please, try again.'));
 			}
+			 
 		}else
 		{
 APP::import('Model','Sector');
@@ -145,7 +203,6 @@ $this->set(compact('Sectors', 'Categorys', 'Customers', 'Languges'));
 		}
 
 	}
-
 /**
  * edit method
  *
@@ -169,7 +226,6 @@ $this->set(compact('Sectors', 'Categorys', 'Customers', 'Languges'));
 			$this->request->data = $this->Document->find('first', $options);
 		}
 	}
-
 /**
  * delete method
  *
@@ -193,6 +249,7 @@ $this->set(compact('Sectors', 'Categorys', 'Customers', 'Languges'));
 
 
 	function bytes($a) {
+		return $a;
     $unim = array("B","KB","MB","GB","TB","PB");
     $c = 0;
     while ($a>=1024) {

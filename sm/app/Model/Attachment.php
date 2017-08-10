@@ -7,10 +7,10 @@ App::uses('AppModel', 'Model');
 class Attachment extends AppModel {
 
 /**
- * Display field
+ * Use table
  *
- * @var string
+ * @var mixed False or table name
  */
-	public $displayField = 'name';
+	public $useTable = 'attachment';
 
 }

@@ -3,7 +3,6 @@ App::uses('Item', 'Model');
 
 /**
  * Item Test Case
- *
  */
 class ItemTest extends CakeTestCase {
 

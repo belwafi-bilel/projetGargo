@@ -27,19 +27,7 @@ class Document extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Attachment' => array(
-			'className' => 'Attachment',
-			'foreignKey' => 'document_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
+		
 		'DocumentCategory' => array(
 			'className' => 'DocumentCategory',
 			'foreignKey' => 'document_id',

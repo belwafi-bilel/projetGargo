@@ -3,7 +3,6 @@ App::uses('Offer', 'Model');
 
 /**
  * Offer Test Case
- *
  */
 class OfferTest extends CakeTestCase {
 

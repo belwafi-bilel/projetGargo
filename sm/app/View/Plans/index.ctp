@@ -84,19 +84,18 @@ $("#savePLan").click(function(){
   $("#MenuPlan").show();
   $("#newPlan").hide();
    $("#PlanShow").show();
-var content=$("#Titre").val();
-  var files=$(document).find('input[type="file"]')[0].files
-   if (files.length > 0) {
-  var file = files[0];
-  var liste=Array(content,file.name);
-  $.ajax({
-         type: "POST",
-         url:"sm/plans/newPlan/"+liste
-      }).done(function(result){
-    document.reload();
-      })
- 
-}
+// var content=$("#Titre").val();
+// $titre=$(".titlePlan").val();
+//   var files=$(document).find('input[type="file"]')[0].files
+//    if (files.length > 0) {
+//   var file = files[0];
+//   var liste=Array(content,file.name,titre);
+//   // $.ajax({
+//   //        type: "POST",
+//   //        url:"sm/plans/newPlan/"+liste
+//   //     }).done(function(result){
+//   //   document.reload();
+//   //     })
 })
 $("#print").click(function(){
     printDiv("printdiv");
@@ -157,10 +156,9 @@ if($plans)
 </div>
 </div>
 <form method="post" action="./sm/Plans/newPlan" enctype="multipart/form-data">
-
 <div class="row" id="newPlan" style="display:none;">
    <div class="col-xs-12  white height-33">
-    <span><?php echo __("New PLAN"); ?></span>
+    <?php echo $this->Form->input('Title',array('label'=>false,'type'=>'text','class'=>'titlePlan')); ?>
  <button type="submit"  class="btn-btn" id="savePLan1">
    <?php echo __("Save"); ?>
    </button> 
@@ -168,26 +166,20 @@ if($plans)
   <?php echo __("Cancel"); ?>
    </button>
 </div>
-
-   
-  <div class="logoPlan">
+<div class="logoPlan">
      <div style="border-style: solid;border-color: #fbf9f9;padding: 6px;">
       <label>
         <img id="output" src="./sm/img/plans/vide.gif" style=" width: 100px;height: 100px;" for="inputupload"/>
         <?php echo $this->Form->input('.logo',array('label'=>false,'type'=>'file','id'=>'inputupload', 'options' => array('accept' => 'application/gzip,application/gzipped,application/octet-stream'),'onchange'=>'readURL(this);','style'=>'display: none')); ?>
-         
          </label>
       </div>
-  </div>
+</div>
       <div class="item margin-top-34">
-        <?php echo $this->Form->input('Title',array('label'=>false,'type'=>'textarea','class'=>'textareaNewPlan')); ?>
-        
+        <?php echo $this->Form->input('description',array('label'=>false,'type'=>'textarea','class'=>'textareaNewPlan')); ?>
       </div>
-
 </div>  
 </form>     
 <div id="PlanShow" class="col-xs-12 col-md-12 margin-bottom-13">
-
 </div>
  <datalist id="query">
   <?php foreach ($types as $type) {
@@ -198,9 +190,6 @@ if($plans)
 } ?>
    </datalist>
    <div id="listegroupe"></div>
-  
-
-
 <div style="display:none"class="refreshdiv"  id="refersh">
   <div>
     <?php echo $this->Html->image("LoaderIcon.gif");?>

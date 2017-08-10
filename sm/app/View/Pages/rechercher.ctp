@@ -33,8 +33,8 @@ foreach ($documents as $document) {
       <th scope="row"><?php  echo $document['documents']['id']; ?></th>
       <td><?php  echo $document['documents']['name']; ?></td>
       <td><?php  echo $document['documents']['description']; ?></td>
-      <td><?php  echo $username[0]." ".$username[1]; ?></td>
-      <td><?php  echo $document['documents']['creation_date']; ?></td>
+      <td><?php  //echo $username[0]." ".$username[1]; ?></td>
+      <td><?php  echo $document['documents']['date_created']; ?></td>
     </tr>
   </a>
 	<?php

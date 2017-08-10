@@ -3,7 +3,6 @@ App::uses('PersonalOffer', 'Model');
 
 /**
  * PersonalOffer Test Case
- *
  */
 class PersonalOfferTest extends CakeTestCase {
 
@@ -13,7 +12,12 @@ class PersonalOfferTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.personal_offer'
+		'app.personal_offer',
+		'app.historical',
+		'app.item',
+		'app.offer',
+		'app.task',
+		'app.permission_access'
 	);
 
 /**

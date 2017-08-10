@@ -1,5 +1,5 @@
 
-<?php // $this->webroot="http://documents.goforms.ca"; ?>
+<?php  $webroot="sm/"; ?>
 
 </script>
 
@@ -94,7 +94,7 @@ if(typeAction=="download")
 $('#downloadDocument').slideDown("show");
  $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/detail/"+liste
+  url:"sm/pages/detail/"+liste
 });
 }
 else if(typeAction=="view")
@@ -104,7 +104,7 @@ $("#openDocument").slideDown("show");
 {
    $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/detail/"+liste
+  url:"sm/pages/detail/"+liste
 }).done(function(result) {
      $('#body-detail').html(result);
 });
@@ -114,7 +114,7 @@ else
 alert(etat);
   $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/detail/"+liste
+  url:"sm/pages/detail/"+liste
 }).done(function(result) {
      $('#body-detail').html(result);
 });
@@ -170,7 +170,7 @@ var searchArray=Array(rechercher,language,sector,category,customer,date,todate,a
 //alert(searchArray);
 $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/rechercher/"+searchArray
+  url:"sm/pages/rechercher/"+searchArray
 }).done(function(result) {
      $('#body-content').html(result);   
  });
@@ -235,7 +235,7 @@ var id_document=$(this).attr('documentID');
   {
     $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/detail/"+id
+  url:"sm/pages/detail/"+id
 }).done(function(result) {
      $('#body-detail').html(result);
 });
@@ -245,7 +245,7 @@ var id_document=$(this).attr('documentID');
 
 $.ajax({
   type: "POST",
-  url:<?php echo $this->webroot;?>+"/pages/detail/"+id
+  url:"sm/pages/detail/"+id
 }).done(function(result) {
      $('#body-detail').html(result);
 });

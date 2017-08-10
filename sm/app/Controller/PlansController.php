@@ -9,31 +9,7 @@ App::uses('AppController', 'Controller');
 class PlansController extends AppController {
  
 
-public function composant($liste=null)
-{	$this->loadModel("Composant");
-$coordonner=explode(',',$liste);
-$type=explode(',',$coordonner[2]);
-$composants=$this->Composant->find('all');
-$TableTails=$this->Session->read("TableTail");
-	$this->exemple($coordonner[0].','.$coordonner[1]);
-	$this->set(compact('composants','TableTails','coordonner'));
-}
 
-public function colone($numLigne=null)
-{
-	$this->loadModel('TypeComponent');
-	$types=$this->TypeComponent->find('all');
-$tab=explode(',',$numLigne); 
-	$this->set(compact('tab','types'));
-}
-
-
-public function budget($id=null)
-{
-$budgets=$this->getBudget_id($id);
-$detailbudgets=$this->getDetail_budget($id);
-$this->set(compact('budgets','detailbudgets'));
-}
 
 
 public function textarea($liste=null)
@@ -54,33 +30,8 @@ $TableTails=$this->Session->read("TableTail");
 $this->set(compact('index','TableTails'));
 }
 
-public function recording($id=null)
-{
-$detailsession=$this->Session->read("TableTail");
-	$content="";
-for ($i=0; $i <count($detailsession) ; $i++) { 
-	
-for ($j=0; $j <count($detailsession[$i]) ; $j++) { 
-		$content.=$i."<>".$j."=.=".$detailsession[$i][$j]['type']."?!?".$detailsession[$i][$j]['color']."?!?".$detailsession[$i][$j]['display']."?!?".$detailsession[$i][$j]['data']."?!?".$detailsession[$i][$j]['duplicate']."!!-!!";
-	}
-}
 
-$ettiquette=$this->Session->read('ettiquette');
-	$ettiquettes="";
-	foreach ($ettiquette as  $value) {
-		$ettiquettes.="%3%".$value['id']."%3%".$value['description']."!##!";
-	}
-$content.="%55%".$ettiquettes;
-$id_profile=$this->Session->read('id');
-$data=array('id_plan'=>$id,
-			'id_profile'=>$id_profile,
-			'date_modification'=>date("Y-m-d h:s:i"),
-			'content'=>$content
-	);
-$this->loadModel('DetailPlan');
-$this->DetailPlan->create();
-$this->DetailPlan->save($data);
-}
+
 public function newPlan()
 {
 	$this->loadModel('TypePlan');
@@ -94,7 +45,7 @@ public function newPlan()
  		'title'=>$this->request->data['Title'],
  		'date_create'=>date("Y-m-d h:s:i"),
  		'logo'=>$fileData,
- 		'adress'=>'',
+ 		'adress'=>$this->request->data['description'],
  		'user_id'=>$id);
  
 $this->Plan->create();
@@ -157,14 +108,105 @@ $this->set(compact('types','listes','plans','total'));
 }
 
 
+public function planingJson($string=null)
+{
+$string='
+    {"Event":{"id":"4","status":"edit","posEvent":"Title Or Axis Or metrics or propertyPlaning or line or column","data":"data for change","line":"2","column":"3"},
+    "propertyPlaning":{"Planing_id":"1","historical_planing_id":"1","lock":"no","titre":"titre plans","photo":"name.extension","optionPlaning":"long term","style_planing":{"color":"red","Red":"#FF00000"}}
+   
+}';
+ $text=$this->getEntiteHtml($string);
+//  echo $text;
+    $data=json_decode($text,TRUE);
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+ // $json=json_encode($data);
+  //echo $json;
+switch ($data['Event']['status']) {
+	case 'new':
+		switch ($data['Event']['posEvent'])
+		 {
+			case 'Axis':
+				$this->addAxes($data['propertyPlaning']['historical_planing_id']);
+				break;
+			case 'Line':
+			$nomberLigne=$this->getNUmbreRowPlanningTable($data['propertyPlaning']['Planing_id']);
+			$tab=$data['Event']['id'].",".$data['Event']['line'].",".$nomberLigne;
+				$this->addLine($tab);
+				break;
+			case 'column':
+			    $this->addTypePlanning();
+				$tab=$data['Event']['row'].",".$data['propertyPlaning']['historical_planing_id'];
+					$this->addRow($tab);
+				break;
+			default:
+				break;
+				break;
+		}
+		break;
+	case 'edit':
+		switch ($data['Event']['posEvent']) 
+		{
+			case 'Axis':
+			$this->setAxes($data['Event']['id'].",".$data['Event']['data']);
+				break;
+			case 'detail_planning':
+			$this->saveCelle($data['Event']['id'].",".$data['Event']['data']);
+				break;
+			case 'type':
+			$this->setTypePlanning($data['Event']['id'].",".$data['Event']['data']);
+			default:
+			
+				break;
+		}
+		break;
+	case 'delete':
+		$this->deleteLine();
+		break;
+	case 'delete':
+	switch ($data['Event']['posEvent'])
+		 {
+			case 'line':
+				$this->deleteLine(",".$data['Event']['id'].",".$data['Event']['line']);
+				break;
+			case 'column':
+			$this->deleteRow($data['propertyPlaning']['historical_planing_id'].",".$data['Event']['column']);
+			    break;
+			    case "plan":
+					$this->deletePlan($data['propertyPlaning']['Planing_id']);
+			    break;
+			default:
+				;
+				break;
+		}
+		break;
+	default:
+		# code...
+		break;
+}
 
 
+// if($data['Event']['status']=="new")
+// {
+// 	echo "<pre>";
+// 	print_r($data[$data['Event']['posEvent']]);
+// }
+// else if($data['Event']['status']=="edit")
+// {
 
+// }else if($data['Event']['status']=="change")
+// {
+
+// }
+print_r($this->getPlanning($data['propertyPlaning']['historical_planing_id'].',1'));
+   die();
+}
 
 
 
 public function index()
-{
+{ 
 	    $plans="";
 	    $types="";
         $this->layout=null;
@@ -382,16 +424,10 @@ for ($k=0; $k <count($lignecolone)-1 ; $k++) {
 $TableTail[$indexI]=$detail;
 }
 }
-
 $detailplans=$TableTail;
 $coordonners=array(count($TableTail),count($TableTail[0]));
-
 $this->set(compact('linkweb','plans','detailplans','coordonners'));
-
 }
-
-
-
 public function table()
 {
 	$this->layout=null;
@@ -641,9 +677,16 @@ $style=$this->getStyle($historical_plans[$his_id]['HistoricalPlan']['id']);
   	}
  }
  $type_Plannings=$this->getTypePlanning($id);
+ $typePlans=array('typePlan'=>$type_Plannings);
+ $id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
+ $axes=array('axis'=>$axes);
+$data=array_merge($style,$historical_plans[0],$optionplans,$visionplans,$typePlans,$axes,array('line'=>$line,'row'=>$row,'id'=>$id,'positionActivite'=>$positionActivite,'positionIndicator'=>$positionIndicator,'positionEcheance'=>$positionEcheance,'positionBudget'=>$positionBudget,'his_id'=>$his_id,'historical_id'=>$id_hisorical));
+return json_encode($data);
+echo "<pre>";
+print_r(json_encode($data));
+die();
 
-$id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
-   $this->set(compact('plans','style','optionplans','visionplans','type_Plannings','historical_plans','id','position','axes','line','row','his_id','id_hisorical','positionActivite','positionIndicator','positionEcheance','positionBudget'));       
+    $this->set(compact('plans','style','optionplans','visionplans','typePlans','historical_plans','id','position','axes','line','row','his_id','id_hisorical','positionActivite','positionIndicator','positionEcheance','positionBudget'));       
 }
 /*****************************function historical planning*****************************/
 /*
@@ -676,7 +719,7 @@ foreach ($axes as $axe) {
 	$line=$this->getNUmbreLinePlanningTable($axe['Axis']['id']);
 	$coordonners=array('row'=>$row,'line'=>($line==0)?0:($line/(($row!=0)?$row:1)));
 	$axefinal=array_merge($axe['Axis'],$coordonners);
- 	$axes1[]=array_merge(array('Axis'=>$axefinal,'detail_planning'=>$this->getDetail_planning($axe['Axis']['id'])));
+ 	$axes1[]=array_merge(array('Axis'=>$axefinal),array('detail_planning'=>$this->getDetail_planning($axe['Axis']['id'])));
  }
 	return $axes1;	
 }
@@ -713,6 +756,7 @@ function getDetail_planning($id=null)
 $detailplans=$this->DetailPlan->find('all',
 	['conditions'=>['DetailPlan.axes_id'=>$id]]);
 $detailplans1=null;
+$tableau=array();
 foreach ($detailplans as $detailplan) 
 	{
 		$detailplans1[]=array('DetailPlan'=>array_merge($detailplan['DetailPlan'],
@@ -721,11 +765,16 @@ foreach ($detailplans as $detailplan)
 	 		array('jobs'=>$this->getJobs($detailplan['DetailPlan']['id'])),
 	 		array('MaterielSources'=>$this->getMaterielSource($detailplan['DetailPlan']['id'])),
 	 		array('HumanSources'=>$this->gethumanSource($detailplan['DetailPlan']['id'])),
-	 		array('activites'=>$this->getListeActivityAndIndicatorByDetailPlanningId($detailplan['DetailPlan']['id']))
+	 		array('Activites'=>$this->getListeActivityAndIndicatorByDetailPlanningId($detailplan['DetailPlan']['id']))
 	 		));
+		
 	}
-	return $detailplans1;
-
+	
+	// echo "<pre>";
+	// print_r(array_merge(array('detail_planning'=>$detailplans1),array('Activites'=>$tableau)));
+	// die();
+	//return array_merge(array('detail_planning'=>$detailplans1),array('Activites'=>$tableau));
+return $detailplans1;
 }
 
 /*****************************************function budget ***********************/
@@ -1377,16 +1426,60 @@ public function newActiviter($liste=null)
 	$liste=explode(',',$liste);
 	$data=array(
 		'num'=>$num+1,
-		'description'=>'-',
-		'cible'=>'0',
+		'description'=>'Description',
+		'cible'=>'Cible',
 		'detail_planning_id'=>$liste[0]
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
 	$lasteIdActivite=$this->Activite->getLastInsertID();
 	$NumeroActivite=$this->Activite->findById($lasteIdActivite);
+	$users=$this->getUser($id);
+$this->set(compact('NumeroActivite','NumIndicator','users'))	;
+}
+	/**********************************function SaveActiviter  ***********************/
+/*
+function saveActiviter to  edit Activiter  planning action of row=?? and position=?
+*/    
+public function saveActiviter($liste=null)
+{
+	$this->loadModel('Activite');
+	$liste=explode(',',$liste);
+	$data=array(
+		'id'=>$liste[0],
+		'description'=>$liste[1],
+		'cible'=>$liste[2],
+		'title'=>$liste[3]
+		);
+	$this->Activite->save($data);
+	// $tab=$liste[0].','.
+}
+public function setActiviter($id=null)
+{
+	$this->loadModel('Activite');
+	$activiter=$this->Activite->findById($id);
+	$indicators=$this->getIndicators($id);
+	$users=$this->getUser($id);
+	$this->set(compact('activiter','indicators','users'));
+}
+/**********************************function newResponsableActiviter  ***********************/
+/*
+*function newResponsableActiviter of activiter_id=?
+*/
+public function newResponsableActiviter($liste=null)
+{
+	$liste=explode(',',$liste);
+	$this->loadModel('ActivityManager');
+	for ($i=1; $i <count($liste) ; $i++) { 
+		$data=array(
+			'activiteer_id'=>$liste[0],
+			'user_id'=>$liste[$i],
+			"date"=>new date("Y-m-d")
+			);
+		$this->ActivityManager->create();
+		$this->ActivityManager->save($data);
+	}
 
-$this->set(compact('NumeroActivite','NumIndicator'))	;
 }
 	/**********************************function getIndicators  ***********************/
 /*
@@ -1409,7 +1502,8 @@ public function listeindicator($id=null)
 }
 /**********************************function getActivityByDetailPlanningId  ***********************/
 /*
-function getActivityByDetailPlanningId of axes_id=? and line=?*/ 
+function getActivityByDetailPlanningId of axes_id=? and line=?
+*/ 
 public function getActivityByDetailPlanningId($id=null)
 {
 	$this->loadModel('Activite');
@@ -1418,14 +1512,15 @@ public function getActivityByDetailPlanningId($id=null)
 }
 /**********************************function getListeActivityAndIndicatorByDetailPlanningId  ***********************/
 /*
-function getActivityByDetailPlanningId of axes_id=? and line=?*/ 
+function getActivityByDetailPlanningId of axes_id=? and line=?
+*/ 
 public function getListeActivityAndIndicatorByDetailPlanningId($id=null)
 {
 	$this->loadModel('Activite');
 	$listeActiviters=$this->Activite->findAllByDetailPlanningId($id);
 	$tab=array();
 	foreach ($listeActiviters as $listeActiviter) {
-		$tab[]=array_merge($listeActiviter,$this->getIndicators($listeActiviter['Activite']['id']));
+		$tab[]=array_merge($listeActiviter,array('indicators'=>$this->getIndicators($listeActiviter['Activite']['id'])));
 	}
 	return $tab;
 }
@@ -1445,7 +1540,6 @@ function newIndicators of Activitre=?*/
 
 public function newIndicator($liste=null)
 {
-
 	$type=array('%','#','$');
 	$liste=explode(',',$liste);
 	$listeindicators=$this->getIndicators($liste[5]);
@@ -1463,6 +1557,101 @@ public function newIndicator($liste=null)
 	$this->Indicator->create();
 	$this->Indicator->save($data);
 }
+/**********************************function setIndicator  ***********************/
+/*
+function setIndicators of id=?*/ 
+public function setIndicator($liste=null)
+{
+	$liste=explode(',', $liste);
+	$this->loadModel("Indicator");
+	$data=array(
+		'id'=>$liste[0],
+		'valeur'=>$liste[1]
+		);
+	$this->Indicator->save($data);
+}
 
+/**********************************function getSourceById  ***********************/
+/*
+function getSourceById of any model  and by id=?
+*/ 
+public function getSourceById($liste=null)
+{
+	$liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->findById($liste[1]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
+/**********************************function getSourceByAttribute  ***********************/
+/*
+function getSourceByAttribute of any model  and by Attribute=?
+*/ 
+public function getSourceByAttribute($liste=null)
+{
+	$liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1]=>$liste[2]]]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
+/**********************************function getSourceByTopAttribute  ***********************/
+/*
+function getSourceByTopAttribute of any model  and by top attribute=?
+*/ 
+public function getSourceByTopAttribute($liste=null)
+{
+    $liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1].'> '=>$liste[2]]]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
+/**********************************function getSourceByLowerAttribute  ***********************/
+/*
+function getSourceByLowerAttribute of any model  and by lower attribute=?
+*/ 
+public function getSourceByLowerAttribute($liste=null)
+{
+    $liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1].'< '=>$liste[2]]]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
+/**********************************function getSourceBetweenTwoAttribute  ***********************/
+/*
+function getSourceBetweenTwoAttribute of any model  and Between two attributes=?
+*/ 
+public function getSourceBetweenTwoAttribute($liste=null)
+{
+    $liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1].'<='=>$liste[2],$liste[0].'.'.$liste[1].'>= '=>$liste[3]]]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
+/**********************************function getSourceByTwoAttributes  ***********************/
+/*
+function getSourceByTwoAttributes of any model and by two attributes=?
+*/ 
+public function getSourceByTwoAttributes($liste=null)
+{
+	 $liste=explode(",",$liste);
+	$this->loadModel($liste[0]);
+	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1]=>$liste[3],$liste[0].'.'.$liste[2]=>$liste[4]]]);
+	$table=array_values(($table));
+	$out=json_encode($table);
+	return $out;
+}
 
+/**********************************function getSourceById  ***********************/
+/*
+function getSourceById of any model and by id=?
+*/ 
 }

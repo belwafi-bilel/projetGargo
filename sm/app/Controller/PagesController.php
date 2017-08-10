@@ -38,14 +38,14 @@ class PagesController extends AppController {
  *
  * @var string
  */
-	public $name = 'Pages';
+  public $name = 'Pages';
 
 /**
  * This controller does not use a model
  *
  * @var array
  */
-	public $uses = array();
+  public $uses = array();
 
 /**
  * Displays a view
@@ -53,13 +53,13 @@ class PagesController extends AppController {
  * @param mixed What page to display
  * @return void
  */
-	public function index() {
+  public function index() {
 APP::import('Model','Document');
      $this->Document = new Document;
 //$documents=$this->Document->find('all');
 $string="SELECT * FROM documents";
 $documents=$this->Document->query($string);
-		APP::import('Model','Sector');
+    APP::import('Model','Sector');
 $this->Sector = new Sector;
 APP::import('Model','Category');
 $this->Category = new Category;
@@ -90,14 +90,16 @@ $this->Attachment = new Attachment;
 
 $extensions=$this->Attachment->find('all',array('fields'=>'DISTINCT Attachment.extension'));
 $this->set(compact('Sectors','documents', 'Categorys', 'Customers', 'Languages','extensions','actions','document_actionnes'));
-	
+  
   }
 
 
 public function detail($liste=null)
 {
+
 $tab=explode(",",$liste); 
   $this->layout=null;
+  $this->loadModel("Attachment");
   APP::import('Model','Action');
      $this->Action = new Action;
        APP::import('Model','Document');
@@ -115,35 +117,53 @@ $tab=explode(",",$liste);
      $this->Action->save($action);
 $id=$tab[0];
   }
-$documents=$this->Document->find('all',array('conditions'=>array('Document.id'=>$id)));
+$documents=$this->Document->findById($id);
+$attachments=$this->Attachment->findAllByDocumentId($id);
 $actions=$this->Action->find('all',array('conditions'=>array('Action.document_id'=>$id)));
 if(count($tab)>1)
 if($tab[2]=="download")
 {
- $zip = new ZipArchive(); 
-      // On ouvre l’archive.
- $dir=explode("\\",$documents[0]['Document']['url']);
+foreach ($attachments as $attachment) {
+// // header("Content-Type: ".$attachment['Attachment']['mime']);
+// // ob_clean();
+// // flush();
+// //echo $attachment['Attachment']['file'];
+//   header('Content-Length: '.);
+//  header('Content-Type: '.);
+//  header('Content-Disposition: attachment; filename="'.$attachment['Attachment']['file'].'"');
+
+ $this->Download($attachment['Attachment']['size'],$attachment['Attachment']['mime'],$attachment['Attachment']['name'],$attachment['Attachment']['file']);
+
+ // ob_clean();
+ // flush();
+}
+//echo "<pre>";
+// print_r($tab);
+die();
+//  $zip = new ZipArchive(); 
+//       // On ouvre l’archive.
+//  $dir=explode("\\",$documents[0]['Document']['url']);
  
- $zipe='files'.DS.$dir[1].DS.$dir[2].DS.$documents[0]['Document']['name'].DS.$documents[0]['Document']['name'].".zip";
+//  $zipe='files'.DS.$dir[1].DS.$dir[2].DS.$documents[0]['Document']['name'].DS.$documents[0]['Document']['name'].".zip";
  
-      if($zip->open($zipe== TRUE))
+//       if($zip->open($zipe== TRUE))
       
-      if($zip->open($zipe, ZipArchive::CREATE) == TRUE)
-      {
+//       if($zip->open($zipe, ZipArchive::CREATE) == TRUE)
+//       {
         
-      }
+//       }
      
-foreach ($documents as $document) {
-  for($i=0;$i<count($document['Attachment']);$i++)
-  {
+// foreach ($documents as $document) {
+//   for($i=0;$i<count($document['Attachment']);$i++)
+//   {
     
-  $zip->addFile($document['Attachment'][$i]['url']);
-  }
+//   $zip->addFile($document['Attachment'][$i]['url']);
+//   }
+// }
+// $zip->close();
 }
-$zip->close();
-}
-$this->set(compact('documents','actions'));
-$this->set(compact('documents','actions'));
+
+$this->set(compact('documents','actions','attachments'));
 }
 public function rechercher($chaine=mull)
 {
@@ -152,9 +172,9 @@ public function rechercher($chaine=mull)
    $this->set(compact('documents'));
 }
 
-	function indexation($text)
-	{
-			$dirvide= new Folder('files' . DS .'Vide');
+  function indexation($text)
+  {
+      $dirvide= new Folder('files' . DS .'Vide');
       $filevide = new File($dirvide->pwd() . DS . '2.txt');
     $contentsvide = $filevide->read();
 $motevide = utf8_encode($contentsvide);
@@ -162,15 +182,15 @@ $motevide = utf8_encode($contentsvide);
      $mots=array();
     //$fichier=explode(" ",$fichier);
    for ($i=0; $i <count($motevide) ; $i++) { 
-   	$mots[]= $motevide[$i];
+    $mots[]= $motevide[$i];
     }
 $saisie=explode(" "," ".$text);
     $indexe=array();
     for ($i=0; $i <count($saisie) ; $i++) { 
-  	if(!in_array($saisie[$i], $mots)&&strlen(trim($saisie[$i]))>1)
-  		{
-  			$indexe[]=$saisie[$i];
-  		}
+    if(!in_array($saisie[$i], $mots)&&strlen(trim($saisie[$i]))>1)
+      {
+        $indexe[]=$saisie[$i];
+      }
   }
     $saisie= array_values($indexe);
 
@@ -210,9 +230,7 @@ $DocumentCustomers=array();
   $Attachments = $this->Attachment->find('all',array(
             'fields'=>'DISTINCT Attachment.document_id'
               ));
- 
-         
-    
+
           APP::import('Model','Document');
               $this->Document = new Document;
      if(count($tab))
@@ -323,22 +341,22 @@ for($j=1;$j<count($document);$j++)
 }
 
 
-$string.=") OR ( profile_id ='".$usersarrayid[0]."'";
+$string.=") OR ( user_id ='".$usersarrayid[0]."'";
 for ($i=01; $i <count($usersarrayid) ; $i++) { 
-  $string.=" OR profile_id ='".$usersarrayid[$i]."'";
+  $string.=" OR user_id ='".$usersarrayid[$i]."'";
 }
 
 $string.=" ))";
 
 if($optionsearch[5]!='0' && $optionsearch[6]!='0' )
 {
-  $string.=" AND creation_date BETWEEN '".$optionsearch[5]."' AND '".$optionsearch[6]."'";
+  $string.=" AND date_created BETWEEN '".$optionsearch[5]."' AND '".$optionsearch[6]."'";
 }else if($optionsearch[5]!='0')
 {
- $string.=" AND creation_date >= '".$optionsearch[5]."'";
+ $string.=" AND date_created >= '".$optionsearch[5]."'";
 }
 else if($optionsearch[6]!='0')
-$string.=" AND creation_date <= '".$optionsearch[6]."'";
+$string.=" AND date_created <= '".$optionsearch[6]."'";
 
              $documents=$this->Document->query($string);
           for($i=0;$i<count($documents);$i++)
@@ -347,20 +365,25 @@ $string.=" AND creation_date <= '".$optionsearch[6]."'";
             $Category="";
             $Customer="";
             $Language=array();
-            $user = $this->User->findById($documents[$i]['documents']['profile_id']);     
+            $user = $this->User->findById($documents[$i]['documents']['user_id']);     
           $Attachment = $this->Attachment->find('all',array('conditions'=>array('Attachment.document_id'=>$documents[$i]['documents']['id'])));
-          $DocumentSector = $this->DocumentSector->find('all',array('conditions'=>array('DocumentSector.document_id'=>$documents[$i]['documents']['id'])));
-          $DocumentCategory = $this->DocumentCategory->find('all',array('conditions'=>array('DocumentCategory.document_id'=>$documents[$i]['documents']['id'])));
-          $DocumentCustomer = $this->DocumentCustomer->find('all',array('conditions'=>array('DocumentCustomer.document_id'=>$documents[$i]['documents']['id'])));
-          $DocumentLanguage = $this->DocumentLanguage->find('all',array('conditions'=>array('DocumentLanguage.document_id'=>$documents[$i]['documents']['id'])));
-              for ($j=0; $j <count($DocumentSector) ; $j++)     
-           $Sector[]=$this->Sector->find('first',array('conditions'=>array('Sector.id'=>$DocumentSector[$j]['DocumentSector']['sector_id'])))['Sector']['description'];
+          $DocumentSector = $this->DocumentSector->findAllByDocumentId($documents[$i]['documents']['id']);
+         
+          $DocumentCategory = $this->DocumentCategory->findAllByDocumentId($documents[$i]['documents']['id']);
+          $DocumentCustomer = $this->DocumentCustomer->findAllByDocumentId($documents[$i]['documents']['id']);
+          $DocumentLanguage = $this->DocumentLanguage->findAllByDocumentId($documents[$i]['documents']['id']);
+              for ($j=0; $j <count($DocumentSector) ; $j++)  
+              {
+                 
+                 $tab=$this->Sector->findById($DocumentSector[$j]['DocumentSector']['sector_id']);
+                 $Sector[]=$tab['Sector']['description'];
+              }
            for ($j=0; $j <count($DocumentCategory) ; $j++)
-           $Category[]=$this->Category->find('first',array('conditions'=>array('Category.id'=>$DocumentCategory[$j]['DocumentCategory']['categorie_id'])))['Category']['description'];
+           $Category[]=$this->Category->findById($DocumentCategory[$j]['DocumentCategory']['categorie_id'])['Category']['description'];
           for ($j=0; $j <count($DocumentCustomer) ; $j++)
-           $Customer[]=$this->Customer->find('first',array('conditions'=>array('Customer.id'=>$DocumentCustomer[$j]['DocumentCustomer']['customer_id'])))['Customer']['description'];
+           $Customer[]=$this->Customer->findById($DocumentCustomer[$j]['DocumentCustomer']['customer_id'])['Customer']['description'];
            for ($j=0; $j <count($DocumentLanguage) ; $j++)
-           $Language[]=$this->Language->find('first',array('conditions'=>array('Language.id'=>$DocumentLanguage[$j]['DocumentLanguage']['language_id'])))['Language']['name'];
+           $Language[]=$this->Language->findById($DocumentLanguage[$j]['DocumentLanguage']['language_id'])['Language']['name'];
                         
               $documents[$i]=array_merge($documents[$i],array('option'=>array(
                 'Sector'=>$Sector,
@@ -374,13 +397,28 @@ $string.=" AND creation_date <= '".$optionsearch[6]."'";
               );
             
               }
-             
+
          return $documents;
           
        } 
   }
 
 
+function Download($size,$type,$title,$content)
+{
+     header('Content-Type:'.$type);
+    header('Content-Length: '. $size);
+    header('Content-disposition: attachment; filename='. $name);
+    header('Pragma: no-cache');
+    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+    header('Expires: 0');
+    readfile($content);
+    exit();
+        // header("Content-Length: $size");
+        // header("Content-Type: $type");
+        // header("Content-Disposition: attachment; filename=".$title);
+        // echo $content;
 
+}
 
 }

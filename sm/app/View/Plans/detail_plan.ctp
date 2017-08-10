@@ -1,3 +1,4 @@
+ 
  <script>
   $('.jqte-test').jqte();
   var jqteStatus = true;
@@ -36,20 +37,20 @@ function refresh(){
         //         $("#refersh").show();
         //      } },
         //     {label:'Insérer des ligne en dessous', icon:'sm/img/icon/bottom.png',action:function() {  
-        //     	var tab=liste.split(',');
-        //     	liste= Array(tab[0],Number(tab[1])+1,tab[2]);
-        //     	alert(liste)
-        //     	 $.ajax({
+        //      var tab=liste.split(',');
+        //      liste= Array(tab[0],Number(tab[1])+1,tab[2]);
+        //      alert(liste)
+        //       $.ajax({
         //          type: "POST",
         //         url:"sm/plans/addLine/"+liste
         //         })
         //         $("#refersh").show();
         //        } },
         //     {label:'Insérer des colonnes a gauche',     icon:'sm/img/icon/right.png', action:function() {
-        //     	var tab=liste.split(',');
-        //     	liste= Array(tab[2],$("#historical_plan_id").val());
+        //      var tab=liste.split(',');
+        //      liste= Array(tab[2],$("#historical_plan_id").val());
         //     alert(liste)
-        //     	 $.ajax({
+        //       $.ajax({
         //          type: "POST",
         //         url:"sm/plans/addRow/"+liste
         //         })
@@ -72,34 +73,34 @@ function refresh(){
         //     null,
         //      {label:'Fusionner les cellules',     icon:'sm/img/icon/fusionner.png', action:function() {  } },
         //       {label:'Fractionner les cellules',     icon:'sm/img/icon/fractionner.png', action:function() { 
-        //       	 } },
+        //         } },
         //       null,
         //        {label:'Supprimer les lignes',     icon:'sm/img/icon/deleteline.png', action:function() {
-        //        	var tab=liste.split(',');
-        //     	liste= Array($("#historical_plan_id").val(),tab[2]);
+        //          var tab=liste.split(',');
+        //      liste= Array($("#historical_plan_id").val(),tab[2]);
          
-        //         	$.ajax({
+        //          $.ajax({
         //          type: "POST",
         //         url:"sm/plans/deleteLine/"+liste
         //         })
-        //         $("#refersh").show();	
+        //         $("#refersh").show();  
 
 
         //        } },
         //         {label:'Supprimer les colonnes',     icon:'sm/img/icon/deleterow.png', action:function() {
-        //         	var tab=liste.split(',');
-        //     	liste= Array($("#historical_plan_id").val(),tab[2]);
-            	
-        //         	$.ajax({
+        //          var tab=liste.split(',');
+        //      liste= Array($("#historical_plan_id").val(),tab[2]);
+              
+        //          $.ajax({
         //          type: "POST",
         //         url:"sm/plans/deleteRow/"+liste
         //         })
-        //         $("#refersh").show();	
+        //         $("#refersh").show();  
 
         //         } }
         //      ]
         // });
-  $(".jqte_editor").focus(function(){	
+  $(".jqte_editor").focus(function(){ 
      if($(".fa-unlock-alt").is(":visible"))
   {
     $("tbody,thead").find('tr,td').css('border','none');
@@ -111,18 +112,18 @@ $(".jqte_editor").focusout(function(){
    if($(".fa-unlock-alt").is(":visible"))
   {
 var content=($(this).html()).trim();
-	$(this).parent().find(".jqte_toolbar").hide();  
+  $(this).parent().find(".jqte_toolbar").hide();  
   var axesid=$(this).parent().parent().attr('axes');
   if(axesid==null)
   {
     $id=$(this).parents('.composantVertical').attr('id');
 
         listes=$id+','+htmlEntities(content);
-		      $.ajax({
+          $.ajax({
                  type: "POST",
                 url:"sm/plans/saveCelle/"+listes
                 })
-                $("#refersh").show();	 
+                $("#refersh").show();  
  }}
 })
 $('.textarea-axe').dblclick(function(){
@@ -358,10 +359,6 @@ $(".project").click(function(){
         })
 })
 });
-
-
-
-
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\//g,'&42;').replace(/\:/g,'&58;').replace(/,/g,'&44;').replace(/\[/g,'&91;').replace(/\]/g,'&93;');
 }
@@ -402,7 +399,6 @@ function htmlEntities(str) {
           $("#example").find('div').css('pointer-events','none');
           $("#projectTache").show();
           $("#projectTache").html(result);
-   
         })
  })
  $(".Activites").dblclick(function(){
@@ -417,8 +413,21 @@ $liste=$(this).attr('for');
           $("#projectTache").html(result);
    
         })
-  
  })
+ $(".activiterDetail").click(function(){
+$liste=$(this).attr("id");
+  $.ajax({
+          type: "POST",
+           url:"sm/plans/setActiviter/"+$liste
+        }).done(function(result){
+          $('td').find('i').hide();
+          $("#example").find('div').css('pointer-events','none');
+          $("#projectTache").show();
+          $("#projectTache").html(result);
+
+         });
+  });
+
     </script>
 <!-- style="font-family:<?php //echo $style['Styleplanning']['font-family']; ?>;font-size:<?php //echo  $style['Styleplanning']['font-size']; ?>;color:<?php //echo  $style['Styleplanning']['color']; ?>;background-color:<?php //echo  $style['Styleplanning']['background-color']; ?>;font-style:<?php // echo  $style['Styleplanning']['font-style']; ?>;font-weight:<?php //echo  $style['Styleplanning']['font-weight']; ?>" -->
 <table id="example" class="table-border" style="width: 100%">
@@ -446,9 +455,8 @@ $liste=$(this).attr('for');
         </thead>
         <tbody>
           <?php
-
            foreach ($axes as $axe) 
-        	{
+          {
            ?>
           <tr class="plusLines" id="<?php echo $axe['Axis']['id'];?>A">
             <td colspan="<?php echo 2*intval($axe['Axis']['row']);?>" class="textarea-axe" liste="<?php echo $axe['Axis']['id'].',1,'.$row; ?>">
@@ -456,8 +464,8 @@ $liste=$(this).attr('for');
               </textarea>
             </td>
           </tr>
-				<?php for($i=1;$i<=$axe['Axis']['line'];$i++)
-					{ ?>
+        <?php for($i=1;$i<=$axe['Axis']['line'];$i++)
+          { ?>
             <tr class="plusLines">
             <td colspan="<?php echo 2*$row;?>">
             <div>
@@ -466,21 +474,28 @@ $liste=$(this).attr('for');
            <div>
            </td>
          </tr>
-					<tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
-						<?php for($j=1;$j<=$axe['Axis']['row'];$j++)
-							{ 
-							foreach ($axe['detail_planning'] as $detail_planning) 
-								{ 
-									if(($detail_planning['DetailPlan']['line']==$i)&&
-										($detail_planning['DetailPlan']['row']==$j)
-									   ){
-										?>
+          <tr id="<?php echo $axe['Axis']['id'].'-'.$i;?>L">
+            <?php for($j=1;$j<=$axe['Axis']['row'];$j++)
+              { 
+              foreach ($axe['detail_planning'] as $detail_planning) 
+              { 
+                  if(($detail_planning['DetailPlan']['line']==$i)&&
+                    ($detail_planning['DetailPlan']['row']==$j)
+                     ){
+                    ?>
                     <?php if ($detail_planning['DetailPlan']['row']==$positionBudget){
                         ?>
                         <td colspan="2" class="budgets">
                       <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
                       <div class="budget">
                         BUDGET [<?php echo $detail_planning['DetailPlan']['budgets']['total'];?>]
+                          <div class="jqte-test" >
+                        <?php
+                        $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
+                         echo htmlspecialchars_decode($y); 
+                         ?>
+                      </div>
+                        
                           <div class="divBUdget">
                           new budget
                           </div>
@@ -488,22 +503,28 @@ $liste=$(this).attr('for');
                       </div> 
                       </td>
                         <?php } else if($detail_planning['DetailPlan']['row']==$positionActivite)
-                        { ?>
+                        { $activity=array(); ?>
                           <td colspan="2" class=" Activites" 
                       id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
                     <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
                       <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
-                         
                         <div class="">
                        <dir class="divbutton">
                        <?php
-                        if(count($detail_planning['DetailPlan']['activites']))
-                          for($c=0;$c<count($detail_planning['DetailPlan']['activites']);$c++)
-                            { ?>
-                              <button class="btn-btn12 project" id="<?php echo $detail_planning['DetailPlan']['activites'][$c]['Activite']['id']?>"> 
-                              <?php echo $detail_planning['DetailPlan']['activites'][$c]['Activite']['description'];?></button>
-                            <?php } ?>
-                         <?php
+                        if(count($detail_planning['DetailPlan']['Activites']))
+                          foreach ($detail_planning['DetailPlan']['Activites'] as $activite) 
+                              { if($activite['Activite']['detail_planning_id']==$detail_planning['DetailPlan']['id'])
+                                 {
+                        $activity[]=$activite;
+                                  ?>
+                                  <span class="activiterDetail" id="<?php echo $activite['Activite']['id'];?>"> 
+                                  <?php echo $activite['Activite']['num'].'.'.$activite['Activite']['description'];?>
+                                  </span>
+                                <?php
+                                 } 
+                                echo "<hr>";
+                               }
+
                         if(count($detail_planning['DetailPlan']['projects']))
                           for($c=0;$c<count($detail_planning['DetailPlan']['projects']);$c++)
                             { ?>
@@ -513,58 +534,88 @@ $liste=$(this).attr('for');
                     </div>
                       </div> 
                       </td>
-
-
-                        <?php }else if($detail_planning['DetailPlan']['row']==$positionEcheance)
-                          { ?>
+                       <?php } else if(($detail_planning['DetailPlan']['row']!=$positionEcheance)&& ($detail_planning['DetailPlan']['row']!=$positionIndicator))
+                       { ?>
+                    <td colspan="2" class="context-menu-one" 
+                    liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>"  id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
+                    <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
+                    <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" style="resize: both;">
+             
+                      <div class="jqte-test" >
+                        <?php
+                        $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
+                         echo htmlspecialchars_decode($y); 
+                         ?>
+                      </div>
+                    </div>
+                      </td>
+                  <?php }?>
+<!-- ********************************************************************************************* -->
+<?php if($detail_planning['DetailPlan']['row']==$positionEcheance)
+                  { 
+                         ?>
                           <td colspan="2" class="budgets" style="pointer-events: none">
                       <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
-                     
+                       <dir class="divbutton">
+                       <?php
+                       // if(count($detail_planning['DetailPlan']['Activites']))
+                    
+                          foreach ($activity as $activite)
+                               {
+                                foreach ($activite['indicators'] as $indicators) 
+                                 //if($detail_planning['DetailPlan']['id']==$Activite['Activite']['detail_planning_id'])
+                                 {
+                                echo "<span>";
+                                echo $activite["Activite"]['num'].'.';
+                                echo $indicators['Indicator']['num']."  ";
+                                echo $indicators['Indicator']['date_fin'];
+                                 echo "</span>";
+                                 }
+                                 echo "<hr>";
+                               }
+                                 ?>
+                       </dir>
                       </div> 
                       </td>
                       <?php } else if($detail_planning['DetailPlan']['row']==$positionIndicator)
-                        {?>
+                        { ?>
                            <td colspan="2" class="budgets" style="pointer-events: none">
                       <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" >
-                      <?php
-                        if(count($detail_planning['DetailPlan']['activites']))
-                          for($c=0;$c<count($detail_planning['DetailPlan']['activites']);$c++)
-                            { 
-                                foreach ($detail_planning['DetailPlan']['activites'][$c] as $indicators) {
-                            echo $indicators['Indicator']['description'];
-                              ?>
-                            <?php }
-                            } ?>
-                            bilerl
+                         <dir class="divbutton">
+                         
+                       <?php
+                          
+                       if(count($activity))
+                          foreach ($activity as $activite)
+                        { 
+                                foreach ($activite['indicators'] as $indicators) 
+                                 //if($detail_planning['DetailPlan']['id']==$Activite['Activite']['detail_planning_id'])
+                                 {
+                                  echo "<span>";
+                                  echo $activite["Activite"]['num'].'.';
+                                  echo $indicators['Indicator']['num'];
+                                  echo $indicators['Indicator']['description'];
+                                  echo "</span>";
+                                 }
+                                 echo "<hr>";
+                               }
+                        ?>
+                       </dir>
                       </div> 
                       </td>
-                        <?php
-                        }else{ ?>
-										<td colspan="2" class="context-menu-one" 
-										liste="<?php echo $axe['Axis']['id'].','.$i.','.$row ?>"  id="checkboxes" for ="<?php echo $detail_planning['DetailPlan']['id'];?>">
-                    <input type="checkbox" id="<?php echo $detail_planning['DetailPlan']['id'];?>" class="check_cat">
+              <?php } ?>
 
-                    <div class="composantVertical" id="<?php echo $detail_planning['DetailPlan']['id'] ?>" style="resize: both;">
-             
-											<div class="jqte-test" >
-										    <?php
-										    $y= html_entity_decode($detail_planning['DetailPlan']['content'], ENT_COMPAT | ENT_HTML5,'utf-8');
-										     echo htmlspecialchars_decode($y); 
-                         ?>
-                      </div>
-                     
-                    </div>
-                     
-									    </td>
-										
-							<?php } } }?>			
-					  <?php }?>
-					</tr>
-				  <tr class="plusLines"><td colspan="<?php echo $row; ?>" >
+<!-- ********************************************************************************************************************** -->
+                  
+              <?php 
+              } }?>     
+            <?php }?>
+          </tr>
+          <tr class="plusLines"><td colspan="<?php echo $row; ?>" >
             <div style="display:nones">
             <i class="fa fa-plus-circle fa-plus-circle1" id="dessous<?php echo $axe['Axis']['id'].'-'.$i;?>L" aria-hidden="true"></i>
            <div></td></tr>
-			  <?php } ?>
+        <?php } ?>
       <?php } ?>
         </tbody>
         <tfoot>

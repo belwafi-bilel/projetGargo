@@ -1,7 +1,6 @@
 <?php
 /**
- * HistoricalFixture
- *
+ * Historical Fixture
  */
 class HistoricalFixture extends CakeTestFixture {
 
@@ -11,11 +10,11 @@ class HistoricalFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'period' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 200, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'rabais' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 200, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-		'offer_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-		'profile_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+		'regulation_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -29,11 +28,11 @@ class HistoricalFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
+			'id' => 1,
 			'period' => 'Lorem ipsum dolor sit amet',
 			'rabais' => 'Lorem ipsum dolor sit amet',
-			'offer_id' => 1,
-			'profile_id' => 1,
-			'id' => 1
+			'regulation_id' => 1,
+			'user_id' => 1
 		),
 	);
 

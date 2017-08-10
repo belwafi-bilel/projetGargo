@@ -3,7 +3,6 @@ App::uses('Historical', 'Model');
 
 /**
  * Historical Test Case
- *
  */
 class HistoricalTest extends CakeTestCase {
 

@@ -7,10 +7,10 @@ App::uses('AppModel', 'Model');
 class Category extends AppModel {
 
 /**
- * Display field
+ * Use table
  *
- * @var string
+ * @var mixed False or table name
  */
-	public $displayField = 'description';
+	public $useTable = 'category';
 
 }

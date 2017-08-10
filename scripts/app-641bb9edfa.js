@@ -268,7 +268,7 @@ function() {
         e.state("SmartDocument", {
             url: "/SmartDocument",
 
-            templateUrl: "sm/documents",
+            templateUrl: "sm/pages/",
             title: words["LIBRARY"][lang],
             sidebarMeta: {
                 icon: "ion-document",

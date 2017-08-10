@@ -3,7 +3,6 @@ App::uses('Task', 'Model');
 
 /**
  * Task Test Case
- *
  */
 class TaskTest extends CakeTestCase {
 
@@ -13,7 +12,9 @@ class TaskTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.task'
+		'app.task',
+		'app.item',
+		'app.permission_access'
 	);
 
 /**

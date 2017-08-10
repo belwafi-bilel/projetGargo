@@ -2188,10 +2188,14 @@ input[type="week" i]:disabled {
 
 .textareaNewPlan {
     margin: 0px;
-    width: 864px;
     height: 119px;
     resize: initial;
     overflow: hidden;
+    border: none;
+}
+.textareaNewPlan:after{
+  
+    border: none;
 }
 
 .tooltip {
@@ -2290,4 +2294,23 @@ input[type="week" i]:disabled {
     height: 22px;
     display: none;
     cursor: pointer;
+}
+.divbutton>hr
+{
+    margin: 2px;
+}
+.divbutton>span
+{
+    display: grid;
+}
+.divbutton>span:hover
+{
+    background: #afcef3;
+    cursor: pointer;
+}
+.titlePlan{
+        width: 50%;
+    padding: 0px;
+    margin: 6px;
+    border: 0px;
 }
