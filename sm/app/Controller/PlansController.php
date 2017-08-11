@@ -32,20 +32,21 @@ $this->set(compact('index','TableTails'));
 
 
 
-public function newPlan()
+public function newPlan($image=null)
 {
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
-  $photo = $this->request->data[0]["logo"];
-          if($photo["size"]>0){
-             $fileData = fread(fopen($photo["tmp_name"],"r"),$photo["size"]);
-              }
+ 
+          // if($photo["size"]>0){
+          //    $fileData = fread(fopen($image,"r"),$photo["size"]);
+          //     }
  	$id=$this->Session->read('id');
+ $id=14;
  	$date=array(
- 		'title'=>$this->request->data['Title'],
+ 		'title'=>'',
  		'date_create'=>date("Y-m-d h:s:i"),
- 		'logo'=>$fileData,
- 		'adress'=>$this->request->data['description'],
+ 		'logo'=>null,
+ 		'adress'=>'',
  		'user_id'=>$id);
  
 $this->Plan->create();
@@ -122,6 +123,7 @@ $data=array(
 	'propertyPlaning'=>array(
 				explode('=',$liste[4])[0]=>explode('=',$liste[4])[1],
 				explode('=',$liste[5])[0]=>explode('=',$liste[5])[1],
+				explode("=",$liste[6])[0]=>explode('=',$liste[6])[1]
 				)
 );
 
@@ -150,8 +152,9 @@ switch ($data['Event']['status']) {
 				$tab=$data['Event']['row'].",".$data['propertyPlaning']['historical_planing_id'];
 					$this->addRow($tab);
 				break;
-			default:
-				break;
+			case 'plan':
+			$this->newPlan($data['propertyPlaning']['image']);
+			echo "plas es created";
 				break;
 		}
 		break;
