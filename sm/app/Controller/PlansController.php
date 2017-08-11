@@ -110,18 +110,18 @@ $this->set(compact('types','listes','plans','total'));
 
 public function planingJson($string=null)
 {
-	$liste=explode(',', $string);
+	$liste=explode('&', $string);
 
 $data=array(
 	'Event'=>array(
-				'id'=>$liste[0],
-				'status'=>$liste[1],
-				'posEvent'=>$liste[2],
-				'data'=>$this->getEntiteHtml($liste[3])
+				explode('=',$liste[0])[0]=>explode('=',$liste[0])[1],
+				explode('=',$liste[1])[0]=>explode('=',$liste[1])[1],
+				explode('=',$liste[2])[0]=>explode('=',$liste[2])[1],
+				explode('=',$liste[3])[0]=>explode('=',$liste[3])[1],
 				),
 	'propertyPlaning'=>array(
-				'Planing_id'=>$liste[4],
-				'historical_planing_id'=>$liste[5]
+				explode('=',$liste[4])[0]=>explode('=',$liste[4])[1],
+				explode('=',$liste[5])[0]=>explode('=',$liste[5])[1],
 				)
 );
 
