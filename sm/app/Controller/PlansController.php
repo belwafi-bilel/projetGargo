@@ -694,7 +694,7 @@ $style=$this->getStyle($historical_plans[$his_id]['HistoricalPlan']['id']);
   	}
  }
  $type_Plannings=$this->getTypePlanning($id);
- $typePlans=array('typePlan'=>$type_Plannings);
+ $typePlans=$type_Plannings;
  $id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
  $axes=array('axis'=>$axes);
 $data=array_merge($style,$historical_plans[0],$optionplans,$visionplans,$typePlans,$axes,array('line'=>$line,'row'=>$row,'id'=>$id,'positionActivite'=>$positionActivite,'positionIndicator'=>$positionIndicator,'positionEcheance'=>$positionEcheance,'positionBudget'=>$positionBudget,'his_id'=>$his_id,'historical_id'=>$id_hisorical));
