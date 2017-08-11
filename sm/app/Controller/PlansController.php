@@ -136,6 +136,9 @@ $data=array(
  // $json=json_encode($data);
   //echo $json;
 switch ($data['Event']['status']) {
+	case 'get':
+		print_r($this->getPlanning($data['propertyPlaning']['planing_id'].','.$data['propertyPlaning']['historical_planing_id']));
+		break;
 	case 'new':
 		switch ($data['Event']['posEvent'])
 		 {
@@ -156,6 +159,7 @@ switch ($data['Event']['status']) {
 			$this->newPlan($data['propertyPlaning']['image']);
 			echo "plas es created";
 				break;
+				
 		}
 		break;
 	case 'edit':
@@ -212,7 +216,7 @@ switch ($data['Event']['status']) {
 // {
 
 // }
-print_r($this->getPlanning($data['propertyPlaning']['historical_planing_id'].',1'));
+
 die();
 }
 
