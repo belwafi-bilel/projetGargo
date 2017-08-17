@@ -30,7 +30,7 @@ class PlansController extends AppController {
 // $this->set(compact('index','TableTails'));
 // }
 
-
+//
 
 public function newPlan($image=null)
 {
