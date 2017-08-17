@@ -1576,7 +1576,7 @@ $this->response->body($reponses);
 /*
 function saveActiviter to  edit Activiter  planning action of row=?? and position=?
 */    
-public function setActiviter($liste=null)
+public function editActiviter($liste=null)
 {
 	if ($this->request->is('post')||($this->request->is('put')))
 	{
@@ -1594,8 +1594,6 @@ public function setActiviter($liste=null)
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
-	
-	$users=$this->getUser($id);
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 $this->response->body($reponses);
 	return $this->response;
