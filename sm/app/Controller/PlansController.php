@@ -644,7 +644,8 @@ public function deleteTask($id=null)
 	{
 		$request=$this->request->query;
 	 $this->loadModel('Tach');
-	 //$this->loadModel('')
+	 $this->loadModel('DelegationTache');
+	 $this->DelegationTache->deleteAll(array('DelegationTache.tached_id'=>$request['id']));
 	$this->Tach->id = $request['id'];
 $this->Tach->delete();
 }
@@ -753,6 +754,8 @@ public function deleteProject()
 	$this->loadModel('ProjectDetailPlanning');
 	$this->loadModel('Tach');
 	$this->Tach->deleteAll(array("Tach.project_id"=>$request['id']));
+	$this->loadModel('DelegationProject');
+	 $this->DelegationProject->deleteAll(array('DelegationProject.project_id'=>$request['id']));
 	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$request['id']));
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 	$this->response->body($reponses);
