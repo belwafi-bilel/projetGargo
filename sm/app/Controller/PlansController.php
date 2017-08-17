@@ -30,7 +30,7 @@ class PlansController extends AppController {
 // $this->set(compact('index','TableTails'));
 // }
 
-//
+
 
 public function newPlan($image=null)
 {
@@ -645,7 +645,7 @@ public function deleteTask($id=null)
 		$request=$this->request->query;
 	 $this->loadModel('Tach');
 	 $this->loadModel('DelegationTache');
-	 $this->DelegationTache->deleteAll(array('DelegationTache.tached_id'=>$request['id']));
+	 $this->DelegationTache->deleteAll(array('DelegationTache.tache_id'=>$request['id']));
 	$this->Tach->id = $request['id'];
 $this->Tach->delete();
 }
