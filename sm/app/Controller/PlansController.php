@@ -1567,7 +1567,6 @@ public function newActiviter()
 	$this->Activite->create();
 	$this->Activite->save($data);
 	
-	$users=$this->getUser($id);
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 $this->response->body($reponses);
 	return $this->response;
