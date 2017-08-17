@@ -1549,51 +1549,60 @@ $detailplans=$this->DetailPlan->find('all',
 /*
 function NewActiviter to NewActiviter  planning action of row=?? and position=?
 */    
-public function newActiviter($liste=null)
+public function newActiviter()
 {
-	$NumIndicator=0;
-	$NumeroActivite=1;
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
 	$this->loadModel('Activite');
-	$num=count($this->getActivityByDetailPlanningId($liste));
-	$liste=explode(',',$liste);
+	$num=count($this->getActivityByDetailPlanningId($request['id_cell']));
+	
 	$data=array(
 		'num'=>$num+1,
-		'description'=>'Description',
-		'cible'=>'Cible',
-		'detail_planning_id'=>$liste[0]
+		'description'=>$request['derscription'],
+		'cible'=>$request['cible'],
+		'detail_planning_id'=>$request['id_cell'],
+		'value'=>$request['value']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
-	$lasteIdActivite=$this->Activite->getLastInsertID();
-	$NumeroActivite=$this->Activite->findById($lasteIdActivite);
+	
 	$users=$this->getUser($id);
-$this->set(compact('NumeroActivite','NumIndicator','users'))	;
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+}
 }
 	/**********************************function SaveActiviter  ***********************/
 /*
 function saveActiviter to  edit Activiter  planning action of row=?? and position=?
 */    
-public function saveActiviter($liste=null)
+public function setActiviter($liste=null)
 {
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
 	$this->loadModel('Activite');
-	$liste=explode(',',$liste);
+	$num=count($this->getActivityByDetailPlanningId($request['id_cell']));
+	
 	$data=array(
-		'id'=>$liste[0],
-		'description'=>$liste[1],
-		'cible'=>$liste[2],
-		'title'=>$liste[3]
+		'id'=>$request['id'],
+		'num'=>$request['num'],
+		'description'=>$request['derscription'],
+		'cible'=>$request['cible'],
+		'detail_planning_id'=>$request['id_cell'],
+		'value'=>$request['value']
 		);
+	$this->Activite->create();
 	$this->Activite->save($data);
-	// $tab=$liste[0].','.
-}
-public function setActiviter($id=null)
-{
-	$this->loadModel('Activite');
-	$activiter=$this->Activite->findById($id);
-	$indicators=$this->getIndicators($id);
+	
 	$users=$this->getUser($id);
-	$this->set(compact('activiter','indicators','users'));
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
 }
+}
+
 /**********************************function newResponsableActiviter  ***********************/
 /*
 *function newResponsableActiviter of activiter_id=?
