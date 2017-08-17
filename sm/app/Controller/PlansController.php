@@ -12,40 +12,41 @@ class PlansController extends AppController {
 
 
 
-public function textarea($liste=null)
-{
-	$this->set(compact('liste'));
-}
+// public function textarea($liste=null)
+// {
+// 	$this->set(compact('liste'));
+// }
 
-public function exemple($liste=null)
-{
-	$index=explode('-,',$liste);
+// public function exemple($liste=null)
+// {
+// 	$index=explode('-,',$liste);
 
-	if(count($index)==3){
-	$TableTails=$this->Session->read("TableTail");
-	//$i=count($TableTails[$index[0]][$index[1]]['data']);
-     $this->Session->write('TableTail.'.$index[0].'.'.$index[1].'.data',htmlspecialchars($index[2]));
-       }
-$TableTails=$this->Session->read("TableTail");
-$this->set(compact('index','TableTails'));
-}
+// 	if(count($index)==3){
+// 	$TableTails=$this->Session->read("TableTail");
+// 	//$i=count($TableTails[$index[0]][$index[1]]['data']);
+//      $this->Session->write('TableTail.'.$index[0].'.'.$index[1].'.data',htmlspecialchars($index[2]));
+//        }
+// $TableTails=$this->Session->read("TableTail");
+// $this->set(compact('index','TableTails'));
+// }
 
 
 
-public function newPlan()
+public function newPlan($image=null)
 {
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
-  $photo = $this->request->data[0]["logo"];
-          if($photo["size"]>0){
-             $fileData = fread(fopen($photo["tmp_name"],"r"),$photo["size"]);
-              }
+ 
+          // if($photo["size"]>0){
+          //    $fileData = fread(fopen($image,"r"),$photo["size"]);
+          //     }
  	$id=$this->Session->read('id');
+ $id=14;
  	$date=array(
- 		'title'=>$this->request->data['Title'],
+ 		'title'=>'',
  		'date_create'=>date("Y-m-d h:s:i"),
- 		'logo'=>$fileData,
- 		'adress'=>$this->request->data['description'],
+ 		'logo'=>null,
+ 		'adress'=>'',
  		'user_id'=>$id);
  
 $this->Plan->create();
@@ -72,191 +73,301 @@ $this->setTypePlanning($id.','.'Deadline');
  $this->addHistoricalPlanning($idLaste);
 $id_Historical= $this->HistoricalPlan->getLastInsertID();
 $this->addAxes($id_Historical);
-$this->redirect('../../#/SmartLibrary/listplan');
+//$this->redirect('../../#/SmartLibrary/listplan');
  }
 
 
-public function plan($liste=null)
-{
-	$total=$this->Session->read("total");
-	$detail=0;
-	$tab=explode(',', $liste);
-	SessionComponent::delete('TableTail');
-	SessionComponent::delete('ettiquette');
-	$id_profile=$this->Session->read('id');
-    $plans=$this->Plan->find('first',array('conditions'=>array('Plan.id'=>$tab[0])));  
-            if($tab[1]==1)
-            {
-	        $detail=intval($this->Session->read("detail"));
-	       if($detail<$total)
-	       	{
-	       		$detail+=1;
-	       	}
-           }else
-            {
-            $detail=intval($this->Session->read("detail"));
-            if($detail>0)
-       	     $detail-=1;
-        	}
-$result=$this->detailplans($tab[0],$detail);
-$this->Session->write("TableTail",$result[0]);
-$this->Session->write("ettiquette",$result[1]);
-$this->Session->write('id_plan',$tab[0]);
-$this->tableau();
-$listes=array("user1","user2","user3","user4");
-$this->set(compact('types','listes','plans','total'));
-}
-
+// public function plan($liste=null)
+// {
+// 	$total=$this->Session->read("total");
+// 	$detail=0;
+// 	$tab=explode(',', $liste);
+// 	SessionComponent::delete('TableTail');
+// 	SessionComponent::delete('ettiquette');
+// 	$id_profile=$this->Session->read('id');
+//     $plans=$this->Plan->find('first',array('conditions'=>array('Plan.id'=>$tab[0])));  
+//             if($tab[1]==1)
+//             {
+// 	        $detail=intval($this->Session->read("detail"));
+// 	       if($detail<$total)
+// 	       	{
+// 	       		$detail+=1;
+// 	       	}
+//            }else
+//             {
+//             $detail=intval($this->Session->read("detail"));
+//             if($detail>0)
+//        	     $detail-=1;
+//         	}
+// $result=$this->detailplans($tab[0],$detail);
+// $this->Session->write("TableTail",$result[0]);
+// $this->Session->write("ettiquette",$result[1]);
+// $this->Session->write('id_plan',$tab[0]);
+// $this->tableau();
+// $listes=array("user1","user2","user3","user4");
+// $this->set(compact('types','listes','plans','total'));
+// }
 
 public function planingJson($string=null)
 {
-	$liste=explode(',', $string);
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+$data=$this->request->query;
 
-$data=array(
-	'Event'=>array(
-				'id'=>$liste[0],
-				'status'=>$liste[1],
-				'posEvent'=>$liste[2],
-				'data'=>$this->getEntiteHtml($liste[3])
-				),
-	'propertyPlaning'=>array(
-				'Planing_id'=>$liste[4],
-				'historical_planing_id'=>$liste[5]
-				)
-);
-
-
-
-
-// $text=$this->getEntiteHtml($string);
-//  echo $text;
-    //$data=json_decode($text,TRUE);
- // $json=json_encode($data);
-  //echo $json;
-switch ($data['Event']['status']) {
+switch ($data['status']) {
+	case 'get':
+	$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
+		break;
 	case 'new':
-		switch ($data['Event']['posEvent'])
+		switch ($data['posEvent'])
 		 {
-			case 'Axis':
-				$this->addAxes($data['propertyPlaning']['historical_planing_id']);
-				break;
-			case 'Line':
-			$nomberLigne=$this->getNUmbreRowPlanningTable($data['propertyPlaning']['Planing_id']);
-			$tab=$data['Event']['id'].",".$data['Event']['line'].",".$nomberLigne;
-				$this->addLine($tab);
+			case 'axis':
+				$this->addAxes($data['historical_planing_id']);
+				$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'column':
-			    $this->addTypePlanning();
-				$tab=$data['Event']['row'].",".$data['propertyPlaning']['historical_planing_id'];
+			     $row=$this->getNUmbreRowPlanningTable($data['planing_id'])+1;
+			      $this->addTypePlanning($data['planing_id'].','.$row);
+				$tab=$data['historical_planing_id'].','.$row;
 					$this->addRow($tab);
+					$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
-			default:
+			case 'plan':
+			$this->newPlan($data['image']);
+			$this->loadModel('Plan');
+			$this->loadModel('HistoricalPlan');
+			$id_plan=$this->Plan->getLastInsertID();
+			$id_historical_plan=$this->HistoricalPlan->getLastInsertID();
+			$reponses=$this->getPlanning($id_plan.','.$id_historical_plan);
+			
+
 				break;
-				break;
+				
 		}
 		break;
 	case 'edit':
-		switch ($data['Event']['posEvent']) 
+		switch ($data['posEvent']) 
 		{
-			case 'Axis':
-			$this->setAxes($data['Event']['id'].",".$data['Event']['data']);
+			case 'axis':
+			$this->setAxes($data['id'].",".$data['data']);
+			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
-			case 'detail_planning':
-			$this->saveCelle($data['Event']['id'].",".$data['Event']['data']);
+			case 'cell':
+			$this->saveCelle($data['id'].",".$data['data']);
+			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'type':
-			$this->setTypePlanning($data['Event']['id'].",".$data['Event']['data']);
+			$this->setTypePlanning($data['id'].",".$data['data']);
+			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 			default:
-			
 				break;
 		}
 		break;
+	
 	case 'delete':
-		$this->deleteLine();
-		break;
-	case 'delete':
-	switch ($data['Event']['posEvent'])
+	switch ($data['posEvent'])
 		 {
-			case 'line':
-				$this->deleteLine(",".$data['Event']['id'].",".$data['Event']['line']);
+			case 'axis':
+				$this->deleteLine($data['id']);
+				$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'column':
-			$this->deleteRow($data['propertyPlaning']['historical_planing_id'].",".$data['Event']['column']);
+			$this->deleteRow($data['historical_planing_id'].",".$data['id']);
+			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 			    break;
 			    case "plan":
-					$this->deletePlan($data['propertyPlaning']['Planing_id']);
+					$this->deletePlan($data['Planing_id']);
+					$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 			    break;
 			default:
 				;
 				break;
 		}
 		break;
-	default:
-		# code...
+	case "move":
+		switch ($data['posEvent']) {
+			case 'axis':
+			$tab=$data['id'].','.$data['data'].','.$data['historical_planing_id'];
+		$this->moveAxis($tab);
+	     $reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
+				break;
+			case 'column':
+
+			default:
+				# code...
+				break;
+		}
+	    
 		break;
 }
-
-
-// if($data['Event']['status']=="new")
-// {
-// 	echo "<pre>";
-// 	print_r($data[$data['Event']['posEvent']]);
-// }
-// else if($data['Event']['status']=="edit")
-// {
-
-// }else if($data['Event']['status']=="change")
-// {
-
-// }
-print_r($this->getPlanning($data['propertyPlaning']['historical_planing_id'].',1'));
+$this->response->body($reponses);
+	return $this->response;
+}
 die();
 }
-
-
-
-public function index()
-{ 
-	    $plans="";
-	    $types="";
-        $this->layout=null;
-		$this->loadModel('TypeComponent');
-		$types=$this->TypeComponent->find('all');
-		$this->loadModel('PersonalOffer');
-	    $this->loadModel('PermissionAccess');
-        $id=$this->Session->read('id');
-	    $this->loadModel('Historical');
-	    $this->loadModel('TypeComponent');
-	//$this->loadModel('Plan');
-	$plans=$this->Plan->find('all',array('conditions'=>array('Plan.user_id'=>$id)));
-	if($plans)
+public function moveAxis()
+{
+		if ($this->request->is('post')||($this->request->is('put')))
 	{
-			$histrical=$this->Historical->find('first',array('conditions'=>['Historical.user_id'=>$id]));
-			if($histrical)
-			{
-			 $date= explode('=>',$histrical['Historical']['period']);
-			 if((date("Y-m-d")>$date[0])&&(date("Y-m-d")<$date[1]))
-				{
-				$personalOffers=$this->PersonalOffer->find('all',array('conditions'=>
-				 array('PersonalOffer.historical_id'=>$histrical['Historical']['id'])));
-				$tab=0;
-				foreach ($personalOffers as $value) 
-					$tab[]=$value['PersonalOffer']['id'];
-				$PermissionAccesses=$this->PermissionAccess->find('all',
-					array('conditions'=>array('PermissionAccess.personal_offers_id'=>$tab)));
-				//SessionComponent::delete('TableTail');
-				
-				$types=$this->TypeComponent->find('all');
-		       }else
-				{
-				 $access=array('access'=>false);
-			     $this->set((compact('access','')));
-				}
-				$this->Session->write('plan_id',$plans[0]['Plan']['id']);
-			}
+    $request=$this->request->query;
+	$this->loadModel('Axis');
+	$axismove=$this->Axis->findById($request['id']);
+	if($request['destination']<$axismove['Axis']['position'])
+	{
+    $AllAxisEditPosition=$this->Axis->find('all',
+    	['conditions'=>['Axis.position >'=>$request['destination'],'Axis.position <'=>$axismove['Axis']['position'],'Axis.historical_plan_id'=>$request['historical_planing_id']]
+    	]);
+    foreach ($AllAxisEditPosition as $Axis) 
+	{
+		$data=array('id'=>$Axis['Axis']['id'],
+			'position'=>intval($Axis['Axis']['position'])+1);
+		$this->Axis->save($data);
 	}
-$this->set(compact('types','listes','plans'));  
+	$data=array('id'=>$axismove['Axis']['id'],
+		'position'=>intval($request['destination'])+1);
+	$this->Axis->save($data);
+	}else
+	{
+		 $AllAxisEditPosition=$this->Axis->find('all',
+    	['conditions'=>['Axis.position <='=>$request['destination'],'Axis.position >'=>$axismove['Axis']['position'],'Axis.historical_plan_id'=>$request['historical_planing_id']]
+    	]);
+		
+    foreach ($AllAxisEditPosition as $Axis) 
+	{
+		$data=array('id'=>$Axis['Axis']['id'],
+			'position'=>intval($Axis['Axis']['position'])-1);
+		$this->Axis->save($data);
+	}
+	$data=array('id'=>$axismove['Axis']['id'],
+		'position'=>intval($request['destination']));
+	$this->Axis->save($data);
+	}
 }
+ $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+}
+/*************************function MoveRow*****************/
+/*
+function move row of the params id row and destination and historical planing id
+*/
+public function moveRow()
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+    $request=$this->request->query;
+	$this->loadModel('Axis');
+	$AxisAll=$this->Axis->findAllByHistoricalPlanId($request['historical_planing_id'],'id');
+	foreach ($AxisAll as $axis) {
+	$tab[]=$axis['Axis']['id'];
+	}
+	$this->loadModel('DetailPlan');
+	$this->loadModel('TypePlan');
+	$typePlaningMove=$this->getSourceById('TypePlan,'.$request['id']);
+	
+	$detailPlansMove=$this->DetailPlan->findByRowAndAxesId($typePlaningMove['TypePlan']['position'],$tab);
+	
+if($request['destination']<$typePlaningMove['TypePlan']['position'])
+{
+		$detailplans=$this->DetailPlan->find('all',
+			['conditions'=>['DetailPlan.Axes_id'=>$tab,
+			'DetailPlan.row >='=>$request['destination'],
+			'DetailPlan.row <' =>$typePlaningMove['TypePlan']['position']]
+			]
+			);
+		$typePlannings=$this->TypePlan->find('all',
+			['conditions'=>['TypePlan.position >='=>$request['destination'],
+			'TypePlan.position <'=>$typePlaningMove['TypePlan']['position']]]);
+		foreach ($typePlannings as $type) {
+			$data=array(
+				'id'=>$type['TypePlan']['id'],
+				'position'=>intval($type['TypePlan']['position'])+1);
+			$this->TypePlan->save($data);
+		}
+		foreach ($detailplans as $detailplan) {
+			$data1=array('id'=>$detailplan['DetailPlan']['id'],
+				'row'=>intval($detailplan['DetailPlan']['row'])+1);
+			$this->DetailPlan->save($data1);
+		}
+	}
+	else if($request['destination']>$typePlaningMove['TypePlan']['position'])
+	{
+		$detailplans=$this->DetailPlan->find('all',
+			['conditions'=>['DetailPlan.Axes_id'=>$tab,
+			'DetailPlan.row >'=>$typePlaningMove['TypePlan']['position'],
+			'DetailPlan.row <=' =>$request['destination']]
+			]
+			);
+		foreach ($detailplans as $detailplan) {
+			$data=array('id'=>$detailplan['DetailPlan']['id'],
+				'row'=>intval($detailplan['DetailPlan']['row'])-1);
+			$this->DetailPlan->save($data);
+		}
+		$typePlannings=$this->TypePlan->find('all',
+			['conditions'=>['TypePlan.position <='=>$request['destination'],
+			'TypePlan.position >'=>$typePlaningMove['TypePlan']['position']]]);
+		foreach ($typePlannings as $type) {
+			$data=array(
+				'id'=>$type['TypePlan']['id'],
+				'position'=>intval($type['TypePlan']['position'])-1);
+			$this->TypePlan->save($data);
+		}
+		}
+	}
+	$data=array('id'=>$typePlaningMove['TypePlan']['id'],
+		'position'=>$request['destination']);
+	$this->TypePlan->save($data);
+	$data=array('id'=>$detailPlansMove['DetailPlan']['id'],
+		'row'=>$request['destination']);
+	$this->DetailPlan->save($data);
+
+$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+ 
+}
+// public function index()
+// { 
+// 	    $plans="";
+// 	    $types="";
+//         $this->layout=null;
+// 		$this->loadModel('TypeComponent');
+// 		$types=$this->TypeComponent->find('all');
+// 		$this->loadModel('PersonalOffer');
+// 	    $this->loadModel('PermissionAccess');
+//         $id=$this->Session->read('id');
+// 	    $this->loadModel('Historical');
+// 	    $this->loadModel('TypeComponent');
+// 	//$this->loadModel('Plan');
+// 	$plans=$this->Plan->find('all',array('conditions'=>array('Plan.user_id'=>$id)));
+// 	if($plans)
+// 	{
+// 			$histrical=$this->Historical->find('first',array('conditions'=>['Historical.user_id'=>$id]));
+// 			if($histrical)
+// 			{
+// 			 $date= explode('=>',$histrical['Historical']['period']);
+// 			 if((date("Y-m-d")>$date[0])&&(date("Y-m-d")<$date[1]))
+// 				{
+// 				$personalOffers=$this->PersonalOffer->find('all',array('conditions'=>
+// 				 array('PersonalOffer.historical_id'=>$histrical['Historical']['id'])));
+// 				$tab=0;
+// 				foreach ($personalOffers as $value) 
+// 					$tab[]=$value['PersonalOffer']['id'];
+// 				$PermissionAccesses=$this->PermissionAccess->find('all',
+// 					array('conditions'=>array('PermissionAccess.personal_offers_id'=>$tab)));
+// 				//SessionComponent::delete('TableTail');
+				
+// 				$types=$this->TypeComponent->find('all');
+// 		       }else
+// 				{
+// 				 $access=array('access'=>false);
+// 			     $this->set((compact('access','')));
+// 				}
+// 				$this->Session->write('plan_id',$plans[0]['Plan']['id']);
+// 			}
+// 	}
+// $this->set(compact('types','listes','plans'));  
+// }
 public function detailPlans($id=null,$x=null)
 {
 	$total=0;
@@ -309,12 +420,7 @@ $ligneEtiquettes=explode('!##!',explode('%55%',$detailplans['DetailPlan']['conte
 
 return array($TableTail,$tab,$total);
 }
-
-
-
-
 public function comment()
-
 {
 	$id=$this->Session->read('id');
 $this->loadModel('Plan');
@@ -370,7 +476,6 @@ $this->set(compact('TableTails','coordonners','ettiquette'));
 
 public function linkWeb($id=null)
 {
-	
     $this->loadModel('Linkweb');
 $linkweb=$this->Linkweb->find('first',array('conditions'=>array('Linkweb.plan_id'=>$id)));
 if(count($linkweb))
@@ -482,62 +587,16 @@ public function table()
 		}
 	}
 }
-public function view($liste=null)
-{
-	echo $liste;
-die();
-}
- public function delete($liste=null)
- {
-$index=explode(',',$liste);
- 	$this->Session->delete('TableTail.'.$index[0].'.'.$index[1].'.data.'.$index[2]);
- 	return null;
- }
 
-public function editExemple($liste=null)
-{
-	$index=explode(',',$liste);
-	$this->Session->write('TableTail.'.$index[0].'.'.$index[1].'.data.'.$index[2],$index[3]);
-return null;
-}
-public function listeusergroups($liste=null)
-{
-	if($liste=="groups")
-	{
-$listes=array("groupe1","groupe2","groupe3","groupe4");
-	}else
-	{
-		$listes=array("user1","user2","user3","user4");
-	}
-	$this->set(compact('listes'));
-}
-public function edit($liste=null)
-{
-// 	$detailsession=$this->Session->read("TableTail");
-// 	echo "<pre>";
-// 	print_r($detailsession);
-// echo "</pre>";
-// 	die();
-}
 
-public function getdeblock($i,$j)
-{
-// if($this->Session->read('TableTail.0.0.duplicate')=="block")
-// return $this->Session->read('TableTail.'.$i.'.'.$j.'.duplicate');
-// else if($this->Session->read('TableTail.0.0.duplicate')=="none")
-return $this->Session->read('TableTail.0.0.duplicate');
-	
-}
-public function getData($i,$j)
-{
-	return $this->Session->read('TableTail.'.$i.'.'.$j.'.data')?
-	$this->Session->read('TableTail.'.$i.'.'.$j.'.data'):"";
-}
 
-public function blockagecellule($liste=null)
-{$index=explode(',', $liste);
-$this->Session->write('TableTail.'.$index[0].'.'.$index[1].".",$index[2]);
-}
+
+
+
+
+
+
+
 
 public function random($car) {
 $string = "";
@@ -549,37 +608,77 @@ $string .= $chaine[rand()%strlen($chaine)];
 return $string;
 }
 
-public function task($liste=null)
+/*****************************************function function for project ***********************/
+/*
+function set project to add new project in data base 
+ */
+public function newTask()
 {
-    $data=array('project_id'=>$liste,
-    			'titre'=>null,
-    			'description'=>null,
-    			'date_debut'=>null,
-    			'date_fin'=>null,
-    			'heurs_estimee'=>null,
-    			'taux_estimee'=>null,
-    			'urgent'=>'false',
-    			'aviser_utilisateurs_couriel'=>'false');
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+    $data=array('project_id'=>$request['project_id'],
+    			'title'=>$request['title'],
+    			'description'=>$request['description'],
+    			'date_start'=>$request['date_start'],
+    			'date_end'=>$request['date_end'],
+    			'heurs_estimee'=>$request['hours_est'],
+    			'tauxe_estimee'=>$request['tauxe_est'],
+    			'urgent'=>$request['urgent'],
+    			'notify_user'=>$request['notify_user'],
+    			'accompli'=>$request['accompli'],
+    			'value'=>$request['value'],
+    			'cible'=>$request['cible']);
    $this->loadModel('Tach');
    $this->Tach->create();
    $this->Tach->save($data);
   }
-public function deleteTask($id=null)
-{
-	 $this->loadModel('Tach');
-	$this->Tach->id = $id;
-$this->Tach->delete();
-}
-public function setTask($liste=null)
-{
-	 $liste=explode(',',$liste);
-	 $this->loadModel('Tach');
-     $data=array(
-     	'id'=>$liste[0],
-        $liste[1]=>$liste[2]);
-$this->Tach->save($data);
+   $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
 }
 
+public function deleteTask($id=null)
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+	 $this->loadModel('Tach');
+	 //$this->loadModel('')
+	$this->Tach->id = $request['id'];
+$this->Tach->delete();
+}
+$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+}
+
+
+public function editTask()
+{
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+    $data=array('id'=>$request['id'],
+    			'title'=>$request['title'],
+    			'description'=>$request['description'],
+    			'date_start'=>$request['date_start'],
+    			'date_end'=>$request['date_end'],
+    			'heurs_estimee'=>$request['hours_est'],
+    			'tauxe_estimee'=>$request['tauxe_est'],
+    			'urgent'=>$request['urgent'],
+    			'notify_user'=>$request['notify_user'],
+    			'accompli'=>$request['accompli'],
+    			'value'=>$request['value'],
+    			'cible'=>$request['cible']);
+   $this->loadModel('Tach');
+   $this->Tach->save($data);
+  }
+   $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+}
+/**********************fin  task*******************************************/
 public function deletePlan($id=null)
 {
 $this->Plan->id = $id;
@@ -587,50 +686,80 @@ $this->Plan->delete();
 $this->loadModel('DetailPlan');
 $this->DetailPlan->deleteAll(array('DetailPlan.id_plan'=>$id));
 }
-/*****************************************function set project ***********************/
+
+
+
+
+/*****************************************function function for project ***********************/
 /*
 function set project to add new project in data base 
  */
-public function setProject($liste=null)
+public function setProject()
 {
-$liste=explode('--.--',$liste);	
-$this->loadModel('ProjectDetailPlanning');
-$this->loadModel('Project');
-$data=array('title'=>$liste[0],
-			'description'=>$liste[1],
-			'accompli'=>'0',
-			'notify_user'=>$liste[2]);
-$this->Project->create();
-$this->Project->save($data);
-$id=$this->Project->getLastInsertID();
-$liste_id=explode(' ',$liste[3]);
-for ($i=0; $i <count($liste_id) ; $i++) { 
-	$data=array('detail_planning_id'=>$liste_id[$i],
-				'project_id'=>$id);
-	$this->ProjectDetailPlanning->create();
-	$this->ProjectDetailPlanning->save($data);
-}
+
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+		$this->loadModel('ProjectDetailPlanning');
+		$this->loadModel('Project');
+		$data=array('title'=>$request['title'],
+					'description'=>$request['description'],
+					'accompli'=>$request['accompli'],
+					'notify_user'=>$request['notify_user']);
+		$this->Project->create();
+		$this->Project->save($data);
+		$id=$this->Project->getLastInsertID();
+		print_r($data);
+		$liste_id=explode(',',$request['id_cells']);
+		for ($i=0; $i <count($liste_id) ; $i++) 
+		{ 
+			$data=array('detail_planning_id'=>$liste_id[$i],
+						'project_id'=>$id);
+			$this->ProjectDetailPlanning->create();
+			$this->ProjectDetailPlanning->save($data);
+		}
+	}
+ $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
 
 }
-/*****************************************function project ***********************/
-/*
-function show project detail with id = ?
- */
+public function editProject()
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+	$this->loadModel('Project');
+	$data=array(	'id'=>$request['id'],
+					'title'=>$request['title'],
+					'description'=>$request['description'],
+					'accompli'=>$request['accompli'],
+					'notify_user'=>$request['notify_user']);
+	$this->Project->save($data);
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	$this->response->body($reponses);
+	return $this->response;
+	}
+}
 
-public function project($id=null)
+public function deleteProject()
 {
-	$projects=$this->getProject_id($id);
-	$this->set(compact('projects'));
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+	$request=$this->request->query;
+	$this->loadModel('Project');
+	$this->Project->id=$request['id'];
+	$this->Project->delete();
+	$this->loadModel('ProjectDetailPlanning');
+	$this->loadModel('Tach');
+	$this->Tach->deleteAll(array("Tach.project_id"=>$request['id']));
+	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$request['id']));
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	$this->response->body($reponses);
+	return $this->response;
+	}
 }
-/*****************************************function add project With id list cell***********************/
-/*
-function addProject show interfaces for add new project with liste id cell=?
-*/
-public function addProject($liste=null)
-{
-	$liste=trim($liste);
-	$this->set(compact('liste'));
-}
+
 /**************************function sendMessage********************************/
 /*
 function sendMessage to share the planning=?
@@ -690,13 +819,9 @@ $style=$this->getStyle($historical_plans[$his_id]['HistoricalPlan']['id']);
  $typePlans=array('typePlan'=>$type_Plannings);
  $id_hisorical=$historical_plans[$his_id]['HistoricalPlan']['id'];
  $axes=array('axis'=>$axes);
-$data=array_merge($style,$historical_plans[0],$optionplans,$visionplans,$typePlans,$axes,array('line'=>$line,'row'=>$row,'id'=>$id,'positionActivite'=>$positionActivite,'positionIndicator'=>$positionIndicator,'positionEcheance'=>$positionEcheance,'positionBudget'=>$positionBudget,'his_id'=>$his_id,'historical_id'=>$id_hisorical));
+$data=array_merge($plans,$style,$historical_plans[0],$optionplans,$visionplans,$typePlans,$axes,array('line'=>$line,'row'=>$row,'id'=>$id,'positionActivite'=>$positionActivite,'positionIndicator'=>$positionIndicator,'positionEcheance'=>$positionEcheance,'positionBudget'=>$positionBudget,'his_id'=>$his_id,'historical_id'=>$id_hisorical));
 return json_encode($data);
-echo "<pre>";
-print_r(json_encode($data));
-die();
-
-    $this->set(compact('plans','style','optionplans','visionplans','typePlans','historical_plans','id','position','axes','line','row','his_id','id_hisorical','positionActivite','positionIndicator','positionEcheance','positionBudget'));       
+     
 }
 /*****************************function historical planning*****************************/
 /*
@@ -733,6 +858,13 @@ foreach ($axes as $axe) {
  }
 	return $axes1;	
 }
+// public function getAxesById($id=null)
+// {
+// 	$this->loadModel('Axis');
+// 	$axis=$this->Axis->findById($id);
+// 	return(array_merge(array($axis,$this->getDetail_planning($id))));
+	
+// }
 /*************************function option action planning*****************/
 /*
 function return all option for action planning id=??
@@ -1032,6 +1164,7 @@ $detailplans=$this->DetailPlan->find('all',
 			'line'=>$liste[1],
 			'row'=>$i+1,
 			'content'=>'null',
+			'locked'=>'no',
 			'id_user'=>$id,
 			'axes_id'=>$liste[0]);
 $this->DetailPlan->create();
@@ -1091,40 +1224,24 @@ function addRow to add new Row planning action of axes_id=?? and position=?
 public function addRow($liste=null)
 {
 	$id=$this->Session->read('id');
+	$line=0;
  $liste=explode(',',$liste);
-print_r($liste);
  $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
 $axes = $this->Axis->find('all',
-	['conditions'=>['Axis.historical_plan_id'=>$liste[1]],'order'=>['Axis.position'=>'ASC']]);
+	['conditions'=>['Axis.historical_plan_id'=>$liste[0]],'order'=>['Axis.position'=>'ASC']]);
 	foreach ($axes as $axe) 
 		{
-		$detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$axe['Axis']['id'],'DetailPlan.row >='=>$liste[0]]]);
-			foreach ($detailplans as $detailplan) 
-			{
-				$detailplan['DetailPlan']['row']=intval($detailplan['DetailPlan']['row'])+1;
-				$this->DetailPlan->save($detailplan['DetailPlan']);
-				
-				$line[]=$detailplan['DetailPlan']['line'];
-			}
-            
-				}
-				 $line=array_values((array_unique($line)));
-            
-             
-				for($i=0;$i<count($line);$i++)
-				{
 					$data=array(
-							'line'=>$line[$i],
-							'row'=>$liste[0],
+							'line'=>1,
+							'row'=>$liste[1],
 							'content'=>' ',
 							'id_user'=>$id,
 							'axes_id'=>$axe['Axis']['id']);
 			$this->DetailPlan->create();
 			$this->DetailPlan->save($data);
 		}
-		$this->addTypePlanning($liste[1].','.$liste[0]);
+	
 }
 
 
@@ -1369,17 +1486,17 @@ public function deleteLine($liste=null)
   $liste=explode(',',$liste);
   $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
-    $detailplans1=$this->DetailPlan->findAllByLineAndAxesId($liste[2],$liste[1],'id');
-	         print_r($detailplans1);
+    $detailplans1=$this->DetailPlan->findAllByLineAndAxesId('1',$liste[0],'id');
+	         
 	          foreach ($detailplans1 as $detailplan) {
  	$this->deleteProjectByIdDetailPlan($detailplan['DetailPlan']['id']);
  }
- $line=$this->getNumberLineByAxes($liste[1]);
+ $line=$this->getNumberLineByAxes($liste[0]);
  $axes = $this->Axis->find('first',
-	['conditions'=>['Axis.id'=>$liste[1]]]);
+	['conditions'=>['Axis.id'=>$liste[0]]]);
           $detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$liste[1],'DetailPlan.line >'=>$liste[2]]]);
-          $this->DetailPlan->deleteAll(array('DetailPlan.line '=>$liste[2],'DetailPlan.axes_id'=>$liste[1]));
+	     ['conditions'=>['DetailPlan.axes_id'=>$liste[0],'DetailPlan.line >'=>1]]);
+          $this->DetailPlan->deleteAll(array('DetailPlan.axes_id'=>$liste[0]));
 			foreach ($detailplans as $detailplan) 
 			{
 				$detailplan['DetailPlan']['line']=intval($detailplan['DetailPlan']['line'])-1;
@@ -1387,7 +1504,7 @@ public function deleteLine($liste=null)
 			}
 			if($line==1)
 			{
-		$this->deleteAxes($liste[1]);
+		$this->deleteAxes($liste[0]);
 		$line=0;
 	        }
 
@@ -1401,6 +1518,8 @@ public function deleteRow($liste=null)
  $liste=explode(',',$liste);
   $this->loadModel('DetailPlan');
  $this->loadModel('Axis');
+ $this->loadModel("TypePlan");
+ $position=$this->TypePlan->findById($liste[1])['TypePlan']['position'];
  $axes = $this->Axis->find('all',
 	['conditions'=>['Axis.historical_plan_id'=>$liste[0]]]);
 
@@ -1409,16 +1528,16 @@ $tab=array();
 		{
 			$tab[]=$axe['Axis']['id'];
 		}
-$this->DetailPlan->deleteAll(array('DetailPlan.row '=>$liste[1],'DetailPlan.axes_id'=>$tab));		
+$this->DetailPlan->deleteAll(array('DetailPlan.row '=>$position,'DetailPlan.axes_id'=>$tab));		
 $detailplans=$this->DetailPlan->find('all',
-	     ['conditions'=>['DetailPlan.axes_id'=>$tab,'DetailPlan.row >'=>$liste[1]]]);
+	     ['conditions'=>['DetailPlan.axes_id'=>$tab,'DetailPlan.row >'=>$position]]);
         foreach ($detailplans as $detailplan) 
 			{
 				$detailplan['DetailPlan']['row']=intval($detailplan['DetailPlan']['row'])-1;
 				$this->DetailPlan->save($detailplan['DetailPlan']);
 			}
 			$plan_id=$this->getIdPlanningByHistoricalPlanId($liste[0]);
-			$this->deleteTypePlaningByPositionType($plan_id.','.$liste[1]);
+			$this->deleteTypePlaningByPositionType($plan_id.','.$position);
 
 
 
@@ -1590,9 +1709,9 @@ public function getSourceById($liste=null)
 	$liste=explode(",",$liste);
 	$this->loadModel($liste[0]);
 	$table=$this->$liste[0]->findById($liste[1]);
-	$table=array_values(($table));
-	$out=json_encode($table);
-	return $out;
+	//$table=array_values(($table));
+	//$out=json_encode($table);
+	return $table;
 }
 /**********************************function getSourceByAttribute  ***********************/
 /*
@@ -1659,9 +1778,41 @@ public function getSourceByTwoAttributes($liste=null)
 	$out=json_encode($table);
 	return $out;
 }
-
-/**********************************function getSourceById  ***********************/
+/**********************************function lockedUnlockedPlanById  ***********************/
 /*
-function getSourceById of any model and by id=?
+function lockedUnlockedPlanById of Plan by id=?
 */ 
+public function lockedUnlockedPlanById()
+{
+if ($this->request->is('post')||($this->request->is('put')))
+	{
+$request=$this->request->query;
+$this->loadModel('Plan');
+debug($request);
+$data=array('id'=>$request['planing_id'],
+	'locked'=>$request['locked']);
+$this->Plan->save($data);
+$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	$this->response->body($reponses);
+	return $this->response;
+	
+}
+}
+public function lockedUnlockedCellById()
+{
+if ($this->request->is('post')||($this->request->is('put')))
+	{
+$request=$this->request->query;
+$this->loadModel('DetailPlan');
+$data=array('id'=>$request['id'],
+	'locked'=>$request['locked']);
+$this->DetailPlan->save($data);
+$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	$this->response->body($reponses);
+	return $this->response;
+	}
+
+
+}
+
 }

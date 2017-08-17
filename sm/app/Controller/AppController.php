@@ -36,7 +36,9 @@ class AppController extends Controller {
 	// only allow the login controllers only
 	public function beforeFilter() {
 
-
+$this->response->header('Access-Control-Allow-Origin', '*');
+	$this->response->type('application/json');
+	$this->response->statusCode(200);
 $model=array('Action','Activite','ActivityManage','Axis','Bankaccount','Budget','BudgetDetail','Category','Comment','ComponentCategory','ComponentCustomer',
 	         'ComponentLanguage','ComponentSector','Composant','Customer','DetailPlan','Document','DocumentCategory','DocumentCUstomer','DocumentLanguage',
 	         'DocumentSector','Group','GroupeUser','Historical','HistotricalPlan','HumanSource','Indicator','Invoice','InvoiceDetail','Item','Job','JobeDetail','Language','LinkWeb','MaterialSource','Message',
@@ -158,5 +160,12 @@ public function getEntiteHtml($content=null)
    $find=array('&amp;','&lt;','&gt;');
   $filter=array('&','<','>');
   return str_replace($filter, $find, $content);
+}
+
+
+public function sendRequest($rep=null)
+{
+	$this->response->body(json_encode($rep));
+	return $this->response;
 }
 }

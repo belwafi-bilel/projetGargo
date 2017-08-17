@@ -52536,3 +52536,1002 @@ Stack Trace:
 #1 H:\Examp\htdocs\Garago\www\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
 #2 H:\Examp\htdocs\Garago\www\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2017-08-10 16:55:49 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:55:51 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:55:52 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:55:53 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:16 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:17 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:18 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:19 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:38 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/languages
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:39 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/personalOffers
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:40 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/offers
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:41 Error: [MissingControllerException] Controller class Garago-2017Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Garago-2017Controller',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/Garago-2017/sm/items
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-10 16:56:54 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/img/plans/vide.gif
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-11 10:03:58 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /garago-2017/sm/plans/planingJson/id=4&status=new&posEvent=plan&data=data&Planing_id=1&historical_planing_id=1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(Plan), Array, Array)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(52): Model->save(Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(155): PlansController->newPlan(NULL)
+#7 [internal function]: PlansController->planingJson('id=4&status=new...')
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-11 12:21:16 Error: [MissingControllerException] Controller class PlansController could not be found.
+Exception Attributes: array (
+  'class' => 'PlansController',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/plans
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-11 12:21:53 Error: [MissingControllerException] Controller class GetLastAxisController could not be found.
+Exception Attributes: array (
+  'class' => 'GetLastAxisController',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/getLastAxis/1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-11 12:22:57 Error: [MissingControllerException] Controller class PlansController could not be found.
+Exception Attributes: array (
+  'class' => 'PlansController',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/plans/getLastAxis/1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-11 12:23:16 Error: [MissingControllerException] Controller class PlansController could not be found.
+Exception Attributes: array (
+  'class' => 'PlansController',
+  'plugin' => NULL,
+)
+Request URL: /garago-2017/sm/plans/getLastAxis/
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-08-11 12:24:04 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/img/plans/vide.gif
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-11 12:24:13 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/img/plans/vide.gif
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-11 12:25:05 Error: Fatal Error (1): Call to undefined function getLastInsertID() in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 1673]
+2017-08-11 12:25:06 Error: [FatalErrorException] Call to undefined function getLastInsertID()
+Request URL: /garago-2017/sm/plans/getLastAxis/1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 1673)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 1673, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 1673, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 12:30:46 Error: Fatal Error (4): syntax error, unexpected '$lastAxis' (T_VARIABLE) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 1674]
+2017-08-11 12:30:47 Error: [FatalErrorException] syntax error, unexpected '$lastAxis' (T_VARIABLE)
+Request URL: /garago-2017/sm/plans/getLastAxis/6
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 1674)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 1674, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 1674, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 12:49:18 Error: [MissingActionException] Action PlansController::getLastAxi() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'getLastAxi',
+)
+Request URL: /garago-2017/sm/plans/getLastAxi
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-11 12:59:06 Error: [MissingTableException] Table axis14s for model Axis14 was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'axis14s',
+  'class' => 'Axis14',
+  'ds' => 'default',
+)
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=axis&data=null&planing_id=2&historical_planing_id=2&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axis14s')
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(834): Model->getDataSource()
+#2 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1603): Model->__call('findById', Array)
+#3 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1603): AppModel->findById(NULL)
+#4 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(149): PlansController->getSourceById('Axis14')
+#5 [internal function]: PlansController->planingJson('id=1&status=new...')
+#6 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#7 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#9 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2017-08-11 12:59:48 Error: [MissingTableException] Table axis15s for model Axis15 was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'axis15s',
+  'class' => 'Axis15',
+  'ds' => 'default',
+)
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=axis&data=null&planing_id=2&historical_planing_id=2&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3667): Model->setSource('axis15s')
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(834): Model->getDataSource()
+#2 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1603): Model->__call('findById', Array)
+#3 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1603): AppModel->findById(NULL)
+#4 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(149): PlansController->getSourceById('Axis15')
+#5 [internal function]: PlansController->planingJson('id=1&status=new...')
+#6 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#7 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#9 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2017-08-11 13:11:08 Error: Fatal Error (4): syntax error, unexpected 'return' (T_RETURN) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:11:09 Error: [FatalErrorException] syntax error, unexpected 'return' (T_RETURN)
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:11:20 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:11:20 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:11:22 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:11:23 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:11:35 Error: [MissingViewException] View file "Plans\get_axes_by_id.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\get_axes_by_id.ctp',
+)
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-11 13:15:25 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:15:26 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:17:47 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:17:48 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:18:57 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 745]
+2017-08-11 13:18:57 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 745)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 745, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 745, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:20:23 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 746]
+2017-08-11 13:20:23 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/getAxesById/32
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 746, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:55:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'position' cannot be null
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=column&data=null&planing_id=4&historical_planing_id=4&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(TypePlan), Array, Array)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1209): Model->save(Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(153): PlansController->addTypePlanning()
+#7 [internal function]: PlansController->planingJson('id=1&status=new...')
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-11 13:56:58 Error: Fatal Error (4): syntax error, unexpected '$tab' (T_VARIABLE) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 155]
+2017-08-11 13:56:58 Error: [FatalErrorException] syntax error, unexpected '$tab' (T_VARIABLE)
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=column&data=null&planing_id=4&historical_planing_id=4&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 155)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 155, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 155, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-11 13:57:52 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'position' cannot be null
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=column&data=null&planing_id=4&historical_planing_id=4&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('INSERT INTO `sm...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1090): DboSource->execute('INSERT INTO `sm...')
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1940): DboSource->create(Object(TypePlan), Array, Array)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(1758): Model->_doSave(Array, Array)
+#5 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(1211): Model->save(Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(153): PlansController->addTypePlanning()
+#7 [internal function]: PlansController->planingJson('id=1&status=new...')
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-11 14:22:02 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_row.ctp',
+)
+Request URL: /garago-2017/sm/plans/addRow/5,9
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-11 14:22:25 Error: [MissingViewException] View file "Plans\new_plan.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\new_plan.ctp',
+)
+Request URL: /garago-2017/sm/Plans/newPlan
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-11 14:22:46 Error: [MissingViewException] View file "Plans\add_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\add_row.ctp',
+)
+Request URL: /garago-2017/sm/plans/addRow/5,10
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-14 10:06:04 Error: [MissingActionException] Action PlansController::getAxis() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'getAxis',
+)
+Request URL: /garago-2017/sm/plans/getAxis
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-14 10:11:29 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 960]
+2017-08-14 10:11:29 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/addAxes/6
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 10:15:49 Error: Fatal Error (4): syntax error, unexpected ';' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 960]
+2017-08-14 10:15:50 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /garago-2017/sm/plans/addAxes/6
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 960, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 10:48:49 Error: Fatal Error (1): Call to undefined function dier() in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 193]
+2017-08-14 10:48:50 Error: [FatalErrorException] Call to undefined function dier()
+Request URL: /garago-2017/sm/plans/planingJson/id=2&status=delete&posEvent=axis&data=null&planing_id=2&historical_planing_id=2&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 193)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 193, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 193, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 12:23:06 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 230]
+2017-08-14 12:23:06 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=edit&posEvent=axis&data=null&planing_id=1&historical_planing_id=2&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 12:28:00 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 230]
+2017-08-14 12:28:01 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /garago-2017/sm/plans/planingJson/id=1&status=new&posEvent=axis&data=Objectif&planing_id=1&historical_planing_id=2&image=null
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 12:41:15 Error: Fatal Error (1): Call to undefined method PlansController::findAllByPosition() in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 230]
+2017-08-14 12:41:16 Error: [FatalErrorException] Call to undefined method PlansController::findAllByPosition()
+Request URL: /garago-2017/sm/plans/move/1,2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 230)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 230, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'H:\\Examp\\htdocs...', 230, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 14:09:06 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 237]
+2017-08-14 14:09:06 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /garago-2017/sm/plans/move/3,0
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 237)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 237, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 237, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 14:13:22 Error: Fatal Error (4): syntax error, unexpected '$axismove' (T_VARIABLE), expecting ']' in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 230]
+2017-08-14 14:13:23 Error: [FatalErrorException] syntax error, unexpected '$axismove' (T_VARIABLE), expecting ']'
+Request URL: /garago-2017/sm/plans/move/2,0
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 230, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2017-08-14 15:10:21 Error: [MissingActionException] Action PlansController::move() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'move',
+)
+Request URL: /garago-2017/sm/plans/move/3,0,2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-14 15:58:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Axis.historical_id' in 'where clause'
+Request URL: /garago-2017/sm/plans/moveRow/2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `Axis`.`...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `Axis`.`...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `Axis`.`...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(Axis), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('all', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(599): Model->find('all', Array)
+#7 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(834): DboSource->query('findAllByHistor...', Array, Object(Axis))
+#8 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(258): Model->__call('findAllByHistor...', Array)
+#9 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(258): Axis->findAllByHistoricalId('2')
+#10 [internal function]: PlansController->moveRow('2')
+#11 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#12 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#14 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2017-08-14 15:58:50 Error: [MissingViewException] View file "Plans\move_row.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_row.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveRow/2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-15 15:09:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /garago-2017/sm/plans/plan
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(319): Model->find('first', Array)
+#7 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(102): PlansController->detailPlans('', 0)
+#8 [internal function]: PlansController->plan()
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#12 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2017-08-15 15:10:02 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/img/plans/neguac.jpg
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-15 15:10:03 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/plans/tableau/
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-15 15:10:31 Error: [MissingActionException] Action PlansController::linki() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'linki',
+)
+Request URL: /garago-2017/sm/plans/linki
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-15 15:10:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /garago-2017/sm/plans/link
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(487): Model->find('first', Array)
+#7 [internal function]: PlansController->link()
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-15 15:10:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /garago-2017/sm/plans/link/2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(487): Model->find('first', Array)
+#7 [internal function]: PlansController->link('2')
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-15 15:10:52 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.id_plan' in 'where clause'
+Request URL: /garago-2017/sm/plans/link/2,gf
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(487): Model->find('first', Array)
+#7 [internal function]: PlansController->link('2,gf')
+#8 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#9 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#11 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2017-08-15 15:10:59 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/img/plans/neguac.jpg
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-15 15:10:59 Error: [MissingActionException] Action PlansController::sm() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlansController',
+  'action' => 'sm',
+)
+Request URL: /garago-2017/sm/plans/sm/plans/tableau/
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#2 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2017-08-16 14:10:17 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/3,0,2
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:10:42 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/3,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:10:47 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/1,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:17:42 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/1,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:17:56 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:19:06 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:23:50 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:24:50 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:25:23 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,3
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:27:33 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:27:48 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,3,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:29:16 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,1,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:29:58 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:30:41 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,2,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:32:06 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,2,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:32:20 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,1,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:32:42 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/4,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:33:09 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/3,0,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:34:02 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/3,3,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:34:49 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/1,3,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:38:42 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/1,3,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:40:01 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/1,3,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 14:41:04 Error: [MissingViewException] View file "Plans\move_axis.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Plans\\move_axis.ctp',
+)
+Request URL: /garago-2017/sm/plans/moveAxis/3,4,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#4 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2017-08-16 15:48:25 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.historical_plan_id' in 'where clause'
+Request URL: /garago-2017/sm/plans/moveRow/4,1,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(604): Model->find('first', Array)
+#7 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(834): DboSource->query('findByRowAndHis...', Array, Object(DetailPlan))
+#8 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(291): Model->__call('findByRowAndHis...', Array)
+#9 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(291): DetailPlan->findByRowAndHistoricalPlanId('4', '1')
+#10 [internal function]: PlansController->moveRow('4,1,1')
+#11 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#12 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#14 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2017-08-16 15:59:25 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DetailPlan.axis_id' in 'where clause'
+Request URL: /garago-2017/sm/plans/moveRow/4,1,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(470): PDOStatement->execute(Array)
+#1 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(436): DboSource->_execute('SELECT `DetailP...', Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(673): DboSource->execute('SELECT `DetailP...', Array, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(1184): DboSource->fetchAll('SELECT `DetailP...', false)
+#4 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3038): DboSource->read(Object(DetailPlan), Array)
+#5 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(3010): Model->_readDataSource('first', Array)
+#6 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Datasource\DboSource.php(604): Model->find('first', Array)
+#7 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Model\Model.php(834): DboSource->query('findByRowAndAxi...', Array, Object(DetailPlan))
+#8 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(291): Model->__call('findByRowAndAxi...', Array)
+#9 H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php(291): DetailPlan->findByRowAndAxisId('4', Array)
+#10 [internal function]: PlansController->moveRow('4,1,1')
+#11 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PlansController), Array)
+#12 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PlansController), Object(CakeRequest))
+#14 H:\Examp\htdocs\garago-2017\sm\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2017-08-16 16:23:45 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in [H:\Examp\htdocs\garago-2017\sm\app\Controller\PlansController.php, line 300]
+2017-08-16 16:23:45 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION)
+Request URL: /garago-2017/sm/plans/moveRow/2,5,1
+Stack Trace:
+#0 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 300)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 300, Array)
+#2 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'H:\\Examp\\htdocs...', 300, Array)
+#3 H:\Examp\htdocs\garago-2017\sm\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
