@@ -1853,7 +1853,7 @@ $request=$this->request->query;
 $this->loadModel('Plan');
 debug($request);
 $data=array('id'=>$request['planing_id'],
-	'locked'=>$request['locked']);
+	'locked'=>intval($request['locked']));
 $this->Plan->save($data);
 $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 	$this->response->body($reponses);
