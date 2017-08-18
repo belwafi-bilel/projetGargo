@@ -140,7 +140,6 @@ switch ($data['status']) {
 				break;
 			case 'plan':
 			debug($data['data']);
-			die();
 			$this->newPlan($data['image'],$data['data']);
 			$this->loadModel('Plan');
 			$this->loadModel('HistoricalPlan');
