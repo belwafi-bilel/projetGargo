@@ -35,7 +35,7 @@ class PlansController extends AppController {
 public function newPlan($image=null,$liste=null)
 {
 	$listeColor=explode('-',$liste);
-	print_r($listeColor);
+	$listeColor[1];
 	die();
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
