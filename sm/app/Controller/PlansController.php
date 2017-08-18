@@ -1563,7 +1563,7 @@ public function newActiviter()
 		'cible'=>$request['cible'],
 		'detail_planning_id'=>$request['id_cell'],
 		'value'=>$request['value'],
-		'date_deadline'=>request['deadline']
+		'date_deadline'=>$request['deadline']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
@@ -1593,7 +1593,7 @@ public function setActiviter($liste=null)
 		'cible'=>$request['cible'],
 		'detail_planning_id'=>$request['id_cell'],
 		'value'=>$request['value'],
-		'date_deadline'=>request['deadline']
+		'date_deadline'=>$request['deadline']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
