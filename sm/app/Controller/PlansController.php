@@ -1868,10 +1868,14 @@ public function lockedUnlockedCellById()
 {
 if ($this->request->is('post')||($this->request->is('put')))
 	{
+		if($request['locked']=='true')
+	$locked=1;
+else
+	$locked=0;
 $request=$this->request->query;
 $this->loadModel('DetailPlan');
 $data=array('id'=>$request['id'],
-	'locked'=>$request['locked']);
+	'locked'=>$locked);
 $this->DetailPlan->save($data);
 $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 	$this->response->body($reponses);
