@@ -34,7 +34,7 @@ class PlansController extends AppController {
 
 public function newPlan($image=null,$liste=null)
 {
-	$listye=explode('-',$liste);
+	$liste=explode('-',$liste);
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
  
