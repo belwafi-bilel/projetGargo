@@ -35,8 +35,7 @@ class PlansController extends AppController {
 public function newPlan($image=null,$liste=null)
 {
 	$listeColor=explode('-',$liste);
-	echo $listeColor[1];
-	die();
+	
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
  
@@ -141,7 +140,6 @@ switch ($data['status']) {
 					$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'plan':
-			debug($data['data']);
 			$this->newPlan($data['image'],$data['data']);
 			$this->loadModel('Plan');
 			$this->loadModel('HistoricalPlan');
