@@ -1311,6 +1311,7 @@ foreach ($TypePLans as $TypePlan) {
 	$data1=array(
 		'description'=>'bilel',
 		'position'=>$liste[1],
+		'style'=>'#FFrrFF',
 		'plan_id'=>$liste[0]);
 	
 	$this->TypePlan->create();
