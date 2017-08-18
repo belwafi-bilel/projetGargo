@@ -1329,9 +1329,8 @@ foreach ($TypePLans as $TypePlan) {
 	$data=array(
 		'id'=>$TypePlan['TypePlan']['id'],
 		'description'=>$TypePlan['TypePlan']['description'],
-		'position'=>intval($TypePlan['TypePlan']['position'])+1,
-		'background'=>'#FF0000',
-		'color'=>"#FFFFFF",
+		'position'=>intval($TypePlan['TypePlan']['position'])+1
+		
 		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
 	$this->TypePlan->save($data);
 }
@@ -1341,7 +1340,6 @@ foreach ($TypePLans as $TypePlan) {
 		'background'=>'#FF0000',
 		'color'=>"#FFFFFF",
 		'plan_id'=>$liste[0]);
-	
 	$this->TypePlan->create();
 	$this->TypePlan->save($data1);
 	return null;
