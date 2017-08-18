@@ -764,7 +764,7 @@ public function deleteProject()
 }
 
 /**************************function sendMessage********************************/
-/*
+/*R
 function sendMessage to share the planning=?
 */
 public function sendMessage($liste=null)
@@ -1304,6 +1304,7 @@ foreach ($TypePLans as $TypePlan) {
 		'id'=>$TypePlan['TypePlan']['id'],
 		'description'=>$TypePlan['TypePlan']['description'],
 		'position'=>intval($TypePlan['TypePlan']['position'])+1,
+		'style'=>"#E13EE1",
 		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
 	$this->TypePlan->save($data);
 }
