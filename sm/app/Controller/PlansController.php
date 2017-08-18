@@ -200,6 +200,9 @@ switch ($data['status']) {
 	    
 		break;
 }
+$this->response->header('Access-Control-Allow-Origin', '*');
+	$this->response->type('application/json');
+	$this->response->statusCode(200);
 $this->response->body($reponses);
 	return $this->response;
 }
