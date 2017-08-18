@@ -899,7 +899,7 @@ function getDetail_planning($id=null)
 {
 	$this->loadModel('DetailPlan');
 $detailplans=$this->DetailPlan->find('all',
-	['conditions'=>['DetailPlan.axes_id'=>$id]]);
+	['conditions'=>['DetailPlan.axes_id'=>$id], 'DetailPlan.row'=>'desc']);
 $detailplans1=null;
 $tableau=array();
 foreach ($detailplans as $detailplan) 
@@ -1586,7 +1586,7 @@ public function setActiviter($liste=null)
 	$data=array(
 		'id'=>$request['id'],
 		'num'=>$request['num'],
-		'description'=>$request['description'],
+		'description'=>$request['derscription'],
 		'cible'=>$request['cible'],
 		'detail_planning_id'=>$request['id_cell']
 		);
@@ -1656,7 +1656,7 @@ function newIndicators of Activitre=?*/
 
 public function newIndicator($liste=null)
 {
-if ($this->request->is('post')||($this->request->is('put')))
+		if ($this->request->is('post')||($this->request->is('put')))
 	{
 		$request=$this->request->query;
 		$type=array('%','#','$');
@@ -1687,6 +1687,7 @@ public function setIndicator($liste=null)
 {	if ($this->request->is('post')||($this->request->is('put')))
 	{
 		$request=$this->request->query;
+		
 		$this->loadModel("Indicator");
 		$data=array(
 			'id'=>$request['id'],
@@ -1714,7 +1715,7 @@ public function getIndicators()
 	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id));
 	    $this->response->body($reponses);
 		return $this->response;
-}
+
 }
 /**********************************function listeIndicator of activiterId=?  ***********************/
 /*
