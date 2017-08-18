@@ -600,12 +600,12 @@ public function table()
 public function setColorTypePlaning($liste=null)
 {
 	$liste1=explode(',',$liste);
-	print_r($liste1);
+	
 $this->loadModel('TypePlan');
 $data=array('id'=>$liste1[0],
 	'background'=>$liste1[1]);
 	$this->TypePlan->save($data);	
-	die();
+	
 }
 
 
