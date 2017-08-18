@@ -602,6 +602,7 @@ $this->loadModel('TypePlan');
 $data=array('id'=>$liste1[0],
 	'background'=>$liste1[1]);
 debug($data);
+$this->TypePlan->create();
 	$this->TypePlan->save($data);	
 }
 
