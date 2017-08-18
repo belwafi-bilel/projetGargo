@@ -1619,21 +1619,42 @@ $this->response->body($reponses);
 /*
 *function newResponsableActiviter of activiter_id=?
 */
-public function newResponsableActiviter($liste=null)
+public function newMangerActiviter()
 {
-	$liste=explode(',',$liste);
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+		$liste=explode(',',$request['list_user']);
 	$this->loadModel('ActivityManager');
-	for ($i=1; $i <count($liste) ; $i++) { 
-		$data=array(
-			'activiteer_id'=>$liste[0],
-			'user_id'=>$liste[$i],
-			"date"=>new date("Y-m-d")
-			);
-		$this->ActivityManager->create();
-		$this->ActivityManager->save($data);
+		for ($i=1; $i <count($liste) ; $i++) { 
+			$data=array(
+				'activiter_id'=>$request['id_activiter'],
+				'user_id'=>$liste[$i],
+				"date"=>new date("Y-m-d")
+				);
+			$this->ActivityManager->create();
+			$this->ActivityManager->save($data);
+		}
+			$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
 	}
-
 }
+public function deleteMangerActiviter()
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+		
+	$this->loadModel('ActivityManager');
+		
+			$this->ActivityManager->delete(array('ActivityManager.activiter_id'=>$request['id_activiter'],'ActivityManager.user_id'=>$request['id_user']));
+			$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+	}
+}
+
 	/**********************************function getIndicators  ***********************/
 /*
 function getIndicators of activiter_id=?*/    
