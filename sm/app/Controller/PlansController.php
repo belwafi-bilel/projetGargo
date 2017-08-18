@@ -1331,6 +1331,7 @@ public function setTypePlanning($liste=null)
 		'id'=>$liste[0],
 		'description'=>$liste[1],
 		'position'=>$typePlan['TypePlan']['position'],
+		'styel'=>"#254787",
 		'plan_id'=>$typePlan['TypePlan']['plan_id']);
 	
 	$this->TypePlan->save($data);
