@@ -55,7 +55,7 @@ $this->Plan->save($date);
 $idLaste= $this->Plan->getLastInsertID();
 $this->addTypePlanning($idLaste.',1');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[0]);
+$this->setColorTypePlaning($id.','.$listeColor[0]);
 $this->setTypePlanning($id.','.'Objectives');
 $this->addTypePlanning($idLaste.',2');
 $id=$this->TypePlan->getLastInsertID();
@@ -63,19 +63,19 @@ $this->setColorTypePlaning($id,$listeColor[1]);
 $this->setTypePlanning($id.','.'Activities');
 $this->addTypePlanning($idLaste.',3');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[2]);
+$this->setColorTypePlaning($id.','.$listeColor[2]);
 $this->setTypePlanning($id.','.'Indicator');
 $this->addTypePlanning($idLaste.',4');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[3]);
+$this->setColorTypePlaning($id.','.$listeColor[3]);
 $this->setTypePlanning($id.','.'Resources');
 $this->addTypePlanning($idLaste.',5');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[4]);
+$this->setColorTypePlaning($id.','.$listeColor[4]);
 $this->setTypePlanning($id.','.'Budget');
 $this->addTypePlanning($idLaste.',6');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[5]);
+$this->setColorTypePlaning($id.','.$listeColor[5]);
 $this->setTypePlanning($id.','.'Deadline');
  $this->addHistoricalPlanning($idLaste);
 $id_Historical= $this->HistoricalPlan->getLastInsertID();
@@ -597,11 +597,12 @@ public function table()
 
 
 
-public function setColorTypePlaning($id=null,$liste=null)
+public function setColorTypePlaning($liste=null)
 {
+	$liste=explode(',',$liste);
 $this->loadModel('TypePlan');
-$data=array('id'=>$id,
-	'background'=>$liste);
+$data=array('id'=>$liste[0],
+	'background'=>$liste[1]);
 	$this->TypePlan->save($data);	
 }
 
