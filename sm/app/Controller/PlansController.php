@@ -1561,9 +1561,7 @@ public function newActiviter()
 		'num'=>$num+1,
 		'description'=>$request['derscription'],
 		'cible'=>$request['cible'],
-		'detail_planning_id'=>$request['id_cell'],
-		'value'=>$request['value'],
-		'date_deadline'=>$request['deadline']
+		'detail_planning_id'=>$request['id_cell']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
@@ -1590,9 +1588,7 @@ public function setActiviter($liste=null)
 		'num'=>$request['num'],
 		'description'=>$request['derscription'],
 		'cible'=>$request['cible'],
-		'detail_planning_id'=>$request['id_cell'],
-		'value'=>$request['value'],
-		'date_deadline'=>$request['deadline']
+		'detail_planning_id'=>$request['id_cell']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
@@ -1649,19 +1645,77 @@ public function deleteMangerActiviter()
 	$this->loadModel('ActivityManager');
 		
 			$this->ActivityManager->delete(array('ActivityManager.activiter_id'=>$request['id_activiter'],'ActivityManager.user_id'=>$request['id_user']));
-			$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
-$this->response->body($reponses);
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+    $this->response->body($reponses);
 	return $this->response;
 	}
 }
+/**********************************function newIndicator  ***********************/
+/*
+function newIndicators of Activitre=?*/ 
+
+public function newIndicator($liste=null)
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+		$type=array('%','#','$');
+		$liste=explode(',',$liste);
+		$listeindicators=$this->getIndicators($request['activiter_id']);
+		$NumIndicator=count($listeindicators);
+		$this->loadModel("Indicator");
+		$data=array(
+			'num'=>$NumIndicator+1,
+			'description'=>$request['description'],
+			'type'=>$type[$request['type']],
+			'cible'=>$request['cible'],
+			'valeur'=>'0',
+			'date_fin'=>$request['date_end'],
+			'activiter_id'=>$request['activiter_id']
+			);
+		$this->Indicator->create();
+		$this->Indicator->save($data);
+		$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	    $this->response->body($reponses);
+		return $this->response;
+  }
+}
+/**********************************function setIndicator  ***********************/
+/*
+function setIndicators of id=?*/ 
+public function setIndicator($liste=null)
+{	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+		
+		$this->loadModel("Indicator");
+		$data=array(
+			'id'=>$request['id'],
+			'valeur'=>$request['value']
+			);
+		$this->Indicator->save($data);
+		$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+	    $this->response->body($reponses);
+		return $this->response;
+  }
+}
+
 
 	/**********************************function getIndicators  ***********************/
 /*
 function getIndicators of activiter_id=?*/    
-public function getIndicators($id=null)
+
+
+public function getIndicators()
 {
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
 	$this->loadModel("Indicator");
-	return $this->Indicator->findAllByActiviterId($id);
+	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id));
+	    $this->response->body($reponses);
+		return $this->response;
+
 }
 /**********************************function listeIndicator of activiterId=?  ***********************/
 /*
@@ -1708,42 +1762,6 @@ public function getActivityById($id)
 	return $listeActiviter;
 }
 
-/**********************************function newIndicator  ***********************/
-/*
-function newIndicators of Activitre=?*/ 
-
-public function newIndicator($liste=null)
-{
-	$type=array('%','#','$');
-	$liste=explode(',',$liste);
-	$listeindicators=$this->getIndicators($liste[5]);
-	$NumIndicator=count($listeindicators);
-	$this->loadModel("Indicator");
-	$data=array(
-		'num'=>$NumIndicator+1,
-		'description'=>$liste[1],
-		'type'=>$type[$liste[2]],
-		'cible'=>$liste[3],
-		'valeur'=>'0',
-		'date_fin'=>$liste[4],
-		'activiter_id'=>$liste[5]
-		);
-	$this->Indicator->create();
-	$this->Indicator->save($data);
-}
-/**********************************function setIndicator  ***********************/
-/*
-function setIndicators of id=?*/ 
-public function setIndicator($liste=null)
-{
-	$liste=explode(',', $liste);
-	$this->loadModel("Indicator");
-	$data=array(
-		'id'=>$liste[0],
-		'valeur'=>$liste[1]
-		);
-	$this->Indicator->save($data);
-}
 
 /**********************************function getSourceById  ***********************/
 /*
