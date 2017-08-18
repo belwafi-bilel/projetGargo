@@ -1296,9 +1296,10 @@ public function getTypePlanning($id=null)
 			'id'=>$TypePlan['TypePlan']['id'],
 			'description'=>$TypePlan['TypePlan']['description'],
 			'position'=>$TypePlan['TypePlan']['position'],
-			'plan_id'=>$TypePlan['TypePlan']['plan_id']
-		),'style'=>array('background'=>$TypePlan['TypePlan']['background'],
-		'color'=>$TypePlan['TypePlan']['color']));
+			'plan_id'=>$TypePlan['TypePlan']['plan_id'],
+			'style'=>array('background'=>$TypePlan['TypePlan']['background'],'color'=>$TypePlan['TypePlan']['color'])
+		)
+		);
 	}
 	return $tab;
 } 
