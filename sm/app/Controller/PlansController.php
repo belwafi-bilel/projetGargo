@@ -1287,8 +1287,20 @@ function getTypePlanning to get type planning action of plan id=?
 */
 public function getTypePlanning($id=null)
 {
+	$tab=array();
 	$this->loadModel('TypePlan');
-	return $this->TypePlan->find('all',['conditions'=>['TypePlan.plan_id'=>$id],'order'=>['TypePlan.position'=>'ASC']]);
+	$TypePlans= $this->TypePlan->find('all',['conditions'=>['TypePlan.plan_id'=>$id],'order'=>['TypePlan.position'=>'ASC']]);
+	foreach ($TypePlans as $TypePlan) {
+	$tab[]=array(
+		"TypePlan"=>array(
+			'id'=>$TypePlan['TypePlan']['id'],
+			'description'=>$TypePlan['TypePlan']['description'],
+			'position'=>$TypePlan['TypePlan']['position'],
+			'plan_id'=>$TypePlan['TypePlan']['plan_id']
+		),array('background'=>$TypePlan['TypePlan']['background'],
+		'color'=>$TypePlan['TypePlan']['color']));
+	}
+	return $tab;
 } 
 /*****************************************function add type planing***********************/
 /*
