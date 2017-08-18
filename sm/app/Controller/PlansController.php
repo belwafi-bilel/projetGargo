@@ -200,9 +200,6 @@ switch ($data['status']) {
 	    
 		break;
 }
-$this->response->header('Access-Control-Allow-Origin', '*');
-	$this->response->type('application/json');
-	$this->response->statusCode(200);
 $this->response->body($reponses);
 	return $this->response;
 }
@@ -1565,11 +1562,13 @@ public function newActiviter()
 		'description'=>$request['derscription'],
 		'cible'=>$request['cible'],
 		'detail_planning_id'=>$request['id_cell'],
-		'value'=>$request['value']
+		'value'=>$request['value'],
+		'date_deadline'=>request['deadline']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
 	
+	$users=$this->getUser($id);
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 $this->response->body($reponses);
 	return $this->response;
@@ -1579,7 +1578,7 @@ $this->response->body($reponses);
 /*
 function saveActiviter to  edit Activiter  planning action of row=?? and position=?
 */    
-public function editActiviter($liste=null)
+public function setActiviter($liste=null)
 {
 	if ($this->request->is('post')||($this->request->is('put')))
 	{
@@ -1593,16 +1592,30 @@ public function editActiviter($liste=null)
 		'description'=>$request['derscription'],
 		'cible'=>$request['cible'],
 		'detail_planning_id'=>$request['id_cell'],
-		'value'=>$request['value']
+		'value'=>$request['value'],
+		'date_deadline'=>request['deadline']
 		);
 	$this->Activite->create();
 	$this->Activite->save($data);
+	
+	
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 $this->response->body($reponses);
 	return $this->response;
 }
 }
-
+public function deleteActiviter()
+{
+		if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+	$this->loadModel('Activite');
+	$this->Activite->deleteById($request['id'])
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+$this->response->body($reponses);
+	return $this->response;
+}
+}
 /**********************************function newResponsableActiviter  ***********************/
 /*
 *function newResponsableActiviter of activiter_id=?
