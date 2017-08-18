@@ -1610,7 +1610,7 @@ public function deleteActiviter()
 	{
 		$request=$this->request->query;
 	$this->loadModel('Activite');
-	$this->Activite->deleteById($request['id'])
+	$this->Activite->delete(array('Activite.id'=>$request['id']));
 	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 $this->response->body($reponses);
 	return $this->response;
