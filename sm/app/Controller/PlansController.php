@@ -32,7 +32,7 @@ class PlansController extends AppController {
 
 
 
-public function newPlan($image=null,$liste)
+public function newPlan($image=null,$liste=null)
 {
 	$listye=explode('-%23',$liste);
 	$this->loadModel('TypePlan');
@@ -49,7 +49,6 @@ public function newPlan($image=null,$liste)
  		'logo'=>null,
  		'adress'=>'',
  		'user_id'=>$id);
- 
 $this->Plan->create();
 $this->Plan->save($date);
 $idLaste= $this->Plan->getLastInsertID();
@@ -164,6 +163,7 @@ switch ($data['status']) {
 			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'type':
+			debug($dara['data']);
 			$this->setTypePlanning($data['id'].",".$data['data']);
 			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 			default:
