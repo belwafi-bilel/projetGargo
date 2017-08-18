@@ -1329,8 +1329,7 @@ foreach ($TypePLans as $TypePlan) {
 	$data=array(
 		'id'=>$TypePlan['TypePlan']['id'],
 		'description'=>$TypePlan['TypePlan']['description'],
-		'position'=>intval($TypePlan['TypePlan']['position'])+1
-		
+		'position'=>intval($TypePlan['TypePlan']['position'])+1,
 		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
 	$this->TypePlan->save($data);
 }
