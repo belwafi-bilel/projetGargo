@@ -1851,9 +1851,12 @@ if ($this->request->is('post')||($this->request->is('put')))
 	{
 $request=$this->request->query;
 $this->loadModel('Plan');
-debug($request);
+if($request['locked'])
+	$locked=1;
+else
+	$locked=0;
 $data=array('id'=>$request['planing_id'],
-	'locked'=>intval($request['locked']));
+	'locked'=>$locked;
 $this->Plan->save($data);
 $reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
 	$this->response->body($reponses);
