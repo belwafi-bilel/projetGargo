@@ -143,7 +143,7 @@ switch ($data['status']) {
 			$this->newPlan($data['image'],$data['data']);
 			$this->loadModel('Plan');
 			$this->loadModel('HistoricalPlan');
-			$this->setColorTypePlaning($request['data']);
+			$this->setColorTypePlaning($data['data']);
 			$id_plan=$this->Plan->getLastInsertID();
 			$id_historical_plan=$this->HistoricalPlan->getLastInsertID();
 			$reponses=$this->getPlanning($id_plan.','.$id_historical_plan);
