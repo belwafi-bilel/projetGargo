@@ -39,9 +39,7 @@ public function newPlan($image=null,$liste=null)
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
  
-          // if($photo["size"]>0){
-          //    $fileData = fread(fopen($image,"r"),$photo["size"]);
-          //     }
+        
  	$id=$this->Session->read('id');
  $id=14;
  	$date=array(
@@ -600,12 +598,11 @@ public function table()
 public function setColorTypePlaning($liste=null)
 {
 	$liste1=explode(',',$liste);
-	debug($liste1);
 $this->loadModel('TypePlan');
 $data=array('id'=>$liste1[0],
 	'background'=>$liste1[1]);
+
 	$this->TypePlan->save($data);	
-	
 }
 
 
