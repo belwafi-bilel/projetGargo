@@ -1304,14 +1304,16 @@ foreach ($TypePLans as $TypePlan) {
 		'id'=>$TypePlan['TypePlan']['id'],
 		'description'=>$TypePlan['TypePlan']['description'],
 		'position'=>intval($TypePlan['TypePlan']['position'])+1,
-		'style'=>"#E13EE1",
+		'background'=>'#FF0000',
+		'color'=>"#FFFFFF"
 		'plan_id'=>$TypePlan['TypePlan']['plan_id']);
 	$this->TypePlan->save($data);
 }
 	$data1=array(
 		'description'=>'bilel',
 		'position'=>$liste[1],
-		'style'=>'#FFrrFF',
+		'background'=>'#FF0000',
+		'color'=>"#FFFFFF"
 		'plan_id'=>$liste[0]);
 	
 	$this->TypePlan->create();
@@ -1332,7 +1334,8 @@ public function setTypePlanning($liste=null)
 		'id'=>$liste[0],
 		'description'=>$liste[1],
 		'position'=>$typePlan['TypePlan']['position'],
-		'styel'=>"#254787",
+		'background'=>'#FF0000',
+		'color'=>"#FFFFFF"
 		'plan_id'=>$typePlan['TypePlan']['plan_id']);
 	
 	$this->TypePlan->save($data);
