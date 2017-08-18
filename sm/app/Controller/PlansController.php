@@ -1851,7 +1851,7 @@ if ($this->request->is('post')||($this->request->is('put')))
 	{
 $request=$this->request->query;
 $this->loadModel('Plan');
-if($request['locked']==true)
+if($request['locked']=='true')
 	$locked=1;
 else
 	$locked=0;
