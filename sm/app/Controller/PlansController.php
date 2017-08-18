@@ -1715,7 +1715,7 @@ public function getIndicators()
 	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id));
 	    $this->response->body($reponses);
 		return $this->response;
-
+}
 }
 /**********************************function listeIndicator of activiterId=?  ***********************/
 /*
