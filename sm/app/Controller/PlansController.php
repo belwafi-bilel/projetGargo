@@ -34,7 +34,7 @@ class PlansController extends AppController {
 
 public function newPlan($image=null,$liste=null)
 {
-	$listeColor=explode(',',$liste);
+	$listeColor=explode('-',$liste);
 	
 	$this->loadModel('TypePlan');
  	if ($this->request->is('post')) 
@@ -59,7 +59,7 @@ $this->setColorTypePlaning($id.','.$listeColor[0]);
 $this->setTypePlanning($id.','.'Objectives');
 $this->addTypePlanning($idLaste.',2');
 $id=$this->TypePlan->getLastInsertID();
-$this->setColorTypePlaning($id,$listeColor[1]);
+$this->setColorTypePlaning($id.','.$listeColor[1]);
 $this->setTypePlanning($id.','.'Activities');
 $this->addTypePlanning($idLaste.',3');
 $id=$this->TypePlan->getLastInsertID();
