@@ -601,8 +601,7 @@ public function setColorTypePlaning($liste=null)
 $this->loadModel('TypePlan');
 $data=array('id'=>$liste1[0],
 	'background'=>$liste1[1]);
-debug($data);
-$this->TypePlan->create();
+
 	$this->TypePlan->save($data);	
 }
 
@@ -1361,8 +1360,7 @@ public function setTypePlanning($liste=null)
 		'id'=>$liste[0],
 		'description'=>$liste[1],
 		'position'=>$typePlan['TypePlan']['position'],
-		'background'=>'#FF0000',
-		'color'=>"#FFFFFF",
+		
 		'plan_id'=>$typePlan['TypePlan']['plan_id']);
 	
 	$this->TypePlan->save($data);
