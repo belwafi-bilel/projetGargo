@@ -899,7 +899,7 @@ function getDetail_planning($id=null)
 {
 	$this->loadModel('DetailPlan');
 $detailplans=$this->DetailPlan->find('all',
-	['conditions'=>['DetailPlan.axes_id'=>$id], 'DetailPlan.row'=>'desc']);
+	['conditions'=>['DetailPlan.axes_id'=>$id],'order'=>array('DetailPlan.row desc')]);
 $detailplans1=null;
 $tableau=array();
 foreach ($detailplans as $detailplan) 
@@ -1715,7 +1715,7 @@ public function getIndicators()
 	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id));
 	    $this->response->body($reponses);
 		return $this->response;
-}
+
 }
 /**********************************function listeIndicator of activiterId=?  ***********************/
 /*
