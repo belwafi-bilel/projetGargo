@@ -139,6 +139,8 @@ switch ($data['status']) {
 					$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'plan':
+			debug($dara['data']);
+			die();
 			$this->newPlan($data['image'],$data['data']);
 			$this->loadModel('Plan');
 			$this->loadModel('HistoricalPlan');
@@ -163,7 +165,7 @@ switch ($data['status']) {
 			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 				break;
 			case 'type':
-			debug($dara['data']);
+
 			$this->setTypePlanning($data['id'].",".$data['data']);
 			$reponses=$this->getPlanning($data['planing_id'].','.$data['historical_planing_id']);
 			default:
