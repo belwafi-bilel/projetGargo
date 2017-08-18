@@ -899,7 +899,7 @@ function getDetail_planning($id=null)
 {
 	$this->loadModel('DetailPlan');
 $detailplans=$this->DetailPlan->find('all',
-	['conditions'=>['DetailPlan.axes_id'=>$id],'order'=>array('DetailPlan.row desc')]);
+	['conditions'=>['DetailPlan.axes_id'=>$id],'order'=>array('DetailPlan.row ASC')]);
 $detailplans1=null;
 $tableau=array();
 foreach ($detailplans as $detailplan) 
