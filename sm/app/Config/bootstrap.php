@@ -134,4 +134,5 @@ if ($_SERVER['SERVER_NAME']=='dev.goforms.ca') {
 'SIGNATURE'=>'An5ns1Kso7MWUdW4ErQKJJJ4qi4-AFqPXkhAxeX32tlnunfwXQYnJlzO',
 'sandbox'=>''
 	));
+	header('Access-Control-Allow-Origin: *');
 }
