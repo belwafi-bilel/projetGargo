@@ -209,7 +209,7 @@ switch ($data['status']) {
 $this->response->body($reponses);
 $this->response->cors($reponses)
 ->allowOrigin(["*"])
-->build();
+//->build();
 	return $this->response;
 }
 die();
