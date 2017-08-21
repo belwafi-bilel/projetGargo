@@ -793,7 +793,7 @@ function deleteActiviterByDetailPlaning($id=null)
 	}
 	if(count($liste))
 	{
-    $this->Activite->deleteAll(array('Activiter.id',$liste));
+    $this->Activite->deleteAll(array('Activite.id',$liste));
 	$this->Indicator->deleteAll(array('Indicator.activiter_id'=>$liste));
       }
 }
