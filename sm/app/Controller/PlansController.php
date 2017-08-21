@@ -782,8 +782,15 @@ function deleteActiviterByDetailPlaning($id=null)
 	$this->loadModel('Activite');
 	$this->loadModel('Indicator');
 	$listeActiviter=$this->Activite->findAllByDetailPlanningId($id,'id');
-    $this->Activiter->deleteAll(array('Activiter.id',$listeActiviter['Activite']['id']));
-	$this->Indicator->deleteAll(array('Indicator.activiter_id'=>$listeActiviter['Activite']['id']));
+	$liste=array();
+	foreach ($listeActiviter as $listeAc) {
+		$liste[]=$listeAc['Activite']['id'];
+	}
+	if(count($liste))
+	{
+    $this->Activiter->deleteAll(array('Activiter.id',$liste));
+	$this->Indicator->deleteAll(array('Indicator.activiter_id'=>$liste));
+      }
 }
 /*****************************************function function for project ***********************/
 /*
