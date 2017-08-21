@@ -205,6 +205,8 @@ switch ($data['status']) {
 	    
 		break;
 }
+$this->response->cors($this->request)
+->allowOrigin(["*"])->build();
 $this->response->body($reponses);
 	return $this->response;
 }
@@ -695,12 +697,42 @@ $this->response->body($reponses);
 /**********************fin  task*******************************************/
 public function deletePlan($id=null)
 {
-$this->Plan->id = $id;
-$this->Plan->delete();
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+$request=$this->request->query;
 $this->loadModel('DetailPlan');
-$this->DetailPlan->deleteAll(array('DetailPlan.id_plan'=>$id));
+$this->loadModel('HistoricalPlan');
+$this->loadModel('Axis');
+$liste=$this->HistoricalPlan->findByPlanId($id,'id');
+$this->HistoricalPlan->deleteAll(array('HistoricalPlan.plan_id'=>$id));
+$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste,'id');
+$this->Axis->deleteAll(array('Axis.historical_id'=>$listeAxis));
+$listeDetailPlaning=$this->DetailPlan->findAllByLineAndAxesId($listeAxis,'id');
+$this->DetailPlan->deleteAll(array('DetailPlan.axes_id'=>$listeAxis));
+$this->deleteActiviterByDetailPlaning($listeDetailPlaning);
+$this->deleteProjectByDetailPlaning($listeDetailPlaning);
+$this->deleteSourceHumanByDetailPlaning($listeDetailPlaning);
+$this->deleteBudgetByDetailPlaning($listeDetailPlaning);
+$this->Plan->id = $request['id'];
+$this->Plan->delete();
+ }
 }
+function deleteActiviterByDetailPlaning($id=null)
+{
+	$this->loadModel('Project');
+	$this->loadModel('ProjectDetailPlanning');
+	$this->loadModel('Tach');
+	$this->loadModel('DelegationProject');
+	$this->loadModel('delegationTache');
+$listeproject=$this->ProjectDetailPlanning->findAllByDetailPlanningId($id,'project_id');
+$this->Project->deleteAll(array('Project.id'=>$listeproject));
+$listetache=$this->Tach->findallByProjectId($listeproject,'id');
+	$this->Tach->deleteAll(array("Tach.id"=>$listeTache));
 
+	 $this->DelegationProject->deleteAll(array('DelegationProject.project_id'=>$id));
+	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$id));
+
+}
 
 
 
@@ -755,6 +787,7 @@ public function editProject()
 	return $this->response;
 	}
 }
+
 
 public function deleteProject()
 {
