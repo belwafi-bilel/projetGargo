@@ -704,18 +704,32 @@ public function deletePlan()
 		$this->loadModel('DetailPlan');
 		$this->loadModel('HistoricalPlan');
 		$this->loadModel('Axis');
-		$liste=$this->HistoricalPlan->findAllByPlanId($request['id'],'id');
+		$listeH=$this->HistoricalPlan->findAllByPlanId($request['id'],'id');
+		$liste=array();
+		
+		foreach ($listeH as $list) {
+			$liste[]=$list['HistoricalPlan']['id'];
+		}
 		debug($liste);
-		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste['HistoricalPlan']['id']));
-		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste['HistoricalPlan']['id'],'id');
-		$this->Axis->deleteAll(array('Axis.historical_plan_id'=>$listeAxis['Axis']['id']));
-		$listeDetailPlaning=$this->DetailPlan->findAllByLineAndAxesId($listeAxis['Axis']['id'],'id');
-		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$listeDetailPlaning['DetailPlan']['id']));
-		$this->deleteActiviterByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
-		$this->deleteProjectByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
-		$this->deleteSourceHumanByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
-		$this->deleteBudgetByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
-		$this->deleteJobsByDetailPlaningId($listeDetailPlaning['DetailPlan']['id']);
+		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste));
+		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste,'id');
+		$liste=null;
+		foreach ($listeAxis as $list) {
+			$liste[]=$list['Axis']['id'];
+		}
+		debug($liste);
+		$this->Axis->deleteAll(array('Axis.historical_plan_id'=>$liste));
+		$listeDetailPlanings=$this->DetailPlan->findAllByLineAndAxesId($liste,'id');
+		foreach ($listeDetailPlanings as $listeDetailPlaning) {
+			$liste[]=$listeDetailPlaning['DetailPlan']['id'];
+		}
+		debug($liste);
+		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$liste));
+		$this->deleteActiviterByDetailPlaning($liste);
+		$this->deleteProjectByDetailPlaning($liste);
+		$this->deleteSourceHumanByDetailPlaning($liste]);
+		$this->deleteBudgetByDetailPlaning($liste);
+		$this->deleteJobsByDetailPlaningId($liste);
 		$this->Plan->id = $request['id'];
 		$this->Plan->delete();
  }
@@ -740,9 +754,13 @@ public function deleteJobsByDetailPlaningId($id=null)
 {
 	$this->loadModel('Job');
 	$this->loadModel('JobeDetail');
-	$liste=$this->Job->finAllByDetailPlanId($id);
-		$this->Job->deleteAll(array('Job.id'=>$liste['Job']['id']));
-		$this->JobeDetail->deleteAll(array('JobeDetail.job_id'=>$liste['Job']['id']));
+	$listeJobs=$this->Job->finAllByDetailPlanId($id,'id');
+	$liste=array();
+	foreach ($listeJobs as $listeJob) {
+		$liste[]=$listeJob['Job']['id'];
+	}
+		$this->Job->deleteAll(array('Job.id'=>$liste));
+		$this->JobeDetail->deleteAll(array('JobeDetail.job_id'=>$liste));
 }
 function deleteProjectByDetailPlaning($id=null)
 {	
