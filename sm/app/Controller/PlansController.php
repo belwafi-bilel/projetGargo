@@ -705,18 +705,16 @@ public function deletePlan()
 		$this->loadModel('HistoricalPlan');
 		$this->loadModel('Axis');
 		$liste=$this->HistoricalPlan->findByPlanId($request['id'],'id');
-		debug($liste);
-		die();
-		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste));
-		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste,'id');
-		$this->Axis->deleteAll(array('Axis.historical_id'=>$listeAxis));
-		$listeDetailPlaning=$this->DetailPlan->findAllByLineAndAxesId($listeAxis,'id');
-		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$listeDetailPlaning));
-		$this->deleteActiviterByDetailPlaning($listeDetailPlaning);
-		$this->deleteProjectByDetailPlaning($listeDetailPlaning);
-		$this->deleteSourceHumanByDetailPlaning($listeDetailPlaning);
-		$this->deleteBudgetByDetailPlaning($listeDetailPlaning);
-		$this->deleteJobsByDetailPlaningId($listeDetailPlaning);
+		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste['HistoricalPlan']['id']));
+		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste['HistoricalPlan']['id'],'id');
+		$this->Axis->deleteAll(array('Axis.historical_id'=>$listeAxis['Axis']['id']));
+		$listeDetailPlaning=$this->DetailPlan->findAllByLineAndAxesId($listeAxis['Axis']['id'],'id');
+		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$listeDetailPlaning['DetailPlan']['id']));
+		$this->deleteActiviterByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
+		$this->deleteProjectByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
+		$this->deleteSourceHumanByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
+		$this->deleteBudgetByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
+		$this->deleteJobsByDetailPlaningId($listeDetailPlaning['DetailPlan']['id']);
 		$this->Plan->id = $request['id'];
 		$this->Plan->delete();
  }
@@ -742,8 +740,8 @@ public function deleteJobsByDetailPlaningId($id=null)
 	$this->loadModel('Job');
 	$this->loadModel('JobeDetail');
 	$liste=$this->Job->finAllByDetailPlanId($id);
-		$this->Job->deleteAll(array('Job.id'=>$liste));
-		$this->JobeDetail->deleteAll(array('JobeDetail.job_id'=>$liste));
+		$this->Job->deleteAll(array('Job.id'=>$liste['Job']['id']));
+		$this->JobeDetail->deleteAll(array('JobeDetail.job_id'=>$liste['Job']['id']));
 }
 function deleteProjectByDetailPlaning($id=null)
 {	
@@ -753,9 +751,9 @@ function deleteProjectByDetailPlaning($id=null)
 	$this->loadModel('DelegationProject');
 	$this->loadModel('delegationTache');
 	$listeproject=$this->ProjectDetailPlanning->findAllByDetailPlanningId($id,'project_id');
-	$this->Project->deleteAll(array('Project.id'=>$listeproject));
-	$listetache=$this->Tach->findallByProjectId($listeproject,'id');
-	$this->Tach->deleteAll(array("Tach.id"=>$listeTache));
+	$this->Project->deleteAll(array('Project.id'=>$listeproject['ProjectDetailPlanning']['project_id']));
+	$listetache=$this->Tach->findallByProjectId($listeproject['ProjectDetailPlanning']['project_id'],'id');
+	$this->Tach->deleteAll(array("Tach.id"=>$listeTache['Tach']['id']));
 	$this->DelegationProject->deleteAll(array('DelegationProject.project_id'=>$listeproject));
 	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$listeproject));
 
@@ -765,8 +763,8 @@ function deleteActiviterByDetailPlaning($id=null)
 	$this->loadModel('Activite');
 	$this->loadModel('Indicator');
 	$listeActiviter=$this->Activite->findAllByDetailPlanningId($id,'id');
-    $this->Activiter->deleteAll(array('Activiter.id',$listeActiviter));
-	$this->Indicator->deleteAll(array('Indicator.activiter_id'=>$listeActiviter));
+    $this->Activiter->deleteAll(array('Activiter.id',$listeActiviter['Activite']['id']));
+	$this->Indicator->deleteAll(array('Indicator.activiter_id'=>$listeActiviter['Activite']['id']));
 }
 /*****************************************function function for project ***********************/
 /*
