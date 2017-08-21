@@ -769,12 +769,15 @@ function deleteProjectByDetailPlaning($id=null)
 	$this->loadModel('Tach');
 	$this->loadModel('DelegationProject');
 	$this->loadModel('delegationTache');
-	$listeproject=$this->ProjectDetailPlanning->findAllByDetailPlanningId($id,'project_id');
-	$this->Project->deleteAll(array('Project.id'=>$listeproject['ProjectDetailPlanning']['project_id']));
-	$listetache=$this->Tach->findallByProjectId($listeproject['ProjectDetailPlanning']['project_id'],'id');
-	$this->Tach->deleteAll(array("Tach.id"=>$listeTache['Tach']['id']));
-	$this->DelegationProject->deleteAll(array('DelegationProject.project_id'=>$listeproject));
-	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$listeproject));
+	$listeprojects=$this->ProjectDetailPlanning->findAllByDetailPlanningId($id,'project_id');
+	$liste=array();
+	foreach ($listeprojects as $listeproject) {
+		$liste[]=$listeproject['ProjectDetailPlanning']['project_id'];
+	}
+	$this->Project->deleteAll(array('Project.id'=>$liste]));
+	$this->Tach->deleteAll(array("Tach.project_id"=>$liste));
+	$this->DelegationProject->deleteAll(array('DelegationProject.project_id'=>$liste));
+	$this->ProjectDetailPlanning->deleteAll(array('ProjectDetailPlanning.project_id'=>$liste));
 
 }
 function deleteActiviterByDetailPlaning($id=null)
