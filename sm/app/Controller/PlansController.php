@@ -754,7 +754,7 @@ public function deleteJobsByDetailPlaningId($id=null)
 {
 	$this->loadModel('Job');
 	$this->loadModel('JobeDetail');
-	$listeJobs=$this->Job->finAllByDetailPlanId($id,'id');
+	$listeJobs=$this->Job->findAllByDetailPlanId($id,'id');
 	$liste=array();
 	foreach ($listeJobs as $listeJob) {
 		$liste[]=$listeJob['Job']['id'];
