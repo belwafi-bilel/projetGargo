@@ -727,7 +727,7 @@ public function deletePlan()
 		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$liste));
 		$this->deleteActiviterByDetailPlaning($liste);
 		$this->deleteProjectByDetailPlaning($liste);
-		$this->deleteSourceHumanByDetailPlaning($liste]);
+		$this->deleteSourceHumanByDetailPlaning($liste);
 		$this->deleteBudgetByDetailPlaning($liste);
 		$this->deleteJobsByDetailPlaningId($liste);
 		$this->Plan->id = $request['id'];
