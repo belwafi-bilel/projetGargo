@@ -707,7 +707,7 @@ public function deletePlan()
 		$liste=$this->HistoricalPlan->findByPlanId($request['id'],'id');
 		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste['HistoricalPlan']['id']));
 		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste['HistoricalPlan']['id'],'id');
-		$this->Axis->deleteAll(array('Axis.historical_id'=>$listeAxis['Axis']['id']));
+		$this->Axis->deleteAll(array('Axis.historical_plan_id'=>$listeAxis['Axis']['id']));
 		$listeDetailPlaning=$this->DetailPlan->findAllByLineAndAxesId($listeAxis['Axis']['id'],'id');
 		$this->DetailPlan->deleteAll(array('DetailPlan.id'=>$listeDetailPlaning['DetailPlan']['id']));
 		$this->deleteActiviterByDetailPlaning($listeDetailPlaning['DetailPlan']['id']);
