@@ -718,7 +718,7 @@ public function deletePlan()
 			$liste[]=$list['Axis']['id'];
 		}
 		debug($liste);
-		$this->Axis->deleteAll(array('Axis.historical_plan_id'=>$liste));
+		$this->Axis->deleteAll(array('Axis.id'=>$liste));
 		$listeDetailPlanings=$this->DetailPlan->findAllByLineAndAxesId($liste,'id');
 		foreach ($listeDetailPlanings as $listeDetailPlaning) {
 			$liste[]=$listeDetailPlaning['DetailPlan']['id'];
