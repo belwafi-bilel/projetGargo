@@ -1732,19 +1732,23 @@ public function setIndicator($liste=null)
 	/**********************************function getIndicators  ***********************/
 /*
 function getIndicators of activiter_id=?*/    
-
-
-public function getIndicators()
+public function getIndicators($id=null)
 {
-	if ($this->request->is('post')||($this->request->is('put')))
-	{
-		$request=$this->request->query;
 	$this->loadModel("Indicator");
-	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($request['id']);
-	    $this->response->body($reponses);
-		return $this->response;
+	return $this->Indicator->findAllByActiviterId($id);
 }
-}
+
+// public function getIndicators()
+// {
+// 	if ($this->request->is('post')||($this->request->is('put')))
+// 	{
+// 		$request=$this->request->query;
+// 	$this->loadModel("Indicator");
+// 	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id);
+// 	    //$this->response->body($reponses);
+// 		return $this->response;
+// }
+// }
 /**********************************function listeIndicator of activiterId=?  ***********************/
 /*
 function ListeIndicator of activiter_id=?*/    
