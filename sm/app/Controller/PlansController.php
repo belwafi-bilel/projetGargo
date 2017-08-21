@@ -748,7 +748,7 @@ public function deleteSourceMaterielByDetailPlaning($id=null)
 public function deleteBudgetByDetailPlaning($id=null)
 {
 	$this->loadModel('Budget');
-	$this->Budget->deleteAll(array('Budget.detail_paln_id'=>$id));
+	$this->Budget->deleteAll(array('Budget.source_id'=>$id,'Budget.type_budget'=>'detailPlan'));
 }
 public function deleteJobsByDetailPlaningId($id=null)
 {
