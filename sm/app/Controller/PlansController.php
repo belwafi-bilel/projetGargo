@@ -1744,7 +1744,7 @@ public function Indicators()
 	{
 		$request=$this->request->query;
 	$this->loadModel("Indicator");
-	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id);
+	$reponses=$this->getPlanning($this->Indicator->findAllByActiviterId($id));
 	    $this->response->body($reponses);
 		return $this->response;
 }
