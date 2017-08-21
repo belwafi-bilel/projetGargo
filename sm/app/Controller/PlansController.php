@@ -705,6 +705,8 @@ public function deletePlan()
 		$this->loadModel('HistoricalPlan');
 		$this->loadModel('Axis');
 		$liste=$this->HistoricalPlan->findByPlanId($request['id'],'id');
+		debug($liste);
+		die();
 		$this->HistoricalPlan->deleteAll(array('HistoricalPlan.id'=>$liste));
 		$listeAxis=$this->Axis->findAllByHistoricalPlanId($liste,'id');
 		$this->Axis->deleteAll(array('Axis.historical_id'=>$listeAxis));
