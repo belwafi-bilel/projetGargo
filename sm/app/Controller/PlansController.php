@@ -775,7 +775,7 @@ foreach ($detailplans as $detailplan)
 	 		array('jobs'=>$this->getJobs($detailplan['DetailPlan']['id'])),
 	 		array('MaterielSources'=>$this->getMaterielSource($detailplan['DetailPlan']['id'])),
 	 		array('HumanSources'=>$this->gethumanSource($detailplan['DetailPlan']['id'])),
-	 		array('Activities'=>$this->getListeActivityAndIndicatorByDetailPlanningId($detailplan['DetailPlan']['id']))
+	 		array('Activites'=>$this->getListeActivityAndIndicatorByDetailPlanningId($detailplan['DetailPlan']['id']))
 	 		));
 		
 	}
