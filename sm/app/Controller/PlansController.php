@@ -1922,14 +1922,19 @@ public function getSourceByAttribute($liste=null)
 /*
 function getSourceByTopAttribute of any model  and by top attribute=?
 */ 
-public function getSourceByTopAttribute($liste=null)
+public function getSourceByTopAttribute()
 {
-    $liste=explode(",",$liste);
-	$this->loadModel($liste[0]);
-	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1].'> '=>$liste[2]]]);
-	$table=array_values(($table));
-	$out=json_encode($table);
-	return $out;
+   if ($this->request->is('get'))
+	{
+	$request=$this->request->query;
+	$Model=$this->getModel($request['Model']);
+	$this->loadModel($Model);
+	echo $this->getAttributes($request['Model'],$request['Attribute']);
+	die();
+	$table=$this->$Model->find('all',['conditions'=>[$Model.'.'.$this->getAttributes($request['Model'],$request['Attribute']).'> '=>$request['value']]]);
+	$this->response->body(json_encode($table));
+	return $this->response;
+	}
 }
 /**********************************function getSourceByLowerAttribute  ***********************/
 /*
