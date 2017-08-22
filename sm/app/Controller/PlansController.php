@@ -271,7 +271,7 @@ public function moveRow()
 	}
 	$this->loadModel('DetailPlan');
 	$this->loadModel('TypePlan');
-	$typePlaningMove=$this->getSourceById('TypePlan,'.$request['id']);
+	$typePlaningMove=$this->TypePlan->findById($request['id']);
 	
 	$detailPlansMove=$this->DetailPlan->findByRowAndAxesId($typePlaningMove['TypePlan']['position'],$tab);
 	
@@ -1515,8 +1515,6 @@ public function getIdPlanningByHistoricalPlanId($id)
 	$historical_plan_id=$this->HistoricalPlan->findById($id);
 	return $historical_plan_id['HistoricalPlan']['plan_id'];
 }
-
-
 /*****************************************function getStylePlaning***********************/
 /*
 function getStyle for Historicalplnning=?
@@ -1892,14 +1890,17 @@ public function getActivityById($id)
 /*
 function getSourceById of any model  and by id=?
 */ 
-public function getSourceById($liste=null)
+public function getSourceById()
 {
-	$liste=explode(",",$liste);
-	$this->loadModel($liste[0]);
-	$table=$this->$liste[0]->findById($liste[1]);
-	//$table=array_values(($table));
-	//$out=json_encode($table);
-	return $table;
+	if ($this->request->is('get'))
+	{
+		$request=$this->request->query;
+		$Model=$model[$request['Model']]
+		$this->loadModel($Model);
+		$table=$this->$Model->findById($Request['id']);
+		$this->response->body($table);
+		return $this->response;
+	}
 }
 /**********************************function getSourceByAttribute  ***********************/
 /*
@@ -1995,20 +1996,17 @@ if ($this->request->is('post')||($this->request->is('put')))
 	{
 		$request=$this->request->query;
 		if($request['locked']=='true')
-	$locked=1;
-else
-	$locked=0;
-
-$this->loadModel('DetailPlan');
-$data=array('id'=>$request['id'],
-	'locked'=>$locked);
-$this->DetailPlan->save($data);
-$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
-	$this->response->body($reponses);
-	return $this->response;
+			$locked=1;
+		else
+			$locked=0;
+	$this->loadModel('DetailPlan');
+	$data=array('id'=>$request['id'],
+		'locked'=>$locked);
+	$this->DetailPlan->save($data);
+	$reponses=$this->getPlanning($request['planing_id'].','.$request['historical_planing_id']);
+		$this->response->body($reponses);
+		return $this->response;
 	}
-
-
 }
 
 }
