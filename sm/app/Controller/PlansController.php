@@ -1956,12 +1956,16 @@ function getSourceBetweenTwoAttribute of any model  and Between two attributes=?
 */ 
 public function getSourceBetweenTwoAttribute($liste=null)
 {
-    $liste=explode(",",$liste);
-	$this->loadModel($liste[0]);
-	$table=$this->$liste[0]->find('all',['conditions'=>[$liste[0].'.'.$liste[1].'<='=>$liste[2],$liste[0].'.'.$liste[1].'>= '=>$liste[3]]]);
-	$table=array_values(($table));
-	$out=json_encode($table);
-	return $out;
+	if ($this->request->is('get'))
+	{
+	$request=$this->request->query;
+	$Model=$this->getModel($request['Model']);
+	$this->loadModel($Model);
+	$table=$this->$Model->find('all',['conditions'=>[$Model.'.'.$this->getAttributes($request['Model'],$request['Attribute1']).'<= '=>$request['value1'],
+		$Model.'.'.$this->getAttributes($request['Model'],$request['Attribute2']).'>= '=>$request['value2']]]);
+	$this->response->body(json_encode($table));
+	return $this->response;
+	}
 }
 /**********************************function getSourceByTwoAttributes  ***********************/
 /*
