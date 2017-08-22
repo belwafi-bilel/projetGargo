@@ -1892,11 +1892,10 @@ function getSourceById of any model  and by id=?
 */ 
 public function getSourceById()
 {
-
 	if ($this->request->is('get'))
 	{$request=$this->request->query;
 		$Model=$this->getModel($request['Model']);
-		
+		echo $Model;
 		$this->loadModel($Model);
 		$table=$this->$Model->findById($request['id']);
 		$this->response->body($table);
