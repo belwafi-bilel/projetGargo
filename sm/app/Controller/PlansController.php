@@ -1945,7 +1945,6 @@ public function getSourceByLowerAttribute()
 	$request=$this->request->query;
 	$Model=$this->getModel($request['Model']);
 	$this->loadModel($Model);
-	echo $this->getAttributes($request['Model'],$request['Attribute']);
 	$table=$this->$Model->find('all',['conditions'=>[$Model.'.'.$this->getAttributes($request['Model'],$request['Attribute']).' < '=>$request['value']]]);
 	$this->response->body(json_encode($table));
 	return $this->response;
