@@ -1897,7 +1897,7 @@ public function getSourceById()
 		$request=$this->request->query;
 		$Model=$model[$request['Model']];
 		$this->loadModel($Model);
-		$table=$this->$Model->findById($Request['id']);
+		$table=$this->$Model->findById($request['id']);
 		$this->response->body($table);
 		return $this->response;
 	}
