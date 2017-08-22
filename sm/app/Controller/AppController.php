@@ -37,12 +37,45 @@ class AppController extends Controller {
 	public function beforeFilter() {
 
 
-$model=array('Action','Activite','ActivityManage','Axis','Bankaccount','Budget','BudgetDetail','Category','Comment','ComponentCategory','ComponentCustomer',
+
+
+     //  $this->Auth->allow('login');
+		$this->Session->write('id','14');
+        $user_id = $this->Session->read("id");
+        $this->set('user_id', $user_id);
+     
+         if ($this->Session->check('Config.language')) {
+           //  Configure::write('Config.language', $this->Session->read('Config.language'));
+            configure::write('langue', $this->Session->read('Config.language'));
+        }
+$langue = $this->Session->read('Config.language');
+        $this->set('langue', $langue);
+        
+    }
+	
+	public function isAuthorized($user) {
+		// Here is where we should verify the role and give access based on role
+		
+		return true;
+	}
+	
+	public function getModel($num=null)
+	{
+		$model=array('Action','Activite','ActivityManage','Axis','Bankaccount','Budget','BudgetDetail','Category','Comment','ComponentCategory','ComponentCustomer',
 	         'ComponentLanguage','ComponentSector','Composant','Customer','DetailPlan','Document','DocumentCategory','DocumentCUstomer','DocumentLanguage',
 	         'DocumentSector','Group','GroupeUser','Historical','HistotricalPlan','HumanSource','Indicator','Invoice','InvoiceDetail','Item','Job','JobeDetail','Language','LinkWeb','MaterialSource','Message',
 	         'ModePayment','Notification','Offer','OptionPlan','Payment','PermissionAccess','PersonalOffer','Plan','PlanComposant','Project','ProjectDetailPlanning','Regulation','Sector','SocialProfile','StylePlanning',
 	         'Tach','Task','TypeBankaccount','TypeComponent','TypePlan','User','VisionPlan');
-$atrribute=array(
+		return $model[$num];
+	}
+	public function getAttributes($IndiceModel=null,$indiceattribute=null)
+	{
+		$model=array('Action','Activite','ActivityManage','Axis','Bankaccount','Budget','BudgetDetail','Category','Comment','ComponentCategory','ComponentCustomer',
+	         'ComponentLanguage','ComponentSector','Composant','Customer','DetailPlan','Document','DocumentCategory','DocumentCUstomer','DocumentLanguage',
+	         'DocumentSector','Group','GroupeUser','Historical','HistotricalPlan','HumanSource','Indicator','Invoice','InvoiceDetail','Item','Job','JobeDetail','Language','LinkWeb','MaterialSource','Message',
+	         'ModePayment','Notification','Offer','OptionPlan','Payment','PermissionAccess','PersonalOffer','Plan','PlanComposant','Project','ProjectDetailPlanning','Regulation','Sector','SocialProfile','StylePlanning',
+	         'Tach','Task','TypeBankaccount','TypeComponent','TypePlan','User','VisionPlan');
+		$atrribute=array(
 	$model[0]=>array('id','document_id','profile_id','type','date_action'),//Action
 	$model[1]=>array('id','num','title','description','cible','detail_planning_id'),//Activiter
 	$model[2]=>array('id','activiter_id','user_id','date'),//ActivityManger
@@ -104,49 +137,8 @@ $atrribute=array(
 	);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     //  $this->Auth->allow('login');
-		$this->Session->write('id','14');
-        $user_id = $this->Session->read("id");
-        $this->set('user_id', $user_id);
-        $this->set('atrribute',$atrribute);
-         if ($this->Session->check('Config.language')) {
-           //  Configure::write('Config.language', $this->Session->read('Config.language'));
-            configure::write('langue', $this->Session->read('Config.language'));
-        }
-$langue = $this->Session->read('Config.language');
-        $this->set('langue', $langue);
-        
-    }
-	
-	public function isAuthorized($user) {
-		// Here is where we should verify the role and give access based on role
-		
-		return true;
+return $atrribute[$model[$IndiceModel]][$indiceattribute];
 	}
-	
 	public function getHtml($content=null)
 {
   $find=array('&amp;','&lt;','&gt;');
@@ -158,12 +150,5 @@ public function getEntiteHtml($content=null)
    $find=array('&amp;','&lt;','&gt;');
   $filter=array('&','<','>');
   return str_replace($filter, $find, $content);
-}
-
-
-public function sendRequest($rep=null)
-{
-	$this->response->body(json_encode($rep));
-	return $this->response;
 }
 }
