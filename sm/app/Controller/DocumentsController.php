@@ -48,17 +48,17 @@ class DocumentsController extends AppController {
 			 $this->loadModel('DocumentLanguage');
 			 $this->loadModel('DocumentSector');
 			 $this->loadModel('Attachment');
-			
+			$this->request=$this->request->query;
 			  $main_document = $this->request["main_document"];
 	          $associated_documents =$this->request['file'];
-              	
+              	debug()
 				$document=
 				 array('name'=>$this->request['name'],
 				 	'country'=>$this->request['country'],
 				 	'theme'=>$this->request['them'],
 				 	'description'=>$this->request['description'],
 				 	'keyword'=>$this->request['keyword'],
-				 	'price'=>$this->request['Document']['price'],
+				 	'price'=>'',
 				 	'visibility'=>$this->request['visibility'],
 				 	'date_created'=>date("Y-M-d h:s"),
 				 	'main_document'=>$main_document ,
