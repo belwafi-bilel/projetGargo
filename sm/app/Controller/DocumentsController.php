@@ -51,7 +51,7 @@ class DocumentsController extends AppController {
 			$this->request=$this->request->query;
 			  $main_document = $this->request["main_document"];
 	          $associated_documents =$this->request['file'];
-              	debug()
+              	debug($this->request);
 				$document=
 				 array('name'=>$this->request['name'],
 				 	'country'=>$this->request['country'],
