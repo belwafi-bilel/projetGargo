@@ -295,9 +295,9 @@ class DocumentsController extends AppController {
 // $Customers = $this->Customer->find('all');
 // $Languges = $this->Language->find('all');
 // $this->set(compact('Sectors', 'Categorys', 'Customers', 'Languges'));
-		}
+		
 
-	}
+	
 /**
  * edit method
  *
