@@ -49,8 +49,8 @@ class DocumentsController extends AppController {
 			 $this->loadModel('DocumentSector');
 			 $this->loadModel('Attachment');
 			
-			  $main_document = $this->request->["main_document"];
-	          $associated_documents =$this->request->['file'];
+			  $main_document = $this->request["main_document"];
+	          $associated_documents =$this->request['file'];
               	
 				$document=
 				 array('name'=>$this->request['name'],
