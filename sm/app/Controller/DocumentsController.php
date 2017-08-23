@@ -70,19 +70,18 @@ class DocumentsController extends AppController {
 				 $this->Document->save($document);
 				 $document_id=$this->Document->getLastInsertID();		
 				    $associated_documents=$this->request['file'];
-              	foreach ($associated_documents1 as $associated_document) 
-						{
+              
 						 $data=array(
-						 	'extension'=>explode('.',$associated_document["name"])[sizeof(explode('.',$associated_document["tmp_name"]))-1],
-						 	'file'=>$file,
+						 	'extension'=>'zip',
+						 	'file'=>$$this->request['file'],
 						 	'document_id'=>$document_id,
-						 	'size'=>$this->bytes($associated_document['size']),
-						 	'name'=>$associated_document['name'],
+						 	'size'=>'',
+						 	'name'=>'',
 						 	'mime'=>'zip'
 						 	);
 						 $this->Attachment->create();
 						 $this->Attachment->save($data);
-						}
+						
 			 
 						$listeDocumentSector=explode(',',$this->request['liste_sector']);
 					for ($i=0; $i < count($listeDocumentCustomer); $i++) { 
