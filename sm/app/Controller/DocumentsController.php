@@ -84,8 +84,8 @@ class DocumentsController extends AppController {
 						
 			 
 						$listeDocumentSector=explode(',',$this->request['liste_sector']);
-					for ($i=0; $i < count($listeDocumentCustomer); $i++) { 
-				 		$documentSector=array('sector_id'=>$listeDocumentCustomer[$i],
+					for ($i=0; $i < count($listeDocumentSector); $i++) { 
+				 		$documentSector=array('sector_id'=>$listeDocumentSector[$i],
 				 			'document_id'=>$document_id);
 				 		$this->DocumentSector->create();
 						$this->DocumentSector->save($documentSector);
