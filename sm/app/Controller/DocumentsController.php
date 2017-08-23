@@ -129,7 +129,7 @@ class DocumentsController extends AppController {
 					$Categorys = $this->Category->find('all');
 					$Customers = $this->Customer->find('all');
 					$Languges = $this->Language->find('all');
-					$reponses=json_encode(array_merge($Sectors,$Categorys,$Customers,$Languges));
+					$reponses=json_encode(array_merge(array('sectors'=>$Sectors),array('categorie'=>$Categorys),array('customrs'=>$Customers),array('langues'=>$Languges)));
 					$this->response->body($reponses);
 					return $this->response;
 
