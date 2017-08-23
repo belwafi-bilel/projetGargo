@@ -69,7 +69,7 @@ class DocumentsController extends AppController {
 				 $this->Document->create();
 				 $this->Document->save($document);
 				 $document_id=$this->Document->getLastInsertID();		
-				    $associated_documents=$this->request->data['Document']['file'];
+				    $associated_documents=$this->request['file'];
               	foreach ($associated_documents1 as $associated_document) 
 						{
 						 $data=array(
