@@ -115,7 +115,7 @@ class DocumentsController extends AppController {
 				 	}	
 		
 				}
-				else if ($this->request->is('get'))) 
+				else if ($this->request->is('get'))
 				{
 					APP::import('Model','Sector');
 					$this->Sector = new Sector;
