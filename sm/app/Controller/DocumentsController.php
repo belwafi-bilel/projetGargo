@@ -64,7 +64,7 @@ class DocumentsController extends AppController {
 				 	'main_document'=>$main_document ,
 				 	'associated_document'=>$associated_documents ,
 				 	'user_id'=>$id_users,
-				 	'mime'=>$this->request["type"]
+				 	'mime'=>$this->request["typeMainDocument"]
 				 	);
 				 $this->Document->create();
 				 $this->Document->save($document);
@@ -78,7 +78,7 @@ class DocumentsController extends AppController {
 						 	'document_id'=>$document_id,
 						 	'size'=>$this->bytes($associated_document['size']),
 						 	'name'=>$associated_document['name'],
-						 	'mime'=>$associated_document["type"]
+						 	'mime'=>'zip'
 						 	);
 						 $this->Attachment->create();
 						 $this->Attachment->save($data);
