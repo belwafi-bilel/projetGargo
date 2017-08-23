@@ -73,7 +73,7 @@ class DocumentsController extends AppController {
               
 						 $data=array(
 						 	'extension'=>'zip',
-						 	'file'=>$$this->request['file'],
+						 	'file'=>$this->request['file'],
 						 	'document_id'=>$document_id,
 						 	'size'=>'',
 						 	'name'=>'',
