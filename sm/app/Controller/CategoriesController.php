@@ -18,7 +18,7 @@ public function add()
  	$this->Category->create();
 	$this->Category->save($data);
 	$this->Category->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('categorys'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -34,7 +34,7 @@ public function edit()
  	$this->Category->create();
 	$this->Category->save($data);
 	$this->Category->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('categorys'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -46,7 +46,7 @@ public function delete()
  $this->Category->id=$request['id'];
  $this->Category->delete();
 	$this->Category->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('categorys'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -55,7 +55,7 @@ public function view()
 	if ($this->request->is('get'))
 		{
 		$sectors=$this->Category->find('all');
-		$this->response->body(json_encode($sectors));
+		$this->response->body(json_encode(array('categorys'=>$sectors)));
 		return $this->response;
 		}	
 }
