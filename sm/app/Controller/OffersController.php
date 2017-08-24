@@ -19,7 +19,7 @@ public function add()
  	$data=array(
 				'name'=>$request['name'],
 				 'date'=>date("Y-m-d"),
-				 'total_price'=>$request['total_price'],
+				 'price'=>$request['total_price'],
 				 'description'=>$request['description'],
 				 'period'=>$request['period']
 				 );
@@ -27,7 +27,7 @@ public function add()
         $this->Regulation->save($data);
         $Regulation_id=$this->Regulation->getLastInsertID();
          $listeItem=explode(',',$request['items']);
-        for ($i=0; $i <count($listeItem); $i++) { 
+        for ($i=0; $i <count($listeItem); $i
         	$offers=array(
         		'nombre'=>'1',
         		'price_ligne'=>'0',
@@ -52,7 +52,7 @@ public function edit()
  				 'id'=>$Regulation_id,
 				 'name'=>$request['name'],
 				 'date'=>date("Y-m-d"),
-				 'total_price'=>$request['total_price'],
+				 'price'=>$request['total_price'],
 				 'description'=>$request['description'],
 				 'period'=>$request['period']
 				 );
