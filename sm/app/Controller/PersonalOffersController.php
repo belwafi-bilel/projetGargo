@@ -34,7 +34,7 @@ if($periode!='12')
 else
   $message="1 Year";
     $user_id=$this->Session->read('id');
-  	$url=$this->Transaction->requestPaypal($Regulations['Regulation']['total_price'],
+  	$url=$this->Transaction->requestPaypal($Regulations['Regulation']['price'],
       "Compte premium $message","action=subscribe&uid=$user_id&duration=$message");
   	if($url)
   		{
