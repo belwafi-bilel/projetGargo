@@ -7,31 +7,58 @@ App::uses('AppController', 'Controller');
  */
 class CategoriesController extends AppController {
 
-
-public function index($liste=null) {
-      if($liste){
-      $index=explode(',-,',$liste);
-      if(count($index)==2)
-      {
-		
-			$data=array('id'=>$index[0],'description'=>$index[1]);
-		if ($this->request->is('post') || $this->request->is('put')) 
-			$this->Category->save($data);
-	}else if(count($index)==1)
+public function add()
+{
+	if ($this->request->is('post')||($this->request->is('put')))
 	{
-	$data=array('description'=>$index[0]);
-	$this->Category->create();
+		$request=$this->request->query;
+ 	$data=array(
+ 	'description'=>$request['description'],
+ 	'langue'=>$request['langue']);
+ 	$this->Category->create();
 	$this->Category->save($data);
-	}else if(count($index)>2)
+	$this->Category->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
+	}
+}
+public function edit()
+{
+	if ($this->request->is('put'))
 	{
-$this->Category->id = $index[0];
-$this->Category->delete();
+		$request=$this->request->query;
+ 	$data=array(
+ 		'id'=>$request['id'],
+ 	'description'=>$request['description'],
+ 	'langue'=>$request['langue']);
+ 	$this->Category->create();
+	$this->Category->save($data);
+	$this->Category->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
 	}
+}
+public function delete()
+{
+	if ($this->request->is('delete'))
+	{
+		$request=$this->request->query;
+ $this->Category->id=$request['id'];
+ $this->Category->delete();
+	$this->Category->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
 	}
-
-		$this->Category->recursive = 0;
-		$this->set('categories', $this->paginate());
-
+}
+public function view()
+{
+	if ($this->request->is('get'))
+		{
+		$sectors=$this->Category->find('all');
+		$this->response->body(json_encode($sectors));
+		return $this->response;
+		}	
+}
 }
 
 }
