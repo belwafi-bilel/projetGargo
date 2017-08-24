@@ -59,7 +59,7 @@ public function set()
 	{
 		$request=$this->request->query;
  	$data=array(
- 		'id'=>$request['id']
+ 		'id'=>$request['id'],
  	'description'=>$request['description'],
  	'langue'=>$request['langue']);
  	$this->Sector->create();
