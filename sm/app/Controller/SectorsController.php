@@ -38,7 +38,7 @@ class SectorsController extends AppController {
 
 // }
 
-public function new()
+public function add()
 {
 	if ($this->request->is('post')||($this->request->is('put')))
 	{
