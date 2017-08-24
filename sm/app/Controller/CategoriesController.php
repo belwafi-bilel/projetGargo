@@ -59,6 +59,6 @@ public function view()
 		return $this->response;
 		}	
 }
-}
+
 
 }
