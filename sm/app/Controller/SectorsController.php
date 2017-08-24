@@ -53,7 +53,7 @@ public function add()
 	return $this->response;
 	}
 }
-public function set()
+public function edit()
 {
 	if ($this->request->is('put'))
 	{
@@ -81,7 +81,7 @@ public function delete()
 	return $this->response;
 	}
 }
-public function get()
+public function view()
 {
 	if ($this->request->is('get'))
 		{
