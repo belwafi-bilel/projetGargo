@@ -37,5 +37,58 @@ $this->Sector->delete();
 		$this->set('sectors', $this->paginate());
 
 }
+
+public function new()
+{
+	if ($this->request->is('post')||($this->request->is('put')))
+	{
+		$request=$this->request->query;
+ 	$data=array(
+ 	'description'=>$request['description'],
+ 	'langue'=>$request['langue']);
+ 	$this->Sector->create();
+	$this->Sector->save($data);
+	$this->Sector->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
+	}
+}
+public function set()
+{
+	if ($this->request->is('put')))
+	{
+		$request=$this->request->query;
+ 	$data=array(
+ 		'id'=>$request['id']
+ 	'description'=>$request['description'],
+ 	'langue'=>$request['langue']);
+ 	$this->Sector->create();
+	$this->Sector->save($data);
+	$this->Sector->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
+	}
+}
+public function delete()
+{
+	if ($this->request->is('delete')))
+	{
+		$request=$this->request->query;
+ $this->Sector->id=$request['id'];
+ $this->Sector->delete();
+	$this->Sector->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
+	}
+}
+public function get()
+{
+	if ($this->request->is('get')))
+		{
+		$this->Sector->recursive = 0;
+		$this->response->body(json_encode($this->paginate()));
+		return $this->response;
+		}	
+}
 	
 }
