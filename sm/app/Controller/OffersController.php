@@ -27,7 +27,8 @@ public function add()
         $this->Regulation->save($data);
         $Regulation_id=$this->Regulation->getLastInsertID();
          $listeItem=explode(',',$request['items']);
-        for ($i=0; $i <count($listeItem); $i
+        for ($i=0; $i <count($listeItem); $i++)
+        {
         	$offers=array(
         		'nombre'=>'1',
         		'price_ligne'=>'0',
