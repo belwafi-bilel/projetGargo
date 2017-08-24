@@ -71,7 +71,7 @@ public function set()
 }
 public function delete()
 {
-	if ($this->request->is('delete')))
+	if ($this->request->is('delete'))
 	{
 		$request=$this->request->query;
  $this->Sector->id=$request['id'];
@@ -83,7 +83,7 @@ public function delete()
 }
 public function get()
 {
-	if ($this->request->is('get')))
+	if ($this->request->is('get'))
 		{
 		$this->Sector->recursive = 0;
 		$this->response->body(json_encode($this->paginate()));
