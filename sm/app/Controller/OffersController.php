@@ -7,33 +7,26 @@ App::uses('AppController', 'Controller');
  */
 class OffersController extends AppController {
 
-/**
- * index method
- *
- * @return void
- */
-	public function index($liste=null) {
-		$this->Offer->recursive = 0;
-		$this->set('offers', $this->paginate());
-        $this->loadModel('Regulation');
+
+
+public function add()
+{
+		$this->loadModel('Regulation');
         $this->loadModel('Item');
-        $Items = $this->Item->find('all');
-        $Regulations = $this->Regulation->find('all');
-        $this->set(compact('Items', 'Regulations'));
-		if($liste)
-		{
-			$index=explode(',-,',$liste);
-			$data=array(
-				'name'=>$index[0],
+	if ($this->request->is('post'))
+	{
+		$request=$this->request->query;
+ 	$data=array(
+				'name'=>$request['name'],
 				 'date'=>date("Y-m-d"),
-				 'total_price'=>$index[1],
-				 'description'=>$index[2],
-				 'period'=>$index[3]
+				 'total_price'=>$request['total_price'],
+				 'description'=>$request['description'],
+				 'period'=>$request['period']
 				 );
-        $this->Regulation->create();
+ 		$this->Regulation->create();
         $this->Regulation->save($data);
         $Regulation_id=$this->Regulation->getLastInsertID();
-        $listeItem=explode(',',$index[3]);
+         $listeItem=explode(',',$request['items']);
         for ($i=0; $i <count($listeItem); $i++) { 
         	$offers=array(
         		'nombre'=>'1',
@@ -43,84 +36,67 @@ class OffersController extends AppController {
         	$this->Offer->create();
 			$this->Offer->save($offers);
         }
-		}
-		
+	$this->Regulation->recursive = 0;
+	$this->response->body(json_encode(array('regulations'=>$this->paginate())));
+	return $this->response;
 	}
+}
+public function edit()
+{		$this->loadModel('Regulation');
+        $this->loadModel('Item');
+	if ($this->request->is('put'))
+	{
+		$request=$this->request->query;
+		$Regulation_id=$request['id'];
+ 		$data=array(
+ 				 'id'=>$Regulation_id,
+				 'name'=>$request['name'],
+				 'date'=>date("Y-m-d"),
+				 'total_price'=>$request['total_price'],
+				 'description'=>$request['description'],
+				 'period'=>$request['period']
+				 );
+ 		$this->Regulation->create();
+        $this->Regulation->save($data);
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Offer->exists($id)) {
-			throw new NotFoundException(__('Invalid offer'));
-		}
-		$options = array('conditions' => array('Offer.' . $this->Offer->primaryKey => $id));
-		$this->set('offer', $this->Offer->find('first', $options));
+         $this->Offer->deleteAll(array('Offer.regulation_id'=>$Regulation_id));
+         $listeItem=explode(',',$request['items']);
+        for ($i=0; $i <count($listeItem); $i++) { 
+        	$offers=array(
+        		'nombre'=>'1',
+        		'price_ligne'=>'0',
+        		'regulation_id'=>$Regulation_id,
+        		'items_id'=>$listeItem[$i]);
+        	$this->Offer->create();
+			$this->Offer->save($offers);
+        }
+	$this->Regulation->recursive = 0;
+	$this->response->body(json_encode(array('regulations'=>$this->paginate())));
+	return $this->response;
 	}
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Offer->create();
-			if ($this->Offer->save($this->request->data)) {
-				$this->Session->setFlash(__('The offer has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The offer could not be saved. Please, try again.'));
-			}
-		}
+}
+public function delete()
+{$this->loadModel('Regulation');
+        $this->loadModel('Item');
+	if ($this->request->is('delete'))
+	{
+		$request=$this->request->query;
+		$this->Offer->deleteAll(array('Offer.regulation_id'=>$request['id']));
+ 		$this->Regulation->id=$request['id'];
+	    $this->Regulation->delete();
+	$this->Regulation->recursive = 0;
+	$this->response->body(json_encode(array('regulations'=>$this->paginate())));
+	return $this->response;
 	}
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->Offer->exists($id)) {
-			throw new NotFoundException(__('Invalid offer'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Offer->save($this->request->data)) {
-				$this->Session->setFlash(__('The offer has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The offer could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('Offer.' . $this->Offer->primaryKey => $id));
-			$this->request->data = $this->Offer->find('first', $options);
-		}
-	}
-
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		$this->Offer->id = $id;
-		if (!$this->Offer->exists()) {
-			throw new NotFoundException(__('Invalid offer'));
-		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Offer->delete()) {
-			$this->Session->setFlash(__('Offer deleted'));
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('Offer was not deleted'));
-		$this->redirect(array('action' => 'index'));
-	}
+}
+public function view()
+{$this->loadModel('Regulation');
+        $this->loadModel('Item');
+	if ($this->request->is('get'))
+		{
+		$this->Regulation->recursive = 0;
+	$this->response->body(json_encode(array('regulations'=>$this->paginate())));
+	return $this->response;
+		}	
+}
 }
