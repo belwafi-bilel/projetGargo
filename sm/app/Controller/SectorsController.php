@@ -85,7 +85,7 @@ public function view()
 {
 	if ($this->request->is('get'))
 		{
-		$sectors=$this->Sector->findAll();
+		$sectors=$this->Sector->find('all');
 		$this->response->body(json_encode($sectors));
 		return $this->response;
 		}	
