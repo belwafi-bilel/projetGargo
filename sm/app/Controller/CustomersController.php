@@ -20,7 +20,7 @@ public function add()
  	$this->Customer->create();
 	$this->Customer->save($data);
 	$this->Customer->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('customers'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -36,7 +36,7 @@ public function edit()
  	$this->Customer->create();
 	$this->Customer->save($data);
 	$this->Customer->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('customers'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -48,7 +48,7 @@ public function delete()
  $this->Customer->id=$request['id'];
  $this->Customer->delete();
 	$this->Customer->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('customers'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -57,7 +57,7 @@ public function view()
 	if ($this->request->is('get'))
 		{
 		$sectors=$this->Customer->find('all');
-		$this->response->body(json_encode($sectors));
+		$this->response->body(json_encode(array('customers'=>$sectors)));
 		return $this->response;
 		}	
 }
