@@ -31,9 +31,9 @@ public function add()
         {
         	$offers=array(
         		'nombre'=>'1',
-        		'price_ligne'=>'0',
+        		'price'=>'0',
         		'regulation_id'=>$Regulation_id,
-        		'items_id'=>$listeItem[$i]);
+        		'item_id'=>$listeItem[$i]);
         	$this->Offer->create();
 			$this->Offer->save($offers);
         }
@@ -65,9 +65,9 @@ public function edit()
         for ($i=0; $i <count($listeItem); $i++) { 
         	$offers=array(
         		'nombre'=>'1',
-        		'price_ligne'=>'0',
+        		'price'=>'0',
         		'regulation_id'=>$Regulation_id,
-        		'items_id'=>$listeItem[$i]);
+        		'item_id'=>$listeItem[$i]);
         	$this->Offer->create();
 			$this->Offer->save($offers);
         }
