@@ -20,13 +20,13 @@ class PersonalOffersController extends AppController {
 	}
 
 
-		function subscribe($id=null)
+		public function subscribe()
 {
   if ($this->request->is('put'))
   {
   $this->loadModel('Regulation');
     $this->loadModel('Transaction');
-    $id=$this->request->query['id']
+    $id=$this->request->query['id'];
      $Regulations = $this->Regulation->find('first',array('conditions'=>['Regulation.id'=>$id]));
 $periode=$Regulations['Regulation']['period'];
 if($periode!='12')
