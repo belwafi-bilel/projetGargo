@@ -85,8 +85,8 @@ public function view()
 {
 	if ($this->request->is('get'))
 		{
-		$this->Sector->recursive = 0;
-		$this->response->body(json_encode($this->paginate()));
+		$sectors=$this->Sector->findAll();
+		$this->response->body(json_encode($sectors));
 		return $this->response;
 		}	
 }
