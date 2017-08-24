@@ -55,7 +55,7 @@ public function add()
 }
 public function set()
 {
-	if ($this->request->is('put')))
+	if ($this->request->is('put'))
 	{
 		$request=$this->request->query;
  	$data=array(
