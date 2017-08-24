@@ -14,7 +14,7 @@ class LanguagesController extends AppController {
  	$this->Language->create();
 	$this->Language->save($data);
 	$this->Language->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('languages'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -30,7 +30,7 @@ public function edit()
  	$this->Language->create();
 	$this->Language->save($data);
 	$this->Language->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('languages'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -42,7 +42,7 @@ public function delete()
  $this->Language->id=$request['id'];
  $this->Language->delete();
 	$this->Language->recursive = 0;
-	$this->response->body(json_encode($this->paginate()));
+	$this->response->body(json_encode(array('languages'=>$this->paginate())));
 	return $this->response;
 	}
 }
@@ -51,7 +51,7 @@ public function view()
 	if ($this->request->is('get'))
 		{
 		$sectors=$this->Language->find('all');
-		$this->response->body(json_encode($sectors));
+		$this->response->body(json_encode(array('languages'=>$sectors)));
 		return $this->response;
 		}	
 }
