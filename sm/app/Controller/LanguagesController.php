@@ -3,30 +3,57 @@ App::uses('AppController', 'Controller');
 
 class LanguagesController extends AppController {
 
-	public function index($liste=null) {
-      if($liste){
-      $index=explode(',-,',$liste);
-      if(count($index)==3)
-      {
-		
-			$data=array('id'=>$index[0],'name'=>$index[1],'abbreviation'=>$index[2]);
-		if ($this->request->is('post') || $this->request->is('put')) 
-			$this->Language->save($data);
-	}else if(count($index)==2)
+	public function add()
+{
+	if ($this->request->is('post')||($this->request->is('put')))
 	{
-	$data=array('name'=>$index[0],'abbreviation'=>$index[1]);
-	$this->Language->create();
+		$request=$this->request->query;
+ 	$data=array(
+ 	'name'=>$request['name'],
+ 	'abbreviation'=>$request['abbreviation']);
+ 	$this->Language->create();
 	$this->Language->save($data);
-	}else if(count($index)==1)
+	$this->Language->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
+	}
+}
+public function edit()
+{
+	if ($this->request->is('put'))
 	{
-$this->Language->id = $index[0];
-$this->Language->delete();
+		$request=$this->request->query;
+ 	$data=array(
+ 		'id'=>$request['id'],
+  	'name'=>$request['name'],
+ 	'abbreviation'=>$request['abbreviation']);
+ 	$this->Language->create();
+	$this->Language->save($data);
+	$this->Language->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
 	}
+}
+public function delete()
+{
+	if ($this->request->is('delete'))
+	{
+		$request=$this->request->query;
+ $this->Language->id=$request['id'];
+ $this->Language->delete();
+	$this->Language->recursive = 0;
+	$this->response->body(json_encode($this->paginate()));
+	return $this->response;
 	}
-
-		$this->Language->recursive = 0;
-		$this->set('languages', $this->paginate());
-
+}
+public function view()
+{
+	if ($this->request->is('get'))
+		{
+		$sectors=$this->Language->find('all');
+		$this->response->body(json_encode($sectors));
+		return $this->response;
+		}	
 }
 
 }
